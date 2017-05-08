@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SnotifyService} from "./snotify.service";
-import {Toast} from "./toast/toast.model";
+import {SnotifyToast} from "./toast/snotify-toast.model";
 import {Subscription} from "rxjs/Subscription";
 
 @Component({
@@ -9,14 +9,14 @@ import {Subscription} from "rxjs/Subscription";
   styleUrls: ['./snotify.component.css']
 })
 export class SnotifyComponent implements OnInit, OnDestroy {
-  notifications: Toast[];
+  notifications: SnotifyToast[];
   emitter: Subscription;
   constructor(private service: SnotifyService) { }
 
   ngOnInit() {
     this.notifications = this.service.getAll();
     this.emitter = this.service.emitter.subscribe(
-      (toasts: Toast[]) => this.notifications = toasts
+      (toasts: SnotifyToast[]) => this.notifications = toasts
     );
 
   }

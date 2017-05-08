@@ -1,3 +1,7 @@
+import {SnotifyConfig} from './snotify-config';
+
 export interface Snotify {
-  showProgressBar: boolean;
+  title: string;
+  body: string;
+  config?: SnotifyConfig;
 }

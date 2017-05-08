@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {SnotifyService} from './snotify/snotify/snotify.service';
-import {Toast} from './snotify/snotify/toast/toast.model';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +16,7 @@ export class AppComponent implements OnInit {
   }
 
   addToast() {
-    this.snotifyService.add(new Toast('Test Title', 'Test content lalala', 10000));
+    this.snotifyService.success('Super title!', 'Here we are');
   }
 
   clearToasts() {
