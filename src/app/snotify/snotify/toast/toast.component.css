@@ -8,6 +8,7 @@ h4, p {
 }
 
 .snotify-toast {
+  background-color: #999;
   max-height: 300px;
   height: 100%;
   margin: 5px;
@@ -62,6 +63,17 @@ h4, p {
   margin-top: 5px;
 }
 
+.snotify-title {
+  color: #FFFFFF;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.snotify-body {
+  font-size: 1em;
+}
+
+/*Success*/
 .snotify-success {
   background-color: #4CAF50;
 }
@@ -74,12 +86,57 @@ h4, p {
   background-color: #81c784;
 }
 
-.snotify-success .snotify-title {
-  color: #FFFFFF;
-  font-size: 1.8em;
-  margin-bottom: 5px;
-}
-
 .snotify-success .snotify-body {
   color: #C8E6C9;
+}
+
+/*Info*/
+.snotify-info {
+  background-color: #1e88e5;
+}
+
+.snotify-info .snotify-progress-bar {
+  background-color: #1565c0;
+}
+
+.snotify-info .snotify-progress-bar__line {
+  background-color: #64b5f6;
+}
+
+.snotify-info .snotify-body {
+  color: #e3f2fd;
+}
+
+/*Warning*/
+.snotify-warning {
+  background-color: #ff9800;
+}
+
+.snotify-warning .snotify-progress-bar {
+  background-color: #ef6c00;
+}
+
+.snotify-warning .snotify-progress-bar__line {
+  background-color: #ffcc80;
+}
+
+.snotify-warning .snotify-body {
+  color: #fff3e0;
+}
+
+/*Warning*/
+.snotify-error {
+  background-color: #f44336;
+}
+
+.snotify-error .snotify-progress-bar {
+  background-color: #c62828;
+}
+
+.snotify-error .snotify-progress-bar__line {
+  background-color: #ef9a9a;
+}
+
+.snotify-error .snotify-body {
+  color: #ffebee;
 }

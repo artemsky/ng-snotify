@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
-import {SnotifyConfig} from "../snotify-config";
+import {SnotifyConfig, SnotifyType} from "../snotify-config";
 
 @Component({
   selector: 'app-snotify-toast',
@@ -15,15 +15,25 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() id: number;
   @ViewChild('wrapper') wrapper: ElementRef;
   @ViewChild('progress') progress: ElementRef;
+
+  private config: SnotifyConfig;
+
   toast: SnotifyToast;
   interval: any;
-  private config: SnotifyConfig;
+  types = {
+    success: false,
+    warning: false,
+    error: false,
+    info: false,
+    bare: false
+  };
 
   constructor(private service: SnotifyService, private render: Renderer2, private zone: NgZone) { }
 
   ngOnInit() {
     this.config = this.service.getConfig(this.id);
     this.toast = this.service.get(this.id);
+    this.getType(this.config.type);
 
     if (!this.config.showProgressBar) {
       this.service.timeout(this.toast.id, this.config.timeout, this.onRemove.bind(this));
@@ -45,6 +55,25 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
 
     } else {
       this.config.showProgressBar = false;
+    }
+  }
+  getType(type: SnotifyType) {
+    switch (type) {
+      case SnotifyType.SUCCESS:
+        this.types.success = true;
+        break;
+      case SnotifyType.ERROR:
+        this.types.error = true;
+        break;
+      case SnotifyType.WARNING:
+        this.types.warning = true;
+        break;
+      case SnotifyType.INFO:
+        this.types.info = true;
+        break;
+      default:
+        this.types.bare = true;
+        break;
     }
   }
 

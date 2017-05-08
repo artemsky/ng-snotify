@@ -1,4 +1,13 @@
-<div class="snotify-toast snotify-success" (click)="onClick()" #wrapper>
+<div
+  class="snotify-toast"
+  [ngClass]="{
+    'snotify-success': types.success,
+    'snotify-warning': types.warning,
+    'snotify-info': types.info,
+    'snotify-error': types.error,
+    'snotify-bare': types.bare
+  }"
+     (click)="onClick()" #wrapper>
   <div class="snotify-toast__inner">
     <div class="snotify-progress-bar" *ngIf="config.showProgressBar">
       <span class="snotify-progress-bar__line" #progress></span>

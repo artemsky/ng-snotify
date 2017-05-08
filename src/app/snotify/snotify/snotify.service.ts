@@ -11,6 +11,7 @@ export class SnotifyService {
   transitionDelay = 400;
   options: SnotifyConfig;
   notifications: SnotifyToast[] = [];
+
   constructor() {
     this.options = {
       showProgressBar: true,

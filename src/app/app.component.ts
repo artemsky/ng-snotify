@@ -11,12 +11,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.snotifyService.setConfig({
-      showProgressBar: true
+      showProgressBar: true,
+      timeout: 10000
     });
   }
 
   addToast() {
     this.snotifyService.success('Super title!', 'Here we are');
+    this.snotifyService.error('Super title!', 'Here we are');
+    this.snotifyService.warning('Super title!', 'Here we are');
+    this.snotifyService.info('Super title!', 'Here we are');
+    this.snotifyService.bare('Super title!', 'Here we are');
   }
 
   clearToasts() {
