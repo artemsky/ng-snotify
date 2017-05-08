@@ -10,15 +10,18 @@ h4, p {
 .snotify-toast {
   max-height: 300px;
   height: 100%;
+  margin: 5px;
   opacity: 0;
-  border: 1px solid red;
-  transition: transform .5s, opacity .3s, max-height ease .5s;
+  transition: transform .4s, opacity .2s, max-height ease .4s;
   transform: translate(0, -50%);
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .snotify-toast__inner {
   position: relative;
-  padding: 20px;
+  padding: 10px 85px 10px 15px;
+  font-size: 16px;
 }
 
 .snotify-show {
@@ -47,6 +50,36 @@ h4, p {
   top: 0;
   left: 0;
   height: 10px;
-  background-color: rgba(0, 224, 255, .9);
+  background-color: #000;
   max-width: 100%;
+}
+
+.snotify-progress-bar + .snotify-title {
+  margin-top: 5px;
+}
+
+.snotify-progress-bar ~ .snotify-icon {
+  margin-top: 5px;
+}
+
+.snotify-success {
+  background-color: #4CAF50;
+}
+
+.snotify-success .snotify-progress-bar {
+  background-color: #388E3C;
+}
+
+.snotify-success .snotify-progress-bar__line {
+  background-color: #81c784;
+}
+
+.snotify-success .snotify-title {
+  color: #FFFFFF;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.snotify-success .snotify-body {
+  color: #C8E6C9;
 }

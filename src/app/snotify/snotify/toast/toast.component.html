@@ -1,9 +1,10 @@
-<div class="snotify-toast" (click)="onClick()" #wrapper>
+<div class="snotify-toast snotify-success" (click)="onClick()" #wrapper>
   <div class="snotify-toast__inner">
-    <div class="snotify-progress-bar">
+    <div class="snotify-progress-bar" *ngIf="config.showProgressBar">
       <span class="snotify-progress-bar__line" #progress></span>
     </div>
-    <h4>{{toast.title}}</h4>
-    <p>{{toast.body}}</p>
+    <div class="snotify-title">{{toast.title}}</div>
+    <div class="snotify-body">{{toast.body}}</div>
+    <app-icon class="snotify-icon"></app-icon>
   </div>
 </div>

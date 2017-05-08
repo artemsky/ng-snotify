@@ -2,8 +2,9 @@ import {
   AfterViewInit, Component, ElementRef, Input, NgZone, OnDestroy, OnInit, Renderer2,
   ViewChild
 } from '@angular/core';
-import {SnotifyService} from "../snotify.service";
-import {Toast} from "./toast.model";
+import {SnotifyService} from '../snotify.service';
+import {Toast} from './toast.model';
+import {Snotify} from "../snotify";
 
 @Component({
   selector: 'app-snotify-toast',
@@ -16,13 +17,16 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('progress') progress: ElementRef;
   toast: Toast;
   interval: any;
+  private config: Snotify;
 
   constructor(private service: SnotifyService, private render: Renderer2, private zone: NgZone) { }
 
   ngOnInit() {
     this.toast = this.service.get(this.id);
-
-    if (this.toast.timeout > 0) {
+    this.config = this.service.getConfig();
+    if (!this.config.showProgressBar) {
+      this.service.timeout(this.toast.id, this.toast.timeout, this.onRemove.bind(this));
+    } else if (this.toast.timeout > 0) {
       const framerate = 10;
       let progress = 0;
       const step = framerate / this.toast.timeout * 100;
@@ -38,11 +42,9 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
         }, framerate);
       });
 
+    } else {
+      this.config.showProgressBar = false;
     }
-
-    // if (this.toast.timeout > 0) {
-    //   this.service.timeout(this.toast.timeout, this.toast.id, this.onRemove.bind(this));
-    // }
   }
 
   ngAfterViewInit() {
@@ -62,7 +64,6 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log("22")
     clearInterval(this.interval);
   }
 
