@@ -1,1 +1,1 @@
-<app-snotify-toast *ngFor="let notification of notifications" [id]="notification.id"></app-snotify-toast>
+<app-snotify-toast *ngFor="let notification of notifications| slice:dockSize_a:dockSize_b" [id]="notification.id" #snotify></app-snotify-toast>

@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
-import {SnotifyConfig, SnotifyType} from "../snotify-config";
+import {SnotifyConfig, SnotifyType} from '../snotify-config';
 
 @Component({
   selector: 'app-snotify-toast',
@@ -82,7 +82,9 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onClick() {
-    this.service.remove(this.id, this.onRemove.bind(this));
+    if (this.config.closeOnClick) {
+      this.service.remove(this.id, this.onRemove.bind(this));
+    }
   }
 
   onRemove() {

@@ -3,10 +3,6 @@
   cursor: pointer;
 }
 
-h4, p {
-  margin: 0;
-}
-
 .snotify-toast {
   background-color: #999;
   max-height: 300px;

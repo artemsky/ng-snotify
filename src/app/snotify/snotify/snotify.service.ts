@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subject} from 'rxjs/Subject';
-import {SnotifyConfig, SnotifyType} from './snotify-config';
+import {SnotifyConfig, SnotifyOptions, SnotifyPosition, SnotifyType} from './snotify-config';
 import {Snotify} from './snotify';
 
 
@@ -9,13 +9,24 @@ import {Snotify} from './snotify';
 export class SnotifyService {
   emitter = new Subject<SnotifyToast[]>();
   transitionDelay = 400;
-  options: SnotifyConfig;
+  config: SnotifyConfig;
+  options: SnotifyOptions;
   notifications: SnotifyToast[] = [];
 
   constructor() {
-    this.options = {
+    this.config = {
       showProgressBar: true,
-      timeout: 1500
+      timeout: 1500,
+      closeOnClick: true
+    };
+    this.options = {
+      newOnTop: true,
+      position: [SnotifyPosition.BOTTOM, SnotifyPosition.RIGHT],
+      positionOffset: {
+        horizontal: 10,
+        vertical: 10
+      },
+      maxOnScreen: 8
     };
   }
 
@@ -23,16 +34,17 @@ export class SnotifyService {
     this.emitter.next(this.getAll());
   }
 
-  setConfig(options: SnotifyConfig): void {
+  setConfig(config: SnotifyConfig, options?: SnotifyOptions): void {
+    this.config = Object.assign(this.config, config);
     this.options = Object.assign(this.options, options);
   }
 
   getConfig(id: number): SnotifyConfig {
     const config = this.get(id).config;
     if (config) {
-      return Object.assign({}, this.options, config);
+      return Object.assign({}, this.config, config);
     } else {
-      return Object.assign({}, this.options);
+      return Object.assign({}, this.config);
     }
   }
 
@@ -45,7 +57,11 @@ export class SnotifyService {
   }
 
   add(toast: SnotifyToast): void {
-    this.notifications.push(toast);
+    if (this.options.newOnTop) {
+      this.notifications.unshift(toast);
+    } else {
+      this.notifications.push(toast);
+    }
     this.emmit();
   }
 
