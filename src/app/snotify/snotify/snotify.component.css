@@ -1,8 +1,6 @@
 :host {
   display: block;
   position: fixed;
-  bottom: 10px;
-  right: 10px;
   width: 300px;
   min-height: 50px;
 }

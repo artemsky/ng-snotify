@@ -24,5 +24,5 @@ export interface SnotifyOptions {
   maxOnScreen?: number;
   newOnTop?: boolean;
   position?: [SnotifyPosition, SnotifyPosition];
-  positionOffset?: {horizontal: number | string, vertical: number | string};
+  positionOffset?: {horizontal?: string, vertical?: string};
 }

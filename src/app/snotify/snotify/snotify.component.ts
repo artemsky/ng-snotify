@@ -32,8 +32,6 @@ export class SnotifyComponent implements OnInit, OnDestroy {
       (toasts: SnotifyToast[]) => this.notifications = toasts
     );
 
-
-
   }
 
   setPosition(positions: [SnotifyPosition, SnotifyPosition]) {

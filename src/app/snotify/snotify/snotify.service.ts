@@ -23,8 +23,8 @@ export class SnotifyService {
       newOnTop: true,
       position: [SnotifyPosition.BOTTOM, SnotifyPosition.RIGHT],
       positionOffset: {
-        horizontal: 10,
-        vertical: 10
+        horizontal: '10px',
+        vertical: '10px'
       },
       maxOnScreen: 8
     };

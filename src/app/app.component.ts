@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SnotifyService} from './snotify/snotify/snotify.service';
+import {SnotifyPosition} from './snotify/snotify/snotify-config';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent implements OnInit {
     this.snotifyService.setConfig({
       timeout: 30000
     }, {
-      newOnTop: true
+      newOnTop: false,
+      position: [SnotifyPosition.RIGHT, SnotifyPosition.TOP]
     });
   }
 
