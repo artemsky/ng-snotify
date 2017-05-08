@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {SnotifyModule} from './snotify/snotify.module';
+import {SnotifyService} from "./snotify/snotify/snotify.service";
 
 @NgModule({
   declarations: [
@@ -12,9 +14,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SnotifyModule
   ],
-  providers: [],
+  providers: [SnotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  cursor: pointer;
+}
+
+h4, p {
+  margin: 0;
+}
+
+.snotify-toast {
+  max-height: 300px;
+  height: 100%;
+  opacity: 0;
+  border: 1px solid red;
+  transition: transform .5s, opacity .3s, max-height ease .5s;
+  transform: translate(0, -50%);
+}
+
+.snotify-toast__inner {
+  position: relative;
+  padding: 20px;
+}
+
+.snotify-show {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.snotify-remove {
+  max-height: 0;
+  overflow: hidden;
+  transform: translate(0, 50%);
+  opacity: 0;
+}
+
+.snotify-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.snotify-progress-bar__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  background-color: rgba(0, 224, 255, .9);
+  max-width: 100%;
+}
