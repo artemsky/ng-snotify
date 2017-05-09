@@ -674,12 +674,12 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b><span class="modifier">Private</span> config</b>
+                            <b> config</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>config:     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+                            <code>config:     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
     </bcode>
                         </td>
                     </tr>
@@ -813,7 +813,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(&#x27;wrapper&#x27;) wrapper: ElementRef;
   @ViewChild(&#x27;progress&#x27;) progress: ElementRef;
 
-  private config: SnotifyConfig;
+  config: SnotifyConfig;
 
   toast: SnotifyToast;
   interval: any;
