@@ -16,7 +16,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('wrapper') wrapper: ElementRef;
   @ViewChild('progress') progress: ElementRef;
 
-  private config: SnotifyConfig;
+  config: SnotifyConfig;
 
   toast: SnotifyToast;
   interval: any;
