@@ -4,6 +4,9 @@
 
 # ng-snotify
 
+## Example
+https://artemsky.github.io/ng-snotify/
+
 ## Installation
 
 To install this library, run:
