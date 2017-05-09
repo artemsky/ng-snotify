@@ -1,11 +1,11 @@
-import {Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyPosition} from "./snotify-config";
+import {SnotifyPosition} from './snotify-config';
 
 @Component({
-  selector: 'app-snotify',
+  selector: 'ng-snotify',
   templateUrl: './snotify.component.html',
   styleUrls: ['./snotify.component.css']
 })

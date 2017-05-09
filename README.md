@@ -1,28 +1,108 @@
-# NgSnotify
+# ng-snotify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
+## Installation
 
-## Development server
+To install this library, run:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+$ npm install ng-snotify -S
+```
 
-## Code scaffolding
+and then from your Angular `AppModule`:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-## Build
+import { AppComponent } from './app.component';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+// Import your library
+import { SnotifyModule, SnotifyService } from 'ng-snotify';
 
-## Running unit tests
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    // Import SnotifyModule, also you can try SnotifyModule.forRoot() if you have build errors
+    SnotifyModule
+  ],
+  providers: [SnotifyService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Running end-to-end tests
+Add `ng-snotify` component to you root component
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+```xml
+<!-- You can now use your library component in app.component.html -->
+<ng-snotify></ng-snotify>
+```
 
-## Further help
+Now you should inject `SnotifyService`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+import {Component, OnInit} from '@angular/core';
+
+// Import SnotifyService
+import {SnotifyService} from 'ng-snotify';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  // Inject SnotifyService
+  constructor(private snotifyService: SnotifyService) {}
+
+  //You can set global config like this
+  ngOnInit() {
+    this.snotifyService.setConfig({
+      timeout: 30000
+    }, {
+      newOnTop: false,
+    });
+  }
+
+  //Hopefuly you can add a toast 
+  addToast() {
+    this.snotifyService.success('Example success!', 'Here we are');
+    this.snotifyService.error('Example error!', 'Here we are', {
+      closeOnClick: false
+    });
+    this.snotifyService.warning('Example warning!', 'Here we are');
+    this.snotifyService.info('Example info!', 'Here we are');
+    this.snotifyService.bare('Example bare!', 'Here we are');
+  }
+
+  //You can remove all toasts from the field
+  clearToasts() {
+    this.snotifyService.clear();
+  }
+}
+
+```
+
+Once your library is imported, you can use its components, interfaces and service in your Angular application:
+
+## Development
+
+To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+
+```bash
+$ npm run build
+```
+
+To lint all `*.ts` files:
+
+```bash
+$ npm run lint
+```
+
+## License
+
+MIT © [artemsky](mailto:mr.artemsky@gmail.com)

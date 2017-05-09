@@ -1,0 +1,26 @@
+{
+  "name": "ng-snotify",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artemsky/ng-snotify"
+  },
+  "author": {
+    "name": "artemsky",
+    "email": "mr.artemsky@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/artemsky/ng-snotify/issues"
+  },
+  "module": "ng-snotify.js",
+  "typings": "ng-snotify.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
