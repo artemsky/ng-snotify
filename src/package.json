@@ -1,6 +1,7 @@
 {
   "name": "ng-snotify",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "Angular 4 notifications center",
   "repository": {
     "type": "git",
     "url": "https://github.com/artemsky/ng-snotify"
@@ -9,8 +10,25 @@
     "name": "artemsky",
     "email": "mr.artemsky@gmail.com"
   },
+  "homepage": "https://artemsky.github.io/ng-snotify/",
   "keywords": [
-    "angular"
+    "angular",
+    "angular 2",
+    "angular 4",
+    "Angular2",
+    "ng2",
+    "ng4",
+    "Angular4",
+    "4",
+    "2",
+    "Library",
+    "Notifications",
+    "Notification",
+    "Toast",
+    "notify",
+    "notie",
+    "notification-center",
+    "snotify"
   ],
   "license": "MIT",
   "bugs": {
@@ -22,5 +40,6 @@
     "@angular/core": "^4.0.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
-  }
+  },
+  "readme": "README.md"
 }
