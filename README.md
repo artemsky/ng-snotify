@@ -7,6 +7,9 @@
 ## Example
 https://artemsky.github.io/ng-snotify/
 
+[![snotify.gif](https://gifyu.com/images/snotify.gif)](https://gifyu.com/image/bKu8)
+_______
+
 ## Installation
 
 To install this library, run:
