@@ -45,11 +45,11 @@ import { SnotifyModule, SnotifyService } from 'ng-snotify';
 export class AppModule { }
 ```
 
-Add `ng-snotify` component to you root component
+Add `app-snotify` component to you root component
 
 ```xml
 <!-- You can now use your library component in app.component.html -->
-<ng-snotify></ng-snotify>
+<app-snotify></app-snotify>
 ```
 
 Now you should inject `SnotifyService`
