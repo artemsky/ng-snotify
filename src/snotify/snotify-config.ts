@@ -7,10 +7,10 @@ export enum SnotifyType {
 }
 
 export enum SnotifyPosition {
-  TOP,
-  LEFT,
-  RIGHT,
-  BOTTOM,
+  TOP = 0,
+  BOTTOM = 1,
+  LEFT = 3,
+  RIGHT = 2,
 }
 
 export interface SnotifyConfig {
