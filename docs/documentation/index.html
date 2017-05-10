@@ -393,7 +393,37 @@ export class AppComponent implements OnInit {
   clearToasts() {
     this.snotifyService.clear();
   }
-}</code></pre><p>Once your library is imported, you can use its components, interfaces and service in your Angular application:</p>
+}</code></pre><h2 id="configuration">Configuration</h2>
+<h6 id="global-cofig-affects-all-toasts-">Global Cofig (affects all toasts)</h6>
+<p><code>SnotifyService</code> has method <code>setConfig</code>, wich takes 2 parametrs</p>
+<p>1 - Object typeof <code>SnotifyConfig</code> or <code>null</code></p>
+<pre class="line-numbers"><code class="language-typescript">export interface SnotifyConfig {
+  timeout?: number; //default: 1500
+  showProgressBar?: boolean; //default: true
+  type?: SnotifyType; //depends on toast type [success, error, warning, bare, info]
+  closeOnClick?: boolean; //default: true
+}</code></pre><p>2 - Object typeof <code>SnotifyOptions</code> or <code>null</code></p>
+<pre class="line-numbers"><code class="language-typescript">export interface SnotifyOptions {
+  maxOnScreen?: number; //default: 8
+  newOnTop?: boolean; //default: true
+  position?: [SnotifyPosition, SnotifyPosition]; //default: Bottom, Right
+  positionOffset?: {horizontal?: string, vertical?: string}; //default: 10px, 10px
+}</code></pre><h6 id="toast-cofig-affects-current-toast-">Toast Cofig (affects current toast)</h6>
+<p>You can call toast by calling one of 5 methods</p>
+<ul>
+<li><code>success(title: string, body: string, config?: SnotifyConfig)</code></li>
+<li><code>warning(title: string, body: string, config?: SnotifyConfig)</code></li>
+<li><code>info(title: string, body: string, config?: SnotifyConfig)</code></li>
+<li><code>error(title: string, body: string, config?: SnotifyConfig)</code></li>
+<li><code>bare(title: string, body: string, config?: SnotifyConfig)</code><pre class="line-numbers"><code class="language-typescript">snotifyService.success('Example success!', 'Here we are', {
+timeout: 0, // disable timeout,
+showProgressBar: true, // won't affect because of timeout, if timeout set to 0. Progress Bar cannot exist anymore
+closeOnClick: false
+// One important thing: it is not recommended to change the type in all methods except the bare
+});</code></pre>All interfaces can be imported from <code>ng-snotify</code></li>
+</ul>
+<p>The best place to set global config is <code>ngOnInit()</code></p>
+<p>Once your library is imported, you can use its components, interfaces and service in your Angular application:</p>
 <h2 id="development">Development</h2>
 <p>To generate all <code>*.js</code>, <code>*.d.ts</code> and <code>*.metadata.json</code> files:</p>
 <pre class="line-numbers"><code class="language-bash">$ npm run build</code></pre><p>To lint all <code>*.ts</code> files:</p>
