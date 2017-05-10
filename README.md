@@ -97,6 +97,54 @@ export class AppComponent implements OnInit {
 
 ```
 
+## Configuration
+
+###### Global Cofig (affects all toasts)
+
+`SnotifyService` has method `setConfig`, wich takes 2 parametrs
+
+1 - Object typeof `SnotifyConfig` or `null`
+
+```typescript
+export interface SnotifyConfig {
+  timeout?: number; //default: 1500
+  showProgressBar?: boolean; //default: true
+  type?: SnotifyType; //depends on toast type [success, error, warning, bare, info]
+  closeOnClick?: boolean; //default: true
+}
+```
+
+2 - Object typeof `SnotifyOptions` or `null`
+
+```typescript
+export interface SnotifyOptions {
+  maxOnScreen?: number; //default: 8
+  newOnTop?: boolean; //default: true
+  position?: [SnotifyPosition, SnotifyPosition]; //default: Bottom, Right
+  positionOffset?: {horizontal?: string, vertical?: string}; //default: 10px, 10px
+}
+```
+
+###### Toast Cofig (affects current toast)
+
+You can call toast by calling one of 5 methods
+* `success(title: string, body: string, config?: SnotifyConfig)`
+* `warning(title: string, body: string, config?: SnotifyConfig)`
+* `info(title: string, body: string, config?: SnotifyConfig)`
+* `error(title: string, body: string, config?: SnotifyConfig)`
+* `bare(title: string, body: string, config?: SnotifyConfig)`
+```typescript
+snotifyService.success('Example success!', 'Here we are', {
+  timeout: 0, // disable timeout,
+  showProgressBar: true, // won't affect because of timeout, if timeout set to 0. Progress Bar cannot exist anymore
+  closeOnClick: false
+  // One important thing: it is not recommended to change the type in all methods except the bare
+});
+```
+All interfaces can be imported from `ng-snotify`
+
+The best place to set global config is `ngOnInit()`
+
 Once your library is imported, you can use its components, interfaces and service in your Angular application:
 
 ## Development
