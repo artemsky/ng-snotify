@@ -18,6 +18,7 @@ export interface SnotifyConfig {
   showProgressBar?: boolean;
   type?: SnotifyType;
   closeOnClick?: boolean;
+  pauseOnHover?: boolean;
 }
 
 export interface SnotifyOptions {

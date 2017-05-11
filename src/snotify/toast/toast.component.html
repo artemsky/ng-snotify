@@ -7,7 +7,7 @@
     'snotify-error': types.error,
     'snotify-bare': types.bare
   }"
-     (click)="onClick()" #wrapper>
+     (click)="onClick()" (mouseenter)="onEnter()" (mouseleave)="onLeave()" #wrapper>
   <div class="snotify-toast__inner">
     <div class="snotify-progress-bar" *ngIf="config.showProgressBar">
       <span class="snotify-progress-bar__line" #progress></span>

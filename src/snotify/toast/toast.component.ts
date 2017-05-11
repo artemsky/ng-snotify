@@ -14,12 +14,16 @@ import {SnotifyConfig, SnotifyType} from '../snotify-config';
 export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() id: number;
   @ViewChild('wrapper') wrapper: ElementRef;
-  @ViewChild('progress') progress: ElementRef;
+  @ViewChild('progress') progressBar: ElementRef;
 
   config: SnotifyConfig;
 
+  frameRate = 10;
+
+  progress: number;
   toast: SnotifyToast;
   interval: any;
+
   types = {
     success: false,
     warning: false,
@@ -35,24 +39,8 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
     this.toast = this.service.get(this.id);
     this.getType(this.config.type);
 
-    if (!this.config.showProgressBar) {
-      this.service.timeout(this.toast.id, this.config.timeout, this.onRemove.bind(this));
-    } else if (this.config.timeout > 0) {
-      const framerate = 10;
-      let progress = 0;
-      const step = framerate / this.config.timeout * 100;
-      this.zone.runOutsideAngular(() => {
-        this.interval = setInterval(() => {
-          progress += step;
-          if (progress >= 100) {
-            this.zone.run(() => {
-              this.service.remove(this.id, this.onRemove.bind(this));
-            });
-          }
-          this.render.setStyle(this.progress.nativeElement, 'width', progress + '%');
-        }, framerate);
-      });
-
+    if (this.config.timeout > 0) {
+      this.startTimeout(0);
     } else {
       this.config.showProgressBar = false;
     }
@@ -93,6 +81,39 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onShow() {
     this.render.addClass(this.wrapper.nativeElement, 'snotify-show');
+  }
+
+  onEnter() {
+    if (this.config.pauseOnHover) {
+      clearInterval(this.interval);
+    }
+  }
+  onLeave() {
+    if (this.config.pauseOnHover) {
+      this.startTimeout(this.progress);
+    }
+  }
+
+  startTimeout(currentProgress: number) {
+    this.progress = currentProgress;
+    const step = this.frameRate / this.config.timeout * 100;
+    this.zone.runOutsideAngular(() => {
+      this.interval = setInterval(() => {
+        this.progress += step;
+        if (this.progress >= 100) {
+          this.zone.run(() => {
+            this.service.remove(this.id, this.onRemove.bind(this));
+          });
+        }
+        if (this.config.showProgressBar) {
+          this.drawProgressBar(this.progress);
+        }
+      }, this.frameRate);
+    });
+  }
+
+  drawProgressBar(width: number) {
+    this.render.setStyle(this.progressBar.nativeElement, 'width', width + '%');
   }
 
   ngOnDestroy(): void {

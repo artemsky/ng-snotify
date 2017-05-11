@@ -3,5 +3,6 @@
   position: fixed;
   width: 300px;
   min-height: 50px;
+  z-index: 9999;
 }
 
