@@ -322,8 +322,9 @@
                </div>
                <div class="content readme">
                    <div class="content-data">
-<p><a href="https://travis-ci.org/artemsky/ng-snotify"><img src="https://travis-ci.org/artemsky/ng-snotify.svg?branch=master" alt="Build Status" class="img-responsive"></a><br><a href="https://www.npmjs.com/package/ng-snotify"><img src="https://img.shields.io/npm/v/ng-snotify.svg" alt="NPM Version" class="img-responsive"></a><br><a href="https://www.npmjs.com/package/ng-snotify"><img src="https://img.shields.io/npm/dt/ng-snotify.svg" alt="NPM Downloads" class="img-responsive"></a></p>
 <h1 id="ng-snotify">ng-snotify</h1>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 1.0.2.</p>
+<p><a href="https://travis-ci.org/artemsky/ng-snotify"><img src="https://travis-ci.org/artemsky/ng-snotify.svg?branch=master" alt="Build Status" class="img-responsive"></a><br><a href="https://www.npmjs.com/package/ng-snotify"><img src="https://img.shields.io/npm/v/ng-snotify.svg" alt="NPM Version" class="img-responsive"></a><br><a href="https://www.npmjs.com/package/ng-snotify"><img src="https://img.shields.io/npm/dt/ng-snotify.svg" alt="NPM Downloads" class="img-responsive"></a></p>
 <h2 id="example">Example</h2>
 <p><a href="https://artemsky.github.io/ng-snotify/">https://artemsky.github.io/ng-snotify/</a></p>
 <p><a href="https://gifyu.com/image/bKu8"><img src="https://gifyu.com/images/snotify.gif" alt="snotify.gif" class="img-responsive"></a></p>
@@ -380,13 +381,9 @@ export class AppComponent implements OnInit {
 
   //Hopefuly you can add a toast 
   addToast() {
-    this.snotifyService.success('Example success!', 'Here we are');
     this.snotifyService.error('Example error!', 'Here we are', {
       closeOnClick: false
     });
-    this.snotifyService.warning('Example warning!', 'Here we are');
-    this.snotifyService.info('Example info!', 'Here we are');
-    this.snotifyService.bare('Example bare!', 'Here we are');
   }
 
   //You can remove all toasts from the field
@@ -402,6 +399,7 @@ export class AppComponent implements OnInit {
   showProgressBar?: boolean; //default: true
   type?: SnotifyType; //depends on toast type [success, error, warning, bare, info]
   closeOnClick?: boolean; //default: true
+  pauseOnHover?: boolean; //default: true
 }</code></pre><p>2 - Object typeof <code>SnotifyOptions</code> or <code>null</code></p>
 <pre class="line-numbers"><code class="language-typescript">export interface SnotifyOptions {
   maxOnScreen?: number; //default: 8

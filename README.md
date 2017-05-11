@@ -1,8 +1,11 @@
+# ng-snotify
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
+
 [![Build Status](https://travis-ci.org/artemsky/ng-snotify.svg?branch=master)](https://travis-ci.org/artemsky/ng-snotify)
 [![NPM Version](https://img.shields.io/npm/v/ng-snotify.svg)](https://www.npmjs.com/package/ng-snotify)
 [![NPM Downloads](https://img.shields.io/npm/dt/ng-snotify.svg)](https://www.npmjs.com/package/ng-snotify)
 
-# ng-snotify
 
 ## Example
 https://artemsky.github.io/ng-snotify/
@@ -80,13 +83,9 @@ export class AppComponent implements OnInit {
 
   //Hopefuly you can add a toast 
   addToast() {
-    this.snotifyService.success('Example success!', 'Here we are');
     this.snotifyService.error('Example error!', 'Here we are', {
       closeOnClick: false
     });
-    this.snotifyService.warning('Example warning!', 'Here we are');
-    this.snotifyService.info('Example info!', 'Here we are');
-    this.snotifyService.bare('Example bare!', 'Here we are');
   }
 
   //You can remove all toasts from the field
@@ -111,6 +110,7 @@ export interface SnotifyConfig {
   showProgressBar?: boolean; //default: true
   type?: SnotifyType; //depends on toast type [success, error, warning, bare, info]
   closeOnClick?: boolean; //default: true
+  pauseOnHover?: boolean; //default: true
 }
 ```
 
