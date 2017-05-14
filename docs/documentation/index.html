@@ -147,6 +147,9 @@
                                     <a href="./interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./interfaces/SnotifyInfo.html" >SnotifyInfo</a>
+                                </li>
+                                <li class="link">
                                     <a href="./interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                 </li>
                         </ul>
@@ -300,6 +303,9 @@
                                            <a href="./interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./interfaces/SnotifyInfo.html" >SnotifyInfo</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                        </li>
                                </ul>
@@ -323,7 +329,7 @@
                <div class="content readme">
                    <div class="content-data">
 <h1 id="ng-snotify">ng-snotify</h1>
-<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 1.0.2.</p>
+<h6 id="library-is-under-development">LIBRARY IS UNDER DEVELOPMENT</h6>
 <p><a href="https://travis-ci.org/artemsky/ng-snotify"><img src="https://travis-ci.org/artemsky/ng-snotify.svg?branch=master" alt="Build Status" class="img-responsive"></a><br><a href="https://www.npmjs.com/package/ng-snotify"><img src="https://img.shields.io/npm/v/ng-snotify.svg" alt="NPM Version" class="img-responsive"></a><br><a href="https://www.npmjs.com/package/ng-snotify"><img src="https://img.shields.io/npm/dt/ng-snotify.svg" alt="NPM Downloads" class="img-responsive"></a></p>
 <h2 id="example">Example</h2>
 <p><a href="https://artemsky.github.io/ng-snotify/">https://artemsky.github.io/ng-snotify/</a></p>
@@ -406,7 +412,7 @@ export class AppComponent implements OnInit {
   newOnTop?: boolean; //default: true
   position?: [SnotifyPosition, SnotifyPosition]; //default: Bottom, Right
   positionOffset?: {horizontal?: string, vertical?: string}; //default: 10px, 10px
-}</code></pre><h6 id="toast-cofig-affects-current-toast-">Toast Cofig (affects current toast)</h6>
+}</code></pre><h6 id="toast-config-affects-current-toast-">Toast Config (affects current toast)</h6>
 <p>You can call toast by calling one of 5 methods</p>
 <ul>
 <li><code>success(title: string, body: string, config?: SnotifyConfig)</code></li>
@@ -418,14 +424,24 @@ timeout: 0, // disable timeout,
 showProgressBar: true, // won't affect because of timeout, if timeout set to 0. Progress Bar cannot exist anymore
 closeOnClick: false
 // One important thing: it is not recommended to change the type in all methods except the bare
-});</code></pre>All interfaces can be imported from <code>ng-snotify</code></li>
+});</code></pre></li>
+</ul>
+<h6 id="callbacks-affects-all-toast-">Callbacks (affects all toast)</h6>
+<p>There are few lifecycle hooks</p>
+<ul>
+<li><code>onInit</code> - when toast has been shown</li>
+<li><code>onClick</code> - when toast has been clicked</li>
+<li><code>onHoverEnter</code> - on mouse enter</li>
+<li><code>onHoverLeave</code> - on mouse leave</li>
+<li><code>beforeDestroy</code> - before toast destroyed</li>
+<li><code>afterDestroy</code> - after toast has been destroyed<br>You can set it with <code>snotifyService</code><pre class="line-numbers"><code class="language-typescript">this.snotifyService.onInit = (toast: SnotifyToast) => {
+   // Do something here
+ };</code></pre>All interfaces can be imported from <code>ng-snotify</code></li>
 </ul>
 <p>The best place to set global config is <code>ngOnInit()</code></p>
-<p>Once your library is imported, you can use its components, interfaces and service in your Angular application:</p>
 <h2 id="development">Development</h2>
-<p>To generate all <code>*.js</code>, <code>*.d.ts</code> and <code>*.metadata.json</code> files:</p>
-<pre class="line-numbers"><code class="language-bash">$ npm run build</code></pre><p>To lint all <code>*.ts</code> files:</p>
-<pre class="line-numbers"><code class="language-bash">$ npm run lint</code></pre><h2 id="license">License</h2>
+<p>Go to develop branch and use angular-cli</p>
+<h2 id="license">License</h2>
 <p>MIT © <a href="mailto:mr.artemsky@gmail.com">artemsky</a></p>
 
 

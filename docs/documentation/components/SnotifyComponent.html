@@ -147,6 +147,9 @@
                                     <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../interfaces/SnotifyInfo.html" >SnotifyInfo</a>
+                                </li>
+                                <li class="link">
                                     <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                 </li>
                         </ul>
@@ -298,6 +301,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyInfo.html" >SnotifyInfo</a>
                                        </li>
                                        <li class="link">
                                            <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
@@ -474,7 +480,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/snotify/snotify.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/snotify/snotify.component.ts:69</a></div>
                             </td>
                         </tr>
     
@@ -504,7 +510,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/snotify/snotify.component.ts:45</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/snotify/snotify.component.ts:81</a></div>
                             </td>
                         </tr>
     
@@ -534,7 +540,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/snotify/snotify.component.ts:68</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/snotify/snotify.component.ts:104</a></div>
                             </td>
                         </tr>
     
@@ -645,7 +651,7 @@
 import {SnotifyService} from &#x27;./snotify.service&#x27;;
 import {SnotifyToast} from &#x27;./toast/snotify-toast.model&#x27;;
 import {Subscription} from &#x27;rxjs/Subscription&#x27;;
-import {SnotifyOptions, SnotifyPosition} from &#x27;./snotify-config&#x27;;
+import {SnotifyAction, SnotifyInfo, SnotifyOptions, SnotifyPosition} from &#x27;./snotify-config&#x27;;
 
 @Component({
   selector: &#x27;app-snotify&#x27;,
@@ -669,6 +675,42 @@ export class SnotifyComponent implements OnInit, OnDestroy {
 
     this.emitter &#x3D; this.service.emitter.subscribe(
       (toasts: SnotifyToast[]) &#x3D;&gt; this.notifications &#x3D; toasts
+    );
+    this.service.lifecycle.subscribe(
+      (info: SnotifyInfo) &#x3D;&gt; {
+        switch (info.action) {
+          case SnotifyAction.onInit:
+            if (this.service.onInit) {
+              this.service.onInit(info.toast);
+            }
+            break;
+          case SnotifyAction.onClick:
+            if (this.service.onClick) {
+              this.service.onClick(info.toast);
+            }
+            break;
+          case SnotifyAction.onHoverEnter:
+            if (this.service.onHoverEnter) {
+              this.service.onHoverEnter(info.toast);
+            }
+            break;
+          case SnotifyAction.onHoverLeave:
+            if (this.service.onHoverLeave) {
+              this.service.onHoverLeave(info.toast);
+            }
+            break;
+          case SnotifyAction.beforeDestroy:
+            if (this.service.beforeDestroy) {
+              this.service.beforeDestroy(info.toast);
+            }
+            break;
+          case SnotifyAction.afterDestroy:
+            if (this.service.afterDestroy) {
+              this.service.afterDestroy(info.toast);
+            }
+            break;
+        }
+      }
     );
 
   }

@@ -147,6 +147,9 @@
                                     <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../interfaces/SnotifyInfo.html" >SnotifyInfo</a>
+                                </li>
+                                <li class="link">
                                     <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                 </li>
                         </ul>
@@ -300,6 +303,9 @@
                                            <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../interfaces/SnotifyInfo.html" >SnotifyInfo</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                        </li>
                                </ul>
@@ -360,7 +366,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(id: string | number | Date, title: string, body: string, config: <a href="../interfaces/SnotifyConfig.html">SnotifyConfig</a>)</code>
+                                    <code>constructor(id: number, title: string, body: string, config: <a href="../interfaces/SnotifyConfig.html">SnotifyConfig</a>)</code>
                                 </td>
                             </tr>
                                 <tr>
@@ -419,7 +425,7 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>id:     <code>string | number | Date</code>
+                                    <code>id:     <code>number</code>
             </bcode>
                                 </td>
                             </tr>
@@ -447,7 +453,7 @@
 
 export class SnotifyToast {
   constructor(
-    public id: Date | number | string,
+    public id: number,
     public title: string,
     public body: string,
     public config?: SnotifyConfig
