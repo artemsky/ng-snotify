@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
-import {SnotifyConfig, SnotifyType} from '../snotify-config';
+import {SnotifyAction, SnotifyConfig, SnotifyType} from '../snotify-config';
 
 @Component({
   selector: 'app-snotify-toast',
@@ -15,7 +15,6 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() id: number;
   @ViewChild('wrapper') wrapper: ElementRef;
   @ViewChild('progress') progressBar: ElementRef;
-
   config: SnotifyConfig;
 
   frameRate = 10;
@@ -45,6 +44,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
       this.config.showProgressBar = false;
     }
   }
+
   getType(type: SnotifyType) {
     switch (type) {
       case SnotifyType.SUCCESS:
@@ -70,20 +70,24 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onClick() {
+    this.lifecycle(SnotifyAction.onClick);
     if (this.config.closeOnClick) {
       this.service.remove(this.id, this.onRemove.bind(this));
     }
   }
 
   onRemove() {
+    this.lifecycle(SnotifyAction.beforeDestroy);
     this.render.addClass(this.wrapper.nativeElement, 'snotify-remove');
   }
 
   onShow() {
     this.render.addClass(this.wrapper.nativeElement, 'snotify-show');
+    this.lifecycle(SnotifyAction.onInit);
   }
 
   onEnter() {
+    this.lifecycle(SnotifyAction.onHoverEnter);
     if (this.config.pauseOnHover) {
       clearInterval(this.interval);
     }
@@ -92,6 +96,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.config.pauseOnHover) {
       this.startTimeout(this.progress);
     }
+    this.lifecycle(SnotifyAction.onHoverLeave);
   }
 
   startTimeout(currentProgress: number) {
@@ -102,6 +107,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
         this.progress += step;
         if (this.progress >= 100) {
           this.zone.run(() => {
+            clearInterval(this.interval);
             this.service.remove(this.id, this.onRemove.bind(this));
           });
         }
@@ -116,8 +122,15 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
     this.render.setStyle(this.progressBar.nativeElement, 'width', width + '%');
   }
 
+  private lifecycle(action: SnotifyAction) {
+    return this.service.lifecycle.next({
+      action,
+      toast: this.toast
+    });
+  }
+
   ngOnDestroy(): void {
-    clearInterval(this.interval);
+    this.lifecycle(SnotifyAction.afterDestroy);
   }
 
 }

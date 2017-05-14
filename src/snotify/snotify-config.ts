@@ -1,3 +1,4 @@
+import {SnotifyToast} from './toast/snotify-toast.model';
 export enum SnotifyType {
   SUCCESS,
   ERROR,
@@ -13,6 +14,16 @@ export enum SnotifyPosition {
   RIGHT = 2,
 }
 
+export enum SnotifyAction {
+  onInit = 3,
+  beforeDestroy = 0,
+  afterDestroy = 1,
+  onClick = 10,
+  onHoverEnter = 11,
+  onHoverLeave = 12
+}
+
+
 export interface SnotifyConfig {
   timeout?: number;
   showProgressBar?: boolean;
@@ -26,4 +37,9 @@ export interface SnotifyOptions {
   newOnTop?: boolean;
   position?: [SnotifyPosition, SnotifyPosition];
   positionOffset?: {horizontal?: string, vertical?: string};
+}
+
+export interface SnotifyInfo {
+  action: SnotifyAction;
+  toast: SnotifyToast;
 }

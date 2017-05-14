@@ -10,6 +10,7 @@ import {SnotifyService} from './snotify/snotify.service';
 export * from './snotify/snotify.component';
 export * from './snotify/snotify.service';
 export * from './snotify/snotify-config';
+export * from './snotify/toast/snotify-toast.model';
 
 @NgModule({
   imports: [

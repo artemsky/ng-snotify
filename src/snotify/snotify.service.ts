@@ -1,18 +1,31 @@
 import {Injectable} from '@angular/core';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subject} from 'rxjs/Subject';
-import {SnotifyConfig, SnotifyOptions, SnotifyPosition, SnotifyType} from './snotify-config';
+import {SnotifyConfig, SnotifyInfo, SnotifyOptions, SnotifyPosition, SnotifyType} from './snotify-config';
 import {Snotify} from './snotify';
 
 
 @Injectable()
 export class SnotifyService {
   readonly emitter = new Subject<SnotifyToast[]>();
+  readonly lifecycle = new Subject<SnotifyInfo>();
   readonly optionsChanged = new Subject<SnotifyOptions>();
   readonly transitionDelay = 400;
   private config: SnotifyConfig;
   options: SnotifyOptions;
   private notifications: SnotifyToast[] = [];
+
+  // Callbacks
+  onInit: (info?: SnotifyToast) => void;
+  onClick: (info?: SnotifyToast) => void;
+  onHoverEnter: (info?: SnotifyToast) => void;
+  onHoverLeave: (info?: SnotifyToast) => void;
+  beforeDestroy: (info?: SnotifyToast) => void;
+  afterDestroy: (info?: SnotifyToast) => void;
+
+  static generateRandomId(): number {
+    return Math.floor(Math.random() * (Date.now() - 1)) + 1;
+  }
 
   constructor() {
     this.config = {
@@ -82,13 +95,7 @@ export class SnotifyService {
   }
 
   create(snotify: Snotify) {
-    this.add(
-      new SnotifyToast(
-        Math.floor(Math.random() * (Date.now() - 1)) + 1,
-        snotify.title,
-        snotify.body,
-        snotify.config || null)
-    );
+    this.add(new SnotifyToast(SnotifyService.generateRandomId(), snotify.title, snotify.body, snotify.config || null));
   }
 
   success(title: string, body: string, config?: SnotifyConfig) {
@@ -100,7 +107,7 @@ export class SnotifyService {
   }
 
   error(title: string, body: string, config?: SnotifyConfig) {
-    this.create({
+    return this.create({
       title: title,
       body: body,
       config: Object.assign({}, config, {type: SnotifyType.ERROR})
@@ -108,7 +115,7 @@ export class SnotifyService {
   }
 
   info(title: string, body: string, config?: SnotifyConfig) {
-    this.create({
+    return this.create({
       title: title,
       body: body,
       config: Object.assign({}, config, {type: SnotifyType.INFO})
@@ -116,7 +123,7 @@ export class SnotifyService {
   }
 
   warning(title: string, body: string, config?: SnotifyConfig) {
-    this.create({
+    return this.create({
       title: title,
       body: body,
       config: Object.assign({}, config, {type: SnotifyType.WARNING})
@@ -124,7 +131,7 @@ export class SnotifyService {
   }
 
   bare(title: string, body: string, config?: SnotifyConfig) {
-    this.create({
+    return this.create({
       title: title,
       body: body,
       config: Object.assign({}, config, {type: SnotifyType.BARE})

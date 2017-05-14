@@ -2,7 +2,7 @@ import {Component, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyOptions, SnotifyPosition} from './snotify-config';
+import {SnotifyAction, SnotifyInfo, SnotifyOptions, SnotifyPosition} from './snotify-config';
 
 @Component({
   selector: 'app-snotify',
@@ -26,6 +26,42 @@ export class SnotifyComponent implements OnInit, OnDestroy {
 
     this.emitter = this.service.emitter.subscribe(
       (toasts: SnotifyToast[]) => this.notifications = toasts
+    );
+    this.service.lifecycle.subscribe(
+      (info: SnotifyInfo) => {
+        switch (info.action) {
+          case SnotifyAction.onInit:
+            if (this.service.onInit) {
+              this.service.onInit(info.toast);
+            }
+            break;
+          case SnotifyAction.onClick:
+            if (this.service.onClick) {
+              this.service.onClick(info.toast);
+            }
+            break;
+          case SnotifyAction.onHoverEnter:
+            if (this.service.onHoverEnter) {
+              this.service.onHoverEnter(info.toast);
+            }
+            break;
+          case SnotifyAction.onHoverLeave:
+            if (this.service.onHoverLeave) {
+              this.service.onHoverLeave(info.toast);
+            }
+            break;
+          case SnotifyAction.beforeDestroy:
+            if (this.service.beforeDestroy) {
+              this.service.beforeDestroy(info.toast);
+            }
+            break;
+          case SnotifyAction.afterDestroy:
+            if (this.service.afterDestroy) {
+              this.service.afterDestroy(info.toast);
+            }
+            break;
+        }
+      }
     );
 
   }
