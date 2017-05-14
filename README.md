@@ -1,6 +1,6 @@
 # ng-snotify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
+###### LIBRARY IS UNDER DEVELOPMENT
 
 [![Build Status](https://travis-ci.org/artemsky/ng-snotify.svg?branch=master)](https://travis-ci.org/artemsky/ng-snotify)
 [![NPM Version](https://img.shields.io/npm/v/ng-snotify.svg)](https://www.npmjs.com/package/ng-snotify)
@@ -125,7 +125,7 @@ export interface SnotifyOptions {
 }
 ```
 
-###### Toast Cofig (affects current toast)
+###### Toast Config (affects current toast)
 
 You can call toast by calling one of 5 methods
 * `success(title: string, body: string, config?: SnotifyConfig)`
@@ -141,25 +141,28 @@ snotifyService.success('Example success!', 'Here we are', {
   // One important thing: it is not recommended to change the type in all methods except the bare
 });
 ```
+
+###### Callbacks (affects all toast)
+There are few lifecycle hooks
+ - `onInit` - when toast has been shown
+ - `onClick` - when toast has been clicked
+ - `onHoverEnter` - on mouse enter
+ - `onHoverLeave` - on mouse leave
+ - `beforeDestroy` - before toast destroyed
+ - `afterDestroy` - after toast has been destroyed
+You can set it with `snotifyService`
+```typescript
+this.snotifyService.onInit = (toast: SnotifyToast) => {
+      // Do something here
+    };
+```
 All interfaces can be imported from `ng-snotify`
 
 The best place to set global config is `ngOnInit()`
 
-Once your library is imported, you can use its components, interfaces and service in your Angular application:
-
 ## Development
 
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
-```
+Go to develop branch and use angular-cli
 
 ## License
 
