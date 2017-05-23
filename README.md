@@ -10,7 +10,7 @@
 ## Example
 https://artemsky.github.io/ng-snotify/
 
-[![snotify.gif](https://gifyu.com/images/snotify.gif)](https://gifyu.com/image/bKu8)
+
 _______
 
 ## Installation
@@ -98,7 +98,7 @@ export class AppComponent implements OnInit {
 
 ## Configuration
 
-###### Global Cofig (affects all toasts)
+#### Global Cofig (affects all toasts)
 
 `SnotifyService` has method `setConfig`, wich takes 2 parametrs
 
@@ -106,11 +106,12 @@ export class AppComponent implements OnInit {
 
 ```typescript
 export interface SnotifyConfig {
-  timeout?: number; //default: 1500
-  showProgressBar?: boolean; //default: true
-  type?: SnotifyType; //depends on toast type [success, error, warning, bare, info]
-  closeOnClick?: boolean; //default: true
-  pauseOnHover?: boolean; //default: true
+  timeout?: number;
+  showProgressBar?: boolean;
+  type?: SnotifyType;
+  closeOnClick?: boolean;
+  pauseOnHover?: boolean;
+  buttons?: [SnotifyButton, SnotifyButton] | [SnotifyButton];
 }
 ```
 
@@ -118,28 +119,39 @@ export interface SnotifyConfig {
 
 ```typescript
 export interface SnotifyOptions {
-  maxOnScreen?: number; //default: 8
-  newOnTop?: boolean; //default: true
-  position?: [SnotifyPosition, SnotifyPosition]; //default: Bottom, Right
-  positionOffset?: {horizontal?: string, vertical?: string}; //default: 10px, 10px
+  maxOnScreen?: number;
+  newOnTop?: boolean;
+  position?: SnotifyPosition;
+  transition?: number;
 }
 ```
 
-###### Toast Config (affects current toast)
+#### Toast Config (affects current toast)
 
-You can call toast by calling one of 5 methods
-* `success(title: string, body: string, config?: SnotifyConfig)`
-* `warning(title: string, body: string, config?: SnotifyConfig)`
-* `info(title: string, body: string, config?: SnotifyConfig)`
-* `error(title: string, body: string, config?: SnotifyConfig)`
-* `bare(title: string, body: string, config?: SnotifyConfig)`
+You can call toast by calling one of this methods from `SnotifyService` instance
+* `success(title: string, body: string, config?: SnotifyConfig): number`
+* `info(title: string, body: string, config?: SnotifyConfig): number`
+* `warning(title: string, body: string, config?: SnotifyConfig): number)`
+* `error(title: string, body: string, config?: SnotifyConfig): number)`
+* `simple(title: string, body: string, config?: SnotifyConfig): number `
+* `confirm(title: string, body: string, config: SnotifyConfig): number)`
+* `prompt(title: string, body: string, config: SnotifyConfig): number)`
+* `async(title: string, body: string, config: SnotifyConfig): number)`
+
+All toast methods return `id`, so you can remove toast by calling `snotifyService.remove(id)`
+
+If you call `snotifyService. remove()` without id, it will affect all toasts, the same is `snotifyService.clear()`
+
+######Here is an example
 ```typescript
-snotifyService.success('Example success!', 'Here we are', {
-  timeout: 0, // disable timeout,
-  showProgressBar: true, // won't affect because of timeout, if timeout set to 0. Progress Bar cannot exist anymore
-  closeOnClick: false
-  // One important thing: it is not recommended to change the type in all methods except the bare
-});
+const id = snotifyService.simple('Example title!', 'Example body message', {
+      timeout: 0, // disable timeout,
+      showProgressBar: true, // won't affect because of timeout, if timeout set to 0. Progress Bar cannot exist anymore
+      closeOnClick: false,
+      pauseOnHover: true // won't affect because of timeout
+    });
+
+this.snotifyService.remove(id)
 ```
 
 ###### Callbacks (affects all toast)
@@ -159,6 +171,12 @@ this.snotifyService.onInit = (toast: SnotifyToast) => {
 All interfaces can be imported from `ng-snotify`
 
 The best place to set global config is `ngOnInit()`
+
+# Documentation and Examples
+
+Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html).
+
+Examples - [here](https://github.com/artemsky/ng-snotify/blob/develop/src/app/app.component.ts)
 
 ## Development
 
