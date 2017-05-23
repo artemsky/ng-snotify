@@ -68,6 +68,9 @@
                                 <li class="link">
                                     <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
                                 </li>
+                                <li class="link">
+                                    <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -142,9 +145,6 @@
                             >
                                 <li class="link">
                                     <a href="./interfaces/Snotify.html" >Snotify</a>
-                                </li>
-                                <li class="link">
-                                    <a href="./interfaces/SnotifyAsync.html" >SnotifyAsync</a>
                                 </li>
                                 <li class="link">
                                     <a href="./interfaces/SnotifyButton.html" >SnotifyButton</a>
@@ -230,6 +230,9 @@
                                        <li class="link">
                                            <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -306,9 +309,6 @@
                                            <a href="./interfaces/Snotify.html" >Snotify</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./interfaces/SnotifyAsync.html" >SnotifyAsync</a>
-                                       </li>
-                                       <li class="link">
                                            <a href="./interfaces/SnotifyButton.html" >SnotifyButton</a>
                                        </li>
                                        <li class="link">
@@ -341,11 +341,9 @@
                <div class="content readme">
                    <div class="content-data">
 <h1 id="ng-snotify">ng-snotify</h1>
-<h6 id="library-is-under-development">LIBRARY IS UNDER DEVELOPMENT</h6>
 <p><a href="https://travis-ci.org/artemsky/ng-snotify"><img src="https://travis-ci.org/artemsky/ng-snotify.svg?branch=master" alt="Build Status" class="img-responsive"></a><br><a href="https://www.npmjs.com/package/ng-snotify"><img src="https://img.shields.io/npm/v/ng-snotify.svg" alt="NPM Version" class="img-responsive"></a><br><a href="https://www.npmjs.com/package/ng-snotify"><img src="https://img.shields.io/npm/dt/ng-snotify.svg" alt="NPM Downloads" class="img-responsive"></a></p>
 <h2 id="example">Example</h2>
 <p><a href="https://artemsky.github.io/ng-snotify/">https://artemsky.github.io/ng-snotify/</a></p>
-<p><a href="https://gifyu.com/image/bKu8"><img src="https://gifyu.com/images/snotify.gif" alt="snotify.gif" class="img-responsive"></a></p>
 <hr>
 <h2 id="installation">Installation</h2>
 <p>To install this library, run:</p>
@@ -409,36 +407,45 @@ export class AppComponent implements OnInit {
     this.snotifyService.clear();
   }
 }</code></pre><h2 id="configuration">Configuration</h2>
-<h6 id="global-cofig-affects-all-toasts-">Global Cofig (affects all toasts)</h6>
+<h4 id="global-cofig-affects-all-toasts-">Global Cofig (affects all toasts)</h4>
 <p><code>SnotifyService</code> has method <code>setConfig</code>, wich takes 2 parametrs</p>
 <p>1 - Object typeof <code>SnotifyConfig</code> or <code>null</code></p>
 <pre class="line-numbers"><code class="language-typescript">export interface SnotifyConfig {
-  timeout?: number; //default: 1500
-  showProgressBar?: boolean; //default: true
-  type?: SnotifyType; //depends on toast type [success, error, warning, bare, info]
-  closeOnClick?: boolean; //default: true
-  pauseOnHover?: boolean; //default: true
+  timeout?: number;
+  showProgressBar?: boolean;
+  type?: SnotifyType;
+  closeOnClick?: boolean;
+  pauseOnHover?: boolean;
+  buttons?: [SnotifyButton, SnotifyButton] | [SnotifyButton];
 }</code></pre><p>2 - Object typeof <code>SnotifyOptions</code> or <code>null</code></p>
 <pre class="line-numbers"><code class="language-typescript">export interface SnotifyOptions {
-  maxOnScreen?: number; //default: 8
-  newOnTop?: boolean; //default: true
-  position?: [SnotifyPosition, SnotifyPosition]; //default: Bottom, Right
-  positionOffset?: {horizontal?: string, vertical?: string}; //default: 10px, 10px
-}</code></pre><h6 id="toast-config-affects-current-toast-">Toast Config (affects current toast)</h6>
-<p>You can call toast by calling one of 5 methods</p>
+  maxOnScreen?: number;
+  newOnTop?: boolean;
+  position?: SnotifyPosition;
+  transition?: number;
+}</code></pre><h4 id="toast-config-affects-current-toast-">Toast Config (affects current toast)</h4>
+<p>You can call toast by calling one of this methods from <code>SnotifyService</code> instance</p>
 <ul>
-<li><code>success(title: string, body: string, config?: SnotifyConfig)</code></li>
-<li><code>warning(title: string, body: string, config?: SnotifyConfig)</code></li>
-<li><code>info(title: string, body: string, config?: SnotifyConfig)</code></li>
-<li><code>error(title: string, body: string, config?: SnotifyConfig)</code></li>
-<li><code>bare(title: string, body: string, config?: SnotifyConfig)</code><pre class="line-numbers"><code class="language-typescript">snotifyService.success('Example success!', 'Here we are', {
-timeout: 0, // disable timeout,
-showProgressBar: true, // won't affect because of timeout, if timeout set to 0. Progress Bar cannot exist anymore
-closeOnClick: false
-// One important thing: it is not recommended to change the type in all methods except the bare
-});</code></pre></li>
+<li><code>success(title: string, body: string, config?: SnotifyConfig): number</code></li>
+<li><code>info(title: string, body: string, config?: SnotifyConfig): number</code></li>
+<li><code>warning(title: string, body: string, config?: SnotifyConfig): number)</code></li>
+<li><code>error(title: string, body: string, config?: SnotifyConfig): number)</code></li>
+<li><code>simple(title: string, body: string, config?: SnotifyConfig): number</code></li>
+<li><code>confirm(title: string, body: string, config: SnotifyConfig): number)</code></li>
+<li><code>prompt(title: string, body: string, config: SnotifyConfig): number)</code></li>
+<li><code>async(title: string, body: string, config: SnotifyConfig): number)</code></li>
 </ul>
-<h6 id="callbacks-affects-all-toast-">Callbacks (affects all toast)</h6>
+<p>All toast methods return <code>id</code>, so you can remove toast by calling <code>snotifyService.remove(id)</code></p>
+<p>If you call <code>snotifyService. remove()</code> without id, it will affect all toasts, the same is <code>snotifyService.clear()</code></p>
+<p>######Here is an example</p>
+<pre class="line-numbers"><code class="language-typescript">const id = snotifyService.simple('Example title!', 'Example body message', {
+      timeout: 0, // disable timeout,
+      showProgressBar: true, // won't affect because of timeout, if timeout set to 0. Progress Bar cannot exist anymore
+      closeOnClick: false,
+      pauseOnHover: true // won't affect because of timeout
+    });
+
+this.snotifyService.remove(id)</code></pre><h6 id="callbacks-affects-all-toast-">Callbacks (affects all toast)</h6>
 <p>There are few lifecycle hooks</p>
 <ul>
 <li><code>onInit</code> - when toast has been shown</li>
@@ -451,6 +458,9 @@ closeOnClick: false
  };</code></pre>All interfaces can be imported from <code>ng-snotify</code></li>
 </ul>
 <p>The best place to set global config is <code>ngOnInit()</code></p>
+<h1 id="documentation-and-examples">Documentation and Examples</h1>
+<p>Documentation - <a href="https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html">here</a>.</p>
+<p>Examples - <a href="https://github.com/artemsky/ng-snotify/blob/develop/src/app/app.component.ts">here</a></p>
 <h2 id="development">Development</h2>
 <p>Go to develop branch and use angular-cli</p>
 <h2 id="license">License</h2>

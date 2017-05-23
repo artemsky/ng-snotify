@@ -68,6 +68,9 @@
                                 <li class="link">
                                     <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -142,9 +145,6 @@
                             >
                                 <li class="link">
                                     <a href="../interfaces/Snotify.html" >Snotify</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
                                 </li>
                                 <li class="link">
                                     <a href="../interfaces/SnotifyButton.html"  data-type="entity-link" class="active" >SnotifyButton</a>
@@ -230,6 +230,9 @@
                                        <li class="link">
                                            <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -304,9 +307,6 @@
                    >
                                        <li class="link">
                                            <a href="../interfaces/Snotify.html" >Snotify</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
                                        </li>
                                        <li class="link">
                                            <a href="../interfaces/SnotifyButton.html"  data-type="entity-link" class="active" >SnotifyButton</a>
@@ -402,10 +402,16 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="3" class="link-to-prism">src/snotify/interfaces/SnotifyButton.interface.ts:3</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/snotify/interfaces/SnotifyButton.interface.ts:10</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Action which will be called after button click</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -434,10 +440,16 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/snotify/interfaces/SnotifyButton.interface.ts:4</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/snotify/interfaces/SnotifyButton.interface.ts:14</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Make button text bold or not</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -466,18 +478,34 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="2" class="link-to-prism">src/snotify/interfaces/SnotifyButton.interface.ts:2</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/snotify/interfaces/SnotifyButton.interface.ts:5</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Button text</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">export interface SnotifyButton {
+  /**
+   * Button text
+   */
   text: string;
+  /**
+   * Action which will be called after button click
+   * @param text? {String}
+   */
   action?: (text?: string) &#x3D;&gt; void;
+  /**
+   * Make button text bold or not
+   */
   bold?: boolean;
 }
 </code></pre>

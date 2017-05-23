@@ -11,11 +11,18 @@ import {Subscription} from 'rxjs/Subscription';
   styleUrls: ['./toast.component.scss']
 })
 export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
+  /**
+   * Get toast from notifications array
+   */
   @Input() toast: SnotifyToast;
 
   toastDeletedSubscription: Subscription;
   toastChangedSubscription: Subscription;
 
+  /**
+   * Toast state
+   * @type {Object}
+   */
   state = {
     toast: {
       progress: 0,
@@ -30,10 +37,16 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   };
 
-  transitionTime = 400;
-  refreshRate = 10;
+  transitionTime;
+  /**
+   * Toast progress interval
+   */
   interval: any;
 
+  /**
+   * Active style for toast
+   * @type {Object}
+   */
   types = {
     success: false,
     warning: false,
@@ -242,17 +255,18 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
    * @param currentProgress {Number}
    */
   startTimeout(currentProgress: number) {
+    const refreshRate = 10;
     if (this.state.toast.isDestroying) {
       return;
     }
     this.state.toast.progress = currentProgress;
-    const step = this.refreshRate / this.toast.config.timeout * 100;
+    const step = refreshRate / this.toast.config.timeout * 100;
       this.interval = setInterval(() => {
         this.state.toast.progress += step;
         if (this.state.toast.progress >= 100) {
             this.service.remove(this.toast.id);
         }
-      }, this.refreshRate);
+      }, refreshRate);
   }
 
   /**

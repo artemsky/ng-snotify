@@ -68,6 +68,9 @@
                                 <li class="link">
                                     <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -142,9 +145,6 @@
                             >
                                 <li class="link">
                                     <a href="../interfaces/Snotify.html"  data-type="entity-link" class="active" >Snotify</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
                                 </li>
                                 <li class="link">
                                     <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
@@ -230,6 +230,9 @@
                                        <li class="link">
                                            <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -304,9 +307,6 @@
                    >
                                        <li class="link">
                                            <a href="../interfaces/Snotify.html"  data-type="entity-link" class="active" >Snotify</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
                                        </li>
                                        <li class="link">
                                            <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
@@ -402,10 +402,16 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:5</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:11</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Toast message</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -434,10 +440,16 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:6</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:15</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Config object</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -466,10 +478,16 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:4</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:7</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Toast Title</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -478,8 +496,17 @@
         <pre class="line-numbers"><code class="language-typescript">import {SnotifyConfig} from &#x27;./SnotifyConfig.interface&#x27;;
 
 export interface Snotify {
+  /**
+   * Toast Title
+   */
   title: string;
+  /**
+   * Toast message
+   */
   body: string;
+  /**
+   * Config object
+   */
   config?: SnotifyConfig;
 }
 </code></pre>

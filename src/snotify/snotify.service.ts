@@ -7,7 +7,6 @@ import {Subscription} from 'rxjs/Subscription';
 import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
 import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
 import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
-import {SnotifyAsync} from './interfaces/SnotifyAsync.interface';
 import {Snotify} from './interfaces/Snotify.interface';
 import {SnotifyType} from './enum/SnotifyType.enum';
 import {SnotifyPosition} from './enum/SnotifyPosition.enum';
@@ -307,10 +306,10 @@ export class SnotifyService {
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param title {String}
    * @param body {String}
-   * @param action {Promise<SnotifyAsync> | Observable<SnotifyAsync>}
+   * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
    * @return {number}
    */
-  async(title: string, body: string, action: Promise<SnotifyAsync> | Observable<SnotifyAsync>): number {
+  async(title: string, body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): number {
     let async: Observable<any>;
     if (action instanceof Promise) {
       async = PromiseObservable.create(action);
@@ -329,7 +328,7 @@ export class SnotifyService {
     const toast = this.get(id);
     let latestToast = Object.assign({}, toast);
 
-    const updateToast = (type: SnotifyType, data?: SnotifyAsync) => {
+    const updateToast = (type: SnotifyType, data?: SnotifyConfig) => {
       if (!data) {
         latestToast = SnotifyService.mergeDeep(toast, latestToast, {config: {type: type}}) as SnotifyToast;
       } else {
@@ -340,10 +339,10 @@ export class SnotifyService {
     };
 
     const subscription: Subscription = async.subscribe(
-      (next?: SnotifyAsync) => {
+      (next?: SnotifyConfig) => {
         updateToast(SnotifyType.ASYNC, next);
       },
-      (error?: SnotifyAsync) => {
+      (error?: SnotifyConfig) => {
         updateToast(SnotifyType.ERROR, error);
         subscription.unsubscribe();
       },

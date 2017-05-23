@@ -10,7 +10,6 @@ import {SnotifyService} from './snotify/snotify.service';
 export * from './snotify/snotify.component';
 export * from './snotify/snotify.service';
 export * from './snotify/interfaces/Snotify.interface';
-export * from './snotify/interfaces/SnotifyAsync.interface';
 export * from './snotify/interfaces/SnotifyButton.interface';
 export * from './snotify/interfaces/SnotifyConfig.interface';
 export * from './snotify/interfaces/SnotifyInfo.interface';

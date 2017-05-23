@@ -14,11 +14,26 @@ import {SnotifyPosition} from './enum/SnotifyPosition.enum';
   styleUrls: ['./snotify.component.scss']
 })
 export class SnotifyComponent implements OnInit, OnDestroy {
+  /**
+   * Toasts array
+   */
   notifications: SnotifyToast[];
   emitter: Subscription;
+  /**
+   * Listens for options has been changed
+   */
   optionsSubscription: Subscription;
+  /**
+   * Listens for lifecycle has been triggered
+   */
   lifecycleSubscription: Subscription;
+  /**
+   * Helper for slice pipe (maxOnScreen)
+   */
   dockSize_a: number;
+  /**
+   * Helper for slice pipe (maxOnScreen)
+   */
   dockSize_b: number | undefined;
   constructor(private service: SnotifyService, private render: Renderer2, private snotify: ElementRef) { }
 

@@ -35,10 +35,16 @@
     "Notifications",
     "Notification",
     "Toast",
+    "toasts",
+    "promt",
+    "async",
+    "confirmation",
     "notify",
     "notie",
     "notification-center",
-    "snotify"
+    "snotify",
+    "ng-snotify",
+    "ng2-snotify"
   ],
   "license": "MIT",
   "bugs": {

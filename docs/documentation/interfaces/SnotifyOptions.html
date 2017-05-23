@@ -68,6 +68,9 @@
                                 <li class="link">
                                     <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -142,9 +145,6 @@
                             >
                                 <li class="link">
                                     <a href="../interfaces/Snotify.html" >Snotify</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
                                 </li>
                                 <li class="link">
                                     <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
@@ -230,6 +230,9 @@
                                        <li class="link">
                                            <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -306,9 +309,6 @@
                                            <a href="../interfaces/Snotify.html" >Snotify</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
-                                       </li>
-                                       <li class="link">
                                            <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
                                        </li>
                                        <li class="link">
@@ -370,6 +370,13 @@
             <code>src/snotify/interfaces/SnotifyOptions.interface.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Global configuration object</p>
+
+            </p>
 
 
 
@@ -402,10 +409,17 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/snotify/interfaces/SnotifyOptions.interface.ts:4</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/snotify/interfaces/SnotifyOptions.interface.ts:13</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Max toast items on screen.<br>Default: 8</p>
+<p>For example you want to display 3 toasts max at the time. But for some purposes your system calls it 10 times.<br>With this option, 3 toast will be shown. And after each of it will disappear, new toast from the queue will be shown.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -434,10 +448,17 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/snotify/interfaces/SnotifyOptions.interface.ts:5</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/snotify/interfaces/SnotifyOptions.interface.ts:21</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Should new items come from top or bottom side.<br>Default: true</p>
+<p>This option created for styling purposes.<br>For example, if your toast position is TOP-RIGHT. Its not very nice, when items comes from top and pulls down all other toasts</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -466,10 +487,16 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/snotify/interfaces/SnotifyOptions.interface.ts:6</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/snotify/interfaces/SnotifyOptions.interface.ts:26</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Toasts position on screen<br>Default: right_bottom</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -498,21 +525,51 @@
 
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/snotify/interfaces/SnotifyOptions.interface.ts:7</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/snotify/interfaces/SnotifyOptions.interface.ts:31</a></div>
                                     </td>
                                 </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Transition on toast show/hide animation<br>Default: 400</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {SnotifyPosition} from &#x27;../enum/SnotifyPosition.enum&#x27;;
-
+/**
+ * Global configuration object
+ */
 export interface SnotifyOptions {
+  /**
+   * Max toast items on screen.
+   * Default: 8
+   *
+   * For example you want to display 3 toasts max at the time. But for some purposes your system calls it 10 times.
+   * With this option, 3 toast will be shown. And after each of it will disappear, new toast from the queue will be shown.
+   */
   maxOnScreen?: number;
+  /**
+   * Should new items come from top or bottom side.
+   * Default: true
+   *
+   * This option created for styling purposes.
+   * For example, if your toast position is TOP-RIGHT. Its not very nice, when items comes from top and pulls down all other toasts
+   */
   newOnTop?: boolean;
+  /**
+   * Toasts position on screen
+   * Default: right_bottom
+   */
   position?: SnotifyPosition;
+  /**
+   * Transition on toast show/hide animation
+   * Default: 400
+   */
   transition?: number;
 }
 </code></pre>
