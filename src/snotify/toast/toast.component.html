@@ -1,19 +1,46 @@
 <div
-  class="snotify-toast"
+  class="snotifyToast"
   [ngClass]="{
     'snotify-success': types.success,
     'snotify-warning': types.warning,
     'snotify-info': types.info,
     'snotify-error': types.error,
-    'snotify-bare': types.bare
+    'snotify-simple': types.simple,
+    'snotify-async': types.async,
+    'snotify-confirm': types.confirm,
+    'snotify-prompt': types.prompt,
+    'snotifyToast-show': state.toast.isShowing,
+    'snotifyToast-remove': state.toast.isRemoving
   }"
-     (click)="onClick()" (mouseenter)="onEnter()" (mouseleave)="onLeave()" #wrapper>
-  <div class="snotify-toast__inner">
-    <div class="snotify-progress-bar" *ngIf="config.showProgressBar">
-      <span class="snotify-progress-bar__line" #progress></span>
+  [ngStyle]="{'transition': 'transform ' + transitionTime + 'ms, opacity '+transitionTime/2+'ms, max-height ease '+transitionTime+'ms'}"
+  (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+  <div class="snotifyToast__inner">
+    <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
+      <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': state.toast.progress + '%'}"></span>
     </div>
-    <div class="snotify-title">{{toast.title}}</div>
-    <div class="snotify-body">{{toast.body}}</div>
+    <div class="snotifyToast__title">{{toast.title}}</div>
+    <div *ngIf="!types.prompt" class="snotifyToast__body">{{toast.body}}</div>
+    <span *ngIf="types.prompt" class="input"
+          [ngClass]="{'input--filled': state.prompt.isPromptActive}"
+          (mouseenter)="onPromptEnter()"
+          (mouseleave)="onPromptLeave()">
+        <input (input)="state.prompt.input = $event.target.value"
+               class="input__field" type="text"
+               [id]="toast.id"
+               (focus)="state.prompt.isPromptFocused = true"
+               (blur)="state.prompt.isPromptFocused = false; onPromptLeave()"/>
+        <label class="input__label" [for]="toast.id">
+          <span class="input__labelContent">{{toast.body}}</span>
+        </label>
+      </span>
     <app-icon class="snotify-icon" [types]="types"></app-icon>
+  </div>
+  <div *ngIf="types.prompt || types.confirm" class="snotifyToast__buttons">
+    <button (click)="toast.config.buttons[0].action(types.prompt ? state.prompt.input : null)" [ngClass]="{'snotifyToast__buttons--bold': toast.config.buttons[0].bold}">
+      {{toast.config.buttons[0].text}}
+    </button>
+    <button (click)="toast.config.buttons[1].action()" [ngClass]="{'snotifyToast__buttons--bold': toast.config.buttons[1].bold}">
+      {{toast.config.buttons[1].text}}
+    </button>
   </div>
 </div>

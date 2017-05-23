@@ -144,6 +144,12 @@
                                     <a href="../interfaces/Snotify.html" >Snotify</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                </li>
+                                <li class="link">
                                     <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                 </li>
                                 <li class="link">
@@ -300,6 +306,12 @@
                                            <a href="../interfaces/Snotify.html" >Snotify</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                        </li>
                                        <li class="link">
@@ -394,7 +406,7 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>snotify.component.css</code></td>
+                <td class="col-md-9"><code>snotify.component.scss</code></td>
             </tr>
 
 
@@ -422,7 +434,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/snotify/snotify.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/snotify/snotify.component.ts:22</a></div>
                             </td>
                         </tr>
     
@@ -450,12 +462,14 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/snotify/snotify.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/snotify/snotify.component.ts:28</a></div>
                             </td>
                         </tr>
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Init base options. Subscribe to options, lifecycle change</p>
+    </div>
     
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
@@ -480,17 +494,37 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/snotify/snotify.component.ts:69</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/snotify/snotify.component.ts:81</a></div>
                             </td>
                         </tr>
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Setup global options object</p>
+    </div>
     
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>options</b>
+                                                            :     <code><a href="../interfaces/SnotifyOptions.html" target="_self" >SnotifyOptions</a></code>
+    
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -504,23 +538,43 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>setPosition(positions: <a href="../interfaces/Snotify.html">[SnotifyPosition, SnotifyPosition]</a>)</code>
+    <code>setPosition(position: <a href="../interfaces/Snotify.html">SnotifyPosition</a>)</code>
                         </td>
                     </tr>
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/snotify/snotify.component.ts:81</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/snotify/snotify.component.ts:97</a></div>
                             </td>
                         </tr>
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Setup notifications position</p>
+    </div>
     
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>position</b>
+                                                            :     <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyPosition</a></code>
+    
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -540,12 +594,14 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/snotify/snotify.component.ts:104</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/snotify/snotify.component.ts:133</a></div>
                             </td>
                         </tr>
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Unsubscribe subscriptions</p>
+    </div>
     
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
@@ -577,7 +633,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/snotify/snotify.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/snotify/snotify.component.ts:21</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -597,7 +653,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/snotify/snotify.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/snotify/snotify.component.ts:22</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -617,7 +673,27 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/snotify/snotify.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/snotify/snotify.component.ts:18</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> lifecycleSubscription</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>lifecycleSubscription:     <code>Subscription</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/snotify/snotify.component.ts:20</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -637,7 +713,27 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/snotify/snotify.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/snotify/snotify.component.ts:17</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> optionsSubscription</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>optionsSubscription:     <code>Subscription</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/snotify/snotify.component.ts:19</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -651,24 +747,32 @@
 import {SnotifyService} from &#x27;./snotify.service&#x27;;
 import {SnotifyToast} from &#x27;./toast/snotify-toast.model&#x27;;
 import {Subscription} from &#x27;rxjs/Subscription&#x27;;
-import {SnotifyAction, SnotifyInfo, SnotifyOptions, SnotifyPosition} from &#x27;./snotify-config&#x27;;
+import {SnotifyOptions} from &#x27;./interfaces/SnotifyOptions.interface&#x27;;
+import {SnotifyInfo} from &#x27;./interfaces/SnotifyInfo.interface&#x27;;
+import {SnotifyAction} from &#x27;./enum/SnotifyAction.enum&#x27;;
+import {SnotifyPosition} from &#x27;./enum/SnotifyPosition.enum&#x27;;
+
 
 @Component({
   selector: &#x27;app-snotify&#x27;,
   templateUrl: &#x27;./snotify.component.html&#x27;,
-  styleUrls: [&#x27;./snotify.component.css&#x27;]
+  styleUrls: [&#x27;./snotify.component.scss&#x27;]
 })
 export class SnotifyComponent implements OnInit, OnDestroy {
   notifications: SnotifyToast[];
   emitter: Subscription;
+  optionsSubscription: Subscription;
+  lifecycleSubscription: Subscription;
   dockSize_a: number;
   dockSize_b: number | undefined;
   constructor(private service: SnotifyService, private render: Renderer2, private snotify: ElementRef) { }
 
+  /**
+   * Init base options. Subscribe to options, lifecycle change
+   */
   ngOnInit() {
-    this.notifications &#x3D; this.service.getAll();
     this.setOptions(this.service.options);
-    this.service.optionsChanged.subscribe((options: SnotifyOptions) &#x3D;&gt; {
+    this.optionsSubscription &#x3D; this.service.optionsChanged.subscribe((options: SnotifyOptions) &#x3D;&gt; {
       this.setOptions(options);
     });
     this.setPosition(this.service.options.position);
@@ -676,7 +780,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
     this.emitter &#x3D; this.service.emitter.subscribe(
       (toasts: SnotifyToast[]) &#x3D;&gt; this.notifications &#x3D; toasts
     );
-    this.service.lifecycle.subscribe(
+    this.lifecycleSubscription &#x3D; this.service.lifecycle.subscribe(
       (info: SnotifyInfo) &#x3D;&gt; {
         switch (info.action) {
           case SnotifyAction.onInit:
@@ -715,7 +819,11 @@ export class SnotifyComponent implements OnInit, OnDestroy {
 
   }
 
-  setOptions(options: SnotifyOptions) {
+  /**
+   * Setup global options object
+   * @param options {SnotifyOptions}
+   */
+  setOptions(options: SnotifyOptions): void {
     if (this.service.options.newOnTop) {
       this.dockSize_a &#x3D; -options.maxOnScreen;
       this.dockSize_b &#x3D; undefined;
@@ -727,31 +835,50 @@ export class SnotifyComponent implements OnInit, OnDestroy {
     this.setPosition(options.position);
   }
 
-  setPosition(positions: [SnotifyPosition, SnotifyPosition]) {
-    this.render.removeStyle(this.snotify.nativeElement, &#x27;right&#x27;);
-    this.render.removeStyle(this.snotify.nativeElement, &#x27;left&#x27;);
-    this.render.removeStyle(this.snotify.nativeElement, &#x27;bottom&#x27;);
-    this.render.removeStyle(this.snotify.nativeElement, &#x27;top&#x27;);
-    positions.forEach((position: SnotifyPosition) &#x3D;&gt; {
+  /**
+   * Setup notifications position
+   * @param position {SnotifyPosition}
+   */
+  setPosition(position: SnotifyPosition): void {
+    this.render.removeAttribute(this.snotify.nativeElement, &#x27;class&#x27;);
       switch (position) {
-        case SnotifyPosition.RIGHT:
-          this.render.setStyle(this.snotify.nativeElement, &#x27;right&#x27;, this.service.options.positionOffset.horizontal);
+        case SnotifyPosition.left_top:
+          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-leftTop&#x27;);
           break;
-        case SnotifyPosition.LEFT:
-          this.render.setStyle(this.snotify.nativeElement, &#x27;left&#x27;, this.service.options.positionOffset.horizontal);
+        case SnotifyPosition.left_center:
+          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-leftCenter&#x27;);
           break;
-        case SnotifyPosition.TOP:
-          this.render.setStyle(this.snotify.nativeElement, &#x27;top&#x27;, this.service.options.positionOffset.vertical);
+        case SnotifyPosition.left_bottom:
+          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-leftBottom&#x27;);
           break;
-        case SnotifyPosition.BOTTOM:
-          this.render.setStyle(this.snotify.nativeElement, &#x27;bottom&#x27;, this.service.options.positionOffset.vertical);
+        case SnotifyPosition.right_top:
+          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-rightTop&#x27;);
+          break;
+        case SnotifyPosition.right_center:
+          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-rightCenter&#x27;);
+          break;
+        case SnotifyPosition.right_bottom:
+          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-rightBottom&#x27;);
+          break;
+        case SnotifyPosition.center_top:
+          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-centerTop&#x27;);
+          break;
+        case SnotifyPosition.center_center:
+          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-centerCenter&#x27;);
+          break;
+        case SnotifyPosition.center_bottom:
+          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-centerBottom&#x27;);
           break;
       }
-    });
   }
 
+  /**
+   * Unsubscribe subscriptions
+   */
   ngOnDestroy() {
     this.emitter.unsubscribe();
+    this.optionsSubscription.unsubscribe();
+    this.lifecycleSubscription.unsubscribe();
   }
 
 }
@@ -759,7 +886,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
     </div>
 
     <div class="tab-pane fade" id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-snotify-toast *ngFor&#x3D;&quot;let notification of notifications| slice:dockSize_a:dockSize_b&quot; [id]&#x3D;&quot;notification.id&quot; #snotify&gt;&lt;/app-snotify-toast&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;app-snotify-toast *ngFor&#x3D;&quot;let notification of notifications| slice:dockSize_a:dockSize_b&quot; [toast]&#x3D;&quot;notification&quot; #snotify&gt;&lt;/app-snotify-toast&gt;
 </code></pre>
     </div>
 
@@ -786,7 +913,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-snotify-toast *ngFor="let notification of notifications| slice:dockSize_a:dockSize_b" [id]="notification.id" #snotify></app-snotify-toast></div>'
+        var COMPONENT_TEMPLATE = '<div><app-snotify-toast *ngFor="let notification of notifications| slice:dockSize_a:dockSize_b" [toast]="notification" #snotify></app-snotify-toast></div>'
     var COMPONENTS = [{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'SnotifyComponent', 'selector': 'app-snotify'},{'name': 'ToastComponent', 'selector': 'app-snotify-toast'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SnotifyComponent'};

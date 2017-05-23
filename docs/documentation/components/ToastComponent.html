@@ -144,6 +144,12 @@
                                     <a href="../interfaces/Snotify.html" >Snotify</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                </li>
+                                <li class="link">
                                     <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                 </li>
                                 <li class="link">
@@ -300,6 +306,12 @@
                                            <a href="../interfaces/Snotify.html" >Snotify</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                        </li>
                                        <li class="link">
@@ -395,7 +407,7 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>toast.component.css</code></td>
+                <td class="col-md-9"><code>toast.component.scss</code></td>
             </tr>
 
 
@@ -416,18 +428,18 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>id</code>
+                            <code>toast</code>
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>number</code>
+                                <em>Type:</em>    <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast</a></code>
 
                               </p>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/snotify/toast/toast.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/snotify/toast/toast.component.ts:14</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -441,12 +453,12 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(service: <a href="../injectables/SnotifyService.html">SnotifyService</a>, render: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, zone: <a href="https://angular.io/docs/ts/latest/api/core/index/NgZone-class.html" target="_blank">NgZone</a>)</code>
+                            <code>constructor(service: <a href="../injectables/SnotifyService.html">SnotifyService</a>)</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/snotify/toast/toast.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/snotify/toast/toast.component.ts:46</a></div>
                             </td>
                         </tr>
     
@@ -474,42 +486,14 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/snotify/toast/toast.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/snotify/toast/toast.component.ts:57</a></div>
                             </td>
                         </tr>
     
                     <tr>
                         <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> getType</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>getType(type: <a href="../interfaces/Snotify.html">SnotifyType</a>)</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/snotify/toast/toast.component.ts:48</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
+                                <div class="io-description"><p>Init base options. Subscribe to toast changed, toast deleted</p>
+    </div>
     
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
@@ -534,255 +518,14 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/snotify/toast/toast.component.ts:68</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/snotify/toast/toast.component.ts:82</a></div>
                             </td>
                         </tr>
     
                     <tr>
                         <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> onClick</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onClick()</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/snotify/toast/toast.component.ts:72</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> onRemove</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onRemove()</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/snotify/toast/toast.component.ts:79</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> onShow</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onShow()</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/snotify/toast/toast.component.ts:84</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> onEnter</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onEnter()</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/snotify/toast/toast.component.ts:89</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> onLeave</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onLeave()</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/snotify/toast/toast.component.ts:95</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> startTimeout</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>startTimeout(currentProgress: number)</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/snotify/toast/toast.component.ts:102</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> drawProgressBar</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>drawProgressBar(width: number)</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/snotify/toast/toast.component.ts:121</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b><span class="modifier">Private</span> lifecycle</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <span class="modifier-icon method fa fa-play lock">
-                                    <span class="fa fa-lock"></span>
-                                </span>
-                            <code>lifecycle(action: <a href="../interfaces/Snotify.html">SnotifyAction</a>)</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/snotify/toast/toast.component.ts:125</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
+                                <div class="io-description"><p>Delay on toast show</p>
+    </div>
     
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
@@ -807,17 +550,475 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">src/snotify/toast/toast.component.ts:132</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/snotify/toast/toast.component.ts:89</a></div>
                             </td>
                         </tr>
     
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Unsubscribe subscriptions</p>
+    </div>
     
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
     
                                 </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onClick</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onClick()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/snotify/toast/toast.component.ts:102</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Trigger OnClick lifecycle</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onRemove</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onRemove()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/snotify/toast/toast.component.ts:112</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Trigger beforeDestroy lifecycle. Removes toast</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onShow</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onShow()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/snotify/toast/toast.component.ts:123</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Trigger onInit lifecycle</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onMouseEnter</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onMouseEnter()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="131" class="link-to-prism">src/snotify/toast/toast.component.ts:131</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Trigger onHoverEnter lifecycle</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onMouseLeave</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onMouseLeave()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="141" class="link-to-prism">src/snotify/toast/toast.component.ts:141</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Trigger onHoverLeave lifecycle</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onPromptEnter</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onPromptEnter()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="153" class="link-to-prism">src/snotify/toast/toast.component.ts:153</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Expand input</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onPromptLeave</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onPromptLeave()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="160" class="link-to-prism">src/snotify/toast/toast.component.ts:160</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Collapse input</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> initToast</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>initToast(toast: <a href="../interfaces/Snotify.html">SnotifyToast</a>)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="174" class="link-to-prism">src/snotify/toast/toast.component.ts:174</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Initialize base toast config</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>toast</b>
+                                                            :     <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast</a></code>
+    
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> setType</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>setType(type: <a href="../interfaces/Snotify.html">SnotifyType</a>)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="194" class="link-to-prism">src/snotify/toast/toast.component.ts:194</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Setup toast type</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>type</b>
+                                                            :     <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyType</a></code>
+    
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> resetTypes</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>resetTypes()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="228" class="link-to-prism">src/snotify/toast/toast.component.ts:228</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Reset toast type</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> startTimeout</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>startTimeout(currentProgress: number)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="244" class="link-to-prism">src/snotify/toast/toast.component.ts:244</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Start progress bar</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>currentProgress</b>
+                                                            :     <code>Number</code>
+    
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> lifecycle</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>lifecycle(action: <a href="../interfaces/Snotify.html">SnotifyAction</a>)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="262" class="link-to-prism">src/snotify/toast/toast.component.ts:262</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Lifesycle trigger</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>action</b>
+                                                            :     <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyAction</a></code>
+    
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -833,51 +1034,6 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> config</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>config:     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/snotify/toast/toast.component.ts:18</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> frameRate</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>frameRate:     <code>number</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>10</code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/snotify/toast/toast.component.ts:20</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <b> interval</b>
                         </td>
                     </tr>
@@ -889,7 +1045,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/snotify/toast/toast.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/snotify/toast/toast.component.ts:35</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -898,18 +1054,23 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> progress</b>
+                            <b> refreshRate</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>progress:     <code>number</code>
+                            <code>refreshRate:     <code>number</code>
     </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/snotify/toast/toast.component.ts:22</a></div>
+                                <i>Default value: </i><code>10</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/snotify/toast/toast.component.ts:34</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -918,12 +1079,32 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> progressBar</b>
+                            <b> state</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>progressBar:     <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                            <code>state:     <code>{ toast: { progress: number; isShowing: boolean; isRemoving: boolean; isDestroying: boolean; }; p...</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/snotify/toast/toast.component.ts:19</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> toastChangedSubscription</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>toastChangedSubscription:     <code>Subscription</code>
     </bcode>
                         </td>
                     </tr>
@@ -938,18 +1119,43 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> toast</b>
+                            <b> toastDeletedSubscription</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>toast:     <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast</a></code>
+                            <code>toastDeletedSubscription:     <code>Subscription</code>
     </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/snotify/toast/toast.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/snotify/toast/toast.component.ts:16</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> transitionTime</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>transitionTime:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>400</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/snotify/toast/toast.component.ts:33</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -963,33 +1169,13 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>types:     <code>{ success: boolean; warning: boolean; error: boolean; info: boolean; bare: boolean; }</code>
+                            <code>types:     <code>{ success: boolean; warning: boolean; error: boolean; info: boolean; simple: boolean; async: bool...</code>
     </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/snotify/toast/toast.component.ts:26</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> wrapper</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>wrapper:     <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/snotify/toast/toast.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/snotify/toast/toast.component.ts:37</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -999,29 +1185,40 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import {
-  AfterViewInit, Component, ElementRef, Input, NgZone, OnDestroy, OnInit, Renderer2,
-  ViewChild
-} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import {AfterViewInit, Component, Input, OnDestroy, OnInit} from &#x27;@angular/core&#x27;;
 import {SnotifyService} from &#x27;../snotify.service&#x27;;
 import {SnotifyToast} from &#x27;./snotify-toast.model&#x27;;
-import {SnotifyAction, SnotifyConfig, SnotifyType} from &#x27;../snotify-config&#x27;;
+import {SnotifyAction} from &#x27;../enum/SnotifyAction.enum&#x27;;
+import {SnotifyType} from &#x27;../enum/SnotifyType.enum&#x27;;
+import {Subscription} from &#x27;rxjs/Subscription&#x27;;
 
 @Component({
   selector: &#x27;app-snotify-toast&#x27;,
   templateUrl: &#x27;./toast.component.html&#x27;,
-  styleUrls: [&#x27;./toast.component.css&#x27;]
+  styleUrls: [&#x27;./toast.component.scss&#x27;]
 })
 export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
-  @Input() id: number;
-  @ViewChild(&#x27;wrapper&#x27;) wrapper: ElementRef;
-  @ViewChild(&#x27;progress&#x27;) progressBar: ElementRef;
-  config: SnotifyConfig;
+  @Input() toast: SnotifyToast;
 
-  frameRate &#x3D; 10;
+  toastDeletedSubscription: Subscription;
+  toastChangedSubscription: Subscription;
 
-  progress: number;
-  toast: SnotifyToast;
+  state &#x3D; {
+    toast: {
+      progress: 0,
+      isShowing: false,
+      isRemoving: false,
+      isDestroying: false
+    },
+    prompt: {
+      input: &#x27;&#x27;,
+      isPromptFocused: false,
+      isPromptActive: false
+    }
+  };
+
+  transitionTime &#x3D; 400;
+  refreshRate &#x3D; 10;
   interval: any;
 
   types &#x3D; {
@@ -1029,24 +1226,161 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
     warning: false,
     error: false,
     info: false,
-    bare: false
+    simple: false,
+    async: false,
+    confirm: false,
+    prompt: false,
   };
 
-  constructor(private service: SnotifyService, private render: Renderer2, private zone: NgZone) { }
+  constructor(private service: SnotifyService) { }
 
+  /*
+  Life cycles
+   */
+
+  /**
+   * Init base options. Subscribe to toast changed, toast deleted
+   */
   ngOnInit() {
-    this.config &#x3D; this.service.getConfig(this.id);
-    this.toast &#x3D; this.service.get(this.id);
-    this.getType(this.config.type);
+    this.transitionTime &#x3D; this.service.options.transition;
+    this.initToast();
+    this.toastChangedSubscription &#x3D; this.service.toastChanged.subscribe(
+      (toast: SnotifyToast) &#x3D;&gt; {
+        if (this.toast.id &#x3D;&#x3D;&#x3D; toast.id) {
+          this.initToast(toast);
+        }
+      }
+    );
 
-    if (this.config.timeout &gt; 0) {
-      this.startTimeout(0);
-    } else {
-      this.config.showProgressBar &#x3D; false;
+    this.toastDeletedSubscription &#x3D; this.service.toastDeleted.subscribe(
+      (id) &#x3D;&gt; {
+        if (this.toast.id &#x3D;&#x3D;&#x3D; id) {
+          this.onRemove().then(() &#x3D;&gt; {
+            this.service.remove(id, true);
+          });
+        }
+      }
+    );
+  }
+
+  /**
+   * Delay on toast show
+   */
+  ngAfterViewInit() {
+    setTimeout(() &#x3D;&gt; this.onShow(), 50);
+  }
+
+  /**
+   * Unsubscribe subscriptions
+   */
+  ngOnDestroy(): void {
+    this.lifecycle(SnotifyAction.afterDestroy);
+    this.toastChangedSubscription.unsubscribe();
+    this.toastDeletedSubscription.unsubscribe();
+  }
+
+  /*
+  Event hooks
+   */
+
+  /**
+   * Trigger OnClick lifecycle
+   */
+  onClick() {
+    this.lifecycle(SnotifyAction.onClick);
+    if (this.toast.config.closeOnClick) {
+      this.service.remove(this.toast.id);
     }
   }
 
-  getType(type: SnotifyType) {
+  /**
+   * Trigger beforeDestroy lifecycle. Removes toast
+   */
+  onRemove() {
+    clearInterval(this.interval);
+    this.state.toast.isDestroying &#x3D; true;
+    this.lifecycle(SnotifyAction.beforeDestroy);
+    this.state.toast.isRemoving &#x3D; true;
+    return new Promise((resolve, reject) &#x3D;&gt; setTimeout(resolve, this.service.options.transition));
+  }
+
+  /**
+   * Trigger onInit lifecycle
+   */
+  onShow() {
+    this.state.toast.isShowing &#x3D; true;
+    this.lifecycle(SnotifyAction.onInit);
+  }
+
+  /**
+   * Trigger onHoverEnter lifecycle
+   */
+  onMouseEnter() {
+    this.lifecycle(SnotifyAction.onHoverEnter);
+    if (this.toast.config.pauseOnHover) {
+      clearInterval(this.interval);
+    }
+  }
+
+  /**
+   * Trigger onHoverLeave lifecycle
+   */
+  onMouseLeave() {
+    if (this.toast.config.pauseOnHover &amp;&amp; !this.types.prompt) {
+      this.startTimeout(this.state.toast.progress);
+    }
+    this.lifecycle(SnotifyAction.onHoverLeave);
+  }
+
+  // Prompt
+
+  /**
+   * Expand input
+   */
+  onPromptEnter() {
+    this.state.prompt.isPromptActive &#x3D; true;
+  }
+
+  /**
+   * Collapse input
+   */
+  onPromptLeave() {
+    if (!this.state.prompt.input.length &amp;&amp; !this.state.prompt.isPromptFocused) {
+      this.state.prompt.isPromptActive &#x3D; false;
+    }
+  }
+
+  /*
+   Common
+   */
+
+  /**
+   * Initialize base toast config
+   * @param toast {SnotifyToast}
+   */
+  initToast(toast?: SnotifyToast) {
+    if (toast) {
+      if (this.toast.config.type !&#x3D;&#x3D; toast.config.type) {
+        clearInterval(this.interval);
+      }
+      this.toast &#x3D; toast;
+    }
+
+    this.setType(this.toast.config.type);
+    if (this.toast.config.timeout &gt; 0) {
+      this.startTimeout(0);
+    } else {
+      this.toast.config.showProgressBar &#x3D; false;
+    }
+  }
+
+  /**
+   * Setup toast type
+   * @param type {SnotifyType}
+   */
+  setType(type: SnotifyType) {
+    this.resetTypes();
+
     switch (type) {
       case SnotifyType.SUCCESS:
         this.types.success &#x3D; true;
@@ -1060,78 +1394,63 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
       case SnotifyType.INFO:
         this.types.info &#x3D; true;
         break;
+      case SnotifyType.ASYNC:
+        this.types.async &#x3D; true;
+        break;
+      case SnotifyType.CONFIRM:
+        this.types.confirm &#x3D; true;
+        break;
+      case SnotifyType.PROMPT:
+        this.types.prompt &#x3D; true;
+        break;
       default:
-        this.types.bare &#x3D; true;
+        this.types.simple &#x3D; true;
         break;
     }
   }
 
-  ngAfterViewInit() {
-    setTimeout(() &#x3D;&gt; this.onShow(), 50);
+  /**
+   * Reset toast type
+   */
+  resetTypes() {
+    this.types.info &#x3D;
+    this.types.error &#x3D;
+    this.types.warning &#x3D;
+    this.types.simple &#x3D;
+    this.types.success &#x3D;
+    this.types.async &#x3D;
+    this.types.confirm &#x3D;
+    this.types.prompt &#x3D;
+      false;
   }
 
-  onClick() {
-    this.lifecycle(SnotifyAction.onClick);
-    if (this.config.closeOnClick) {
-      this.service.remove(this.id, this.onRemove.bind(this));
-    }
-  }
-
-  onRemove() {
-    this.lifecycle(SnotifyAction.beforeDestroy);
-    this.render.addClass(this.wrapper.nativeElement, &#x27;snotify-remove&#x27;);
-  }
-
-  onShow() {
-    this.render.addClass(this.wrapper.nativeElement, &#x27;snotify-show&#x27;);
-    this.lifecycle(SnotifyAction.onInit);
-  }
-
-  onEnter() {
-    this.lifecycle(SnotifyAction.onHoverEnter);
-    if (this.config.pauseOnHover) {
-      clearInterval(this.interval);
-    }
-  }
-  onLeave() {
-    if (this.config.pauseOnHover) {
-      this.startTimeout(this.progress);
-    }
-    this.lifecycle(SnotifyAction.onHoverLeave);
-  }
-
+  /**
+   * Start progress bar
+   * @param currentProgress {Number}
+   */
   startTimeout(currentProgress: number) {
-    this.progress &#x3D; currentProgress;
-    const step &#x3D; this.frameRate / this.config.timeout * 100;
-    this.zone.runOutsideAngular(() &#x3D;&gt; {
+    if (this.state.toast.isDestroying) {
+      return;
+    }
+    this.state.toast.progress &#x3D; currentProgress;
+    const step &#x3D; this.refreshRate / this.toast.config.timeout * 100;
       this.interval &#x3D; setInterval(() &#x3D;&gt; {
-        this.progress +&#x3D; step;
-        if (this.progress &gt;&#x3D; 100) {
-          this.zone.run(() &#x3D;&gt; {
-            clearInterval(this.interval);
-            this.service.remove(this.id, this.onRemove.bind(this));
-          });
+        this.state.toast.progress +&#x3D; step;
+        if (this.state.toast.progress &gt;&#x3D; 100) {
+            this.service.remove(this.toast.id);
         }
-        if (this.config.showProgressBar) {
-          this.drawProgressBar(this.progress);
-        }
-      }, this.frameRate);
-    });
+      }, this.refreshRate);
   }
 
-  drawProgressBar(width: number) {
-    this.render.setStyle(this.progressBar.nativeElement, &#x27;width&#x27;, width + &#x27;%&#x27;);
-  }
-
-  private lifecycle(action: SnotifyAction) {
+  /**
+   * Lifesycle trigger
+   * @param action {SnotifyAction}
+   */
+  lifecycle(action: SnotifyAction) {
     return this.service.lifecycle.next({
       action,
       toast: this.toast
     });
-  }
-
-  ngOnDestroy(): void {
-    this.lifecycle(SnotifyAction.afterDestroy);
   }
 
 }
@@ -1140,22 +1459,49 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
 
     <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div
-  class&#x3D;&quot;snotify-toast&quot;
+  class&#x3D;&quot;snotifyToast&quot;
   [ngClass]&#x3D;&quot;{
     &#x27;snotify-success&#x27;: types.success,
     &#x27;snotify-warning&#x27;: types.warning,
     &#x27;snotify-info&#x27;: types.info,
     &#x27;snotify-error&#x27;: types.error,
-    &#x27;snotify-bare&#x27;: types.bare
+    &#x27;snotify-simple&#x27;: types.simple,
+    &#x27;snotify-async&#x27;: types.async,
+    &#x27;snotify-confirm&#x27;: types.confirm,
+    &#x27;snotify-prompt&#x27;: types.prompt,
+    &#x27;snotifyToast-show&#x27;: state.toast.isShowing,
+    &#x27;snotifyToast-remove&#x27;: state.toast.isRemoving
   }&quot;
-     (click)&#x3D;&quot;onClick()&quot; (mouseenter)&#x3D;&quot;onEnter()&quot; (mouseleave)&#x3D;&quot;onLeave()&quot; #wrapper&gt;
-  &lt;div class&#x3D;&quot;snotify-toast__inner&quot;&gt;
-    &lt;div class&#x3D;&quot;snotify-progress-bar&quot; *ngIf&#x3D;&quot;config.showProgressBar&quot;&gt;
-      &lt;span class&#x3D;&quot;snotify-progress-bar__line&quot; #progress&gt;&lt;/span&gt;
+  [ngStyle]&#x3D;&quot;{&#x27;transition&#x27;: &#x27;transform &#x27; + transitionTime + &#x27;ms, opacity &#x27;+transitionTime/2+&#x27;ms, max-height ease &#x27;+transitionTime+&#x27;ms&#x27;}&quot;
+  (click)&#x3D;&quot;onClick()&quot; (mouseenter)&#x3D;&quot;onMouseEnter()&quot; (mouseleave)&#x3D;&quot;onMouseLeave()&quot;&gt;
+  &lt;div class&#x3D;&quot;snotifyToast__inner&quot;&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__progressBar&quot; *ngIf&#x3D;&quot;toast.config.showProgressBar&quot;&gt;
+      &lt;span class&#x3D;&quot;snotifyToast__progressBar__percentage&quot; [ngStyle]&#x3D;&quot;{&#x27;width&#x27;: state.toast.progress + &#x27;%&#x27;}&quot;&gt;&lt;/span&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;snotify-title&quot;&gt;{{toast.title}}&lt;/div&gt;
-    &lt;div class&#x3D;&quot;snotify-body&quot;&gt;{{toast.body}}&lt;/div&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__title&quot;&gt;{{toast.title}}&lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;!types.prompt&quot; class&#x3D;&quot;snotifyToast__body&quot;&gt;{{toast.body}}&lt;/div&gt;
+    &lt;span *ngIf&#x3D;&quot;types.prompt&quot; class&#x3D;&quot;input&quot;
+          [ngClass]&#x3D;&quot;{&#x27;input--filled&#x27;: state.prompt.isPromptActive}&quot;
+          (mouseenter)&#x3D;&quot;onPromptEnter()&quot;
+          (mouseleave)&#x3D;&quot;onPromptLeave()&quot;&gt;
+        &lt;input (input)&#x3D;&quot;state.prompt.input &#x3D; $event.target.value&quot;
+               class&#x3D;&quot;input__field&quot; type&#x3D;&quot;text&quot;
+               [id]&#x3D;&quot;toast.id&quot;
+               (focus)&#x3D;&quot;state.prompt.isPromptFocused &#x3D; true&quot;
+               (blur)&#x3D;&quot;state.prompt.isPromptFocused &#x3D; false; onPromptLeave()&quot;/&gt;
+        &lt;label class&#x3D;&quot;input__label&quot; [for]&#x3D;&quot;toast.id&quot;&gt;
+          &lt;span class&#x3D;&quot;input__labelContent&quot;&gt;{{toast.body}}&lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/span&gt;
     &lt;app-icon class&#x3D;&quot;snotify-icon&quot; [types]&#x3D;&quot;types&quot;&gt;&lt;/app-icon&gt;
+  &lt;/div&gt;
+  &lt;div *ngIf&#x3D;&quot;types.prompt || types.confirm&quot; class&#x3D;&quot;snotifyToast__buttons&quot;&gt;
+    &lt;button (click)&#x3D;&quot;toast.config.buttons[0].action(types.prompt ? state.prompt.input : null)&quot; [ngClass]&#x3D;&quot;{&#x27;snotifyToast__buttons--bold&#x27;: toast.config.buttons[0].bold}&quot;&gt;
+      {{toast.config.buttons[0].text}}
+    &lt;/button&gt;
+    &lt;button (click)&#x3D;&quot;toast.config.buttons[1].action()&quot; [ngClass]&#x3D;&quot;{&#x27;snotifyToast__buttons--bold&#x27;: toast.config.buttons[1].bold}&quot;&gt;
+      {{toast.config.buttons[1].text}}
+    &lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -1184,7 +1530,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  class="snotify-toast"  [ngClass]="{    \'snotify-success\': types.success,    \'snotify-warning\': types.warning,    \'snotify-info\': types.info,    \'snotify-error\': types.error,    \'snotify-bare\': types.bare  }"     (click)="onClick()" (mouseenter)="onEnter()" (mouseleave)="onLeave()" #wrapper>  <div class="snotify-toast__inner">    <div class="snotify-progress-bar" *ngIf="config.showProgressBar">      <span class="snotify-progress-bar__line" #progress></span>    </div>    <div class="snotify-title">{{toast.title}}</div>    <div class="snotify-body">{{toast.body}}</div>    <app-icon class="snotify-icon" [types]="types"></app-icon>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div  class="snotifyToast"  [ngClass]="{    \'snotify-success\': types.success,    \'snotify-warning\': types.warning,    \'snotify-info\': types.info,    \'snotify-error\': types.error,    \'snotify-simple\': types.simple,    \'snotify-async\': types.async,    \'snotify-confirm\': types.confirm,    \'snotify-prompt\': types.prompt,    \'snotifyToast-show\': state.toast.isShowing,    \'snotifyToast-remove\': state.toast.isRemoving  }"  [ngStyle]="{\'transition\': \'transform \' + transitionTime + \'ms, opacity \'+transitionTime/2+\'ms, max-height ease \'+transitionTime+\'ms\'}"  (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">  <div class="snotifyToast__inner">    <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">      <span class="snotifyToast__progressBar__percentage" [ngStyle]="{\'width\': state.toast.progress + \'%\'}"></span>    </div>    <div class="snotifyToast__title">{{toast.title}}</div>    <div *ngIf="!types.prompt" class="snotifyToast__body">{{toast.body}}</div>    <span *ngIf="types.prompt" class="input"          [ngClass]="{\'input--filled\': state.prompt.isPromptActive}"          (mouseenter)="onPromptEnter()"          (mouseleave)="onPromptLeave()">        <input (input)="state.prompt.input = $event.target.value"               class="input__field" type="text"               [id]="toast.id"               (focus)="state.prompt.isPromptFocused = true"               (blur)="state.prompt.isPromptFocused = false; onPromptLeave()"/>        <label class="input__label" [for]="toast.id">          <span class="input__labelContent">{{toast.body}}</span>        </label>      </span>    <app-icon class="snotify-icon" [types]="types"></app-icon>  </div>  <div *ngIf="types.prompt || types.confirm" class="snotifyToast__buttons">    <button (click)="toast.config.buttons[0].action(types.prompt ? state.prompt.input : null)" [ngClass]="{\'snotifyToast__buttons--bold\': toast.config.buttons[0].bold}">      {{toast.config.buttons[0].text}}    </button>    <button (click)="toast.config.buttons[1].action()" [ngClass]="{\'snotifyToast__buttons--bold\': toast.config.buttons[1].bold}">      {{toast.config.buttons[1].text}}    </button>  </div></div></div>'
     var COMPONENTS = [{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'SnotifyComponent', 'selector': 'app-snotify'},{'name': 'ToastComponent', 'selector': 'app-snotify-toast'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ToastComponent'};

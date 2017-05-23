@@ -1,4 +1,4 @@
-import {SnotifyConfig} from '../snotify-config';
+import {SnotifyConfig} from '../interfaces/SnotifyConfig.interface';
 
 export class SnotifyToast {
   constructor(

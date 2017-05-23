@@ -144,6 +144,12 @@
                                     <a href="./interfaces/Snotify.html" >Snotify</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./interfaces/SnotifyAsync.html" >SnotifyAsync</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                </li>
+                                <li class="link">
                                     <a href="./interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                 </li>
                                 <li class="link">
@@ -300,6 +306,12 @@
                                            <a href="./interfaces/Snotify.html" >Snotify</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./interfaces/SnotifyAsync.html" >SnotifyAsync</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                        </li>
                                        <li class="link">
@@ -344,87 +356,8 @@
 
 
     <h2 id="inputs"><b>Enumerations</b></h2>
-        <h4><code>src/snotify/snotify-config.ts</code></h4>
+        <h4><code>src/snotify/enum/SnotifyAction.enum.ts</code></h4>
         <section>
-                <h3 id="inputs">
-                    SnotifyType
-                </h3>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>SUCCESS</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>ERROR</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>WARNING</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>INFO</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>BARE</b>
-                                    </td>
-                                </tr>
-                    </tbody>
-                </table>
-                <h3 id="inputs">
-                    SnotifyPosition
-                </h3>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>TOP</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Value: </i><code>0</code>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>BOTTOM</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Value: </i><code>1</code>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>LEFT</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Value: </i><code>3</code>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>RIGHT</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Value: </i><code>2</code>
-                                    </td>
-                                </tr>
-                    </tbody>
-                </table>
                 <h3 id="inputs">
                     SnotifyAction
                 </h3>
@@ -488,6 +421,156 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <i>Value: </i><code>12</code>
+                                    </td>
+                                </tr>
+                    </tbody>
+                </table>
+        </section>
+        <h4><code>src/snotify/enum/SnotifyPosition.enum.ts</code></h4>
+        <section>
+                <h3 id="inputs">
+                    SnotifyPosition
+                </h3>
+                <table class="table table-sm table-bordered">
+                    <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>left_top</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Value: </i><code>0</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>left_center</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Value: </i><code>1</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>left_bottom</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Value: </i><code>2</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>right_top</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Value: </i><code>3</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>right_center</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Value: </i><code>4</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>right_bottom</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Value: </i><code>5</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>center_top</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Value: </i><code>6</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>center_center</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Value: </i><code>7</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>center_bottom</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Value: </i><code>8</code>
+                                    </td>
+                                </tr>
+                    </tbody>
+                </table>
+        </section>
+        <h4><code>src/snotify/enum/SnotifyType.enum.ts</code></h4>
+        <section>
+                <h3 id="inputs">
+                    SnotifyType
+                </h3>
+                <table class="table table-sm table-bordered">
+                    <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>SIMPLE</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>SUCCESS</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>ERROR</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>WARNING</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>INFO</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>ASYNC</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>CONFIRM</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <b>PROMPT</b>
                                     </td>
                                 </tr>
                     </tbody>

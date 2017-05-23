@@ -144,6 +144,12 @@
                                     <a href="../interfaces/Snotify.html" >Snotify</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                </li>
+                                <li class="link">
                                     <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                 </li>
                                 <li class="link">
@@ -300,6 +306,12 @@
                                            <a href="../interfaces/Snotify.html" >Snotify</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../interfaces/SnotifyAsync.html" >SnotifyAsync</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
                                        </li>
                                        <li class="link">
@@ -355,6 +367,13 @@
             <code>src/snotify/snotify.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>SnotifyService - create, remove, config toasts</p>
+
+            </p>
 
             <section>
                 <h3 id="constructor">Constructor</h3>
@@ -367,10 +386,16 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/snotify/snotify.service.ts:28</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/snotify/snotify.service.ts:87</a></div>
                                     </td>
                                 </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Constructor - initialize base configuration objects</p>
+            </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -398,17 +423,24 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/snotify/snotify.service.ts:26</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/snotify/snotify.service.ts:41</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>Generates random id</p>
+            </div>
             
+                                        <div class="io-description">
+                                        </div>
                                         <div class="io-description">
                                             <b>Returns: </b>    <code>number</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -417,7 +449,115 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b><span class="modifier">Private</span> emmit</b>
+                                    <b><span class="modifier">Static</span> isObject</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play export">
+                                            <span class="fa fa-export"></span>
+                                        </span>
+                                    <code>isObject(item: any)</code>
+                                </td>
+                            </tr>
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/snotify/snotify.service.ts:50</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Simple is object check.</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>item</b>
+                                                                    :     <code>Object</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>boolean</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Static</span> mergeDeep</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play export">
+                                            <span class="fa fa-export"></span>
+                                        </span>
+                                    <code>mergeDeep(sources: any[])</code>
+                                </td>
+                            </tr>
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/snotify/snotify.service.ts:59</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Deep merge objects.</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>sources</b>
+                                                                    :     <code>Array</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> emit</b>
                                 </td>
                             </tr>
                             <tr>
@@ -425,18 +565,20 @@
                                         <span class="modifier-icon method fa fa-play lock">
                                             <span class="fa fa-lock"></span>
                                         </span>
-                                    <code>emmit()</code>
+                                    <code>emit()</code>
                                 </td>
                             </tr>
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/snotify/snotify.service.ts:48</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/snotify/snotify.service.ts:114</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>emit changes in notifications array</p>
+            </div>
             
                                         <div class="io-description">
                                             <b>Returns: </b>    <code>void</code>
@@ -461,47 +603,48 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/snotify/snotify.service.ts:52</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/snotify/snotify.service.ts:123</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>Set global config</p>
+            </div>
             
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>config</b>
+                                                                    :     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>options</b>
+                                                                    :     <code><a href="../interfaces/SnotifyOptions.html" target="_self" >SnotifyOptions</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
                                         <div class="io-description">
                                             <b>Returns: </b>    <code>void</code>
             
                                         </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b> getConfig</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>getConfig(id: number)</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/snotify/snotify.service.ts:58</a></div>
-                                    </td>
-                                </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
-            
-                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -521,17 +664,38 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/snotify/snotify.service.ts:67</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="142" class="link-to-prism">src/snotify/snotify.service.ts:142</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>returns SnotifyToast object</p>
+            </div>
             
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>id</b>
+                                                                    :     <code>Number</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
                                         <div class="io-description">
                                             <b>Returns: </b>    <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -540,28 +704,38 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> getAll</b>
+                                    <b><span class="modifier">Private</span> getAll</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>getAll()</code>
+                                        <span class="modifier-icon method fa fa-play lock">
+                                            <span class="fa fa-lock"></span>
+                                        </span>
+                                    <code>getAll()</code>
                                 </td>
                             </tr>
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/snotify/snotify.service.ts:71</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="150" class="link-to-prism">src/snotify/snotify.service.ts:150</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>returns copy of notifications array</p>
+            </div>
             
+                                        <div class="io-description">
+                                        </div>
                                         <div class="io-description">
                                             <b>Returns: </b>    <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast[]</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -570,28 +744,51 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> add</b>
+                                    <b><span class="modifier">Private</span> add</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>add(toast: <a href="../interfaces/Snotify.html">SnotifyToast</a>)</code>
+                                        <span class="modifier-icon method fa fa-play lock">
+                                            <span class="fa fa-lock"></span>
+                                        </span>
+                                    <code>add(toast: <a href="../interfaces/Snotify.html">SnotifyToast</a>)</code>
                                 </td>
                             </tr>
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/snotify/snotify.service.ts:75</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/snotify/snotify.service.ts:158</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>add SnotifyToast to notifications array</p>
+            </div>
             
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>toast</b>
+                                                                    :     <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
                                         <div class="io-description">
                                             <b>Returns: </b>    <code>void</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -605,23 +802,54 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>remove(id: number, callback: () => void)</code>
+            <code>remove(id: number, remove: boolean)</code>
                                 </td>
                             </tr>
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/snotify/snotify.service.ts:84</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="172" class="link-to-prism">src/snotify/snotify.service.ts:172</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>If ID passed, emits toast animation remove, if ID &amp; REMOVE passed, removes toast from notifications array</p>
+            </div>
             
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>id</b>
+                                                                    :     <code>Number</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>remove</b>
+                                                                    :     <code>Boolean</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
                                         <div class="io-description">
                                             <b>Returns: </b>    <code>void</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -641,12 +869,14 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/snotify/snotify.service.ts:92</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="185" class="link-to-prism">src/snotify/snotify.service.ts:185</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>Clear notifications array</p>
+            </div>
             
                                         <div class="io-description">
                                             <b>Returns: </b>    <code>void</code>
@@ -660,28 +890,52 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> create</b>
+                                    <b><span class="modifier">Private</span> create</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>create(snotify: <a href="../interfaces/Snotify.html">Snotify</a>)</code>
+                                        <span class="modifier-icon method fa fa-play lock">
+                                            <span class="fa fa-lock"></span>
+                                        </span>
+                                    <code>create(snotify: <a href="../interfaces/Snotify.html">Snotify</a>)</code>
                                 </td>
                             </tr>
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/snotify/snotify.service.ts:97</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="195" class="link-to-prism">src/snotify/snotify.service.ts:195</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>Creates toast and add it to array, returns toast id</p>
+            </div>
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>snotify</b>
+                                                                    :     <code><a href="../interfaces/Snotify.html" target="_self" >Snotify</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>number</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -701,17 +955,60 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/snotify/snotify.service.ts:101</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="208" class="link-to-prism">src/snotify/snotify.service.ts:208</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>Create toast with Success style, returns toast id;</p>
+            </div>
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>title</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>body</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>config</b>
+                                                                    :     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>number</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -731,17 +1028,60 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/snotify/snotify.service.ts:109</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="223" class="link-to-prism">src/snotify/snotify.service.ts:223</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>Create toast with Error style, returns toast id;</p>
+            </div>
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>title</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>body</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>config</b>
+                                                                    :     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>number</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -761,17 +1101,60 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/snotify/snotify.service.ts:117</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="238" class="link-to-prism">src/snotify/snotify.service.ts:238</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>Create toast with Info style, returns toast id;</p>
+            </div>
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>title</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>body</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>config</b>
+                                                                    :     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>number</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -791,17 +1174,60 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/snotify/snotify.service.ts:125</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="253" class="link-to-prism">src/snotify/snotify.service.ts:253</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>Create toast with Warining style, returns toast id;</p>
+            </div>
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>title</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>body</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>config</b>
+                                                                    :     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>number</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -810,28 +1236,288 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> bare</b>
+                                    <b> simple</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>bare(title: string, body: string, config: <a href="../interfaces/SnotifyConfig.html">SnotifyConfig</a>)</code>
+            <code>simple(title: string, body: string, config: <a href="../interfaces/SnotifyConfig.html">SnotifyConfig</a>)</code>
                                 </td>
                             </tr>
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/snotify/snotify.service.ts:133</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="268" class="link-to-prism">src/snotify/snotify.service.ts:268</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>Create toast without style, returns toast id;</p>
+            </div>
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>title</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>body</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>config</b>
+                                                                    :     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>number</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> confirm</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>confirm(title: string, body: string, config: <a href="../interfaces/SnotifyConfig.html">SnotifyConfig</a>)</code>
+                                </td>
+                            </tr>
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="283" class="link-to-prism">src/snotify/snotify.service.ts:283</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Create toast with Confirm style {with two buttons}, returns toast id;</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>title</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>body</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>config</b>
+                                                                    :     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>number</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> prompt</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>prompt(title: string, body: string, config: <a href="../interfaces/SnotifyConfig.html">SnotifyConfig</a>)</code>
+                                </td>
+                            </tr>
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="298" class="link-to-prism">src/snotify/snotify.service.ts:298</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Create toast with Prompt style {with two buttons}, returns toast id;</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>title</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>body</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>config</b>
+                                                                    :     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>number</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> async</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>async(title: string, body: string, action: <a href="../interfaces/SnotifyAsync.html">Promise<SnotifyAsync> | Observable<SnotifyAsync></a>)</code>
+                                </td>
+                            </tr>
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="313" class="link-to-prism">src/snotify/snotify.service.ts:313</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Creates async toast with Info style. Pass action, and resolve or reject it.</p>
+            </div>
+            
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>title</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>body</b>
+                                                                    :     <code>String</code>
+            
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>action</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>* </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>number</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -847,6 +1533,26 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> _options</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-lock"></span><code>_options:     <code><a href="../interfaces/SnotifyOptions.html" target="_self" >SnotifyOptions</a></code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/snotify/snotify.service.ts:26</a></div>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <b> afterDestroy</b>
                                 </td>
                             </tr>
@@ -858,7 +1564,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/snotify/snotify.service.ts:24</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/snotify/snotify.service.ts:35</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -878,7 +1584,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/snotify/snotify.service.ts:23</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/snotify/snotify.service.ts:34</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -898,7 +1604,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/snotify/snotify.service.ts:14</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/snotify/snotify.service.ts:25</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -918,7 +1624,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/snotify/snotify.service.ts:10</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/snotify/snotify.service.ts:20</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -938,7 +1644,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/snotify/snotify.service.ts:11</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/snotify/snotify.service.ts:21</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -958,7 +1664,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/snotify/snotify.service.ts:16</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/snotify/snotify.service.ts:27</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -978,7 +1684,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/snotify/snotify.service.ts:20</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/snotify/snotify.service.ts:31</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -998,7 +1704,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/snotify/snotify.service.ts:21</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/snotify/snotify.service.ts:32</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1018,7 +1724,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/snotify/snotify.service.ts:22</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/snotify/snotify.service.ts:33</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1038,7 +1744,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/snotify/snotify.service.ts:19</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/snotify/snotify.service.ts:30</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1058,9 +1764,15 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/snotify/snotify.service.ts:15</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/snotify/snotify.service.ts:133</a></div>
                                     </td>
                                 </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>get SnotifyOptions</p>
+            </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -1078,7 +1790,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/snotify/snotify.service.ts:12</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/snotify/snotify.service.ts:22</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1087,23 +1799,38 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b><span class="modifier"></span> transitionDelay</b>
+                                    <b><span class="modifier"></span> toastChanged</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-"></span><code>transitionDelay:     <code>400</code>
+                                    <span class="modifier-icon fa fa-"></span><code>toastChanged:     <code><a href="../interfaces/Snotify.html" target="_self" >Subject&lt;SnotifyToast&gt;</a></code>
             </bcode>
                                 </td>
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <i>Default value: </i><code>400</code>
+                                        <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/snotify/snotify.service.ts:23</a></div>
                                     </td>
                                 </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier"></span> toastDeleted</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-"></span><code>toastDeleted:     <code>Subject&lt;number&gt;</code>
+            </bcode>
+                                </td>
+                            </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/snotify/snotify.service.ts:13</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/snotify/snotify.service.ts:24</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1114,18 +1841,29 @@
         <pre class="line-numbers"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
 import {SnotifyToast} from &#x27;./toast/snotify-toast.model&#x27;;
 import {Subject} from &#x27;rxjs/Subject&#x27;;
-import {SnotifyConfig, SnotifyInfo, SnotifyOptions, SnotifyPosition, SnotifyType} from &#x27;./snotify-config&#x27;;
-import {Snotify} from &#x27;./snotify&#x27;;
+import {Observable} from &#x27;rxjs/Observable&#x27;;
+import {PromiseObservable} from &#x27;rxjs/observable/PromiseObservable&#x27;;
+import {Subscription} from &#x27;rxjs/Subscription&#x27;;
+import {SnotifyInfo} from &#x27;./interfaces/SnotifyInfo.interface&#x27;;
+import {SnotifyOptions} from &#x27;./interfaces/SnotifyOptions.interface&#x27;;
+import {SnotifyConfig} from &#x27;./interfaces/SnotifyConfig.interface&#x27;;
+import {SnotifyAsync} from &#x27;./interfaces/SnotifyAsync.interface&#x27;;
+import {Snotify} from &#x27;./interfaces/Snotify.interface&#x27;;
+import {SnotifyType} from &#x27;./enum/SnotifyType.enum&#x27;;
+import {SnotifyPosition} from &#x27;./enum/SnotifyPosition.enum&#x27;;
 
-
+/**
+ * SnotifyService - create, remove, config toasts
+ */
 @Injectable()
 export class SnotifyService {
   readonly emitter &#x3D; new Subject&lt;SnotifyToast[]&gt;();
   readonly lifecycle &#x3D; new Subject&lt;SnotifyInfo&gt;();
   readonly optionsChanged &#x3D; new Subject&lt;SnotifyOptions&gt;();
-  readonly transitionDelay &#x3D; 400;
+  readonly toastChanged &#x3D; new Subject&lt;SnotifyToast&gt;();
+  readonly toastDeleted &#x3D; new Subject&lt;number&gt;();
   private config: SnotifyConfig;
-  options: SnotifyOptions;
+  private _options: SnotifyOptions;
   private notifications: SnotifyToast[] &#x3D; [];
 
   // Callbacks
@@ -1136,119 +1874,326 @@ export class SnotifyService {
   beforeDestroy: (info?: SnotifyToast) &#x3D;&gt; void;
   afterDestroy: (info?: SnotifyToast) &#x3D;&gt; void;
 
+  /**
+   * Generates random id
+   * @return {number}
+   */
   static generateRandomId(): number {
     return Math.floor(Math.random() * (Date.now() - 1)) + 1;
   }
 
+  /**
+   * Simple is object check.
+   * @param item {Object&lt;any&gt;}
+   * @returns {boolean}
+   */
+  static isObject(item): boolean {
+    return (item &amp;&amp; typeof item &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; !Array.isArray(item) &amp;&amp; item !&#x3D;&#x3D; null);
+  }
+
+  /**
+   * Deep merge objects.
+   * @param sources {Array&lt;Object&gt;}
+   * @returns {Object&lt;any&gt;}
+   */
+  static mergeDeep(...sources) {
+    const target &#x3D; {};
+    if (!sources.length) {
+      return target;
+    }
+
+    while (sources.length &gt; 0) {
+      const source &#x3D; sources.shift();
+      if (SnotifyService.isObject(source)) {
+        for (const key in source) {
+          if (SnotifyService.isObject(source[key])) {
+            target[key] &#x3D; SnotifyService.mergeDeep(target[key], source[key]);
+          } else if (Array.isArray(source[key])) {
+            if (!target[key]) {
+              Object.assign(target, { [key]: source[key] });
+            } else {
+              target[key].forEach((value, i) &#x3D;&gt; {
+                target[key][i] &#x3D; SnotifyService.mergeDeep(value, source[key][i]);
+              });
+            }
+          } else {
+            Object.assign(target, { [key]: source[key] });
+          }
+        }
+      }
+    }
+
+    return target;
+  }
+
+  /**
+   * Constructor - initialize base configuration objects
+   */
   constructor() {
     this.config &#x3D; {
       showProgressBar: true,
-      timeout: 1500,
+      timeout: 2000,
       closeOnClick: true,
-      pauseOnHover: true
+      pauseOnHover: true,
+      buttons: [
+        {text: &#x27;Ok&#x27;, action: null, bold: true},
+        {text: &#x27;Cancel&#x27;, action: null, bold: false},
+      ]
     };
-    this.options &#x3D; {
+    this._options &#x3D; {
       newOnTop: true,
-      position: [SnotifyPosition.BOTTOM, SnotifyPosition.RIGHT],
-      positionOffset: {
-        horizontal: &#x27;10px&#x27;,
-        vertical: &#x27;10px&#x27;
-      },
-      maxOnScreen: 8
+      position: SnotifyPosition.right_bottom,
+      maxOnScreen: 8,
+      transition: 400
     };
   }
 
-  private emmit(): void {
+  /**
+   * emit changes in notifications array
+   */
+  private emit(): void {
     this.emitter.next(this.getAll());
   }
 
+  /**
+   * Set global config
+   * @param config {SnotifyConfig}
+   * @param options {SnotifyOptions}
+   */
   setConfig(config: SnotifyConfig, options?: SnotifyOptions): void {
     this.config &#x3D; Object.assign(this.config, config);
-    this.options &#x3D; Object.assign(this.options, options);
-    this.optionsChanged.next(this.options);
+    this._options &#x3D; Object.assign(this._options, options);
+    this.optionsChanged.next(this._options);
   }
 
-  getConfig(id: number): SnotifyConfig {
-    const config &#x3D; this.get(id).config;
-    if (config) {
-      return Object.assign({}, this.config, config);
-    } else {
-      return Object.assign({}, this.config);
-    }
+  /**
+   * get SnotifyOptions
+   * @return {SnotifyOptions}
+   */
+  get options(){
+    return this._options;
   }
 
+  /**
+   * returns SnotifyToast object
+   * @param id {Number}
+   * @return {undefined|SnotifyToast}
+   */
   get(id: number): SnotifyToast {
     return this.notifications.find(toast &#x3D;&gt; toast.id &#x3D;&#x3D;&#x3D; id);
   }
 
-  getAll(): SnotifyToast[] {
+  /**
+   * returns copy of notifications array
+   * @return {SnotifyToast[]}
+   */
+  private getAll(): SnotifyToast[] {
     return this.notifications.slice();
   }
 
-  add(toast: SnotifyToast): void {
-    if (this.options.newOnTop) {
+  /**
+   * add SnotifyToast to notifications array
+   * @param toast {SnotifyToast}
+   */
+  private add(toast: SnotifyToast): void {
+    if (this._options.newOnTop) {
       this.notifications.unshift(toast);
     } else {
       this.notifications.push(toast);
     }
-    this.emmit();
+    this.emit();
   }
 
-  remove(id: number, callback: () &#x3D;&gt; void): void {
-    callback();
-    setTimeout(() &#x3D;&gt; {
+  /**
+   * If ID passed, emits toast animation remove, if ID &amp; REMOVE passed, removes toast from notifications array
+   * @param id {Number}
+   * @param remove {Boolean}
+   */
+  remove(id?: number, remove?: boolean): void {
+    if (!id) {
+      return this.clear();
+    } else if (remove) {
       this.notifications &#x3D; this.notifications.filter(toast &#x3D;&gt; toast.id !&#x3D;&#x3D; id);
-      this.emmit();
-    }, this.transitionDelay);
+      return this.emit();
+    }
+    this.toastDeleted.next(id);
   }
 
-  clear() {
+  /**
+   * Clear notifications array
+   */
+  clear(): void {
     this.notifications &#x3D; [];
-    this.emmit();
+    this.emit();
   }
 
-  create(snotify: Snotify) {
-    this.add(new SnotifyToast(SnotifyService.generateRandomId(), snotify.title, snotify.body, snotify.config || null));
+  /**
+   * Creates toast and add it to array, returns toast id
+   * @param snotify {Snotify}
+   * @return {number}
+   */
+  private create(snotify: Snotify): number {
+    const id &#x3D; SnotifyService.generateRandomId();
+    this.add(new SnotifyToast(id, snotify.title, snotify.body, snotify.config || null));
+    return id;
   }
 
-  success(title: string, body: string, config?: SnotifyConfig) {
-    this.create({
-      title: title,
-      body: body,
-      config: Object.assign({}, config, {type: SnotifyType.SUCCESS})
-    });
-  }
-
-  error(title: string, body: string, config?: SnotifyConfig) {
+  /**
+   * Create toast with Success style, returns toast id;
+   * @param title {String}
+   * @param body {String}
+   * @param config {SnotifyConfig}
+   * @return {number}
+   */
+  success(title: string, body: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
-      config: Object.assign({}, config, {type: SnotifyType.ERROR})
+      config: Object.assign({}, this.config, config, {type: SnotifyType.SUCCESS})
     });
   }
 
-  info(title: string, body: string, config?: SnotifyConfig) {
+  /**
+   * Create toast with Error style, returns toast id;
+   * @param title {String}
+   * @param body {String}
+   * @param config {SnotifyConfig}
+   * @return {number}
+   */
+  error(title: string, body: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
-      config: Object.assign({}, config, {type: SnotifyType.INFO})
+      config: Object.assign({}, this.config, config, {type: SnotifyType.ERROR})
     });
   }
 
-  warning(title: string, body: string, config?: SnotifyConfig) {
+  /**
+   * Create toast with Info style, returns toast id;
+   * @param title {String}
+   * @param body {String}
+   * @param config {SnotifyConfig}
+   * @return {number}
+   */
+  info(title: string, body: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
-      config: Object.assign({}, config, {type: SnotifyType.WARNING})
+      config: Object.assign({}, this.config, config, {type: SnotifyType.INFO})
     });
   }
 
-  bare(title: string, body: string, config?: SnotifyConfig) {
+  /**
+   * Create toast with Warining style, returns toast id;
+   * @param title {String}
+   * @param body {String}
+   * @param config {SnotifyConfig}
+   * @return {number}
+   */
+  warning(title: string, body: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
-      config: Object.assign({}, config, {type: SnotifyType.BARE})
+      config: Object.assign({}, this.config, config, {type: SnotifyType.WARNING})
     });
+  }
+
+  /**
+   * Create toast without style, returns toast id;
+   * @param title {String}
+   * @param body {String}
+   * @param config {SnotifyConfig}
+   * @return {number}
+   */
+  simple(title: string, body: string, config?: SnotifyConfig): number {
+    return this.create({
+      title: title,
+      body: body,
+      config: Object.assign({}, this.config, config)
+    });
+  }
+
+  /**
+   * Create toast with Confirm style {with two buttons}, returns toast id;
+   * @param title {String}
+   * @param body {String}
+   * @param config {SnotifyConfig}
+   * @return {number}
+   */
+  confirm(title: string, body: string, config: SnotifyConfig): number {
+    return this.create({
+      title: title,
+      body: body,
+      config: SnotifyService.mergeDeep(this.config, config, {type: SnotifyType.CONFIRM}, {closeOnClick: false})
+    });
+  }
+
+  /**
+   * Create toast with Prompt style {with two buttons}, returns toast id;
+   * @param title {String}
+   * @param body {String}
+   * @param config {SnotifyConfig}
+   * @return {number}
+   */
+  prompt(title: string, body: string, config: SnotifyConfig): number {
+    return this.create({
+      title: title,
+      body: body,
+      config: SnotifyService.mergeDeep(this.config, config, {type: SnotifyType.PROMPT}, {timeout: 0, closeOnClick: false})
+    });
+  }
+
+  /**
+   * Creates async toast with Info style. Pass action, and resolve or reject it.
+   * @param title {String}
+   * @param body {String}
+   * @param action {Promise&lt;SnotifyAsync&gt; | Observable&lt;SnotifyAsync&gt;}
+   * @return {number}
+   */
+  async(title: string, body: string, action: Promise&lt;SnotifyAsync&gt; | Observable&lt;SnotifyAsync&gt;): number {
+    let async: Observable&lt;any&gt;;
+    if (action instanceof Promise) {
+      async &#x3D; PromiseObservable.create(action);
+    } else {
+      async &#x3D; action;
+    }
+
+    const id &#x3D; this.simple(title, body, {
+      pauseOnHover: false,
+      closeOnClick: false,
+      timeout: 0,
+      showProgressBar: false,
+      type: SnotifyType.ASYNC
+    });
+
+    const toast &#x3D; this.get(id);
+    let latestToast &#x3D; Object.assign({}, toast);
+
+    const updateToast &#x3D; (type: SnotifyType, data?: SnotifyAsync) &#x3D;&gt; {
+      if (!data) {
+        latestToast &#x3D; SnotifyService.mergeDeep(toast, latestToast, {config: {type: type}}) as SnotifyToast;
+      } else {
+        latestToast &#x3D; SnotifyService.mergeDeep(toast, data, {config: {type: type}}) as SnotifyToast;
+      }
+
+      this.toastChanged.next(latestToast);
+    };
+
+    const subscription: Subscription &#x3D; async.subscribe(
+      (next?: SnotifyAsync) &#x3D;&gt; {
+        updateToast(SnotifyType.ASYNC, next);
+      },
+      (error?: SnotifyAsync) &#x3D;&gt; {
+        updateToast(SnotifyType.ERROR, error);
+        subscription.unsubscribe();
+      },
+      () &#x3D;&gt; {
+        updateToast(SnotifyType.SUCCESS);
+        subscription.unsubscribe();
+      }
+    );
+
+    return id;
   }
 
 }

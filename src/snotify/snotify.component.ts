@@ -2,24 +2,32 @@ import {Component, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyAction, SnotifyInfo, SnotifyOptions, SnotifyPosition} from './snotify-config';
+import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
+import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
+import {SnotifyAction} from './enum/SnotifyAction.enum';
+import {SnotifyPosition} from './enum/SnotifyPosition.enum';
+
 
 @Component({
   selector: 'app-snotify',
   templateUrl: './snotify.component.html',
-  styleUrls: ['./snotify.component.css']
+  styleUrls: ['./snotify.component.scss']
 })
 export class SnotifyComponent implements OnInit, OnDestroy {
   notifications: SnotifyToast[];
   emitter: Subscription;
+  optionsSubscription: Subscription;
+  lifecycleSubscription: Subscription;
   dockSize_a: number;
   dockSize_b: number | undefined;
   constructor(private service: SnotifyService, private render: Renderer2, private snotify: ElementRef) { }
 
+  /**
+   * Init base options. Subscribe to options, lifecycle change
+   */
   ngOnInit() {
-    this.notifications = this.service.getAll();
     this.setOptions(this.service.options);
-    this.service.optionsChanged.subscribe((options: SnotifyOptions) => {
+    this.optionsSubscription = this.service.optionsChanged.subscribe((options: SnotifyOptions) => {
       this.setOptions(options);
     });
     this.setPosition(this.service.options.position);
@@ -27,7 +35,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
     this.emitter = this.service.emitter.subscribe(
       (toasts: SnotifyToast[]) => this.notifications = toasts
     );
-    this.service.lifecycle.subscribe(
+    this.lifecycleSubscription = this.service.lifecycle.subscribe(
       (info: SnotifyInfo) => {
         switch (info.action) {
           case SnotifyAction.onInit:
@@ -66,7 +74,11 @@ export class SnotifyComponent implements OnInit, OnDestroy {
 
   }
 
-  setOptions(options: SnotifyOptions) {
+  /**
+   * Setup global options object
+   * @param options {SnotifyOptions}
+   */
+  setOptions(options: SnotifyOptions): void {
     if (this.service.options.newOnTop) {
       this.dockSize_a = -options.maxOnScreen;
       this.dockSize_b = undefined;
@@ -78,31 +90,50 @@ export class SnotifyComponent implements OnInit, OnDestroy {
     this.setPosition(options.position);
   }
 
-  setPosition(positions: [SnotifyPosition, SnotifyPosition]) {
-    this.render.removeStyle(this.snotify.nativeElement, 'right');
-    this.render.removeStyle(this.snotify.nativeElement, 'left');
-    this.render.removeStyle(this.snotify.nativeElement, 'bottom');
-    this.render.removeStyle(this.snotify.nativeElement, 'top');
-    positions.forEach((position: SnotifyPosition) => {
+  /**
+   * Setup notifications position
+   * @param position {SnotifyPosition}
+   */
+  setPosition(position: SnotifyPosition): void {
+    this.render.removeAttribute(this.snotify.nativeElement, 'class');
       switch (position) {
-        case SnotifyPosition.RIGHT:
-          this.render.setStyle(this.snotify.nativeElement, 'right', this.service.options.positionOffset.horizontal);
+        case SnotifyPosition.left_top:
+          this.render.addClass(this.snotify.nativeElement, 'snotify-leftTop');
           break;
-        case SnotifyPosition.LEFT:
-          this.render.setStyle(this.snotify.nativeElement, 'left', this.service.options.positionOffset.horizontal);
+        case SnotifyPosition.left_center:
+          this.render.addClass(this.snotify.nativeElement, 'snotify-leftCenter');
           break;
-        case SnotifyPosition.TOP:
-          this.render.setStyle(this.snotify.nativeElement, 'top', this.service.options.positionOffset.vertical);
+        case SnotifyPosition.left_bottom:
+          this.render.addClass(this.snotify.nativeElement, 'snotify-leftBottom');
           break;
-        case SnotifyPosition.BOTTOM:
-          this.render.setStyle(this.snotify.nativeElement, 'bottom', this.service.options.positionOffset.vertical);
+        case SnotifyPosition.right_top:
+          this.render.addClass(this.snotify.nativeElement, 'snotify-rightTop');
+          break;
+        case SnotifyPosition.right_center:
+          this.render.addClass(this.snotify.nativeElement, 'snotify-rightCenter');
+          break;
+        case SnotifyPosition.right_bottom:
+          this.render.addClass(this.snotify.nativeElement, 'snotify-rightBottom');
+          break;
+        case SnotifyPosition.center_top:
+          this.render.addClass(this.snotify.nativeElement, 'snotify-centerTop');
+          break;
+        case SnotifyPosition.center_center:
+          this.render.addClass(this.snotify.nativeElement, 'snotify-centerCenter');
+          break;
+        case SnotifyPosition.center_bottom:
+          this.render.addClass(this.snotify.nativeElement, 'snotify-centerBottom');
           break;
       }
-    });
   }
 
+  /**
+   * Unsubscribe subscriptions
+   */
   ngOnDestroy() {
     this.emitter.unsubscribe();
+    this.optionsSubscription.unsubscribe();
+    this.lifecycleSubscription.unsubscribe();
   }
 
 }
