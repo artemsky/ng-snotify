@@ -1,6 +1,6 @@
 {
   "name": "ng-snotify",
-  "version": "0.2.6",
+  "version": "1.0.1",
   "description": "Angular 2 notifications center",
   "scripts": {
     "build": "gulp build",

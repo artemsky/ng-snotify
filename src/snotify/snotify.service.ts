@@ -10,6 +10,7 @@ import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
 import {SnotifyType} from './enum/SnotifyType.enum';
 import {SnotifyPosition} from './enum/SnotifyPosition.enum';
+import {SnotifyAction} from './enum/SnotifyAction.enum';
 
 /**
  * SnotifyService - create, remove, config toasts
@@ -338,17 +339,24 @@ export class SnotifyService {
       this.toastChanged.next(latestToast);
     };
 
-    const subscription: Subscription = async.subscribe(
-      (next?: SnotifyConfig) => {
-        updateToast(SnotifyType.ASYNC, next);
-      },
-      (error?: SnotifyConfig) => {
-        updateToast(SnotifyType.ERROR, error);
-        subscription.unsubscribe();
-      },
-      () => {
-        updateToast(SnotifyType.SUCCESS);
-        subscription.unsubscribe();
+    const lifecycleSubscription = this.lifecycle.subscribe(
+      (info: SnotifyInfo) => {
+        if (info.action === SnotifyAction.onInit && info.toast.id === id) {
+          const subscription: Subscription = async.subscribe(
+            (next?: SnotifyConfig) => {
+              updateToast(SnotifyType.ASYNC, next);
+            },
+            (error?: SnotifyConfig) => {
+              updateToast(SnotifyType.ERROR, error);
+              subscription.unsubscribe();
+            },
+            () => {
+              updateToast(SnotifyType.SUCCESS);
+              subscription.unsubscribe();
+              lifecycleSubscription.unsubscribe();
+            }
+          );
+        }
       }
     );
 
