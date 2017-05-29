@@ -68,9 +68,6 @@
                                 <li class="link">
                                     <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
                                 </li>
-                                <li class="link">
-                                    <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -161,6 +158,22 @@
                         </ul>
                     </li>
             
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="./pipes/TruncatePipe.html" >TruncatePipe</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
                     <li class="chapter">
@@ -224,9 +237,6 @@
                                <ul class="links collapse in"
                                        id="modules-links"
                    >
-                                       <li class="link">
-                                           <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
-                                       </li>
                                        <li class="link">
                                            <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
                                        </li>
@@ -323,6 +333,22 @@
                                </ul>
                            </li>
                    
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="./pipes/TruncatePipe.html" >TruncatePipe</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                            <li class="chapter">
@@ -437,7 +463,7 @@ export class AppComponent implements OnInit {
 </ul>
 <p>All toast methods return <code>id</code>, so you can remove toast by calling <code>snotifyService.remove(id)</code></p>
 <p>If you call <code>snotifyService. remove()</code> without id, it will affect all toasts, the same is <code>snotifyService.clear()</code></p>
-<p>######Here is an example</p>
+<h6 id="here-is-an-example">Here is an example</h6>
 <pre class="line-numbers"><code class="language-typescript">const id = snotifyService.simple('Example title!', 'Example body message', {
       timeout: 0, // disable timeout,
       showProgressBar: true, // won't affect because of timeout, if timeout set to 0. Progress Bar cannot exist anymore
@@ -465,6 +491,19 @@ this.snotifyService.remove(id)</code></pre><h6 id="callbacks-affects-all-toast-"
 <p>Go to develop branch and use angular-cli</p>
 <h2 id="license">License</h2>
 <p>MIT © <a href="mailto:mr.artemsky@gmail.com">artemsky</a></p>
+<h2 id="change-log">Change Log</h2>
+<h3 id="v1-1-2">v1.1.2</h3>
+<ul>
+<li>fix async toast (<a href="https://github.com/artemsky/ng-snotify/issues/8">#8</a>)</li>
+<li>add <code>truncate</code> pipe</li>
+<li>add toast <code>titleMaxLeght</code> and <code>bodyMaxLeght</code> to <code>SnotifyConfig</code></li>
+<li>add toast <code>maxHeight</code> to <code>SnotifyOptions</code> (<a href="https://github.com/artemsky/ng-snotify/issues/7">#7</a>)</li>
+<li>add body to <strong>prompt</strong> type and replace input preview text wih new option <code>placeholder</code> of <code>SnotifyConfig</code> type</li>
+</ul>
+<h3 id="v1-0-0">v1.0.0</h3>
+<ul>
+<li>First release</li>
+</ul>
 
 
 

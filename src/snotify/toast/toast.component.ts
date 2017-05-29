@@ -37,7 +37,14 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   };
 
-  transitionTime;
+  /**
+   * Toast maximum height in pixels
+   */
+  maxHeight: number;
+  /**
+   * toast transition milliseconds
+   */
+  transitionTime: number;
   /**
    * Toast progress interval
    */
@@ -69,6 +76,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   ngOnInit() {
     this.transitionTime = this.service.options.transition;
+    this.maxHeight = this.service.options.maxHeight;
     this.initToast();
     this.toastChangedSubscription = this.service.toastChanged.subscribe(
       (toast: SnotifyToast) => {
@@ -197,6 +205,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
       this.startTimeout(0);
     } else {
       this.toast.config.showProgressBar = false;
+      this.toast.config.pauseOnHover = false;
     }
   }
 

@@ -32,4 +32,19 @@ export interface SnotifyConfig {
    * Default: `[ {text: 'Ok', action: null, bold: true}, {text: 'Cancel', action: null, bold: false} ]`
    */
   buttons?: [SnotifyButton, SnotifyButton] | [SnotifyButton];
+  /**
+   * Placeholder for Prompt toast
+   * Default: 'Enter answer here...'
+   */
+  placeholder?: string;
+  /**
+   * Toast title maximum length
+   * Default: 16
+   */
+  titleMaxLength?: number;
+  /**
+   * Toast body maximum length
+   * Default: 150
+   */
+  bodyMaxLength?: number;
 }

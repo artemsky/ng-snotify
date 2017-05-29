@@ -98,13 +98,17 @@ export class SnotifyService {
       buttons: [
         {text: 'Ok', action: null, bold: true},
         {text: 'Cancel', action: null, bold: false},
-      ]
+      ],
+      placeholder: 'Enter answer here...',
+      bodyMaxLength: 150,
+      titleMaxLength: 16
     };
     this._options = {
       newOnTop: true,
       position: SnotifyPosition.right_bottom,
       maxOnScreen: 8,
-      transition: 400
+      transition: 400,
+      maxHeight: 300
     };
   }
 

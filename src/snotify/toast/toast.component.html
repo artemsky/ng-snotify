@@ -12,14 +12,17 @@
     'snotifyToast-show': state.toast.isShowing,
     'snotifyToast-remove': state.toast.isRemoving
   }"
-  [ngStyle]="{'transition': 'transform ' + transitionTime + 'ms, opacity '+transitionTime/2+'ms, max-height ease '+transitionTime+'ms'}"
+  [ngStyle]="{
+  'transition': 'transform ' + transitionTime + 'ms, opacity '+transitionTime/2+'ms, max-height ease '+transitionTime+'ms',
+  'max-height': maxHeight + 'px'
+  }"
   (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
   <div class="snotifyToast__inner">
     <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
       <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': state.toast.progress + '%'}"></span>
     </div>
-    <div class="snotifyToast__title">{{toast.title}}</div>
-    <div *ngIf="!types.prompt" class="snotifyToast__body">{{toast.body}}</div>
+    <div class="snotifyToast__title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>
+    <div class="snotifyToast__body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>
     <span *ngIf="types.prompt" class="input"
           [ngClass]="{'input--filled': state.prompt.isPromptActive}"
           (mouseenter)="onPromptEnter()"
@@ -30,7 +33,7 @@
                (focus)="state.prompt.isPromptFocused = true"
                (blur)="state.prompt.isPromptFocused = false; onPromptLeave()"/>
         <label class="input__label" [for]="toast.id">
-          <span class="input__labelContent">{{toast.body}}</span>
+          <span class="input__labelContent">{{toast.config.placeholder | truncate}}</span>
         </label>
       </span>
     <app-icon class="snotify-icon" [types]="types"></app-icon>

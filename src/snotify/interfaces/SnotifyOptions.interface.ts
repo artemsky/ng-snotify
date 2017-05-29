@@ -29,4 +29,9 @@ export interface SnotifyOptions {
    * Default: 400
    */
   transition?: number;
+  /**
+   * Toast maximum height in pixels
+   * Default: 300px
+   */
+  maxHeight?: number;
 }

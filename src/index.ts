@@ -18,6 +18,7 @@ export * from './snotify/enum/SnotifyAction.enum';
 export * from './snotify/enum/SnotifyPosition.enum';
 export * from './snotify/enum/SnotifyType.enum';
 export * from './snotify/toast/snotify-toast.model';
+export * from './snotify/pipes/truncate.pipe';
 
 @NgModule({
   imports: [
