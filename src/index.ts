@@ -5,6 +5,7 @@ import { SnotifyComponent } from './snotify/snotify.component';
 import { ToastComponent } from './snotify/toast/toast.component';
 import { IconComponent } from './snotify/toast/icon/icon.component';
 import {SnotifyService} from './snotify/snotify.service';
+import {TruncatePipe} from './snotify/pipes/truncate.pipe';
 
 
 export * from './snotify/snotify.component';
@@ -22,13 +23,13 @@ export * from './snotify/pipes/truncate.pipe';
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule
   ],
   declarations: [
-    SnotifyComponent, ToastComponent, IconComponent
+    SnotifyComponent, ToastComponent, IconComponent, TruncatePipe
   ],
   exports: [
-    SnotifyComponent
+    SnotifyComponent, TruncatePipe
   ]
 })
 export class SnotifyModule {
