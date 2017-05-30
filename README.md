@@ -186,6 +186,11 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
 
+### v1.1.3
+
+- fix TruncatePipe error ([#9](https://github.com/artemsky/ng-snotify/issues/9))
+- fix box-sizing
+
 ### v1.1.2
 
 - fix async toast ([#8](https://github.com/artemsky/ng-snotify/issues/8))
