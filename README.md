@@ -199,6 +199,8 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 - add toast `maxHeight` to `SnotifyOptions` ([#7](https://github.com/artemsky/ng-snotify/issues/7))
 - add body to **prompt** type and replace input preview text wih new option `placeholder` of `SnotifyConfig` type
 
+- First release
+
 ### v1.0.0
 
 - First release

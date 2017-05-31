@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const sass = require('node-sass');
+const tildeImporter = require('node-sass-tilde-importer');
 
 /**
  * Simple Promiseify function that takes a Node API and return a version that supports promises.
@@ -101,7 +102,7 @@ function inlineStyle(content, urlResolver) {
     return 'styles: ['
       + urls.map(styleUrl => {
         const styleFile = urlResolver(styleUrl);
-            const originContent = fs.readFileSync(styleFile, 'utf-8');
+        const originContent = fs.readFileSync(styleFile, 'utf-8');
         const styleContent = styleFile.endsWith('.scss') ? buildSass(originContent, styleFile) : originContent;
         const shortenedStyle = styleContent
           .replace(/([\n\r]\s*)+/gm, ' ')
@@ -120,18 +121,21 @@ function inlineStyle(content, urlResolver) {
  * @return {string} the generated css, empty string if error occured
  */
 function buildSass(content, sourceFile) {
-    try {
-        const result = sass.renderSync({data: content});
-        return result.css.toString()
-    } catch (e) {
-        console.error('\x1b[41m');
-        console.error('at ' + sourceFile + ':' + e.line + ":" + e.column);
-        console.error(e.formatted);
-        console.error('\x1b[0m');
-        return "";
-    }
+  try {
+    const result = sass.renderSync({
+      data: content,
+      file: sourceFile,
+      importer: tildeImporter
+    });
+    return result.css.toString()
+  } catch (e) {
+    console.error('\x1b[41m');
+    console.error('at ' + sourceFile + ':' + e.line + ":" + e.column);
+    console.error(e.formatted);
+    console.error('\x1b[0m');
+    return "";
+  }
 }
-
 
 /**
  * Remove every mention of `moduleId: module.id`.

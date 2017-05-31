@@ -1,0 +1,1544 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-snotify</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+                 <link rel="stylesheet" href="../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-snotify</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">ng-snotify</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html"  data-type="entity-link" class="active" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/IconComponent.html" >IconComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/IconComponent.html" >IconComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SnotifyComponent.html" >SnotifyComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SnotifyComponent.html" >SnotifyComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ToastComponent.html" >ToastComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ToastComponent.html" >ToastComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/Ng2SnotifyPage.html" >Ng2SnotifyPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/SnotifyService.html" >SnotifyService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/SnotifyService.html" >SnotifyService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">ng-snotify</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html"  data-type="entity-link" class="active" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/IconComponent.html" >IconComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/IconComponent.html" >IconComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SnotifyComponent.html" >SnotifyComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SnotifyComponent.html" >SnotifyComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ToastComponent.html" >ToastComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ToastComponent.html" >ToastComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/Ng2SnotifyPage.html" >Ng2SnotifyPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/SnotifyService.html" >SnotifyService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/SnotifyService.html" >SnotifyService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content component">
+                   <div class="content-data">
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AppComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab" data-link="infos">Infos</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+    </li>
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>example/app/app.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-root</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>app.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(snotifyService: <a href="../injectables/SnotifyService.html">SnotifyService</a>)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">example/app/app.component.ts:24</a></div>
+                            </td>
+                        </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        
+            <h3 id="methods">
+                Methods
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> ngOnInit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnInit()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">example/app/app.component.ts:28</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> setGlobal</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>setGlobal()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">example/app/app.component.ts:72</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onSuccess</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onSuccess()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">example/app/app.component.ts:84</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onInfo</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onInfo()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">example/app/app.component.ts:93</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onError</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onError()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">example/app/app.component.ts:102</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onWarning</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onWarning()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">example/app/app.component.ts:111</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onSimple</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onSimple()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">example/app/app.component.ts:120</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onAsyncLoading</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onAsyncLoading()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">example/app/app.component.ts:130</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onConfirmation</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onConfirmation()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="175" class="link-to-prism">example/app/app.component.ts:175</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onPrompt</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onPrompt()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="192" class="link-to-prism">example/app/app.component.ts:192</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onClear</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onClear()</code>
+                        </td>
+                    </tr>
+    
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="213" class="link-to-prism">example/app/app.component.ts:213</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        
+            <h3 id="inputs">
+                Properties
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> body</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>body:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>Lorem ipsum dolor sit amet!</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">example/app/app.component.ts:14</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> bodyMaxLength</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>bodyMaxLength:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>80</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">example/app/app.component.ts:24</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> closeClick</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>closeClick:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>true</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">example/app/app.component.ts:18</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> dockMax</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>dockMax:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>6</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">example/app/app.component.ts:20</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> maxHeight</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>maxHeight:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>300</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">example/app/app.component.ts:22</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> newTop</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>newTop:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>true</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">example/app/app.component.ts:19</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> pauseHover</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>pauseHover:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>true</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">example/app/app.component.ts:21</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> position</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>position:     <code>SnotifyPosition</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">example/app/app.component.ts:16</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> progressBar</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>progressBar:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>true</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">example/app/app.component.ts:17</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> timeout</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>timeout:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>3000</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">example/app/app.component.ts:15</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> title</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>title:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>Snotify title!</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">example/app/app.component.ts:13</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> titleMaxLength</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>titleMaxLength:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>15</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">example/app/app.component.ts:23</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+    </section>
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {SnotifyService} from &#x27;./snotify/snotify.service&#x27;;
+import {SnotifyToast} from &#x27;./snotify/toast/snotify-toast.model&#x27;;
+import {Observable} from &#x27;rxjs/Observable&#x27;;
+import {SnotifyPosition} from &#x27;./snotify/enum/SnotifyPosition.enum&#x27;;
+
+@Component({
+  selector: &#x27;app-root&#x27;,
+  templateUrl: &#x27;./app.component.html&#x27;,
+  styleUrls: [&#x27;./app.component.scss&#x27;]
+})
+export class AppComponent implements OnInit {
+  title &#x3D; &#x27;Snotify title!&#x27;;
+  body &#x3D; &#x27;Lorem ipsum dolor sit amet!&#x27;;
+  timeout &#x3D; 3000;
+  position &#x3D; SnotifyPosition.right_bottom;
+  progressBar &#x3D; true;
+  closeClick &#x3D; true;
+  newTop &#x3D; true;
+  dockMax &#x3D; 6;
+  pauseHover &#x3D; true;
+  maxHeight &#x3D; 300;
+  titleMaxLength &#x3D; 15;
+  bodyMaxLength &#x3D; 80;
+
+  constructor(private snotifyService: SnotifyService) {}
+
+  ngOnInit() {
+    this.snotifyService.setConfig({
+      timeout: 3000,
+      titleMaxLength: 14,
+      bodyMaxLength: 40
+    }, {
+      newOnTop: false,
+      position: this.position,
+      maxHeight: 500
+    });
+
+    this.snotifyService.onInit &#x3D; (toast: SnotifyToast) &#x3D;&gt; {
+      console.log(&#x27;on Init&#x27;, toast);
+      /*
+       At each callback you can change toast data directly.
+       toast.title &#x3D; &quot;New Title&quot;
+       toast.body &#x3D; &quot;Some new value&quot;
+       */
+    };
+
+    this.snotifyService.onHoverEnter &#x3D; (toast: SnotifyToast) &#x3D;&gt; {
+      console.log(&#x27;Hover enter&#x27;, toast);
+    };
+
+    this.snotifyService.onHoverLeave &#x3D; (toast: SnotifyToast) &#x3D;&gt; {
+      console.log(&#x27;Hover leave&#x27;, toast);
+    };
+
+    this.snotifyService.onClick &#x3D; (toast: SnotifyToast) &#x3D;&gt; {
+      console.log(&#x27;Clicked&#x27;, toast);
+    };
+
+    this.snotifyService.beforeDestroy &#x3D; (toast: SnotifyToast) &#x3D;&gt; {
+      console.log(&#x27;Before Destroy&#x27;, toast);
+    };
+
+    this.snotifyService.afterDestroy &#x3D; (toast: SnotifyToast) &#x3D;&gt; {
+      console.log(&#x27;After Destroy&#x27;, toast);
+    };
+  }
+
+  /*
+  Change global configuration
+   */
+  setGlobal() {
+    this.snotifyService.setConfig({
+      bodyMaxLength: this.bodyMaxLength,
+      titleMaxLength: this.titleMaxLength
+    }, {
+      newOnTop: this.newTop,
+      position: this.position,
+      maxOnScreen: this.dockMax,
+      maxHeight: this.maxHeight
+    });
+  }
+
+  onSuccess() {
+    this.setGlobal();
+    this.snotifyService.success(this.title, this.body, {
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover
+    });
+  }
+  onInfo() {
+    this.setGlobal();
+    this.snotifyService.info(this.title, this.body, {
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover
+    });
+  }
+  onError() {
+    this.setGlobal();
+    this.snotifyService.error(this.title, this.body, {
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover
+    });
+  }
+  onWarning() {
+    this.setGlobal();
+    this.snotifyService.warning(this.title, this.body, {
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover
+    });
+  }
+  onSimple() {
+    this.setGlobal();
+    this.snotifyService.simple(this.title, this.body, {
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover
+    });
+  }
+
+  onAsyncLoading() {
+    this.setGlobal();
+    this.snotifyService.async(this.title, this.body,
+      /*
+      You should pass Promise or Observable of type SnotifyConfig to change some data or do some other actions
+      More information how to work with observables:
+      https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
+       */
+
+      // new Promise((resolve, reject) &#x3D;&gt; {
+      //   setTimeout(() &#x3D;&gt; reject(), 1000);
+      //   setTimeout(() &#x3D;&gt; resolve(), 1500);
+      // })
+      Observable.create(observer &#x3D;&gt; {
+          setTimeout(() &#x3D;&gt; {
+            observer.next({
+              body: &#x27;Still loading.....&#x27;,
+            });
+            }, 1000);
+
+        setTimeout(() &#x3D;&gt; {
+          observer.next({
+            title: &#x27;Success&#x27;,
+            body: &#x27;Example. Data loaded!&#x27;,
+            config: {
+              closeOnClick: true,
+              timeout: 5000,
+              showProgressBar: true
+            }
+          });
+          observer.complete();
+        }, 5000);
+
+          // setTimeout(() &#x3D;&gt; {
+          //   observer.error({
+          //     title: &#x27;Error&#x27;,
+          //     body: &#x27;Example. Error 404. Service not found&#x27;,
+          //   });
+          // }, 6000);
+
+        }
+      )
+    );
+  }
+
+  onConfirmation() {
+    this.setGlobal();
+    /*
+    Here we pass an buttons array, which contains of 2 element of type SnotifyButton
+     */
+    this.snotifyService.confirm(this.title, this.body, {
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover,
+      buttons: [
+        {text: &#x27;Yes&#x27;, action: () &#x3D;&gt; console.log(&#x27;Clicked: Yes&#x27;), bold: false},
+        {text: &#x27;No&#x27;, action: () &#x3D;&gt; console.log(&#x27;Clicked: No&#x27;), bold: true},
+      ]
+    });
+  }
+
+  onPrompt() {
+    this.setGlobal();
+    /*
+     Here we pass an buttons array, which contains of 2 element of type SnotifyButton
+     At the action of the first button we can get what user entered into input field.
+     At the second we can&#x27;t get it. But we can remove this toast
+     */
+    const id &#x3D; this.snotifyService.prompt(this.title, this.body, {
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover,
+      buttons: [
+        {text: &#x27;Yes&#x27;, action: (text) &#x3D;&gt; console.log(&#x27;Said Yes: &#x27; + text)},
+        {text: &#x27;No&#x27;, action: (text) &#x3D;&gt; { console.log(&#x27;Said No: &#x27; + text); this.snotifyService.remove(id); }},
+      ],
+      placeholder: &#x27;This is the example placeholder which you can pass&#x27; // Max-length &#x3D; 40
+    });
+  }
+
+
+  onClear() {
+    this.snotifyService.clear();
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;aside&gt;
+  &lt;h3 class&#x3D;&quot;text-center&quot;&gt;Toast config&lt;/h3&gt;
+
+  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+    &lt;label for&#x3D;&quot;title&quot;&gt;Title&lt;/label&gt;
+    &lt;input [(ngModel)]&#x3D;&quot;title&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;title&quot; class&#x3D;&quot;form-control&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+    &lt;label for&#x3D;&quot;body&quot;&gt;Body&lt;/label&gt;
+    &lt;textarea [(ngModel)]&#x3D;&quot;body&quot; id&#x3D;&quot;body&quot; rows&#x3D;&quot;3&quot; class&#x3D;&quot;form-control&quot;&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;titlemaxlen&quot;&gt;Title max-length&lt;/label&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;titleMaxLength&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;titlemaxlen&quot; class&#x3D;&quot;form-control&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;bodymaxlen&quot;&gt;Body max-length&lt;/label&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;bodyMaxLength&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;bodymaxlen&quot; class&#x3D;&quot;form-control&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+    &lt;label for&#x3D;&quot;timeout&quot;&gt;Timeout&lt;/label&gt;
+    &lt;input [(ngModel)]&#x3D;&quot;timeout&quot; type&#x3D;&quot;number&quot; id&#x3D;&quot;timeout&quot; class&#x3D;&quot;form-control&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+    &lt;label for&#x3D;&quot;maxheight&quot;&gt;Toast max-height&lt;/label&gt;
+    &lt;input [(ngModel)]&#x3D;&quot;maxHeight&quot; type&#x3D;&quot;number&quot; id&#x3D;&quot;maxheight&quot; class&#x3D;&quot;form-control&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+    &lt;label for&#x3D;&quot;position&quot;&gt;Position&lt;/label&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-sm-12&quot;&gt;
+        &lt;select [(ngModel)]&#x3D;&quot;position&quot; id&#x3D;&quot;position&quot; class&#x3D;&quot;form-control&quot;&gt;
+          &lt;option [ngValue]&#x3D;&quot;0&quot;&gt;LEFT - TOP&lt;/option&gt;
+          &lt;option [ngValue]&#x3D;&quot;1&quot;&gt;LEFT - CENTER&lt;/option&gt;
+          &lt;option [ngValue]&#x3D;&quot;2&quot;&gt;LEFT - BOTTOM&lt;/option&gt;
+          &lt;option [ngValue]&#x3D;&quot;3&quot;&gt;RIGHT - TOP&lt;/option&gt;
+          &lt;option [ngValue]&#x3D;&quot;4&quot;&gt;RIGHT - CENTER&lt;/option&gt;
+          &lt;option [ngValue]&#x3D;&quot;5&quot;&gt;RIGHT - BOTTOM&lt;/option&gt;
+          &lt;option [ngValue]&#x3D;&quot;6&quot;&gt;CENTER - TOP&lt;/option&gt;
+          &lt;option [ngValue]&#x3D;&quot;7&quot;&gt;CENTER - CENTER&lt;/option&gt;
+          &lt;option [ngValue]&#x3D;&quot;8&quot;&gt;CENTER - BOTTOM&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;switch-group-wrapper&quot;&gt;
+    &lt;div class&#x3D;&quot;switch-wrapper&quot;&gt;
+      &lt;strong&gt;Show progress bar?&lt;/strong&gt;
+      &lt;div class&#x3D;&quot;switch&quot;&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;progressBar&quot; id&#x3D;&quot;progressBar&quot; class&#x3D;&quot;cmn-toggle cmn-toggle-yes-no&quot; type&#x3D;&quot;checkbox&quot;&gt;
+        &lt;label for&#x3D;&quot;progressBar&quot; data-on&#x3D;&quot;On&quot; data-off&#x3D;&quot;Off&quot;&gt;&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;switch-wrapper&quot;&gt;
+      &lt;strong&gt;Close on click?&lt;/strong&gt;
+      &lt;div class&#x3D;&quot;switch&quot;&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;closeClick&quot; id&#x3D;&quot;closeClick&quot; class&#x3D;&quot;cmn-toggle cmn-toggle-yes-no&quot; type&#x3D;&quot;checkbox&quot;&gt;
+        &lt;label for&#x3D;&quot;closeClick&quot; data-on&#x3D;&quot;On&quot; data-off&#x3D;&quot;Off&quot;&gt;&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;switch-wrapper&quot;&gt;
+      &lt;strong&gt;Pause on hover?&lt;/strong&gt;
+      &lt;div class&#x3D;&quot;switch&quot;&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;pauseHover&quot; id&#x3D;&quot;pauseHover&quot; class&#x3D;&quot;cmn-toggle cmn-toggle-yes-no&quot; type&#x3D;&quot;checkbox&quot;&gt;
+        &lt;label for&#x3D;&quot;pauseHover&quot; data-on&#x3D;&quot;On&quot; data-off&#x3D;&quot;Off&quot;&gt;&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;switch-wrapper&quot;&gt;
+      &lt;strong&gt;New items on top?&lt;/strong&gt;
+      &lt;div class&#x3D;&quot;switch&quot;&gt;
+        &lt;input [(ngModel)]&#x3D;&quot;newTop&quot; id&#x3D;&quot;newTop&quot; class&#x3D;&quot;cmn-toggle cmn-toggle-yes-no&quot; type&#x3D;&quot;checkbox&quot;&gt;
+        &lt;label for&#x3D;&quot;newTop&quot; data-on&#x3D;&quot;On&quot; data-off&#x3D;&quot;Off&quot;&gt;&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+    &lt;label for&#x3D;&quot;dockMax&quot;&gt;
+      Max items on screen
+    &lt;/label&gt;
+    &lt;input [(ngModel)]&#x3D;&quot;dockMax&quot; type&#x3D;&quot;number&quot; id&#x3D;&quot;dockMax&quot; class&#x3D;&quot;form-control&quot;&gt;
+
+    &lt;div class&#x3D;&quot;buttons&quot;&gt;
+      &lt;div class&#x3D;&quot;btn-group btn-group-justified&quot;&gt;
+        &lt;div class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;&quot;onSuccess()&quot;&gt;Success&lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn btn-info&quot; (click)&#x3D;&quot;onInfo()&quot;&gt;Info&lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;onError()&quot;&gt;Error&lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn btn-warning&quot; (click)&#x3D;&quot;onWarning()&quot;&gt;Warning&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;btn-group btn-group-justified&quot;&gt;
+        &lt;div class&#x3D;&quot;btn btn-default&quot; (click)&#x3D;&quot;onSimple()&quot;&gt;Simple&lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn btn-blue&quot; (click)&#x3D;&quot;onAsyncLoading()&quot;&gt;Async&lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn btn-teal&quot; (click)&#x3D;&quot;onConfirmation()&quot;&gt;Confirm&lt;/div&gt;
+        &lt;div class&#x3D;&quot;btn btn-black&quot; (click)&#x3D;&quot;onPrompt()&quot;&gt;Prompt&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+  &lt;div class&#x3D;&quot;btn btn-block btn-primary&quot; (click)&#x3D;&quot;onClear()&quot;&gt;Clear all&lt;/div&gt;
+
+
+&lt;/aside&gt;
+&lt;main&gt;
+  &lt;div class&#x3D;&quot;brand&quot;&gt;
+    &lt;h1&gt;Ng-Snotify&lt;/h1&gt;
+    &lt;p&gt;Angular 2 Notification Center&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;div class&#x3D;&quot;footer&quot;&gt;
+    &lt;a href&#x3D;&quot;documentation/index.html&quot; target&#x3D;&quot;_blank&quot;&gt;Auto-Documentation&lt;/a&gt; &amp;#9673;
+    &lt;a href&#x3D;&quot;https://github.com/artemsky/ng-snotify&quot; target&#x3D;&quot;_blank&quot;&gt;GitHub&lt;/a&gt; &amp;#9673;
+    &lt;a href&#x3D;&quot;https://www.npmjs.com/package/ng-snotify&quot; target&#x3D;&quot;_blank&quot;&gt;NPM&lt;/a&gt;
+    &lt;h6&gt;MIT &amp;copy; 2017 &lt;a href&#x3D;&quot;https://github.com/artemsky/&quot;&gt;artemsky&lt;/a&gt;&lt;/h6&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;
+&lt;app-snotify&gt;&lt;/app-snotify&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><aside>  <h3 class="text-center">Toast config</h3>  <div class="form-group">    <label for="title">Title</label>    <input [(ngModel)]="title" type="text" id="title" class="form-control">  </div>  <div class="form-group">    <label for="body">Body</label>    <textarea [(ngModel)]="body" id="body" rows="3" class="form-control"></textarea>  </div>  <div class="row">    <div class="col-xs-6">      <div class="form-group">        <label for="titlemaxlen">Title max-length</label>        <input [(ngModel)]="titleMaxLength" type="text" id="titlemaxlen" class="form-control">      </div>    </div>    <div class="col-xs-6">      <div class="form-group">        <label for="bodymaxlen">Body max-length</label>        <input [(ngModel)]="bodyMaxLength" type="text" id="bodymaxlen" class="form-control">      </div>    </div>  </div>  <div class="form-group">    <label for="timeout">Timeout</label>    <input [(ngModel)]="timeout" type="number" id="timeout" class="form-control">  </div>  <div class="form-group">    <label for="maxheight">Toast max-height</label>    <input [(ngModel)]="maxHeight" type="number" id="maxheight" class="form-control">  </div>  <div class="form-group">    <label for="position">Position</label>    <div class="row">      <div class="col-sm-12">        <select [(ngModel)]="position" id="position" class="form-control">          <option [ngValue]="0">LEFT - TOP</option>          <option [ngValue]="1">LEFT - CENTER</option>          <option [ngValue]="2">LEFT - BOTTOM</option>          <option [ngValue]="3">RIGHT - TOP</option>          <option [ngValue]="4">RIGHT - CENTER</option>          <option [ngValue]="5">RIGHT - BOTTOM</option>          <option [ngValue]="6">CENTER - TOP</option>          <option [ngValue]="7">CENTER - CENTER</option>          <option [ngValue]="8">CENTER - BOTTOM</option>        </select>      </div>    </div>  </div>  <div class="switch-group-wrapper">    <div class="switch-wrapper">      <strong>Show progress bar?</strong>      <div class="switch">        <input [(ngModel)]="progressBar" id="progressBar" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">        <label for="progressBar" data-on="On" data-off="Off"></label>      </div>    </div>    <div class="switch-wrapper">      <strong>Close on click?</strong>      <div class="switch">        <input [(ngModel)]="closeClick" id="closeClick" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">        <label for="closeClick" data-on="On" data-off="Off"></label>      </div>    </div>    <div class="switch-wrapper">      <strong>Pause on hover?</strong>      <div class="switch">        <input [(ngModel)]="pauseHover" id="pauseHover" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">        <label for="pauseHover" data-on="On" data-off="Off"></label>      </div>    </div>    <div class="switch-wrapper">      <strong>New items on top?</strong>      <div class="switch">        <input [(ngModel)]="newTop" id="newTop" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">        <label for="newTop" data-on="On" data-off="Off"></label>      </div>    </div>  </div>  <div class="form-group">    <label for="dockMax">      Max items on screen    </label>    <input [(ngModel)]="dockMax" type="number" id="dockMax" class="form-control">    <div class="buttons">      <div class="btn-group btn-group-justified">        <div class="btn btn-success" (click)="onSuccess()">Success</div>        <div class="btn btn-info" (click)="onInfo()">Info</div>        <div class="btn btn-danger" (click)="onError()">Error</div>        <div class="btn btn-warning" (click)="onWarning()">Warning</div>      </div>      <div class="btn-group btn-group-justified">        <div class="btn btn-default" (click)="onSimple()">Simple</div>        <div class="btn btn-blue" (click)="onAsyncLoading()">Async</div>        <div class="btn btn-teal" (click)="onConfirmation()">Confirm</div>        <div class="btn btn-black" (click)="onPrompt()">Prompt</div>      </div>    </div>  </div>  <div class="btn btn-block btn-primary" (click)="onClear()">Clear all</div></aside><main>  <div class="brand">    <h1>Ng-Snotify</h1>    <p>Angular 2 Notification Center</p>  </div></main><footer>  <div class="footer">    <a href="documentation/index.html" target="_blank">Auto-Documentation</a> &#9673;    <a href="https://github.com/artemsky/ng-snotify" target="_blank">GitHub</a> &#9673;    <a href="https://www.npmjs.com/package/ng-snotify" target="_blank">NPM</a>    <h6>MIT &copy; 2017 <a href="https://github.com/artemsky/">artemsky</a></h6>  </div></footer><app-snotify></app-snotify></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'SnotifyComponent', 'selector': 'app-snotify'},{'name': 'SnotifyComponent', 'selector': 'app-snotify'},{'name': 'ToastComponent', 'selector': 'app-snotify-toast'},{'name': 'ToastComponent', 'selector': 'app-snotify-toast'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+    </body>
+</html>

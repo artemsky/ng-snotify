@@ -1,7 +1,7 @@
 {
   "generator-angular2-library": {
     "promptValues": {
-      "gitRepositoryUrl": "https://github.com/artemsky/ng-snotify"
+      "gitRepositoryUrl": "https://artemsky.github.io/ng-snotify"
     }
   }
 }

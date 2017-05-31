@@ -1,0 +1,125 @@
+<aside>
+  <h3 class="text-center">Toast config</h3>
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input [(ngModel)]="title" type="text" id="title" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="body">Body</label>
+    <textarea [(ngModel)]="body" id="body" rows="3" class="form-control"></textarea>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label for="titlemaxlen">Title max-length</label>
+        <input [(ngModel)]="titleMaxLength" type="text" id="titlemaxlen" class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label for="bodymaxlen">Body max-length</label>
+        <input [(ngModel)]="bodyMaxLength" type="text" id="bodymaxlen" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="timeout">Timeout</label>
+    <input [(ngModel)]="timeout" type="number" id="timeout" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="maxheight">Toast max-height</label>
+    <input [(ngModel)]="maxHeight" type="number" id="maxheight" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="position">Position</label>
+    <div class="row">
+      <div class="col-sm-12">
+        <select [(ngModel)]="position" id="position" class="form-control">
+          <option [ngValue]="0">LEFT - TOP</option>
+          <option [ngValue]="1">LEFT - CENTER</option>
+          <option [ngValue]="2">LEFT - BOTTOM</option>
+          <option [ngValue]="3">RIGHT - TOP</option>
+          <option [ngValue]="4">RIGHT - CENTER</option>
+          <option [ngValue]="5">RIGHT - BOTTOM</option>
+          <option [ngValue]="6">CENTER - TOP</option>
+          <option [ngValue]="7">CENTER - CENTER</option>
+          <option [ngValue]="8">CENTER - BOTTOM</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="switch-group-wrapper">
+    <div class="switch-wrapper">
+      <strong>Show progress bar?</strong>
+      <div class="switch">
+        <input [(ngModel)]="progressBar" id="progressBar" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+        <label for="progressBar" data-on="On" data-off="Off"></label>
+      </div>
+    </div>
+    <div class="switch-wrapper">
+      <strong>Close on click?</strong>
+      <div class="switch">
+        <input [(ngModel)]="closeClick" id="closeClick" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+        <label for="closeClick" data-on="On" data-off="Off"></label>
+      </div>
+    </div>
+    <div class="switch-wrapper">
+      <strong>Pause on hover?</strong>
+      <div class="switch">
+        <input [(ngModel)]="pauseHover" id="pauseHover" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+        <label for="pauseHover" data-on="On" data-off="Off"></label>
+      </div>
+    </div>
+    <div class="switch-wrapper">
+      <strong>New items on top?</strong>
+      <div class="switch">
+        <input [(ngModel)]="newTop" id="newTop" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+        <label for="newTop" data-on="On" data-off="Off"></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="dockMax">
+      Max items on screen
+    </label>
+    <input [(ngModel)]="dockMax" type="number" id="dockMax" class="form-control">
+
+    <div class="buttons">
+      <div class="btn-group btn-group-justified">
+        <div class="btn btn-success" (click)="onSuccess()">Success</div>
+        <div class="btn btn-info" (click)="onInfo()">Info</div>
+        <div class="btn btn-danger" (click)="onError()">Error</div>
+        <div class="btn btn-warning" (click)="onWarning()">Warning</div>
+
+      </div>
+      <div class="btn-group btn-group-justified">
+        <div class="btn btn-default" (click)="onSimple()">Simple</div>
+        <div class="btn btn-blue" (click)="onAsyncLoading()">Async</div>
+        <div class="btn btn-teal" (click)="onConfirmation()">Confirm</div>
+        <div class="btn btn-black" (click)="onPrompt()">Prompt</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="btn btn-block btn-primary" (click)="onClear()">Clear all</div>
+
+
+</aside>
+<main>
+  <div class="brand">
+    <h1>Ng-Snotify</h1>
+    <p>Angular 2 Notification Center</p>
+  </div>
+</main>
+<footer>
+  <div class="footer">
+    <a href="documentation/index.html" target="_blank">Auto-Documentation</a> &#9673;
+    <a href="https://github.com/artemsky/ng-snotify" target="_blank">GitHub</a> &#9673;
+    <a href="https://www.npmjs.com/package/ng-snotify" target="_blank">NPM</a>
+    <h6>MIT &copy; 2017 <a href="https://github.com/artemsky/">artemsky</a></h6>
+  </div>
+</footer>
+<app-snotify></app-snotify>

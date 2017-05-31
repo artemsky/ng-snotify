@@ -3,6 +3,7 @@ var gulp = require('gulp'),
   path = require('path'),
   ngc = require('@angular/compiler-cli/src/main').main,
   rollup = require('gulp-rollup'),
+  rename = require('gulp-rename'),
   del = require('del'),
   runSequence = require('run-sequence'),
   inlineResources = require('./tools/gulp/inline-resources');
@@ -17,7 +18,10 @@ const distFolder = path.join(rootFolder, 'dist');
  * 1. Delete /dist folder
  */
 gulp.task('clean:dist', function () {
-  return deleteFolders([distFolder]);
+
+  // Delete contents but not dist folder to avoid broken npm links
+  // when dist directory is removed while npm link references it.
+  return deleteFolders([distFolder + '/**', '!' + distFolder]);
 });
 
 /**
@@ -61,23 +65,86 @@ gulp.task('ngc', function () {
  * 5. Run rollup inside the /build folder to generate our Flat ES module and place the
  *    generated file into the /dist folder
  */
-gulp.task('rollup', function () {
+gulp.task('rollup:fesm', function () {
   return gulp.src(`${buildFolder}/**/*.js`)
   // transform the files here.
     .pipe(rollup({
-      // any option supported by Rollup can be set here.
+
+      // Bundle's entry point
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#entry
       entry: `${buildFolder}/index.js`,
+
+      // Allow mixing of hypothetical and actual files. "Actual" files can be files
+      // accessed by Rollup or produced by plugins further down the chain.
+      // This prevents errors like: 'path/file' does not exist in the hypothetical file system
+      // when subdirectories are used in the `src` directory.
+      allowRealFiles: true,
+
+      // A list of IDs of modules that should remain external to the bundle
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#external
       external: [
         '@angular/core',
         '@angular/common'
       ],
+
+      // Format of generated bundle
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
       format: 'es'
     }))
     .pipe(gulp.dest(distFolder));
 });
 
 /**
- * 6. Copy all the files from /build to /dist, except .js files. We ignore all .js from /build
+ * 6. Run rollup inside the /build folder to generate our UMD module and place the
+ *    generated file into the /dist folder
+ */
+gulp.task('rollup:umd', function () {
+  return gulp.src(`${buildFolder}/**/*.js`)
+  // transform the files here.
+    .pipe(rollup({
+
+      // Bundle's entry point
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#entry
+      entry: `${buildFolder}/index.js`,
+
+      // Allow mixing of hypothetical and actual files. "Actual" files can be files
+      // accessed by Rollup or produced by plugins further down the chain.
+      // This prevents errors like: 'path/file' does not exist in the hypothetical file system
+      // when subdirectories are used in the `src` directory.
+      allowRealFiles: true,
+
+      // A list of IDs of modules that should remain external to the bundle
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#external
+      external: [
+        '@angular/core',
+        '@angular/common'
+      ],
+
+      // Format of generated bundle
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
+      format: 'umd',
+
+      // Export mode to use
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#exports
+      exports: 'named',
+
+      // The name to use for the module for UMD/IIFE bundles
+      // (required for bundles with exports)
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
+      moduleName: 'ng-snotify',
+
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals
+      globals: {
+        typescript: 'ts'
+      }
+
+    }))
+    .pipe(rename('ng-snotify.umd.js'))
+    .pipe(gulp.dest(distFolder));
+});
+
+/**
+ * 7. Copy all the files from /build to /dist, except .js files. We ignore all .js from /build
  *    because with don't need individual modules anymore, just the Flat ES module generated
  *    on step 5.
  */
@@ -87,7 +154,7 @@ gulp.task('copy:build', function () {
 });
 
 /**
- * 7. Copy package.json from /src to /dist
+ * 8. Copy package.json from /src to /dist
  */
 gulp.task('copy:manifest', function () {
   return gulp.src([`${srcFolder}/package.json`])
@@ -95,27 +162,26 @@ gulp.task('copy:manifest', function () {
 });
 
 /**
- * 8. Delete /.tmp folder
+ * 9. Copy README.md from / to /dist
+ */
+gulp.task('copy:readme', function () {
+  return gulp.src([path.join(rootFolder, 'README.MD')])
+    .pipe(gulp.dest(distFolder));
+});
+
+/**
+ * 10. Delete /.tmp folder
  */
 gulp.task('clean:tmp', function () {
   return deleteFolders([tmpFolder]);
 });
 
 /**
- * 9. Delete /build folder
+ * 11. Delete /build folder
  */
 gulp.task('clean:build', function () {
   return deleteFolders([buildFolder]);
 });
-
-/**
- * 10. Copy README.md from / to /dist
- */
-gulp.task('copy:readme', function () {
-    return gulp.src([path.join(rootFolder, 'README.MD')])
-        .pipe(gulp.dest(distFolder));
-});
-
 
 gulp.task('compile', function () {
   runSequence(
@@ -123,7 +189,8 @@ gulp.task('compile', function () {
     'copy:source',
     'inline-resources',
     'ngc',
-    'rollup',
+    'rollup:fesm',
+    'rollup:umd',
     'copy:build',
     'copy:manifest',
     'copy:readme',

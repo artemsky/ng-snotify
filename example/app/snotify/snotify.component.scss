@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  position: fixed;
+  width: 300px;
+  min-height: 50px;
+  z-index: 9999;
+}
+
+:host(.snotify-leftTop),
+:host(.snotify-leftCenter),
+:host(.snotify-leftBottom) {
+  left: 10px;
+}
+
+:host(.snotify-rightTop),
+:host(.snotify-rightCenter),
+:host(.snotify-rightBottom) {
+  right: 10px;
+}
+
+:host(.snotify-centerTop),
+:host(.snotify-centerCenter),
+:host(.snotify-centerBottom) {
+  left: calc(50% - 300px/2);
+}
+
+:host(.snotify-leftTop),
+:host(.snotify-rightTop),
+:host(.snotify-rightTop) {
+  top: 10px;
+}
+:host(.snotify-leftCenter),
+:host(.snotify-rightCenter),
+:host(.snotify-centerCenter) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+:host(.snotify-leftBottom),
+:host(.snotify-rightBottom),
+:host(.snotify-centerBottom) {
+  bottom: 10px;
+}
+
