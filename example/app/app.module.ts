@@ -4,8 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {SnotifyModule} from './snotify/snotify.module';
-import {SnotifyService} from './snotify/snotify.service';
+import {SnotifyModule, SnotifyService} from 'ng-snotify';
 
 @NgModule({
   declarations: [

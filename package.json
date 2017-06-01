@@ -4,19 +4,22 @@
   "description": "Angular 2 notifications center",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
+    "serve": "ng serve",
     "build": "ng build --base-href=ng-snotify/",
+    "build:prod": "ng build --aot --prod --base-href=ng-snotify/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "npm:build": "gulp build",
     "npm:build:watch": "gulp",
     "npm:docs": "npm run npm:docs:build",
-    "npm:docs:build": "compodoc -p ./tsconfig.json -n ng-snotify -d docs/documentation/ --hideGenerator --theme Laravel",
+    "npm:docs:build": "compodoc -p tsconfig.json -n ng-snotify -d docs/documentation/ --hideGenerator --theme Laravel",
     "npm:docs:serve": "npm run npm:docs:build -- -s",
     "npm:docs:watch": "npm run npm:docs:build -- -s -w",
     "npm:lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
-    "npm:test": "tsc && karma start"
+    "npm:test": "tsc && karma start",
+    "app:build": "npm run npm:build && npm run build:prod && npm run npm:docs"
   },
   "repository": {
     "type": "git",
