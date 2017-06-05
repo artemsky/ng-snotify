@@ -1,13 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "deployUrl": "/ng-snotify/",
   "project": {
     "name": "ng-snotify"
   },
   "apps": [
     {
       "root": "example",
-      "outDir": "docs",
+      "outDir": "dist-example",
       "assets": [
         "assets",
         "favicon.ico"

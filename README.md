@@ -178,13 +178,30 @@ Examples - [here](https://github.com/artemsky/ng-snotify/blob/develop/src/app/ap
 
 ## Development
 
-Go to develop branch and use angular-cli
+- `npm run build`
+- `cd dist`
+- `npm link`
+- `cd ..`
+- `npm link ng-snotify`
+- Run component build:watch `npm run build:watch`
+- Run example app `ng serve --open`
+- open `localhost:4200` in your browser
+- go to `./src`
+- Start developing!
+
+## Known issues
+
+- Compodoc stopped generate interfaces - ([source](https://github.com/jvandemo/generator-angular2-library/issues/112))
 
 ## License
 
 MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
+
+### v1.1.4
+
+- remove min-height ([#11](https://github.com/artemsky/ng-snotify/issues/11))
 
 ### v1.1.3
 
@@ -198,8 +215,6 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 - add toast `titleMaxLeght` and `bodyMaxLeght` to `SnotifyConfig`
 - add toast `maxHeight` to `SnotifyOptions` ([#7](https://github.com/artemsky/ng-snotify/issues/7))
 - add body to **prompt** type and replace input preview text wih new option `placeholder` of `SnotifyConfig` type
-
-- First release
 
 ### v1.0.0
 

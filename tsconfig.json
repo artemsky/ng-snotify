@@ -1,15 +1,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./docs/out-tsc",
-    "baseUrl": "./example",
+    "outDir": "./dist-example/out-tsc",
+    "baseUrl": "dist-example",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "rootDir": "./example",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -17,9 +16,5 @@
       "es2016",
       "dom"
     ]
-  },
-  "exclude": [
-    "example",
-    "e2e"
-  ]
+  }
 }

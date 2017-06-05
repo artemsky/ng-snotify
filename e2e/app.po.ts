@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class Ng2SnotifyPage {
+export class APage {
   navigateTo() {
     return browser.get('/');
   }

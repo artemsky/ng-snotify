@@ -1,14 +1,16 @@
-import { Ng2SnotifyPage } from './app.po';
+import { APage } from './app.po';
 
-describe('ng2-snotify App', () => {
-  let page: Ng2SnotifyPage;
+describe('a App', () => {
+  let page: APage;
 
   beforeEach(() => {
-    page = new Ng2SnotifyPage();
+    page = new APage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', done => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    page.getParagraphText()
+      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+      .then(done, done.fail);
   });
 });
