@@ -955,7 +955,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="285" class="link-to-prism">src/snotify/toast/toast.component.ts:285</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">src/snotify/toast/toast.component.ts:286</a></div>
                             </td>
                         </tr>
     
@@ -1441,7 +1441,8 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
       this.interval &#x3D; setInterval(() &#x3D;&gt; {
         this.state.toast.progress +&#x3D; step;
         if (this.state.toast.progress &gt;&#x3D; 100) {
-            this.service.remove(this.toast.id);
+          this.maxHeight &#x3D; 0;
+          this.service.remove(this.toast.id);
         }
       }, refreshRate);
   }

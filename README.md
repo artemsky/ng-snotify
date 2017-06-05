@@ -179,7 +179,7 @@ Examples - [here](https://github.com/artemsky/ng-snotify/blob/develop/src/app/ap
 ## Development
 
 - `npm run build`
-- `cd dist`
+- `cd src`
 - `npm link`
 - `cd ..`
 - `npm link ng-snotify`
@@ -202,6 +202,7 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 ### v1.1.4
 
 - remove min-height ([#11](https://github.com/artemsky/ng-snotify/issues/11))
+- fix max-height animation
 - change 2-branches developing (develop\master) onto 1 branch (master)
 - Upgrade example app **angular cli** 1.0.2 -> 1.1.0
 - Upgrade **yeomen generator-angular2-library** 10.0.0 -> 10.2.2
