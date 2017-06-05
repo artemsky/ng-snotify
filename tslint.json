@@ -110,15 +110,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
-      "ng",
+      ["app", "ng"],
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
-      "ng",
+      ["app", "ng"],
       "kebab-case"
     ],
     "use-input-property-decorator": true,

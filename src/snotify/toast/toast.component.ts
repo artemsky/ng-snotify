@@ -273,7 +273,8 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
       this.interval = setInterval(() => {
         this.state.toast.progress += step;
         if (this.state.toast.progress >= 100) {
-            this.service.remove(this.toast.id);
+          this.maxHeight = 0;
+          this.service.remove(this.toast.id);
         }
       }, refreshRate);
   }

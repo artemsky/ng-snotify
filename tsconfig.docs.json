@@ -15,6 +15,7 @@
     "e2e",
     "example",
     "dist",
-    "docs"
+    "docs",
+    "node_modules"
   ]
 }

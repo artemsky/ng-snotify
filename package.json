@@ -12,10 +12,10 @@
     "build": "gulp build",
     "build:watch": "gulp",
     "docs": "npm run docs:build",
-    "docs:build": "compodoc -p tsconfig.src.json -n ng-snotify -d -d docs/documentation/ --hideGenerator --theme Laravel",
+    "docs:build": "compodoc -p tsconfig.docs.json -n ng-snotify -d -d docs/documentation/ --hideGenerator --theme Laravel",
     "docs:serve": "npm run docs:build -- -s",
     "docs:watch": "npm run docs:build -- -s -w",
-    "lint": "tslint --type-check --project tsconfig.src.json src/**/*.ts",
+    "lint": "tslint --type-check -p src/tsconfig.es5.json src/**/*.ts",
     "test": "tsc && karma start",
     "app:build": "npm run build && npm run example:build:prod && npm run docs"
   },
@@ -98,9 +98,6 @@
     "tslint": "~5.3.2",
     "typescript": "~2.3.3",
     "zone.js": "^0.8.4"
-  },
-  "peerDependencies": {
-    "ng-snotify": "1.2.0"
   },
   "engines": {
     "node": ">=6.0.0"
