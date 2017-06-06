@@ -313,122 +313,41 @@
 <p><a href="https://artemsky.github.io/ng-snotify/">https://artemsky.github.io/ng-snotify/</a></p>
 <hr>
 <h2 id="installation">Installation</h2>
-<p>To install this library, run:</p>
-<pre class="line-numbers"><code class="language-bash">$ npm install ng-snotify -S</code></pre><p>and then from your Angular <code>AppModule</code>:</p>
-<pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#40;angular/platform-browser&#39;;
-import { NgModule } from &#39;&#40;angular/core&#39;;
-
-import { AppComponent } from &#39;./app.component&#39;;
-
-// Import your library
+<h6 id="npm-5">NPM 5</h6>
+<p><code>npm install ng-snotify</code></p>
+<h6 id="npm-4">NPM 4</h6>
+<p><code>npm install ng-snotify --save</code></p>
+<h4 id="import-module">Import Module</h4>
+<p>Import SnotifyModule, also you can try SnotifyModule.forRoot() if you have build errors<br>And provide SnotifyService</p>
+<pre class="line-numbers"><code class="language-typescript">// Import your library
 import { SnotifyModule, SnotifyService } from &#39;ng-snotify&#39;;
 
 &#40;NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-
-    // Import SnotifyModule, also you can try SnotifyModule.forRoot() if you have build errors
     SnotifyModule
   ],
-  providers: [SnotifyService],
-  bootstrap: [AppComponent]
+  providers: [SnotifyService]
 })
-export class AppModule { }</code></pre><p>Add <code>app-snotify</code> component to you root component</p>
-<pre class="line-numbers"><code class="language-xml">&lt;!-- You can now use your library component in app.component.html --&gt;
-&lt;app-snotify&gt;&lt;/app-snotify&gt;</code></pre><p>Now you should inject <code>SnotifyService</code></p>
-<pre class="line-numbers"><code class="language-typescript">import {Component, OnInit} from &#39;&#40;angular/core&#39;;
-
-// Import SnotifyService
-import {SnotifyService} from &#39;ng-snotify&#39;;
+export class AppModule { }</code></pre><h4 id="add-selector">Add selector</h4>
+<p>Add <code>app-snotify</code> component to you root component</p>
+<pre class="line-numbers"><code class="language-html">&lt;app-snotify&gt;&lt;/app-snotify&gt;</code></pre><h4 id="dependency-injection">Dependency injection</h4>
+<p>Now you should inject <code>SnotifyService</code></p>
+<pre class="line-numbers"><code class="language-typescript">import {SnotifyService} from &#39;ng-snotify&#39;;
 
 &#40;Component({
   selector: &#39;app-root&#39;,
   templateUrl: &#39;./app.component.html&#39;,
   styleUrls: [&#39;./app.component.css&#39;]
 })
-export class AppComponent implements OnInit {
-  // Inject SnotifyService
+export class AppComponent {
   constructor(private snotifyService: SnotifyService) {}
-
-  //You can set global config like this
-  ngOnInit() {
-    this.snotifyService.setConfig({
-      timeout: 30000
-    }, {
-      newOnTop: false,
-    });
-  }
-
-  //Hopefuly you can add a toast 
-  addToast() {
-    this.snotifyService.error(&#39;Example error!&#39;, &#39;Here we are&#39;, {
-      closeOnClick: false
-    });
-  }
-
-  //You can remove all toasts from the field
-  clearToasts() {
-    this.snotifyService.clear();
-  }
-}</code></pre><h2 id="configuration">Configuration</h2>
-<h4 id="global-cofig-affects-all-toasts-">Global Cofig (affects all toasts)</h4>
-<p><code>SnotifyService</code> has method <code>setConfig</code>, wich takes 2 parametrs</p>
-<p>1 - Object typeof <code>SnotifyConfig</code> or <code>null</code></p>
-<pre class="line-numbers"><code class="language-typescript">export interface SnotifyConfig {
-  timeout?: number;
-  showProgressBar?: boolean;
-  type?: SnotifyType;
-  closeOnClick?: boolean;
-  pauseOnHover?: boolean;
-  buttons?: [SnotifyButton, SnotifyButton] | [SnotifyButton];
-}</code></pre><p>2 - Object typeof <code>SnotifyOptions</code> or <code>null</code></p>
-<pre class="line-numbers"><code class="language-typescript">export interface SnotifyOptions {
-  maxOnScreen?: number;
-  newOnTop?: boolean;
-  position?: SnotifyPosition;
-  transition?: number;
-}</code></pre><h4 id="toast-config-affects-current-toast-">Toast Config (affects current toast)</h4>
-<p>You can call toast by calling one of this methods from <code>SnotifyService</code> instance</p>
-<ul>
-<li><code>success(title: string, body: string, config?: SnotifyConfig): number</code></li>
-<li><code>info(title: string, body: string, config?: SnotifyConfig): number</code></li>
-<li><code>warning(title: string, body: string, config?: SnotifyConfig): number)</code></li>
-<li><code>error(title: string, body: string, config?: SnotifyConfig): number)</code></li>
-<li><code>simple(title: string, body: string, config?: SnotifyConfig): number</code></li>
-<li><code>confirm(title: string, body: string, config: SnotifyConfig): number)</code></li>
-<li><code>prompt(title: string, body: string, config: SnotifyConfig): number)</code></li>
-<li><code>async(title: string, body: string, config: SnotifyConfig): number)</code></li>
-</ul>
-<p>All toast methods return <code>id</code>, so you can remove toast by calling <code>snotifyService.remove(id)</code></p>
-<p>If you call <code>snotifyService. remove()</code> without id, it will affect all toasts, the same is <code>snotifyService.clear()</code></p>
-<h6 id="here-is-an-example">Here is an example</h6>
-<pre class="line-numbers"><code class="language-typescript">const id = snotifyService.simple(&#39;Example title!&#39;, &#39;Example body message&#39;, {
-      timeout: 0, // disable timeout,
-      showProgressBar: true, // won&#39;t affect because of timeout, if timeout set to 0. Progress Bar cannot exist anymore
-      closeOnClick: false,
-      pauseOnHover: true // won&#39;t affect because of timeout
-    });
-
-this.snotifyService.remove(id)</code></pre><h6 id="callbacks-affects-all-toast-">Callbacks (affects all toast)</h6>
-<p>There are few lifecycle hooks</p>
-<ul>
-<li><code>onInit</code> - when toast has been shown</li>
-<li><code>onClick</code> - when toast has been clicked</li>
-<li><code>onHoverEnter</code> - on mouse enter</li>
-<li><code>onHoverLeave</code> - on mouse leave</li>
-<li><code>beforeDestroy</code> - before toast destroyed</li>
-<li><code>afterDestroy</code> - after toast has been destroyed
-You can set it with <code>snotifyService</code><pre class="line-numbers"><code class="language-typescript">this.snotifyService.onInit = (toast: SnotifyToast) =&gt; {
-   // Do something here
- };</code></pre>All interfaces can be imported from <code>ng-snotify</code></li>
-</ul>
-<p>The best place to set global config is <code>ngOnInit()</code></p>
-<h1 id="documentation-and-examples">Documentation and Examples</h1>
-<p>Documentation - <a href="https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html">here</a>.</p>
-<p>Examples - <a href="https://github.com/artemsky/ng-snotify/blob/develop/src/app/app.component.ts">here</a></p>
+}</code></pre><h2 id="documentation-and-examples">Documentation and Examples</h2>
+<p>All interfaces can be imported from <code>ng-snotify</code>  </p>
+<p>Api - <a href="https://github.com/artemsky/ng-snotify/wiki/API">here</a></p>
+<p>Auto-Documentation - <a href="https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html">here</a>.</p>
+<p>Examples - <a href="https://github.com/artemsky/ng-snotify/wiki/API#examples">here</a></p>
+<p>Example application source - <a href="https://github.com/artemsky/ng-snotify/tree/master/example/app">here</a></p>
 <h2 id="development">Development</h2>
 <ul>
 <li><code>npm run build</code></li>
@@ -449,6 +368,11 @@ You can set it with <code>snotifyService</code><pre class="line-numbers"><code c
 <h2 id="license">License</h2>
 <p>MIT © <a href="mailto:mr.artemsky@gmail.com">artemsky</a></p>
 <h2 id="change-log">Change Log</h2>
+<h3 id="v1-1-6">v1.1.6</h3>
+<ul>
+<li>Improve documentation</li>
+<li>Create wiki</li>
+</ul>
 <h3 id="v1-1-4">v1.1.4</h3>
 <ul>
 <li>remove min-height (<a href="https://github.com/artemsky/ng-snotify/issues/11">#11</a>)</li>
@@ -478,6 +402,8 @@ You can set it with <code>snotifyService</code><pre class="line-numbers"><code c
 <ul>
 <li>Write good documentation</li>
 <li>rename component to <code>ng2-snotify</code> due semantic purpose </li>
+<li>Make icons configurable </li>
+<li>Make toast styling configurable</li>
 </ul>
 
 

@@ -4,11 +4,12 @@ import {SnotifyButton} from './SnotifyButton.interface';
 export interface SnotifyConfig {
   /**
    * Toast timeout in milliseconds. 0 - Disable timeout
+   * Default: 2000
    */
   timeout?: number;
   /**
    * Enable/Disable progress bar. Disabled if timeout is 0.
-   * Default: 2000
+   * Default: true
    */
   showProgressBar?: boolean;
   /**

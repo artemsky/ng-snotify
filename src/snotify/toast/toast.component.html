@@ -42,7 +42,7 @@
     <button (click)="toast.config.buttons[0].action(types.prompt ? state.prompt.input : null)" [ngClass]="{'snotifyToast__buttons--bold': toast.config.buttons[0].bold}">
       {{toast.config.buttons[0].text}}
     </button>
-    <button (click)="toast.config.buttons[1].action()" [ngClass]="{'snotifyToast__buttons--bold': toast.config.buttons[1].bold}">
+    <button (click)="toast.config.buttons[1].action(types.prompt ? state.prompt.input : null)" [ngClass]="{'snotifyToast__buttons--bold': toast.config.buttons[1].bold}">
       {{toast.config.buttons[1].text}}
     </button>
   </div>

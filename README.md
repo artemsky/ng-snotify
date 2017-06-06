@@ -93,6 +93,12 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
 
+### v1.1.6
+
+- Add callback text when **No** button pressed (Prompt)
+- Improve documentation
+- Create wiki
+
 ### v1.1.4
 
 - remove min-height ([#11](https://github.com/artemsky/ng-snotify/issues/11))
