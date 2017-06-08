@@ -39,7 +39,6 @@
   "bugs": {
     "url": "https://artemsky.github.io/ng-snotify/issues"
   },
-  "module": "ng-snotify.js",
   "typings": "ng-snotify.d.ts",
   "peerDependencies": {
     "@angular/core": "^4.0.0",
