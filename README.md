@@ -15,6 +15,7 @@ _______
 
 ###### NPM 5
 `npm install ng-snotify`
+
 ###### NPM 4
 `npm install ng-snotify --save`
 
@@ -62,7 +63,7 @@ export class AppComponent {
 ## Documentation and Examples
 All interfaces can be imported from `ng-snotify`  
 
-Api - [here](https://github.com/artemsky/ng-snotify/wiki/API)
+Wiki - [here](https://github.com/artemsky/ng-snotify/wiki)
 
 Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html).
 
@@ -92,6 +93,10 @@ Example application source - [here](https://github.com/artemsky/ng-snotify/tree/
 MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
+
+### v1.1.7
+
+- fix **AOT** compilation ([#13](https://github.com/artemsky/ng-snotify/issues/13))
 
 ### v1.1.6
 
