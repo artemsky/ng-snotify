@@ -4,14 +4,6 @@ $warning: #ffccbc;
 $error: #ffcdd2;
 $async: $info;
 
-:host {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  line-height: 0;
-  transform: translate(0, -50%);
-}
-
 .snotify-icon__error {
   fill: $error;
 }

@@ -36,7 +36,10 @@
           <span class="input__labelContent">{{toast.config.placeholder | truncate}}</span>
         </label>
       </span>
-    <app-icon class="snotify-icon" [types]="types"></app-icon>
+    <app-icon *ngIf="!toast.config.icon; else elseBlock" class="snotify-icon" [types]="types"></app-icon>
+    <ng-template #elseBlock>
+      <img class="snotify-icon" [src]='toast.config.icon' />
+    </ng-template>
   </div>
   <div *ngIf="types.prompt || types.confirm" class="snotifyToast__buttons">
     <button (click)="toast.config.buttons[0].action(types.prompt ? state.prompt.input : null)" [ngClass]="{'snotifyToast__buttons--bold': toast.config.buttons[0].bold}">

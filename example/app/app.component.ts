@@ -117,11 +117,16 @@ export class AppComponent implements OnInit {
   }
   onSimple() {
     this.setGlobal();
+
+    const icon = `assets/custom-svg.svg`;
+    // const icon = `<img src="http://placehold.it/48">`;
+
     this.snotifyService.simple(this.title, this.body, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
-      pauseOnHover: this.pauseHover
+      pauseOnHover: this.pauseHover,
+      icon: icon
     });
   }
 
