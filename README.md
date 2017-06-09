@@ -94,6 +94,11 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
 
+### v1.2.0
+
+- add custom icons [Wiki](https://github.com/artemsky/ng-snotify/wiki/API#custom-icon)  
+You can see an example of custom icon by calling *Simple toast* in the example app
+
 ### v1.1.7
 
 - fix **AOT** compilation ([#13](https://github.com/artemsky/ng-snotify/issues/13))
