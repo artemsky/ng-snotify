@@ -118,8 +118,8 @@ export class AppComponent implements OnInit {
   onSimple() {
     this.setGlobal();
 
-    const icon = `assets/custom-svg.svg`;
-    // const icon = `<img src="http://placehold.it/48">`;
+    // const icon = `assets/custom-svg.svg`;
+    const icon = `https://placehold.it/48x100`;
 
     this.snotifyService.simple(this.title, this.body, {
       timeout: this.timeout,
