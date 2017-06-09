@@ -48,4 +48,17 @@ export interface SnotifyConfig {
    * Default: 150
    */
   bodyMaxLength?: number;
+  /**
+   * Activate custom icon.
+   * You should provide full tag, e.g.
+   * Default: Depends on toast type
+   * @example
+   *  ```
+   * <img src="assets/custom-icon.png"/>
+   * // or
+   * <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 48 48;" xml:space="preserve" width="48px" height="48px">
+   * <g><path....../></g></svg>
+   * ```
+   */
+  icon?: string;
 }
