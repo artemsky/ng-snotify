@@ -4,32 +4,24 @@ $warning: #ffccbc;
 $error: #ffcdd2;
 $async: $info;
 
-:host {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  line-height: 0;
-  transform: translate(0, -50%);
-}
-
 .snotify-icon__error {
-  fill: #ffcdd2;
+  fill: $error;
 }
 
 .snotify-icon__warning {
-  fill: #ffccbc;
+  fill: $warning;
 }
 
 .snotify-icon__info {
-  fill: #bbdefb;
+  fill: $info;
 }
 
 .snotify-icon__success {
-  fill: #c8e6c9;
+  fill: $success;
 }
 
 .snotify-icon__async {
-  fill: #bbdefb;
+  fill: $async;
   animation: async 3s infinite linear;
   transform-origin: 50% 50%;
 }
