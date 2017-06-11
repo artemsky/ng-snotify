@@ -131,6 +131,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
    * Trigger beforeDestroy lifecycle. Removes toast
    */
   onRemove() {
+    this.maxHeight = 0;
     clearInterval(this.interval);
     this.state.toast.isDestroying = true;
     this.lifecycle(SnotifyAction.beforeDestroy);
@@ -273,7 +274,6 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
       this.interval = setInterval(() => {
         this.state.toast.progress += step;
         if (this.state.toast.progress >= 100) {
-          this.maxHeight = 0;
           this.service.remove(this.toast.id);
         }
       }, refreshRate);
