@@ -311,6 +311,14 @@
 <a href="https://www.npmjs.com/package/ng-snotify"><img src="https://img.shields.io/npm/dt/ng-snotify.svg" alt="NPM Downloads" class="img-responsive"></a></p>
 <h2 id="example">Example</h2>
 <p><a href="https://artemsky.github.io/ng-snotify/">https://artemsky.github.io/ng-snotify/</a></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>8 types of toast notifications</li>
+<li>Flexible, Configurable</li>
+<li>Custom styling</li>
+<li>Lifecycle callbacks</li>
+<li>Fully CSS, no angular animations dependency!</li>
+</ul>
 <hr>
 <h2 id="installation">Installation</h2>
 <h6 id="npm-5">NPM 5</h6>
@@ -343,11 +351,7 @@ export class AppModule { }</code></pre><h4 id="add-selector">Add selector</h4>
 export class AppComponent {
   constructor(private snotifyService: SnotifyService) {}
 }</code></pre><h2 id="documentation-and-examples">Documentation and Examples</h2>
-<p>All interfaces can be imported from <code>ng-snotify</code>  </p>
-<p>Wiki - <a href="https://github.com/artemsky/ng-snotify/wiki">here</a></p>
-<p>Auto-Documentation - <a href="https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html">here</a>.</p>
-<p>Examples - <a href="https://github.com/artemsky/ng-snotify/wiki/API#examples">here</a></p>
-<p>Example application source - <a href="https://github.com/artemsky/ng-snotify/tree/master/example/app">here</a></p>
+<p>Wiki - <a href="https://github.com/artemsky/ng-snotify/wiki">here</a><br>Examples - <a href="https://github.com/artemsky/ng-snotify/wiki/Examples">here</a><br>Example application source - <a href="https://github.com/artemsky/ng-snotify/tree/master/example/app">here</a><br>Auto-Documentation - <a href="https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html">here</a></p>
 <h2 id="development">Development</h2>
 <ul>
 <li><code>npm run build</code></li>
@@ -368,6 +372,11 @@ export class AppComponent {
 <h2 id="license">License</h2>
 <p>MIT © <a href="mailto:mr.artemsky@gmail.com">artemsky</a></p>
 <h2 id="change-log">Change Log</h2>
+<h3 id="v1-3-0">v1.3.0</h3>
+<ul>
+<li>add <strong>Custom Styling</strong> - <a href="https://github.com/artemsky/ng-snotify/wiki/Custom-Styling">Read more</a></li>
+<li>fix max-height collapsing closeOnClick</li>
+</ul>
 <h3 id="v1-2-0">v1.2.0</h3>
 <ul>
 <li>add custom icons <a href="https://github.com/artemsky/ng-snotify/wiki/API#custom-icon">Wiki</a><br>You can see an example of custom icon by calling <em>Simple toast</em> in the example app</li>
@@ -409,10 +418,7 @@ export class AppComponent {
 </ul>
 <h2 id="future">Future</h2>
 <ul>
-<li>Write good documentation</li>
 <li>rename component to <code>ng2-snotify</code> due semantic purpose </li>
-<li>Make icons configurable </li>
-<li>Make toast styling configurable</li>
 </ul>
 
 

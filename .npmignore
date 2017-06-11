@@ -32,3 +32,4 @@ Desktop.ini
 # Library files
 src/*
 build/*
+package-lock.json
