@@ -9,6 +9,14 @@
 https://artemsky.github.io/ng-snotify/
 
 
+## Features
+
+- 8 types of toast notifications
+- Flexible, Configurable
+- Custom styling
+- Lifecycle callbacks
+- Fully CSS, no angular animations dependency!
+
 _______
 
 ## Installation
@@ -61,15 +69,11 @@ export class AppComponent {
 ```
 
 ## Documentation and Examples
-All interfaces can be imported from `ng-snotify`  
 
-Wiki - [here](https://github.com/artemsky/ng-snotify/wiki)
-
-Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html).
-
-Examples - [here](https://github.com/artemsky/ng-snotify/wiki/API#examples)
-
-Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)
+Wiki - [here](https://github.com/artemsky/ng-snotify/wiki)  
+Examples - [here](https://github.com/artemsky/ng-snotify/wiki/Examples)  
+Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)  
+Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html)
 
 ## Development
 
@@ -93,6 +97,11 @@ Example application source - [here](https://github.com/artemsky/ng-snotify/tree/
 MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
+
+### v1.3.0
+
+- add **Custom Styling** - [Read more](https://github.com/artemsky/ng-snotify/wiki/Custom-Styling)
+- fix max-height collapsing closeOnClick
 
 ### v1.2.0
 
@@ -136,7 +145,4 @@ You can see an example of custom icon by calling *Simple toast* in the example a
 
 ## Future
 
-- Write good documentation
 - rename component to `ng2-snotify` due semantic purpose 
-- Make icons configurable 
-- Make toast styling configurable
