@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   progressBar = true;
   closeClick = true;
   newTop = true;
+  backdrop = -1;
   dockMax = 6;
   pauseHover = true;
   maxHeight = 300;
@@ -70,7 +71,8 @@ export class AppComponent implements OnInit {
   setGlobal() {
     this.snotifyService.setConfig({
       bodyMaxLength: this.bodyMaxLength,
-      titleMaxLength: this.titleMaxLength
+      titleMaxLength: this.titleMaxLength,
+      backdrop: this.backdrop
     }, {
       newOnTop: this.newTop,
       position: this.position,
@@ -180,16 +182,15 @@ export class AppComponent implements OnInit {
     /*
     Here we pass an buttons array, which contains of 2 element of type SnotifyButton
      */
-    this.snotifyService.confirm(this.title, this.body, {
+    const id = this.snotifyService.confirm(this.title, this.body, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
       pauseOnHover: this.pauseHover,
       buttons: [
         {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
-        {text: 'No', action: () => console.log('Clicked: No'), bold: true},
-      ],
-      backdrop: 0.3
+        {text: 'No', action: () => {console.log('Clicked: No'); this.snotifyService.remove(id); }, bold: true},
+      ]
     });
   }
 
@@ -209,8 +210,7 @@ export class AppComponent implements OnInit {
         {text: 'Yes', action: (text) => console.log('Said Yes: ' + text)},
         {text: 'No', action: (text) => { console.log('Said No: ' + text); this.snotifyService.remove(id); }},
       ],
-      placeholder: 'This is the example placeholder which you can pass', // Max-length = 40
-      backdrop: 0.8
+      placeholder: 'This is the example placeholder which you can pass' // Max-length = 40
     });
   }
 
