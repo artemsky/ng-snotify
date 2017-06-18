@@ -35,6 +35,10 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    * Helper for slice pipe (maxOnScreen)
    */
   dockSize_b: number | undefined;
+  /**
+   * Backdrop Opacity
+   */
+  backdrop: number;
   constructor(private service: SnotifyService, private render: Renderer2, private snotify: ElementRef) { }
 
   /**
@@ -48,7 +52,22 @@ export class SnotifyComponent implements OnInit, OnDestroy {
     this.setPosition(this.service.options.position);
 
     this.emitter = this.service.emitter.subscribe(
-      (toasts: SnotifyToast[]) => this.notifications = toasts
+      (toasts: SnotifyToast[]) => {
+        this.notifications = toasts;
+        const list = this.notifications.filter(toast => toast.config.backdrop >= 0);
+
+        if (list.length) {
+          this.backdrop = 0;
+          setTimeout(() => {
+            this.backdrop = list[list.length - 1].config.backdrop;
+          }, 10)
+        } else {
+          this.backdrop = 0;
+          setTimeout(() => {
+            this.backdrop = -1;
+          }, this.service.options.transition)
+        }
+      }
     );
     this.lifecycleSubscription = this.service.lifecycle.subscribe(
       (info: SnotifyInfo) => {

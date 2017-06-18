@@ -61,4 +61,10 @@ export interface SnotifyConfig {
    * ```
    */
   icon?: string;
+  /**
+   * Backdrop opacity. 0.0 - 1.0
+   * -1 = Disabled
+   * Default: -1
+   */
+  backdrop?: number;
 }

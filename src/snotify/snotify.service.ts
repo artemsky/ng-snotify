@@ -101,7 +101,8 @@ export class SnotifyService {
       ],
       placeholder: 'Enter answer here...',
       bodyMaxLength: 150,
-      titleMaxLength: 16
+      titleMaxLength: 16,
+      backdrop: -1
     };
     this._options = {
       newOnTop: true,
