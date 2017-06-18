@@ -98,6 +98,10 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
 
+### v1.4.0
+
+- add backdrop ([#15](https://github.com/artemsky/ng-snotify/issues/15))
+
 ### v1.3.0
 
 - add **Custom Styling** - [Read more](https://github.com/artemsky/ng-snotify/wiki/Custom-Styling)

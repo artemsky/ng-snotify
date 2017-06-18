@@ -188,7 +188,8 @@ export class AppComponent implements OnInit {
       buttons: [
         {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
         {text: 'No', action: () => console.log('Clicked: No'), bold: true},
-      ]
+      ],
+      backdrop: 0.3
     });
   }
 
@@ -208,7 +209,8 @@ export class AppComponent implements OnInit {
         {text: 'Yes', action: (text) => console.log('Said Yes: ' + text)},
         {text: 'No', action: (text) => { console.log('Said No: ' + text); this.snotifyService.remove(id); }},
       ],
-      placeholder: 'This is the example placeholder which you can pass' // Max-length = 40
+      placeholder: 'This is the example placeholder which you can pass', // Max-length = 40
+      backdrop: 0.8
     });
   }
 
