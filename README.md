@@ -24,49 +24,10 @@ _______
 ###### NPM 5
 `npm install ng-snotify`
 
-###### NPM 4
-`npm install ng-snotify --save`
+###### yarn
+`yarn add ng-snotify`
 
-
-#### Import Module
-Import SnotifyModule, also you can try SnotifyModule.forRoot() if you have build errors  
-And provide SnotifyService
-```typescript
-// Import your library
-import { SnotifyModule, SnotifyService } from 'ng-snotify';
-
-@NgModule({
-  imports: [
-    BrowserModule,
-    SnotifyModule
-  ],
-  providers: [SnotifyService]
-})
-export class AppModule { }
-```
-
-#### Add selector
-Add `app-snotify` component to you root component
-
-```html
-<app-snotify></app-snotify>
-```
-#### Dependency injection
-Now you should inject `SnotifyService`
-
-```typescript
-import {SnotifyService} from 'ng-snotify';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  constructor(private snotifyService: SnotifyService) {}
-}
-
-```
+Detailed instruction - [here](https://github.com/artemsky/ng-snotify/wiki/Install)
 
 ## Documentation and Examples
 
@@ -74,23 +35,7 @@ Wiki - [here](https://github.com/artemsky/ng-snotify/wiki)
 Examples - [here](https://github.com/artemsky/ng-snotify/wiki/Examples)  
 Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)  
 Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html)
-
-## Development
-
-- `npm run build`
-- `cd src`
-- `npm link`
-- `cd ..`
-- `npm link ng-snotify`
-- Run component build:watch `npm run build:watch`
-- Run example app `ng serve --open`
-- open `localhost:4200` in your browser
-- go to `./src`
-- Start developing!
-
-## Known issues
-
-- Compodoc stopped generate interfaces - ([source](https://github.com/jvandemo/generator-angular2-library/issues/112))
+Development - [here](https://github.com/artemsky/ng-snotify/wiki/Development)
 
 ## License
 
@@ -101,6 +46,8 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 ### v1.4.0
 
 - add backdrop ([#15](https://github.com/artemsky/ng-snotify/issues/15))
+- fix @compodoc/compodoc inteface generator - [source 1](https://github.com/compodoc/compodoc/issues/198)
+[source 2](https://github.com/jvandemo/generator-angular2-library/issues/112)
 
 ### v1.3.0
 
