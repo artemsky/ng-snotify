@@ -34,7 +34,7 @@ Detailed instruction - [here](https://github.com/artemsky/ng-snotify/wiki/Instal
 Wiki - [here](https://github.com/artemsky/ng-snotify/wiki)  
 Examples - [here](https://github.com/artemsky/ng-snotify/wiki/Examples)  
 Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)  
-Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html)
+Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html)  
 Development - [here](https://github.com/artemsky/ng-snotify/wiki/Development)
 
 ## License
