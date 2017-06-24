@@ -1,7 +1,7 @@
 {
-  "name": "ng-snotify",
+  "name": "ng2-snotify",
   "description": "Angular 2 notifications center",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -102,7 +102,7 @@
     "zone.js": "^0.8.4"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "dependencies": {}
 }

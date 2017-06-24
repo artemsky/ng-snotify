@@ -84,7 +84,11 @@ gulp.task('rollup:fesm', function () {
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#external
       external: [
         '@angular/core',
-        '@angular/common'
+        '@angular/common',
+        'rxjs/Subject',
+        'rxjs/observable/PromiseObservable',
+        'rxjs/Observable',
+        'rxjs/Subscription',
       ],
 
       // Format of generated bundle
@@ -117,7 +121,11 @@ gulp.task('rollup:umd', function () {
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#external
       external: [
         '@angular/core',
-        '@angular/common'
+        '@angular/common',
+        'rxjs/Subject',
+        'rxjs/observable/PromiseObservable',
+        'rxjs/Observable',
+        'rxjs/Subscription',
       ],
 
       // Format of generated bundle
@@ -131,15 +139,19 @@ gulp.task('rollup:umd', function () {
       // The name to use for the module for UMD/IIFE bundles
       // (required for bundles with exports)
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
-      moduleName: 'ng-snotify',
+      moduleName: 'ng2-snotify',
 
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals
       globals: {
-        typescript: 'ts'
+        typescript: 'ts',
+        '@angular/core': '@angular/core',
+        '@angular/common': '@angular/common',
+        'rxjs/Subject': 'rxjs/Subject',
+        'rxjs/observable/PromiseObservable': 'rxjs/observable/PromiseObservable',
       }
 
     }))
-    .pipe(rename('ng-snotify.umd.js'))
+    .pipe(rename('ng2-snotify.umd.js'))
     .pipe(gulp.dest(distFolder));
 });
 
@@ -149,7 +161,7 @@ gulp.task('rollup:umd', function () {
  *    on step 5.
  */
 gulp.task('copy:build', function () {
-  return gulp.src([`${buildFolder}/**/*`])
+  return gulp.src([`${buildFolder}/**/*`, `!${buildFolder}/**/*.js`])
     .pipe(gulp.dest(distFolder));
 });
 
@@ -201,7 +213,7 @@ gulp.task('compile', function () {
         console.log('ERROR:', err.message);
         deleteFolders([distFolder, tmpFolder, buildFolder]);
       } else {
-        console.log('Compilation finished succesfully');
+        console.log('Compilation finished successfully');
       }
     });
 });
