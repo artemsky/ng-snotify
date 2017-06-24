@@ -6,7 +6,7 @@ import {SnotifyType} from '../enum/SnotifyType.enum';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({
-  selector: 'app-snotify-toast',
+  selector: 'ng-snotify-toast',
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.scss']
 })

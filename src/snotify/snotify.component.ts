@@ -9,7 +9,7 @@ import {SnotifyPosition} from './enum/SnotifyPosition.enum';
 
 
 @Component({
-  selector: 'app-snotify',
+  selector: 'ng-snotify',
   templateUrl: './snotify.component.html',
   styleUrls: ['./snotify.component.scss']
 })

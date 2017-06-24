@@ -36,7 +36,7 @@
           <span class="input__labelContent">{{toast.config.placeholder | truncate}}</span>
         </label>
       </span>
-    <app-icon *ngIf="!toast.config.icon; else elseBlock" class="snotify-icon" [types]="types"></app-icon>
+    <ng-snotify-icon *ngIf="!toast.config.icon; else elseBlock" class="snotify-icon" [types]="types"></ng-snotify-icon>
     <ng-template #elseBlock>
       <img class="snotify-icon" [src]='toast.config.icon' />
     </ng-template>

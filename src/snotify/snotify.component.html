@@ -1,3 +1,3 @@
 <div class="snotify-backdrop" *ngIf="backdrop >= 0" [style.opacity]="backdrop"></div>
-<app-snotify-toast *ngFor="let notification of notifications| slice:dockSize_a:dockSize_b" [toast]="notification">
-</app-snotify-toast>
+<ng-snotify-toast *ngFor="let notification of notifications| slice:dockSize_a:dockSize_b" [toast]="notification">
+</ng-snotify-toast>
