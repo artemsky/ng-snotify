@@ -53,8 +53,13 @@ $prompt-color: #e0f2f1;
   overflow: hidden;
 
   &__inner {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
     position: relative;
-    padding: 10px 65px 10px 15px;
+    padding: 15px 65px 5px 15px;
+    min-height: 78px;
     font-size: 16px;
     color: $simple-color;
   }
@@ -76,10 +81,6 @@ $prompt-color: #e0f2f1;
       max-width: 100%;
     }
 
-    + .snotifyToast__title {
-      margin-top: 5px;
-    }
-
     ~ .snotifyToast-icon {
       margin-top: 5px;
     }
@@ -87,6 +88,7 @@ $prompt-color: #e0f2f1;
 
   &__title {
     font-size: 1.8em;
+    line-height: 1.2em;
     margin-bottom: 5px;
     color: #fff;
   }

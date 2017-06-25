@@ -21,9 +21,12 @@
     <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
       <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': state.toast.progress + '%'}"></span>
     </div>
-    <div class="snotifyToast__title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>
+    <div class="snotifyToast__title" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>
     <div class="snotifyToast__body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>
-    <ng-snotify-prompt *ngIf="types.prompt" [placeholder]="toast.config.placeholder" (valueChanged)="onPromptChanged($event)"></ng-snotify-prompt>
+    <ng-snotify-prompt *ngIf="types.prompt"
+                       [placeholder]="toast.config.placeholder"
+                       (valueChanged)="onPromptChanged($event)">
+    </ng-snotify-prompt>
     <ng-snotify-icon *ngIf="!toast.config.icon; else elseBlock" class="snotify-icon" [types]="types"></ng-snotify-icon>
     <ng-template #elseBlock>
       <img class="snotify-icon" [src]='toast.config.icon' />

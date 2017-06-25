@@ -80,7 +80,7 @@
   &__labelContent {
     position: relative;
     display: block;
-    padding: 1.6em 0;
+    padding: 1em 0;
     width: 100%;
     transition: transform 0.3s 0.3s;
   }
@@ -88,7 +88,7 @@
 }
 
 .snotifyToast__input--filled {
-  margin-top: 1.5em;
+  margin-top: 2.5em;
 
   &:focus,
   .snotifyToast__input__field {

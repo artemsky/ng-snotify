@@ -200,12 +200,12 @@ export class SnotifyService {
 
   /**
    * Create toast with Success style, returns toast id;
-   * @param title {String}
    * @param body {String}
+   * @param title {String}
    * @param config {SnotifyConfig}
    * @return {number}
    */
-  success(title: string, body: string, config?: SnotifyConfig): number {
+  success(body: string, title?: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
@@ -215,12 +215,12 @@ export class SnotifyService {
 
   /**
    * Create toast with Error style, returns toast id;
-   * @param title {String}
    * @param body {String}
+   * @param title {String}
    * @param config {SnotifyConfig}
    * @return {number}
    */
-  error(title: string, body: string, config?: SnotifyConfig): number {
+  error(body: string, title?: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
@@ -230,12 +230,12 @@ export class SnotifyService {
 
   /**
    * Create toast with Info style, returns toast id;
-   * @param title {String}
    * @param body {String}
+   * @param title {String}
    * @param config {SnotifyConfig}
    * @return {number}
    */
-  info(title: string, body: string, config?: SnotifyConfig): number {
+  info(body: string, title?: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
@@ -245,12 +245,12 @@ export class SnotifyService {
 
   /**
    * Create toast with Warining style, returns toast id;
-   * @param title {String}
    * @param body {String}
+   * @param title {String}
    * @param config {SnotifyConfig}
    * @return {number}
    */
-  warning(title: string, body: string, config?: SnotifyConfig): number {
+  warning(body: string, title?: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
@@ -260,12 +260,12 @@ export class SnotifyService {
 
   /**
    * Create toast without style, returns toast id;
-   * @param title {String}
    * @param body {String}
+   * @param title {String}
    * @param config {SnotifyConfig}
    * @return {number}
    */
-  simple(title: string, body: string, config?: SnotifyConfig): number {
+  simple(body: string, title?: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
@@ -275,12 +275,12 @@ export class SnotifyService {
 
   /**
    * Create toast with Confirm style {with two buttons}, returns toast id;
-   * @param title {String}
    * @param body {String}
+   * @param title {String}
    * @param config {SnotifyConfig}
    * @return {number}
    */
-  confirm(title: string, body: string, config: SnotifyConfig): number {
+  confirm(body: string, title: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
@@ -303,12 +303,12 @@ export class SnotifyService {
 
   /**
    * Create toast with Prompt style {with two buttons}, returns toast id;
-   * @param title {String}
    * @param body {String}
+   * @param title {String}
    * @param config {SnotifyConfig}
    * @return {number}
    */
-  prompt(title: string, body: string, config: SnotifyConfig): number {
+  prompt(body: string, title?: string, config?: SnotifyConfig): number {
     return this.create({
       title: title,
       body: body,
@@ -333,12 +333,12 @@ export class SnotifyService {
 
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
-   * @param title {String}
    * @param body {String}
+   * @param title {String}
    * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
    * @return {number}
    */
-  async(title: string, body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): number {
+  async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): number {
     let async: Observable<any>;
     if (action instanceof Promise) {
       async = PromiseObservable.create(action);
@@ -346,7 +346,7 @@ export class SnotifyService {
       async = action;
     }
 
-    const id = this.simple(title, body, {
+    const id = this.simple(body, title, {
       pauseOnHover: false,
       closeOnClick: false,
       timeout: 0,

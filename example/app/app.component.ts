@@ -87,16 +87,17 @@ export class AppComponent implements OnInit {
 
   onSuccess() {
     this.setGlobal();
-    this.snotifyService.success(this.title, this.body, {
+    this.snotifyService.success(this.body, this.title, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
       pauseOnHover: this.pauseHover
     });
   }
+
   onInfo() {
     this.setGlobal();
-    this.snotifyService.info(this.title, this.body, {
+    this.snotifyService.info(this.body, this.title, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
@@ -105,7 +106,7 @@ export class AppComponent implements OnInit {
   }
   onError() {
     this.setGlobal();
-    this.snotifyService.error(this.title, this.body, {
+    this.snotifyService.error(this.body, this.title, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
@@ -114,7 +115,7 @@ export class AppComponent implements OnInit {
   }
   onWarning() {
     this.setGlobal();
-    this.snotifyService.warning(this.title, this.body, {
+    this.snotifyService.warning(this.body, this.title, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
@@ -127,7 +128,7 @@ export class AppComponent implements OnInit {
     // const icon = `assets/custom-svg.svg`;
     const icon = `https://placehold.it/48x100`;
 
-    this.snotifyService.simple(this.title, this.body, {
+    this.snotifyService.simple(this.body, this.title, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
@@ -138,7 +139,7 @@ export class AppComponent implements OnInit {
 
   onAsyncLoading() {
     this.setGlobal();
-    this.snotifyService.async(this.title, this.body,
+    this.snotifyService.async(this.body, this.title,
       /*
       You should pass Promise or Observable of type SnotifyConfig to change some data or do some other actions
       More information how to work with observables:
@@ -186,7 +187,7 @@ export class AppComponent implements OnInit {
     /*
     Here we pass an buttons array, which contains of 2 element of type SnotifyButton
      */
-    const id = this.snotifyService.confirm(this.title, this.body, {
+    const id = this.snotifyService.confirm(this.body, this.title, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
@@ -207,7 +208,7 @@ export class AppComponent implements OnInit {
      At the action of the first button we can get what user entered into input field.
      At the second we can't get it. But we can remove this toast
      */
-    const id = this.snotifyService.prompt(this.title, this.body, {
+    const id = this.snotifyService.prompt(this.body, this.title, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
