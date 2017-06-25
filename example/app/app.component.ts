@@ -188,8 +188,10 @@ export class AppComponent implements OnInit {
       closeOnClick: this.closeClick,
       pauseOnHover: this.pauseHover,
       buttons: [
-        {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
+        {text: 'Y2es', action: () => console.log('Clicked: Yes'), bold: false},
         {text: 'No', action: () => {console.log('Clicked: No'); this.snotifyService.remove(id); }, bold: true},
+        {text: 'N2o', action: () => {console.log('Clicked: No'); this.snotifyService.remove(id); }, bold: true},
+        {text: 'N1o', action: () => {console.log('Clicked: No'); this.snotifyService.remove(id); }, bold: true},
       ]
     });
   }

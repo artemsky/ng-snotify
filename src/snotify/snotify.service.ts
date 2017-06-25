@@ -82,7 +82,6 @@ export class SnotifyService {
         }
       }
     }
-
     return target;
   }
 
@@ -289,6 +288,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
+      // config: {...this.config, ...config, ...{type: SnotifyType.CONFIRM}, ...{closeOnClick: false}}
       config: SnotifyService.mergeDeep(this.config, config, {type: SnotifyType.CONFIRM}, {closeOnClick: false})
     });
   }

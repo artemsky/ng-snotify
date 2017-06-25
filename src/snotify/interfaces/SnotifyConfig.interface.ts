@@ -32,7 +32,8 @@ export interface SnotifyConfig {
    * Buttons config for Confirmation & Prompt types
    * Default: `[ {text: 'Ok', action: null, bold: true}, {text: 'Cancel', action: null, bold: false} ]`
    */
-  buttons?: [SnotifyButton, SnotifyButton] | [SnotifyButton];
+  // buttons?: [SnotifyButton, SnotifyButton] | [SnotifyButton];
+  buttons?: SnotifyButton[];
   /**
    * Placeholder for Prompt toast
    * Default: 'Enter answer here...'
