@@ -6,11 +6,15 @@
   button {
     position: relative;
     width: 100%;
-    border: none;
+    border-right: 1px solid rgba(0,0,0,.1);
+    border-left: 1px solid rgba(0,0,0,.1);
+    border-top: none;
+    border-bottom: none;
     background: transparent;
     padding: 8px;
     text-transform: capitalize;
     color: #fff;
+    box-sizing: border-box;
 
     &:hover,
     &:focus {
@@ -23,15 +27,11 @@
     }
 
     &:last-child {
-      &::before {
-        content: '';
-        width: 2px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: -1px;
-        background-color: rgba(0,0,0,.1);
-      }
+      border-right: none;
+    }
+
+    &:first-child {
+      border-left: none;
     }
   }
 

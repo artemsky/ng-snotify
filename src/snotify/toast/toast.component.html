@@ -41,5 +41,5 @@
       <img class="snotify-icon" [src]='toast.config.icon' />
     </ng-template>
   </div>
-  <ng-snotify-button [buttons]="toast.config.buttons" [text]="types.prompt ? state.prompt.input : null"></ng-snotify-button>
+  <ng-snotify-button *ngIf="toast.config.buttons" [buttons]="toast.config.buttons" [text]="types.prompt ? state.prompt.input : null"></ng-snotify-button>
 </div>

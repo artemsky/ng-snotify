@@ -2,7 +2,7 @@
   <button type="button"
           *ngFor="let button of buttons"
           [ngClass]="{'snotifyToast__buttons--bold': button.bold}"
-          (click)="button.action(text)">
+          (click)="button.action && button.action(text)">
     {{button.text}}
   </button>
 </div>

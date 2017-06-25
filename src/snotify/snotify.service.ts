@@ -94,11 +94,6 @@ export class SnotifyService {
       timeout: 2000,
       closeOnClick: true,
       pauseOnHover: true,
-      buttons: [
-        {text: 'Ok', action: null, bold: true},
-        {text: 'Cancel', action: null, bold: false},
-      ],
-      placeholder: 'Enter answer here...',
       bodyMaxLength: 150,
       titleMaxLength: 16,
       backdrop: -1
@@ -213,7 +208,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: Object.assign({}, this.config, config, {type: SnotifyType.SUCCESS})
+      config: {...this.config, ...{type: SnotifyType.SUCCESS}, ...config}
     });
   }
 
@@ -228,7 +223,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: Object.assign({}, this.config, config, {type: SnotifyType.ERROR})
+      config: {...this.config, ...{type: SnotifyType.ERROR}, ...config}
     });
   }
 
@@ -243,7 +238,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: Object.assign({}, this.config, config, {type: SnotifyType.INFO})
+      config: {...this.config, ...{type: SnotifyType.INFO}, ...config}
     });
   }
 
@@ -258,7 +253,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: Object.assign({}, this.config, config, {type: SnotifyType.WARNING})
+      config: {...this.config,  ...{type: SnotifyType.WARNING}, ...config}
     });
   }
 
@@ -273,7 +268,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: Object.assign({}, this.config, config)
+      config: {...this.config, ...config}
     });
   }
 
@@ -288,8 +283,20 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      // config: {...this.config, ...config, ...{type: SnotifyType.CONFIRM}, ...{closeOnClick: false}}
-      config: SnotifyService.mergeDeep(this.config, config, {type: SnotifyType.CONFIRM}, {closeOnClick: false})
+      config: {
+        ...this.config,
+        ...{
+          buttons: [
+            {text: 'Ok', action: null, bold: true},
+            {text: 'Cancel', action: null, bold: false},
+          ]
+        },
+        ...config,
+        ...{
+          type: SnotifyType.CONFIRM,
+          closeOnClick: false,
+        }
+      }
     });
   }
 
@@ -304,7 +311,22 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: SnotifyService.mergeDeep(this.config, config, {type: SnotifyType.PROMPT}, {timeout: 0, closeOnClick: false})
+      config: {
+        ...this.config,
+        ...{
+          buttons: [
+            {text: 'Ok', action: null, bold: true},
+            {text: 'Cancel', action: null, bold: false},
+          ],
+          placeholder: 'Enter answer here...',
+        },
+        ...config,
+        ...{
+          timeout: 0,
+          closeOnClick: false,
+          type: SnotifyType.PROMPT,
+        }
+      }
     });
   }
 
