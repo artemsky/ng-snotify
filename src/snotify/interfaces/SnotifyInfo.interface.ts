@@ -13,4 +13,8 @@ export interface SnotifyInfo {
    * Toast which triggered an action
    */
   toast: SnotifyToast;
+  /**
+   * Prompt toast input value
+   */
+  value?: string;
 }

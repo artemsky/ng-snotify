@@ -63,6 +63,10 @@ export class AppComponent implements OnInit {
     this.snotifyService.afterDestroy = (toast: SnotifyToast) => {
       console.log('After Destroy', toast);
     };
+
+    this.snotifyService.onInput = (toast: SnotifyToast, value: string) => {
+      console.log('On Input', value, toast);
+    };
   }
 
   /*

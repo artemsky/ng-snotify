@@ -30,11 +30,7 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
       isRemoving: false,
       isDestroying: false
     },
-    prompt: {
-      input: '',
-      isPromptFocused: false,
-      isPromptActive: false
-    }
+    prompt: ''
   };
 
   /**
@@ -167,22 +163,11 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
     this.lifecycle(SnotifyAction.onHoverLeave);
   }
 
-  // Prompt
-
   /**
-   * Expand input
+   * Prompt input value changed
    */
-  onPromptEnter() {
-    this.state.prompt.isPromptActive = true;
-  }
-
-  /**
-   * Collapse input
-   */
-  onPromptLeave() {
-    if (!this.state.prompt.input.length && !this.state.prompt.isPromptFocused) {
-      this.state.prompt.isPromptActive = false;
-    }
+  onPromptChanged(value: string) {
+    this.lifecycle(SnotifyAction.onInput, value)
   }
 
   /*
@@ -280,13 +265,15 @@ export class ToastComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
-   * Lifesycle trigger
+   * Lifecycle trigger
    * @param action {SnotifyAction}
+   * @param promptValue {SnotifyAction}
    */
-  lifecycle(action: SnotifyAction) {
+  lifecycle(action: SnotifyAction, promptValue?: string) {
     return this.service.lifecycle.next({
       action,
-      toast: this.toast
+      toast: this.toast,
+      value: promptValue
     });
   }
 

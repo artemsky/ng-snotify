@@ -31,6 +31,7 @@ export class SnotifyService {
   onClick: (info?: SnotifyToast) => void;
   onHoverEnter: (info?: SnotifyToast) => void;
   onHoverLeave: (info?: SnotifyToast) => void;
+  onInput: (info?: SnotifyToast, value?: string) => void;
   beforeDestroy: (info?: SnotifyToast) => void;
   afterDestroy: (info?: SnotifyToast) => void;
 

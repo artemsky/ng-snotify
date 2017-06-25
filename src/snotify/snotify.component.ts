@@ -102,6 +102,11 @@ export class SnotifyComponent implements OnInit, OnDestroy {
               this.service.afterDestroy(info.toast);
             }
             break;
+          case SnotifyAction.onInput:
+            if (this.service.onInput) {
+              this.service.onInput(info.toast, info.value);
+            }
+            break;
         }
       }
     );

@@ -1,3 +1,4 @@
+///<reference path="snotify/toast/prompt/prompt.component.ts"/>
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,6 +8,7 @@ import { IconComponent } from './snotify/toast/icon/icon.component';
 import { SnotifyService } from './snotify/snotify.service';
 import { TruncatePipe } from './snotify/pipes/truncate.pipe';
 import {ButtonsComponent} from './snotify/toast/button/buttons.component';
+import {PromptComponent} from './snotify/toast/prompt/prompt.component';
 
 export * from './snotify/snotify.component';
 export * from './snotify/snotify.service';
@@ -24,6 +26,7 @@ export * from './snotify/toast/icon/icon.component';
 export * from './snotify/pipes/truncate.pipe';
 
 export * from './snotify/toast/button/buttons.component';
+export * from './snotify/toast/prompt/prompt.component';
 
 @NgModule({
   imports: [
@@ -31,7 +34,7 @@ export * from './snotify/toast/button/buttons.component';
   ],
   declarations: [
     SnotifyComponent, ToastComponent, IconComponent, TruncatePipe,
-    ButtonsComponent
+    ButtonsComponent, PromptComponent
   ],
   exports: [
     SnotifyComponent, TruncatePipe
