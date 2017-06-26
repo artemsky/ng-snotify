@@ -1,8 +1,9 @@
+@import "animate/animate";
+
 $simple-bg: #fff;
 $simple-color: #000;
 $simple-progressBar: #c7c7c7;
 $simple-progressBarPercentage: #4c4c4c;
-
 
 $success-bg: #4CAF50;
 $success-color: #C8E6C9;
@@ -48,7 +49,6 @@ $prompt-color: #e0f2f1;
   height: 100%;
   margin: 5px;
   opacity: 0;
-  transform: translate(0, -50%);
   border-radius: 5px;
   overflow: hidden;
 

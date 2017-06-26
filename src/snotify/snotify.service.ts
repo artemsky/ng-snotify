@@ -8,9 +8,9 @@ import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
 import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
 import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
-import {SnotifyType} from './enum/SnotifyType.enum';
 import {SnotifyPosition} from './enum/SnotifyPosition.enum';
 import {SnotifyAction} from './enum/SnotifyAction.enum';
+import {SnotifyType} from './types/Snotify.type';
 
 /**
  * SnotifyService - create, remove, config toasts
@@ -25,6 +25,7 @@ export class SnotifyService {
   private config: SnotifyConfig;
   private _options: SnotifyOptions;
   private notifications: SnotifyToast[] = [];
+  private _defaultAnimationTime = 750;
 
   // Callbacks
   onInit: (info?: SnotifyToast) => void;
@@ -97,7 +98,8 @@ export class SnotifyService {
       pauseOnHover: true,
       bodyMaxLength: 150,
       titleMaxLength: 16,
-      backdrop: -1
+      backdrop: -1,
+      animation: {enter: 'fadeInUp', exit: 'fadeOutRight', time: this._defaultAnimationTime}
     };
     this._options = {
       newOnTop: true,
@@ -121,8 +123,41 @@ export class SnotifyService {
    * @param options {SnotifyOptions}
    */
   setConfig(config: SnotifyConfig, options?: SnotifyOptions): void {
-    this.config = Object.assign(this.config, config);
-    this._options = Object.assign(this._options, options);
+    this._options = Object.assign(
+      this._options,
+      options
+    );
+    console.log(this._options)
+    this.config = config ? {
+      ...this.config,
+      ...{
+        animation: ((position) => {
+          switch (position) {
+            case SnotifyPosition.left_top:
+              return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this._defaultAnimationTime};
+            case SnotifyPosition.left_center:
+              return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this._defaultAnimationTime};
+            case SnotifyPosition.left_bottom:
+              return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this._defaultAnimationTime};
+
+            case SnotifyPosition.right_top:
+              return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this._defaultAnimationTime};
+            case SnotifyPosition.right_center:
+              return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this._defaultAnimationTime};
+            case SnotifyPosition.right_bottom:
+              return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this._defaultAnimationTime};
+
+            case SnotifyPosition.center_top:
+              return {enter: 'fadeInDown', exit: 'fadeOutUp', time: this._defaultAnimationTime};
+            case SnotifyPosition.center_center:
+              return {enter: 'fadeIn', exit: 'fadeOut', time: this._defaultAnimationTime};
+            case SnotifyPosition.center_bottom:
+              return {enter: 'fadeInUp', exit: 'fadeOutDown', time: this._defaultAnimationTime};
+          }
+        })(this._options.position)
+      },
+      ...config
+    } : config;
     this.optionsChanged.next(this._options);
   }
 

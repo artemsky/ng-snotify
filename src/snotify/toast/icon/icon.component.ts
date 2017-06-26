@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {SnotifyType} from '../../types/Snotify.type';
 
 @Component({
   selector: 'ng-snotify-icon',
@@ -9,6 +10,6 @@ export class IconComponent {
   /**
    * Get toast type, to select an item from the list
    */
-  @Input() types;
+  @Input() type: SnotifyType;
   constructor() { }
 }

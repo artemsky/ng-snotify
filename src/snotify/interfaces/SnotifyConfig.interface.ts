@@ -1,5 +1,6 @@
-import {SnotifyType} from '../enum/SnotifyType.enum';
 import {SnotifyButton} from './SnotifyButton.interface';
+import {SnotifyAnimate} from './SnotifyAnimate.interface';
+import {SnotifyType} from '../types/Snotify.type';
 
 export interface SnotifyConfig {
   /**
@@ -68,4 +69,5 @@ export interface SnotifyConfig {
    * Default: -1
    */
   backdrop?: number;
+  animation?: SnotifyAnimate
 }

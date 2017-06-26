@@ -19,7 +19,6 @@ export * from './snotify/interfaces/SnotifyInfo.interface';
 export * from './snotify/interfaces/SnotifyOptions.interface';
 export * from './snotify/enum/SnotifyAction.enum';
 export * from './snotify/enum/SnotifyPosition.enum';
-export * from './snotify/enum/SnotifyType.enum';
 export * from './snotify/toast/snotify-toast.model';
 export * from './snotify/toast/toast.component';
 export * from './snotify/toast/icon/icon.component';
