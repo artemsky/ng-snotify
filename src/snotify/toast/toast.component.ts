@@ -75,7 +75,7 @@ export class ToastComponent implements OnInit, OnDestroy {
         }
       }
     );
-
+    this.state.toast.type = this.toast.config.type as string;
     this.state.toast.time = this.toast.config.animation.time;
     this.state.toast.animation = this.toast.config.animation.enter;
     this.lifecycle(SnotifyAction.onInit);

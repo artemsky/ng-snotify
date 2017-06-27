@@ -10,10 +10,10 @@
   }"
   (animationend)="onExitTransitionEnd()"
   (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+  <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
+    <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': state.toast.progress + '%'}"></span>
+  </div>
   <div class="snotifyToast__inner">
-    <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
-      <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': state.toast.progress + '%'}"></span>
-    </div>
     <div class="snotifyToast__title" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>
     <div class="snotifyToast__body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>
     <ng-snotify-prompt *ngIf="state.toast.type === state.promptType"

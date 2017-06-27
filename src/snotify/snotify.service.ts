@@ -123,14 +123,9 @@ export class SnotifyService {
    * @param options {SnotifyOptions}
    */
   setConfig(config: SnotifyConfig, options?: SnotifyOptions): void {
-    this._options = Object.assign(
-      this._options,
-      options
-    );
-    console.log(this._options)
-    this.config = config ? {
-      ...this.config,
-      ...{
+    this._options = SnotifyService.mergeDeep(this._options, options);
+    this.config = SnotifyService.mergeDeep(this.config,
+      {
         animation: ((position) => {
           switch (position) {
             case SnotifyPosition.left_top:
@@ -156,8 +151,8 @@ export class SnotifyService {
           }
         })(this._options.position)
       },
-      ...config
-    } : config;
+      config);
+
     this.optionsChanged.next(this._options);
   }
 
@@ -244,7 +239,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: {...this.config, ...{type: SnotifyType.SUCCESS}, ...config}
+      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.SUCCESS}, config)
     });
   }
 
@@ -259,7 +254,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: {...this.config, ...{type: SnotifyType.ERROR}, ...config}
+      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.ERROR}, config)
     });
   }
 
@@ -274,7 +269,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: {...this.config, ...{type: SnotifyType.INFO}, ...config}
+      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.INFO}, config)
     });
   }
 
@@ -289,7 +284,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: {...this.config,  ...{type: SnotifyType.WARNING}, ...config}
+      config: SnotifyService.mergeDeep(this.config,  {type: SnotifyType.WARNING}, config)
     });
   }
 
@@ -304,7 +299,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: {...this.config, ...config}
+      config: SnotifyService.mergeDeep(this.config, config)
     });
   }
 
@@ -319,20 +314,18 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: {
-        ...this.config,
-        ...{
+      config: SnotifyService.mergeDeep(this.config,
+        {
           buttons: [
             {text: 'Ok', action: null, bold: true},
             {text: 'Cancel', action: null, bold: false},
           ]
-        },
-        ...config,
-        ...{
+        }, config,
+        {
           type: SnotifyType.CONFIRM,
           closeOnClick: false,
         }
-      }
+      )
     });
   }
 
@@ -347,22 +340,20 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: {
-        ...this.config,
-        ...{
+      config: SnotifyService.mergeDeep(this.config,
+        {
           buttons: [
             {text: 'Ok', action: null, bold: true},
             {text: 'Cancel', action: null, bold: false},
           ],
           placeholder: 'Enter answer here...',
-        },
-        ...config,
-        ...{
+        }, config,
+        {
           timeout: 0,
           closeOnClick: false,
           type: SnotifyType.PROMPT,
         }
-      }
+      )
     });
   }
 
