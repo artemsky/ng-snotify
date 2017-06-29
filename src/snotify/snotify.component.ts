@@ -130,40 +130,12 @@ export class SnotifyComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Setup notifications position
+   * Set notifications position
    * @param position {SnotifyPosition}
    */
   setPosition(position: SnotifyPosition): void {
     this.render.removeAttribute(this.snotify.nativeElement, 'class');
-      switch (position) {
-        case SnotifyPosition.left_top:
-          this.render.addClass(this.snotify.nativeElement, 'snotify-leftTop');
-          break;
-        case SnotifyPosition.left_center:
-          this.render.addClass(this.snotify.nativeElement, 'snotify-leftCenter');
-          break;
-        case SnotifyPosition.left_bottom:
-          this.render.addClass(this.snotify.nativeElement, 'snotify-leftBottom');
-          break;
-        case SnotifyPosition.right_top:
-          this.render.addClass(this.snotify.nativeElement, 'snotify-rightTop');
-          break;
-        case SnotifyPosition.right_center:
-          this.render.addClass(this.snotify.nativeElement, 'snotify-rightCenter');
-          break;
-        case SnotifyPosition.right_bottom:
-          this.render.addClass(this.snotify.nativeElement, 'snotify-rightBottom');
-          break;
-        case SnotifyPosition.center_top:
-          this.render.addClass(this.snotify.nativeElement, 'snotify-centerTop');
-          break;
-        case SnotifyPosition.center_center:
-          this.render.addClass(this.snotify.nativeElement, 'snotify-centerCenter');
-          break;
-        case SnotifyPosition.center_bottom:
-          this.render.addClass(this.snotify.nativeElement, 'snotify-centerBottom');
-          break;
-      }
+    this.render.addClass(this.snotify.nativeElement, `snotify-${position}`);
   }
 
   /**

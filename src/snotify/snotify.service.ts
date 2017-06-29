@@ -10,7 +10,7 @@ import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
 import {SnotifyPosition} from './enum/SnotifyPosition.enum';
 import {SnotifyAction} from './enum/SnotifyAction.enum';
-import {SnotifyType} from './types/Snotify.type';
+import {SnotifyType} from './enum/Snotify.type';
 
 /**
  * SnotifyService - create, remove, config toasts

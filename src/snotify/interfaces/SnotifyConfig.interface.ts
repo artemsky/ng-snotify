@@ -1,6 +1,6 @@
 import {SnotifyButton} from './SnotifyButton.interface';
 import {SnotifyAnimate} from './SnotifyAnimate.interface';
-import {SnotifyType} from '../types/Snotify.type';
+import {SnotifyType} from '../enum/Snotify.type';
 
 export interface SnotifyConfig {
   /**
