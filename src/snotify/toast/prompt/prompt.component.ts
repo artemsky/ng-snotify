@@ -6,6 +6,10 @@ import {SnotifyService} from '../../snotify.service';
   templateUrl: './prompt.component.html',
   styleUrls: ['./prompt.component.scss']
 })
+
+/**
+ * Prompt component. Part of PROMPT type
+ */
 export class PromptComponent implements OnInit {
   /**
    * Get PROMPT placeholder

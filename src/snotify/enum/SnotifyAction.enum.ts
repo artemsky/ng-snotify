@@ -1,3 +1,6 @@
+/**
+ * Toast callback types
+ */
 export enum SnotifyAction {
   onInit = 3,
   beforeDestroy = 0,

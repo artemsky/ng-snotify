@@ -1,3 +1,6 @@
+/**
+ * Toast position
+ */
 export enum SnotifyPosition {
   left_top = 'leftTop',
   left_center = 'leftCenter',

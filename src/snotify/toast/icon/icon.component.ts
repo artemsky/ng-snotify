@@ -6,6 +6,10 @@ import {SnotifyType} from '../../enum/SnotifyType.enum';
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss']
 })
+
+/**
+ * Icons component
+ */
 export class IconComponent {
   /**
    * Get toast type, to select an item from the list

@@ -1,66 +1,71 @@
+// tslint:disable:no-trailing-whitespace
+
 import {SnotifyButton} from './SnotifyButton.interface';
 import {SnotifyAnimate} from './SnotifyAnimate.interface';
-import {SnotifyType} from '../enum/Snotify.type';
+import {SnotifyType} from '../enum/SnotifyType.enum';
 
 export interface SnotifyConfig {
   /**
-   * Toast timeout in milliseconds. 0 - Disable timeout
-   * Default: 2000
+   * Toast timeout in milliseconds.
+   * Disable timeout = 0
+   * @type {number}
+   * @default: 2000
    */
   timeout?: number;
   /**
-   * Enable/Disable progress bar. Disabled if timeout is 0.
-   * Default: true
-   *
+   * Enable/Disable progress bar.
+   * Disabled if timeout is 0.
    * @type {boolean}
+   * @default true
    */
   showProgressBar?: boolean;
   /**
    * Type of toast, affects toast style.
    * It's not recommended to change it.
-   * Default: Depends on toast type - success | async | error | etc...
+   * Depends on toast type.
+   * @type {SnotifyType}
+   * @default SnotifyType.SIMPLE | SnotifyType.SUCCESS | SnotifyType. ERROR | SnotifyType.WARNING etc..
    */
   type?: SnotifyType;
   /**
-   * Enable/Disable toast close by clicking on it
-   * Default: true
+   * Should toast close on click?
    * @type {boolean}
+   * @default true
    */
   closeOnClick?: boolean;
   /**
-   * Enable/Disable pause on mouse enter
-   * Default: true
+   * Should timeout pause on hover?
+   * @type {boolean}
+   * @default true
    */
   pauseOnHover?: boolean;
   /**
    * Buttons config.
-   * Default: Confirm, Prompt `[ {text: 'Ok', action: null, bold: true}, {text: 'Cancel', action: null, bold: false} ]`
-   * Default for other types: null
    * @type {SnotifyButton[]}
+   * @default Look snotify button description
    */
   buttons?: SnotifyButton[];
   /**
    * Placeholder for Prompt toast
-   * Default: 'Enter answer here...'
    * @type {string}
+   * @default 'Enter answer here...'
    */
   placeholder?: string;
   /**
    * Toast title maximum length
-   * Default: 16
    * @type {number}
+   * @default 16
    */
   titleMaxLength?: number;
   /**
    * Toast body maximum length
-   * Default: 150
    * @type {number}
+   * @default 150
    */
   bodyMaxLength?: number;
   /**
    * Activate custom icon.
    * You should provide full tag, e.g.
-   * Default: Depends on toast type
    * ```
    * <img src="assets/custom-icon.png"/>
    * // or
@@ -68,15 +73,19 @@ export interface SnotifyConfig {
    * <g><path....../></g></svg>
    * ```
    * @type {string}
+   * @default Depends on toast type. Look more in icon.component.html
    */
   icon?: string;
   /**
-   * Backdrop opacity. 0.0 - 1.0 | -1 = Disabled
-   * Default: -1
+   * Backdrop opacity.
+   * Range: 0.0 - 1.0.
+   * Disabled = -1
    * @type {number}
+   * @default -1
    */
   backdrop?: number;
   /**
+   * Animation config
    * @type {SnotifyAnimate}
    */
   animation?: SnotifyAnimate

@@ -6,6 +6,10 @@ import {SnotifyButton} from '../../interfaces/SnotifyButton.interface';
   templateUrl: './buttons.component.html',
   styleUrls: ['./buttons.component.scss']
 })
+
+/**
+ * Buttons component
+ */
 export class ButtonsComponent {
   /**
    * Get buttons Array

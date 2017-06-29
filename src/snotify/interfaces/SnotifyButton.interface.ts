@@ -1,15 +1,27 @@
+/**
+ * Buttons config.
+ * By default there are two buttons exists only on type PROMPT & CONFIRM.
+ *
+ * Default - 1st button | 2nd button
+ */
 export interface SnotifyButton {
   /**
    * Button text
+   * @type {string}
+   * @default 'Yes' | 'Cancel'
    */
   text: string;
   /**
    * Action which will be called after button click
-   * @param text? {String}
+   * @type {function}
+   * @param text? {string}
+   * @returns {void}
+   * @default null | () => this.remove(id)
    */
   action?: (text?: string) => void;
   /**
-   * Make button text bold or not
+   * Should button text be bold.
+   * @default true | false
    */
   bold?: boolean;
 }

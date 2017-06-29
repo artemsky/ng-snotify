@@ -3,6 +3,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'truncate'
 })
+
+/**
+ * Truncate toast text pipe
+ */
 export class TruncatePipe implements PipeTransform {
 
   transform(value: string, ...args: Array<any>): any {

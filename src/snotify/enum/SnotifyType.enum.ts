@@ -1,5 +1,5 @@
 /**
- * Toast string type.
+ * Toast type.
  */
 export enum SnotifyType {
   SIMPLE = 'simple',

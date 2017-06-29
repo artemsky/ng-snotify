@@ -10,7 +10,7 @@ import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
 import {SnotifyPosition} from './enum/SnotifyPosition.enum';
 import {SnotifyAction} from './enum/SnotifyAction.enum';
-import {SnotifyType} from './enum/Snotify.type';
+import {SnotifyType} from './enum/SnotifyType.enum';
 
 /**
  * SnotifyService - create, remove, config toasts
@@ -105,7 +105,6 @@ export class SnotifyService {
       newOnTop: true,
       position: SnotifyPosition.right_bottom,
       maxOnScreen: 8,
-      transition: 400,
       maxHeight: 300
     };
   }
@@ -311,14 +310,14 @@ export class SnotifyService {
    * @return {number}
    */
   confirm(body: string, title: string, config?: SnotifyConfig): number {
-    return this.create({
+    const id = this.create({
       title: title,
       body: body,
       config: SnotifyService.mergeDeep(this.config,
         {
           buttons: [
             {text: 'Ok', action: null, bold: true},
-            {text: 'Cancel', action: null, bold: false},
+            {text: 'Cancel', action: () => this.remove(id), bold: false},
           ]
         }, config,
         {
@@ -327,6 +326,7 @@ export class SnotifyService {
         }
       )
     });
+    return id;
   }
 
   /**
@@ -337,14 +337,14 @@ export class SnotifyService {
    * @return {number}
    */
   prompt(body: string, title?: string, config?: SnotifyConfig): number {
-    return this.create({
+    const id = this.create({
       title: title,
       body: body,
       config: SnotifyService.mergeDeep(this.config,
         {
           buttons: [
             {text: 'Ok', action: null, bold: true},
-            {text: 'Cancel', action: null, bold: false},
+            {text: 'Cancel', action: () => this.remove(id), bold: false},
           ],
           placeholder: 'Enter answer here...',
         }, config,
@@ -355,6 +355,7 @@ export class SnotifyService {
         }
       )
     });
+    return id;
   }
 
   /**
