@@ -83,7 +83,13 @@
                                 id="xs-components-links"
                             >
                                 <li class="link">
+                                    <a href="./components/ButtonsComponent.html" >ButtonsComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/IconComponent.html" >IconComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/PromptComponent.html" >PromptComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="./components/SnotifyComponent.html" >SnotifyComponent</a>
@@ -108,6 +114,9 @@
                             >
                                 <li class="link">
                                     <a href="./classes/SnotifyToast.html" >SnotifyToast</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./classes/SnotifyType.html" >SnotifyType</a>
                                 </li>
                         </ul>
                     </li>
@@ -142,6 +151,9 @@
                             >
                                 <li class="link">
                                     <a href="./interfaces/Snotify.html" >Snotify</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/SnotifyAnimate.html" >SnotifyAnimate</a>
                                 </li>
                                 <li class="link">
                                     <a href="./interfaces/SnotifyButton.html" >SnotifyButton</a>
@@ -257,7 +269,13 @@
                                        id="components-links"
                    >
                                        <li class="link">
+                                           <a href="./components/ButtonsComponent.html" >ButtonsComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/IconComponent.html" >IconComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/PromptComponent.html" >PromptComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="./components/SnotifyComponent.html" >SnotifyComponent</a>
@@ -282,6 +300,9 @@
                    >
                                        <li class="link">
                                            <a href="./classes/SnotifyToast.html" >SnotifyToast</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./classes/SnotifyType.html" >SnotifyType</a>
                                        </li>
                                </ul>
                            </li>
@@ -316,6 +337,9 @@
                    >
                                        <li class="link">
                                            <a href="./interfaces/Snotify.html" >Snotify</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/SnotifyAnimate.html" >SnotifyAnimate</a>
                                        </li>
                                        <li class="link">
                                            <a href="./interfaces/SnotifyButton.html" >SnotifyButton</a>
@@ -383,58 +407,19 @@
 <h2 id="installation">Installation</h2>
 <h6 id="npm-5">NPM 5</h6>
 <p><code>npm install ng-snotify</code></p>
-<h6 id="npm-4">NPM 4</h6>
-<p><code>npm install ng-snotify --save</code></p>
-<h4 id="import-module">Import Module</h4>
-<p>Import SnotifyModule, also you can try SnotifyModule.forRoot() if you have build errors<br>And provide SnotifyService</p>
-<pre class="line-numbers"><code class="language-typescript">// Import your library
-import { SnotifyModule, SnotifyService } from &#39;ng-snotify&#39;;
-
-&#64;NgModule({
-  imports: [
-    BrowserModule,
-    SnotifyModule
-  ],
-  providers: [SnotifyService]
-})
-export class AppModule { }</code></pre><h4 id="add-selector">Add selector</h4>
-<p>Add <code>app-snotify</code> component to you root component</p>
-<pre class="line-numbers"><code class="language-html">&lt;app-snotify&gt;&lt;/app-snotify&gt;</code></pre><h4 id="dependency-injection">Dependency injection</h4>
-<p>Now you should inject <code>SnotifyService</code></p>
-<pre class="line-numbers"><code class="language-typescript">import {SnotifyService} from &#39;ng-snotify&#39;;
-
-&#64;Component({
-  selector: &#39;app-root&#39;,
-  templateUrl: &#39;./app.component.html&#39;,
-  styleUrls: [&#39;./app.component.css&#39;]
-})
-export class AppComponent {
-  constructor(private snotifyService: SnotifyService) {}
-}</code></pre><h2 id="documentation-and-examples">Documentation and Examples</h2>
-<p>Wiki - <a href="https://github.com/artemsky/ng-snotify/wiki">here</a><br>Examples - <a href="https://github.com/artemsky/ng-snotify/wiki/Examples">here</a><br>Example application source - <a href="https://github.com/artemsky/ng-snotify/tree/master/example/app">here</a><br>Auto-Documentation - <a href="https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html">here</a></p>
-<h2 id="development">Development</h2>
-<ul>
-<li><code>npm run build</code></li>
-<li><code>cd src</code></li>
-<li><code>npm link</code></li>
-<li><code>cd ..</code></li>
-<li><code>npm link ng-snotify</code></li>
-<li>Run component build:watch <code>npm run build:watch</code></li>
-<li>Run example app <code>ng serve --open</code></li>
-<li>open <code>localhost:4200</code> in your browser</li>
-<li>go to <code>./src</code></li>
-<li>Start developing!</li>
-</ul>
-<h2 id="known-issues">Known issues</h2>
-<ul>
-<li>Compodoc stopped generate interfaces - (<a href="https://github.com/jvandemo/generator-angular2-library/issues/112">source</a>)</li>
-</ul>
+<h6 id="yarn">yarn</h6>
+<p><code>yarn add ng-snotify</code></p>
+<p>Detailed instruction - <a href="https://github.com/artemsky/ng-snotify/wiki/Install">here</a></p>
+<h2 id="documentation-and-examples">Documentation and Examples</h2>
+<p>Wiki - <a href="https://github.com/artemsky/ng-snotify/wiki">here</a><br>Examples - <a href="https://github.com/artemsky/ng-snotify/wiki/Examples">here</a><br>Example application source - <a href="https://github.com/artemsky/ng-snotify/tree/master/example/app">here</a><br>Auto-Documentation - <a href="https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html">here</a><br>Development - <a href="https://github.com/artemsky/ng-snotify/wiki/Development">here</a></p>
 <h2 id="license">License</h2>
 <p>MIT © <a href="mailto:mr.artemsky@gmail.com">artemsky</a></p>
 <h2 id="change-log">Change Log</h2>
 <h3 id="v1-4-0">v1.4.0</h3>
 <ul>
 <li>add backdrop (<a href="https://github.com/artemsky/ng-snotify/issues/15">#15</a>)</li>
+<li>fix @compodoc/compodoc inteface generator - <a href="https://github.com/compodoc/compodoc/issues/198">source 1</a>
+<a href="https://github.com/jvandemo/generator-angular2-library/issues/112">source 2</a></li>
 </ul>
 <h3 id="v1-3-0">v1.3.0</h3>
 <ul>

@@ -25,7 +25,7 @@ export class SnotifyService {
   private config: SnotifyConfig;
   private _options: SnotifyOptions;
   private notifications: SnotifyToast[] = [];
-  private _defaultAnimationTime = 750;
+  private _defaultAnimationTime = 400;
 
   // Callbacks
   onInit: (info?: SnotifyToast) => void;

@@ -7,14 +7,17 @@ import {SnotifyAction} from '../enum/SnotifyAction.enum';
 export interface SnotifyInfo {
   /**
    * Toast lifecycle action (onInit, onDestroy, etc...)
+   * @type {SnotifyAction}
    */
   action: SnotifyAction;
   /**
    * Toast which triggered an action
+   * @type {SnotifyToast}
    */
   toast: SnotifyToast;
   /**
    * Prompt toast input value
+   * @type {string}
    */
   value?: string;
 }

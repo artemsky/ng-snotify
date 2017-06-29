@@ -83,7 +83,13 @@
                                 id="xs-components-links"
                             >
                                 <li class="link">
+                                    <a href="../components/ButtonsComponent.html" >ButtonsComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/IconComponent.html"  data-type="entity-link" class="active" >IconComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PromptComponent.html" >PromptComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/SnotifyComponent.html" >SnotifyComponent</a>
@@ -108,6 +114,9 @@
                             >
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
                                 </li>
                         </ul>
                     </li>
@@ -142,6 +151,9 @@
                             >
                                 <li class="link">
                                     <a href="../interfaces/Snotify.html" >Snotify</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyAnimate.html" >SnotifyAnimate</a>
                                 </li>
                                 <li class="link">
                                     <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
@@ -257,7 +269,13 @@
                                        id="components-links"
                    >
                                        <li class="link">
+                                           <a href="../components/ButtonsComponent.html" >ButtonsComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/IconComponent.html"  data-type="entity-link" class="active" >IconComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PromptComponent.html" >PromptComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/SnotifyComponent.html" >SnotifyComponent</a>
@@ -282,6 +300,9 @@
                    >
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
                                        </li>
                                </ul>
                            </li>
@@ -316,6 +337,9 @@
                    >
                                        <li class="link">
                                            <a href="../interfaces/Snotify.html" >Snotify</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyAnimate.html" >SnotifyAnimate</a>
                                        </li>
                                        <li class="link">
                                            <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
@@ -419,7 +443,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-icon</code></td>
+                <td class="col-md-9"><code>ng-snotify-icon</code></td>
             </tr>
 
             <tr>
@@ -445,16 +469,20 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>types</code>
+                            <code>type</code>
                         </td>
                         <td class="col-md-10">
                             <div><p>Get toast type, to select an item from the list</p>
 </div>
+                              <p>
+                                <em>Type:</em>    <code>any</code>
+
+                              </p>
                         </td>
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/snotify/toast/icon/icon.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/snotify/toast/icon/icon.component.ts:13</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -473,7 +501,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/snotify/toast/icon/icon.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/snotify/toast/icon/icon.component.ts:13</a></div>
                                 </td>
                             </tr>
     
@@ -487,9 +515,10 @@
 
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {Component, Input} from &#x27;@angular/core&#x27;;
+import {SnotifyType} from &#x27;../../types/Snotify.type&#x27;;
 
 @Component({
-  selector: &#x27;app-icon&#x27;,
+  selector: &#x27;ng-snotify-icon&#x27;,
   templateUrl: &#x27;./icon.component.html&#x27;,
   styleUrls: [&#x27;./icon.component.scss&#x27;]
 })
@@ -497,29 +526,31 @@ export class IconComponent {
   /**
    * Get toast type, to select an item from the list
    */
-  @Input() types;
+  @Input() type: SnotifyType;
   constructor() { }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade" id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; version&#x3D;&quot;1.1&quot; x&#x3D;&quot;0px&quot; y&#x3D;&quot;0px&quot; viewBox&#x3D;&quot;0 0 512 512&quot; style&#x3D;&quot;enable-background:new 0 0 48 48;&quot; xml:space&#x3D;&quot;preserve&quot; width&#x3D;&quot;48px&quot; height&#x3D;&quot;48px&quot;&gt;
-  &lt;g *ngIf&#x3D;&quot;types.warning&quot; class&#x3D;&quot;snotify-icon__warning&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; version&#x3D;&quot;1.1&quot; x&#x3D;&quot;0px&quot; y&#x3D;&quot;0px&quot; viewBox&#x3D;&quot;0 0 512 512&quot;
+     style&#x3D;&quot;enable-background:new 0 0 48 48;&quot; xml:space&#x3D;&quot;preserve&quot; width&#x3D;&quot;48px&quot; height&#x3D;&quot;48px&quot; [ngSwitch]&#x3D;&quot;type&quot;&gt;
+  &lt;g *ngSwitchCase&#x3D;&quot;&#x27;warning&#x27;&quot; class&#x3D;&quot;snotify-icon__warning&quot;&gt;
     &lt;path d&#x3D;&quot;M256,512c141.15,0,256-114.84,256-256S397.15,0,256,0,0,114.84,0,256,114.85,512,256,512Zm0-480.49c123.79,0,224.49,100.71,224.49,224.49S379.79,480.49,256,480.49,31.51,379.79,31.51,256,132.21,31.51,256,31.51Z&quot;/&gt;&lt;circle cx&#x3D;&quot;260.08&quot; cy&#x3D;&quot;343.87&quot; r&#x3D;&quot;26.35&quot;/&gt;&lt;path d&#x3D;&quot;M254.68,278.39a15.76,15.76,0,0,0,15.75-15.75V128.72a15.75,15.75,0,1,0-31.51,0V262.63A15.76,15.76,0,0,0,254.68,278.39Z&quot;/&gt;
   &lt;/g&gt;
-  &lt;g *ngIf&#x3D;&quot;types.success&quot; class&#x3D;&quot;snotify-icon__success&quot;&gt;
+  &lt;g *ngSwitchCase&#x3D;&quot;&#x27;success&#x27;&quot; class&#x3D;&quot;snotify-icon__success&quot;&gt;
     &lt;path d&#x3D;&quot;M256,0C114.85,0,0,114.84,0,256S114.85,512,256,512,512,397.16,512,256,397.15,0,256,0Zm0,492.31c-130.29,0-236.31-106-236.31-236.31S125.71,19.69,256,19.69,492.31,125.71,492.31,256,386.29,492.31,256,492.31Z&quot;/&gt;&lt;path class&#x3D;&quot;cls-1&quot; d&#x3D;&quot;M376.64,151,225.31,321.24l-91.17-72.93a9.85,9.85,0,0,0-12.3,15.38l98.46,78.77a9.86,9.86,0,0,0,13.52-1.15L391.36,164.08A9.85,9.85,0,0,0,376.64,151Z&quot;/&gt;
   &lt;/g&gt;
-  &lt;g *ngIf&#x3D;&quot;types.info &amp;&amp; !types.async&quot; class&#x3D;&quot;snotify-icon__info&quot;&gt;
+  &lt;g *ngSwitchCase&#x3D;&quot;&#x27;info&#x27;&quot; class&#x3D;&quot;snotify-icon__info&quot;&gt;
     &lt;path d&#x3D;&quot;M256,0C114.84,0,0,114.84,0,256S114.84,512,256,512,512,397.16,512,256,397.15,0,256,0Zm0,478.43C133.35,478.43,33.57,378.64,33.57,256S133.35,33.58,256,33.58,478.42,133.36,478.42,256,378.64,478.43,256,478.43Z&quot;/&gt;&lt;path d&#x3D;&quot;M251.26,161.24a22.39,22.39,0,1,0-22.38-22.39A22.39,22.39,0,0,0,251.26,161.24Z&quot;/&gt;&lt;path d&#x3D;&quot;M286.84,357.87h-14v-160A16.79,16.79,0,0,0,256,181.05H225.17a16.79,16.79,0,0,0,0,33.58h14.05V357.87H225.17a16.79,16.79,0,0,0,0,33.57h61.67a16.79,16.79,0,1,0,0-33.57Z&quot;/&gt;
   &lt;/g&gt;
-  &lt;g *ngIf&#x3D;&quot;types.error&quot; class&#x3D;&quot;snotify-icon__error&quot;&gt;
+  &lt;g *ngSwitchCase&#x3D;&quot;&#x27;error&#x27;&quot; class&#x3D;&quot;snotify-icon__error&quot;&gt;
     &lt;path d&#x3D;&quot;M437,75A256,256,0,1,0,75,437,256,256,0,1,0,437,75ZM416.43,416.43a226.82,226.82,0,0,1-320.86,0C7.11,328,7.11,184,95.57,95.57a226.82,226.82,0,0,1,320.86,0C504.89,184,504.89,328,416.43,416.43Z&quot;/&gt;&lt;path d&#x3D;&quot;M368.81,143.19a14.5,14.5,0,0,0-20.58,0L256,235.42l-92.23-92.23a14.55,14.55,0,0,0-20.58,20.58L235.42,256l-92.23,92.23a14.6,14.6,0,0,0,10.24,24.89,14.19,14.19,0,0,0,10.24-4.31l92.23-92.23,92.23,92.23a14.64,14.64,0,0,0,10.24,4.31,14,14,0,0,0,10.24-4.31,14.5,14.5,0,0,0,0-20.58l-92-92.23,92.23-92.23A14.5,14.5,0,0,0,368.81,143.19Z&quot;/&gt;
   &lt;/g&gt;
-  &lt;g *ngIf&#x3D;&quot;types.async&quot; class&#x3D;&quot;snotify-icon__async&quot;&gt;
+  &lt;g *ngSwitchCase&#x3D;&quot;&#x27;async&#x27;&quot; class&#x3D;&quot;snotify-icon__async&quot;&gt;
    &lt;path d&#x3D;&quot;M256,0a32,32,0,0,0-32,32V96a32,32,0,0,0,64,0V32A32,32,0,0,0,256,0Zm0,384a32,32,0,0,0-32,32v64a32,32,0,0,0,64,0V416A32,32,0,0,0,256,384ZM391.74,165.5,437,120.22A32,32,0,0,0,391.74,75L346.5,120.22a32,32,0,0,0,45.25,45.28Zm-271.52,181L75,391.74A32,32,0,0,0,120.22,437l45.25-45.25a32,32,0,0,0-45.25-45.25Zm0-271.52A32,32,0,1,0,75,120.22l45.25,45.28a32,32,0,1,0,45.25-45.28ZM391.74,346.5a32,32,0,0,0-45.25,45.25L391.74,437A32,32,0,0,0,437,391.74ZM480,224H416a32,32,0,0,0,0,64h64a32,32,0,0,0,0-64ZM128,256a32,32,0,0,0-32-32H32a32,32,0,0,0,0,64H96A32,32,0,0,0,128,256Z&quot;/&gt;
   &lt;/g&gt;
+
 &lt;/svg&gt;
 
 </code></pre>
@@ -548,8 +579,8 @@ export class IconComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 48 48;" xml:space="preserve" width="48px" height="48px">  <g *ngIf="types.warning" class="snotify-icon__warning">    <path d="M256,512c141.15,0,256-114.84,256-256S397.15,0,256,0,0,114.84,0,256,114.85,512,256,512Zm0-480.49c123.79,0,224.49,100.71,224.49,224.49S379.79,480.49,256,480.49,31.51,379.79,31.51,256,132.21,31.51,256,31.51Z"/><circle cx="260.08" cy="343.87" r="26.35"/><path d="M254.68,278.39a15.76,15.76,0,0,0,15.75-15.75V128.72a15.75,15.75,0,1,0-31.51,0V262.63A15.76,15.76,0,0,0,254.68,278.39Z"/>  </g>  <g *ngIf="types.success" class="snotify-icon__success">    <path d="M256,0C114.85,0,0,114.84,0,256S114.85,512,256,512,512,397.16,512,256,397.15,0,256,0Zm0,492.31c-130.29,0-236.31-106-236.31-236.31S125.71,19.69,256,19.69,492.31,125.71,492.31,256,386.29,492.31,256,492.31Z"/><path class="cls-1" d="M376.64,151,225.31,321.24l-91.17-72.93a9.85,9.85,0,0,0-12.3,15.38l98.46,78.77a9.86,9.86,0,0,0,13.52-1.15L391.36,164.08A9.85,9.85,0,0,0,376.64,151Z"/>  </g>  <g *ngIf="types.info && !types.async" class="snotify-icon__info">    <path d="M256,0C114.84,0,0,114.84,0,256S114.84,512,256,512,512,397.16,512,256,397.15,0,256,0Zm0,478.43C133.35,478.43,33.57,378.64,33.57,256S133.35,33.58,256,33.58,478.42,133.36,478.42,256,378.64,478.43,256,478.43Z"/><path d="M251.26,161.24a22.39,22.39,0,1,0-22.38-22.39A22.39,22.39,0,0,0,251.26,161.24Z"/><path d="M286.84,357.87h-14v-160A16.79,16.79,0,0,0,256,181.05H225.17a16.79,16.79,0,0,0,0,33.58h14.05V357.87H225.17a16.79,16.79,0,0,0,0,33.57h61.67a16.79,16.79,0,1,0,0-33.57Z"/>  </g>  <g *ngIf="types.error" class="snotify-icon__error">    <path d="M437,75A256,256,0,1,0,75,437,256,256,0,1,0,437,75ZM416.43,416.43a226.82,226.82,0,0,1-320.86,0C7.11,328,7.11,184,95.57,95.57a226.82,226.82,0,0,1,320.86,0C504.89,184,504.89,328,416.43,416.43Z"/><path d="M368.81,143.19a14.5,14.5,0,0,0-20.58,0L256,235.42l-92.23-92.23a14.55,14.55,0,0,0-20.58,20.58L235.42,256l-92.23,92.23a14.6,14.6,0,0,0,10.24,24.89,14.19,14.19,0,0,0,10.24-4.31l92.23-92.23,92.23,92.23a14.64,14.64,0,0,0,10.24,4.31,14,14,0,0,0,10.24-4.31,14.5,14.5,0,0,0,0-20.58l-92-92.23,92.23-92.23A14.5,14.5,0,0,0,368.81,143.19Z"/>  </g>  <g *ngIf="types.async" class="snotify-icon__async">   <path d="M256,0a32,32,0,0,0-32,32V96a32,32,0,0,0,64,0V32A32,32,0,0,0,256,0Zm0,384a32,32,0,0,0-32,32v64a32,32,0,0,0,64,0V416A32,32,0,0,0,256,384ZM391.74,165.5,437,120.22A32,32,0,0,0,391.74,75L346.5,120.22a32,32,0,0,0,45.25,45.28Zm-271.52,181L75,391.74A32,32,0,0,0,120.22,437l45.25-45.25a32,32,0,0,0-45.25-45.25Zm0-271.52A32,32,0,1,0,75,120.22l45.25,45.28a32,32,0,1,0,45.25-45.28ZM391.74,346.5a32,32,0,0,0-45.25,45.25L391.74,437A32,32,0,0,0,437,391.74ZM480,224H416a32,32,0,0,0,0,64h64a32,32,0,0,0,0-64ZM128,256a32,32,0,0,0-32-32H32a32,32,0,0,0,0,64H96A32,32,0,0,0,128,256Z"/>  </g></svg></div>'
-    var COMPONENTS = [{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'SnotifyComponent', 'selector': 'app-snotify'},{'name': 'ToastComponent', 'selector': 'app-snotify-toast'}];
+        var COMPONENT_TEMPLATE = '<div><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 512 512"     style="enable-background:new 0 0 48 48;" xml:space="preserve" width="48px" height="48px" [ngSwitch]="type">  <g *ngSwitchCase="\'warning\'" class="snotify-icon__warning">    <path d="M256,512c141.15,0,256-114.84,256-256S397.15,0,256,0,0,114.84,0,256,114.85,512,256,512Zm0-480.49c123.79,0,224.49,100.71,224.49,224.49S379.79,480.49,256,480.49,31.51,379.79,31.51,256,132.21,31.51,256,31.51Z"/><circle cx="260.08" cy="343.87" r="26.35"/><path d="M254.68,278.39a15.76,15.76,0,0,0,15.75-15.75V128.72a15.75,15.75,0,1,0-31.51,0V262.63A15.76,15.76,0,0,0,254.68,278.39Z"/>  </g>  <g *ngSwitchCase="\'success\'" class="snotify-icon__success">    <path d="M256,0C114.85,0,0,114.84,0,256S114.85,512,256,512,512,397.16,512,256,397.15,0,256,0Zm0,492.31c-130.29,0-236.31-106-236.31-236.31S125.71,19.69,256,19.69,492.31,125.71,492.31,256,386.29,492.31,256,492.31Z"/><path class="cls-1" d="M376.64,151,225.31,321.24l-91.17-72.93a9.85,9.85,0,0,0-12.3,15.38l98.46,78.77a9.86,9.86,0,0,0,13.52-1.15L391.36,164.08A9.85,9.85,0,0,0,376.64,151Z"/>  </g>  <g *ngSwitchCase="\'info\'" class="snotify-icon__info">    <path d="M256,0C114.84,0,0,114.84,0,256S114.84,512,256,512,512,397.16,512,256,397.15,0,256,0Zm0,478.43C133.35,478.43,33.57,378.64,33.57,256S133.35,33.58,256,33.58,478.42,133.36,478.42,256,378.64,478.43,256,478.43Z"/><path d="M251.26,161.24a22.39,22.39,0,1,0-22.38-22.39A22.39,22.39,0,0,0,251.26,161.24Z"/><path d="M286.84,357.87h-14v-160A16.79,16.79,0,0,0,256,181.05H225.17a16.79,16.79,0,0,0,0,33.58h14.05V357.87H225.17a16.79,16.79,0,0,0,0,33.57h61.67a16.79,16.79,0,1,0,0-33.57Z"/>  </g>  <g *ngSwitchCase="\'error\'" class="snotify-icon__error">    <path d="M437,75A256,256,0,1,0,75,437,256,256,0,1,0,437,75ZM416.43,416.43a226.82,226.82,0,0,1-320.86,0C7.11,328,7.11,184,95.57,95.57a226.82,226.82,0,0,1,320.86,0C504.89,184,504.89,328,416.43,416.43Z"/><path d="M368.81,143.19a14.5,14.5,0,0,0-20.58,0L256,235.42l-92.23-92.23a14.55,14.55,0,0,0-20.58,20.58L235.42,256l-92.23,92.23a14.6,14.6,0,0,0,10.24,24.89,14.19,14.19,0,0,0,10.24-4.31l92.23-92.23,92.23,92.23a14.64,14.64,0,0,0,10.24,4.31,14,14,0,0,0,10.24-4.31,14.5,14.5,0,0,0,0-20.58l-92-92.23,92.23-92.23A14.5,14.5,0,0,0,368.81,143.19Z"/>  </g>  <g *ngSwitchCase="\'async\'" class="snotify-icon__async">   <path d="M256,0a32,32,0,0,0-32,32V96a32,32,0,0,0,64,0V32A32,32,0,0,0,256,0Zm0,384a32,32,0,0,0-32,32v64a32,32,0,0,0,64,0V416A32,32,0,0,0,256,384ZM391.74,165.5,437,120.22A32,32,0,0,0,391.74,75L346.5,120.22a32,32,0,0,0,45.25,45.28Zm-271.52,181L75,391.74A32,32,0,0,0,120.22,437l45.25-45.25a32,32,0,0,0-45.25-45.25Zm0-271.52A32,32,0,1,0,75,120.22l45.25,45.28a32,32,0,1,0,45.25-45.28ZM391.74,346.5a32,32,0,0,0-45.25,45.25L391.74,437A32,32,0,0,0,437,391.74ZM480,224H416a32,32,0,0,0,0,64h64a32,32,0,0,0,0-64ZM128,256a32,32,0,0,0-32-32H32a32,32,0,0,0,0,64H96A32,32,0,0,0,128,256Z"/>  </g></svg></div>'
+    var COMPONENTS = [{'name': 'ButtonsComponent', 'selector': 'ng-snotify-button'},{'name': 'IconComponent', 'selector': 'ng-snotify-icon'},{'name': 'PromptComponent', 'selector': 'ng-snotify-prompt'},{'name': 'SnotifyComponent', 'selector': 'ng-snotify'},{'name': 'ToastComponent', 'selector': 'ng-snotify-toast'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'IconComponent'};
 </script>

@@ -7,35 +7,37 @@ import {SnotifyService} from '../../snotify.service';
   styleUrls: ['./prompt.component.scss']
 })
 export class PromptComponent implements OnInit {
+  /**
+   * Get PROMPT placeholder
+   */
   @Input() placeholder: string;
+  /**
+   * Emmit prompt input value
+   */
   @Output() valueChanged = new EventEmitter<string>();
 
+  /**
+   * Input length, needed for collapse check
+   */
   length: number;
+  /**
+   * Toast id
+   */
   id: number;
+  /**
+   * Is PROMPT focused
+   * @type {boolean}
+   */
   isPromptFocused = false;
-  isPromptActive = false;
 
   constructor() {
     this.id = SnotifyService.generateRandomId();
   }
 
+  /**
+   * Subscribe on input value change
+   */
   ngOnInit() {
     this.valueChanged.subscribe((value: string) => this.length = value.length)
-  }
-
-  /**
-   * Expand input
-   */
-  onPromptEnter() {
-    this.isPromptActive = true;
-  }
-
-  /**
-   * Collapse input
-   */
-  onPromptLeave() {
-    if (!this.length && !this.isPromptFocused) {
-      this.isPromptActive = false;
-    }
   }
 }

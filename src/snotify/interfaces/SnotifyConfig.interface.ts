@@ -11,6 +11,8 @@ export interface SnotifyConfig {
   /**
    * Enable/Disable progress bar. Disabled if timeout is 0.
    * Default: true
+   *
+   * @type {boolean}
    */
   showProgressBar?: boolean;
   /**
@@ -22,6 +24,7 @@ export interface SnotifyConfig {
   /**
    * Enable/Disable toast close by clicking on it
    * Default: true
+   * @type {boolean}
    */
   closeOnClick?: boolean;
   /**
@@ -30,44 +33,51 @@ export interface SnotifyConfig {
    */
   pauseOnHover?: boolean;
   /**
-   * Buttons config for Confirmation & Prompt types
-   * Default: `[ {text: 'Ok', action: null, bold: true}, {text: 'Cancel', action: null, bold: false} ]`
+   * Buttons config.
+   * Default: Confirm, Prompt `[ {text: 'Ok', action: null, bold: true}, {text: 'Cancel', action: null, bold: false} ]`
+   * Default for other types: null
+   * @type {SnotifyButton[]}
    */
-  // buttons?: [SnotifyButton, SnotifyButton] | [SnotifyButton];
   buttons?: SnotifyButton[];
   /**
    * Placeholder for Prompt toast
    * Default: 'Enter answer here...'
+   * @type {string}
    */
   placeholder?: string;
   /**
    * Toast title maximum length
    * Default: 16
+   * @type {number}
    */
   titleMaxLength?: number;
   /**
    * Toast body maximum length
    * Default: 150
+   * @type {number}
    */
   bodyMaxLength?: number;
   /**
    * Activate custom icon.
    * You should provide full tag, e.g.
    * Default: Depends on toast type
-   * @example
-   *  ```
+   * ```
    * <img src="assets/custom-icon.png"/>
    * // or
    * <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 48 48;" xml:space="preserve" width="48px" height="48px">
    * <g><path....../></g></svg>
    * ```
+   * @type {string}
    */
   icon?: string;
   /**
-   * Backdrop opacity. 0.0 - 1.0
-   * -1 = Disabled
+   * Backdrop opacity. 0.0 - 1.0 | -1 = Disabled
    * Default: -1
+   * @type {number}
    */
   backdrop?: number;
+  /**
+   * @type {SnotifyAnimate}
+   */
   animation?: SnotifyAnimate
 }

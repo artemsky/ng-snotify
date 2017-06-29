@@ -1,12 +1,9 @@
-<span class="snotifyToast__input"
-    [ngClass]="{'snotifyToast__input--filled': isPromptActive}"
-    (mouseenter)="onPromptEnter()"
-    (mouseleave)="onPromptLeave()">
+<span class="snotifyToast__input" [ngClass]="{'snotifyToast__input--filled': isPromptFocused}">
   <input (input)="valueChanged.next($event.target.value);"
          class="snotifyToast__input__field" type="text"
          [id]="id"
          (focus)="isPromptFocused = true"
-         (blur)="isPromptFocused = false; onPromptLeave()"/>
+         (blur)="isPromptFocused = !!length;"/>
   <label class="snotifyToast__input__label" [for]="id">
     <span class="snotifyToast__input__labelContent">{{placeholder | truncate}}</span>
   </label>

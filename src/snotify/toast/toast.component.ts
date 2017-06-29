@@ -39,10 +39,6 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Toast maximum height in pixels
    */
   maxHeight: number;
-  // /**
-  //  * toast transition milliseconds
-  //  */
-  // transitionTime: number;
   /**
    * Toast progress interval
    */
@@ -142,6 +138,9 @@ export class ToastComponent implements OnInit, OnDestroy {
     this.lifecycle(SnotifyAction.onInput, value)
   }
 
+  /**
+   * Remove toast completely after animation
+   */
   onExitTransitionEnd() {
     if (this.state.toast.isDestroying) {
       this.service.remove(this.toast.id, true);
