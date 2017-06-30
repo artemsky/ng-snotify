@@ -21,8 +21,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "ng2-snotify.js",
-    "flatModuleId": "ng2-snotify"
+    "flatModuleOutFile": "ng-snotify.js",
+    "flatModuleId": "ng-snotify"
   },
   "files": [
     "./index.ts"

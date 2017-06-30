@@ -139,7 +139,7 @@ gulp.task('rollup:umd', function () {
       // The name to use for the module for UMD/IIFE bundles
       // (required for bundles with exports)
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
-      moduleName: 'ng2-snotify',
+      moduleName: 'ng-snotify',
 
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals
       globals: {
@@ -151,7 +151,7 @@ gulp.task('rollup:umd', function () {
       }
 
     }))
-    .pipe(rename('ng2-snotify.umd.js'))
+    .pipe(rename('ng-snotify.umd.js'))
     .pipe(gulp.dest(distFolder));
 });
 
