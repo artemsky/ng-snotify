@@ -1,5 +1,3 @@
-// tslint:disable:no-trailing-whitespace
-
 import {SnotifyButton} from './SnotifyButton.interface';
 import {SnotifyAnimate} from './SnotifyAnimate.interface';
 import {SnotifyType} from '../enum/SnotifyType.enum';
@@ -66,11 +64,13 @@ export interface SnotifyConfig {
   /**
    * Activate custom icon.
    * You should provide full tag, e.g.
-   * ```
+   * ```html
    * <img src="assets/custom-icon.png"/>
-   * // or
+   * ```
+   * ```html
    * <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 48 48;" xml:space="preserve" width="48px" height="48px">
-   * <g><path....../></g></svg>
+   *     <g><path....../></g>
+   * </svg>
    * ```
    * @type {string}
    * @default Depends on toast type. Look more in icon.component.html
@@ -78,8 +78,8 @@ export interface SnotifyConfig {
   icon?: string;
   /**
    * Backdrop opacity.
-   * Range: 0.0 - 1.0.
-   * Disabled = -1
+   * * **Range:** `0.0 - 1.0`.
+   * * **Disabled:** `-1`
    * @type {number}
    * @default -1
    */

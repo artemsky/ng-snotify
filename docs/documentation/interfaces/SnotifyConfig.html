@@ -115,9 +115,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -301,9 +298,6 @@
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -451,10 +445,16 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:85</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:91</a></div>
                                         </td>
                                     </tr>
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Animation config</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -483,14 +483,17 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:81</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:86</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Backdrop opacity. 0.0 - 1.0 | -1 = Disabled
-Default: -1</p>
+                                    <div class="io-description"><p>Backdrop opacity.</p>
+<ul>
+<li><strong>Range:</strong> <code>0.0 - 1.0</code>.</li>
+<li><strong>Disabled:</strong> <code>-1</code></li>
+</ul>
 </div>
                                 </td>
                             </tr>
@@ -522,14 +525,13 @@ Default: -1</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:59</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:63</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Toast body maximum length
-Default: 150</p>
+                                    <div class="io-description"><p>Toast body maximum length</p>
 </div>
                                 </td>
                             </tr>
@@ -561,15 +563,13 @@ Default: 150</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:41</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:45</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Buttons config.
-Default: Confirm, Prompt <code>[ {text: &#39;Ok&#39;, action: null, bold: true}, {text: &#39;Cancel&#39;, action: null, bold: false} ]</code>
-Default for other types: null</p>
+                                    <div class="io-description"><p>Buttons config.</p>
 </div>
                                 </td>
                             </tr>
@@ -601,14 +601,13 @@ Default for other types: null</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:29</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:33</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Enable/Disable toast close by clicking on it
-Default: true</p>
+                                    <div class="io-description"><p>Should toast close on click?</p>
 </div>
                                 </td>
                             </tr>
@@ -640,19 +639,17 @@ Default: true</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:72</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:78</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-description"><p>Activate custom icon.
-You should provide full tag, e.g.
-Default: Depends on toast type</p>
-<pre class="line-numbers"><code class="language-none">&lt;img src=&quot;assets/custom-icon.png&quot;/&gt;
-// or
-&lt;svg x=&quot;0px&quot; y=&quot;0px&quot; viewBox=&quot;0 0 512 512&quot; style=&quot;enable-background:new 0 0 48 48;&quot; xml:space=&quot;preserve&quot; width=&quot;48px&quot; height=&quot;48px&quot;&gt;
-&lt;g&gt;&lt;path....../&gt;&lt;/g&gt;&lt;/svg&gt;</code></pre></div>
+You should provide full tag, e.g.</p>
+<pre class="line-numbers"><code class="language-html">&lt;img src=&quot;assets/custom-icon.png&quot;/&gt;</code></pre><pre class="line-numbers"><code class="language-html">&lt;svg x=&quot;0px&quot; y=&quot;0px&quot; viewBox=&quot;0 0 512 512&quot; style=&quot;enable-background:new 0 0 48 48;&quot; xml:space=&quot;preserve&quot; width=&quot;48px&quot; height=&quot;48px&quot;&gt;
+     &lt;g&gt;&lt;path....../&gt;&lt;/g&gt;
+&lt;/svg&gt;</code></pre></div>
                                 </td>
                             </tr>
                         </tbody>
@@ -683,14 +680,13 @@ Default: Depends on toast type</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:34</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:39</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Enable/Disable pause on mouse enter
-Default: true</p>
+                                    <div class="io-description"><p>Should timeout pause on hover?</p>
 </div>
                                 </td>
                             </tr>
@@ -722,14 +718,13 @@ Default: true</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:47</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:51</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Placeholder for Prompt toast
-Default: &#39;Enter answer here...&#39;</p>
+                                    <div class="io-description"><p>Placeholder for Prompt toast</p>
 </div>
                                 </td>
                             </tr>
@@ -761,14 +756,14 @@ Default: &#39;Enter answer here...&#39;</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:17</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:19</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Enable/Disable progress bar. Disabled if timeout is 0.
-Default: true</p>
+                                    <div class="io-description"><p>Enable/Disable progress bar.
+Disabled if timeout is 0.</p>
 </div>
                                 </td>
                             </tr>
@@ -800,14 +795,14 @@ Default: true</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:10</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:12</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Toast timeout in milliseconds. 0 - Disable timeout
-Default: 2000</p>
+                                    <div class="io-description"><p>Toast timeout in milliseconds.
+Disable timeout = 0</p>
 </div>
                                 </td>
                             </tr>
@@ -839,14 +834,13 @@ Default: 2000</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:53</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:57</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Toast title maximum length
-Default: 16</p>
+                                    <div class="io-description"><p>Toast title maximum length</p>
 </div>
                                 </td>
                             </tr>
@@ -878,7 +872,7 @@ Default: 16</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:23</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/snotify/interfaces/SnotifyConfig.interface.ts:27</a></div>
                                         </td>
                                     </tr>
 
@@ -886,7 +880,7 @@ Default: 16</p>
                                 <td class="col-md-4">
                                     <div class="io-description"><p>Type of toast, affects toast style.
 It&#39;s not recommended to change it.
-Default: Depends on toast type - success | async | error | etc...</p>
+Depends on toast type.</p>
 </div>
                                 </td>
                             </tr>
@@ -897,86 +891,92 @@ Default: Depends on toast type - success | async | error | etc...</p>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {SnotifyButton} from &#x27;./SnotifyButton.interface&#x27;;
 import {SnotifyAnimate} from &#x27;./SnotifyAnimate.interface&#x27;;
-import {SnotifyType} from &#x27;../types/Snotify.type&#x27;;
+import {SnotifyType} from &#x27;../enum/SnotifyType.enum&#x27;;
 
 export interface SnotifyConfig {
   /**
-   * Toast timeout in milliseconds. 0 - Disable timeout
-   * Default: 2000
+   * Toast timeout in milliseconds.
+   * Disable timeout &#x3D; 0
+   * @type {number}
+   * @default: 2000
    */
   timeout?: number;
   /**
-   * Enable/Disable progress bar. Disabled if timeout is 0.
-   * Default: true
-   *
+   * Enable/Disable progress bar.
+   * Disabled if timeout is 0.
    * @type {boolean}
+   * @default true
    */
   showProgressBar?: boolean;
   /**
    * Type of toast, affects toast style.
    * It&#x27;s not recommended to change it.
-   * Default: Depends on toast type - success | async | error | etc...
+   * Depends on toast type.
+   * @type {SnotifyType}
+   * @default SnotifyType.SIMPLE | SnotifyType.SUCCESS | SnotifyType. ERROR | SnotifyType.WARNING etc..
    */
   type?: SnotifyType;
   /**
-   * Enable/Disable toast close by clicking on it
-   * Default: true
+   * Should toast close on click?
    * @type {boolean}
+   * @default true
    */
   closeOnClick?: boolean;
   /**
-   * Enable/Disable pause on mouse enter
-   * Default: true
+   * Should timeout pause on hover?
+   * @type {boolean}
+   * @default true
    */
   pauseOnHover?: boolean;
   /**
    * Buttons config.
-   * Default: Confirm, Prompt &#x60;[ {text: &#x27;Ok&#x27;, action: null, bold: true}, {text: &#x27;Cancel&#x27;, action: null, bold: false} ]&#x60;
-   * Default for other types: null
    * @type {SnotifyButton[]}
+   * @default Look snotify button description
    */
   buttons?: SnotifyButton[];
   /**
    * Placeholder for Prompt toast
-   * Default: &#x27;Enter answer here...&#x27;
    * @type {string}
+   * @default &#x27;Enter answer here...&#x27;
    */
   placeholder?: string;
   /**
    * Toast title maximum length
-   * Default: 16
    * @type {number}
+   * @default 16
    */
   titleMaxLength?: number;
   /**
    * Toast body maximum length
-   * Default: 150
    * @type {number}
+   * @default 150
    */
   bodyMaxLength?: number;
   /**
    * Activate custom icon.
    * You should provide full tag, e.g.
-   * Default: Depends on toast type
-   * &#x60;&#x60;&#x60;
+   * &#x60;&#x60;&#x60;html
    * &lt;img src&#x3D;&quot;assets/custom-icon.png&quot;/&gt;
-   * // or
+   * &#x60;&#x60;&#x60;
+   * &#x60;&#x60;&#x60;html
    * &lt;svg x&#x3D;&quot;0px&quot; y&#x3D;&quot;0px&quot; viewBox&#x3D;&quot;0 0 512 512&quot; style&#x3D;&quot;enable-background:new 0 0 48 48;&quot; xml:space&#x3D;&quot;preserve&quot; width&#x3D;&quot;48px&quot; height&#x3D;&quot;48px&quot;&gt;
-   * &lt;g&gt;&lt;path....../&gt;&lt;/g&gt;&lt;/svg&gt;
+   *     &lt;g&gt;&lt;path....../&gt;&lt;/g&gt;
+   * &lt;/svg&gt;
    * &#x60;&#x60;&#x60;
    * @type {string}
+   * @default Depends on toast type. Look more in icon.component.html
    */
   icon?: string;
   /**
-   * Backdrop opacity. 0.0 - 1.0 | -1 &#x3D; Disabled
-   * Default: -1
+   * Backdrop opacity.
+   * * **Range:** &#x60;0.0 - 1.0&#x60;.
+   * * **Disabled:** &#x60;-1&#x60;
    * @type {number}
-   * @value {-1}
-   * [tag] 123
-   * @note {123}
+   * @default -1
    */
   backdrop?: number;
   /**
+   * Animation config
    * @type {SnotifyAnimate}
    */
   animation?: SnotifyAnimate

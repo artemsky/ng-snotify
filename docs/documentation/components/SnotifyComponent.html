@@ -115,9 +115,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -300,9 +297,6 @@
                    >
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
                                        </li>
                                </ul>
                            </li>
@@ -559,7 +553,7 @@
                                         <ul class="jsdoc-params">
                                                 <li>
                                                     <div>
-                                                        <b>options</b>
+                                                        <b></b>
                                                             :     <code><a href="../interfaces/SnotifyOptions.html" target="_self" >SnotifyOptions</a></code>
     
                                                     </div>
@@ -602,7 +596,7 @@
     
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Setup notifications position</p>
+                                <div class="io-description"><p>Set notifications position</p>
     </div>
     
                                 <div class="io-description">
@@ -610,7 +604,7 @@
                                         <ul class="jsdoc-params">
                                                 <li>
                                                     <div>
-                                                        <b>position</b>
+                                                        <b></b>
                                                             :     <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyPosition</a></code>
     
                                                     </div>
@@ -647,7 +641,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="172" class="link-to-prism">src/snotify/snotify.component.ts:172</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="144" class="link-to-prism">src/snotify/snotify.component.ts:144</a></div>
                                 </td>
                             </tr>
     
@@ -919,7 +913,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
           this.backdrop &#x3D; 0;
           setTimeout(() &#x3D;&gt; {
             this.backdrop &#x3D; -1;
-          }, this.service.options.transition)
+          }, 400)
         }
       }
     );
@@ -984,40 +978,12 @@ export class SnotifyComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Setup notifications position
+   * Set notifications position
    * @param position {SnotifyPosition}
    */
   setPosition(position: SnotifyPosition): void {
     this.render.removeAttribute(this.snotify.nativeElement, &#x27;class&#x27;);
-      switch (position) {
-        case SnotifyPosition.left_top:
-          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-leftTop&#x27;);
-          break;
-        case SnotifyPosition.left_center:
-          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-leftCenter&#x27;);
-          break;
-        case SnotifyPosition.left_bottom:
-          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-leftBottom&#x27;);
-          break;
-        case SnotifyPosition.right_top:
-          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-rightTop&#x27;);
-          break;
-        case SnotifyPosition.right_center:
-          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-rightCenter&#x27;);
-          break;
-        case SnotifyPosition.right_bottom:
-          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-rightBottom&#x27;);
-          break;
-        case SnotifyPosition.center_top:
-          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-centerTop&#x27;);
-          break;
-        case SnotifyPosition.center_center:
-          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-centerCenter&#x27;);
-          break;
-        case SnotifyPosition.center_bottom:
-          this.render.addClass(this.snotify.nativeElement, &#x27;snotify-centerBottom&#x27;);
-          break;
-      }
+    this.render.addClass(this.snotify.nativeElement, &#x60;snotify-${position}&#x60;);
   }
 
   /**

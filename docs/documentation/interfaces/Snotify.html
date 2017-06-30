@@ -115,9 +115,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -301,9 +298,6 @@
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -419,6 +413,13 @@
             <code>src/snotify/interfaces/Snotify.interface.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Snotify toast params</p>
+
+            </p>
 
 
 
@@ -451,7 +452,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:11</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:16</a></div>
                                         </td>
                                     </tr>
 
@@ -489,7 +490,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:16</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:21</a></div>
                                         </td>
                                     </tr>
 
@@ -527,7 +528,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:7</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/snotify/interfaces/Snotify.interface.ts:11</a></div>
                                         </td>
                                     </tr>
 
@@ -544,13 +545,18 @@
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {SnotifyConfig} from &#x27;./SnotifyConfig.interface&#x27;;
 
+/**
+ * Snotify toast params
+ */
 export interface Snotify {
   /**
    * Toast Title
+   * @type {string}
    */
   title: string;
   /**
    * Toast message
+   * @type {string}
    */
   body: string;
   /**

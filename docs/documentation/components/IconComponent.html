@@ -115,9 +115,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -301,9 +298,6 @@
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -482,7 +476,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/snotify/toast/icon/icon.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/snotify/toast/icon/icon.component.ts:17</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -501,7 +495,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/snotify/toast/icon/icon.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/snotify/toast/icon/icon.component.ts:17</a></div>
                                 </td>
                             </tr>
     
@@ -515,13 +509,17 @@
 
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {Component, Input} from &#x27;@angular/core&#x27;;
-import {SnotifyType} from &#x27;../../types/Snotify.type&#x27;;
+import {SnotifyType} from &#x27;../../enum/SnotifyType.enum&#x27;;
 
 @Component({
   selector: &#x27;ng-snotify-icon&#x27;,
   templateUrl: &#x27;./icon.component.html&#x27;,
   styleUrls: [&#x27;./icon.component.scss&#x27;]
 })
+
+/**
+ * Icons component
+ */
 export class IconComponent {
   /**
    * Get toast type, to select an item from the list

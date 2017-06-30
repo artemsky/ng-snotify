@@ -115,9 +115,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -301,9 +298,6 @@
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -426,6 +420,10 @@
 @Pipe({
   name: &#x27;truncate&#x27;
 })
+
+/**
+ * Truncate toast text pipe
+ */
 export class TruncatePipe implements PipeTransform {
 
   transform(value: string, ...args: Array&lt;any&gt;): any {

@@ -115,9 +115,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -301,9 +298,6 @@
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -419,6 +413,15 @@
             <code>src/snotify/interfaces/SnotifyAnimate.interface.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Snotify animation params
+If you want more animations, you can include animate.css or write animations yourself in your styles
+Then you&#39;ll need to share this styles with snotify component [ng-snotify] component.</p>
+
+            </p>
 
 
 
@@ -451,14 +454,13 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/snotify/interfaces/SnotifyAnimate.interface.ts:7</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/snotify/interfaces/SnotifyAnimate.interface.ts:13</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>In animation
-Default: depends on toast position</p>
+                                    <div class="io-description"><p>In animation</p>
 </div>
                                 </td>
                             </tr>
@@ -490,14 +492,13 @@ Default: depends on toast position</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/snotify/interfaces/SnotifyAnimate.interface.ts:13</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/snotify/interfaces/SnotifyAnimate.interface.ts:19</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Out animation
-Default: depends on toast position</p>
+                                    <div class="io-description"><p>Out animation</p>
 </div>
                                 </td>
                             </tr>
@@ -529,14 +530,13 @@ Default: depends on toast position</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/snotify/interfaces/SnotifyAnimate.interface.ts:19</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/snotify/interfaces/SnotifyAnimate.interface.ts:25</a></div>
                                         </td>
                                     </tr>
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Animation time in ms
-Default: 400</p>
+                                    <div class="io-description"><p>Animation time in ms</p>
 </div>
                                 </td>
                             </tr>
@@ -548,20 +548,21 @@ Default: 400</p>
         <pre class="line-numbers"><code class="language-typescript">export interface SnotifyAnimate {
   /**
    * In animation
-   * Default: depends on toast position
    * @type {&#x27;fadeOutLeft&#x27; | &#x27;fadeOutRight&#x27; | &#x27;fadeOutUp&#x27; | &#x27;fadeOutDown&#x27; | string}
+   *
+   * @default Depends on toast position
    */
   enter: &#x27;fadeInLeft&#x27; | &#x27;fadeInRight&#x27; | &#x27;fadeInUp&#x27; | &#x27;fadeInDown&#x27; | string;
   /**
    * Out animation
-   * Default: depends on toast position
    * @type {&#x27;fadeOutLeft&#x27; | &#x27;fadeOutRight&#x27; | &#x27;fadeOutUp&#x27; | &#x27;fadeOutDown&#x27; | string}
+   * @default Depends on toast position
    */
   exit: &#x27;fadeOutLeft&#x27; | &#x27;fadeOutRight&#x27; | &#x27;fadeOutUp&#x27; | &#x27;fadeOutDown&#x27; | string;
   /**
    * Animation time in ms
-   * Default: 400
    * @type {number}
+   * @default 400
    */
   time: number;
 }
