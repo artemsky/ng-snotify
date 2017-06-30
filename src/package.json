@@ -42,7 +42,7 @@
   "module": "ng2-snotify.js",
   "typings": "ng2-snotify.d.ts",
   "peerDependencies": {
-    "@angular/core": "^4.2.4",
+    "@angular/core": "^4.2.5",
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.4"
   }

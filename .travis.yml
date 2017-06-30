@@ -3,7 +3,7 @@ sudo: required
 language: node_js
 
 node_js:
-  - "6"
+  - "8"
 os:
   - linux
 env:
@@ -16,4 +16,4 @@ before_script:
 install:
   - npm install
 script:
-  - npm run lint
+  - lib:build

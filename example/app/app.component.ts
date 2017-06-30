@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {SnotifyService, SnotifyToast, SnotifyPosition} from 'ng2-snotify';
+import {SnotifyService, SnotifyToast, SnotifyPosition} from 'ng-snotify';
 
 @Component({
   selector: 'app-root',
@@ -87,7 +87,6 @@ export class AppComponent implements OnInit {
 
   onSuccess() {
     this.setGlobal();
-    console.log(this.snotifyService.options, this.position)
     this.snotifyService.success(this.body, this.title, {
       timeout: this.timeout,
       showProgressBar: this.progressBar,

@@ -1,4 +1,3 @@
-///<reference path="snotify/toast/prompt/prompt.component.ts"/>
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
