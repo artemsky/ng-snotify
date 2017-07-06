@@ -39,8 +39,8 @@
   "bugs": {
     "url": "https://artemsky.github.io/ng-snotify/issues"
   },
-  "module": "ng2-snotify.js",
-  "typings": "ng2-snotify.d.ts",
+  "module": "ng-snotify.js",
+  "typings": "ng-snotify.d.ts",
   "peerDependencies": {
     "@angular/core": "^4.2.5",
     "rxjs": "^5.4.1",

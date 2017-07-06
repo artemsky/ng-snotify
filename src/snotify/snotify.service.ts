@@ -298,7 +298,7 @@ export class SnotifyService {
     return this.create({
       title: title,
       body: body,
-      config: SnotifyService.mergeDeep(this.config, config)
+      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.SIMPLE}, config)
     });
   }
 
