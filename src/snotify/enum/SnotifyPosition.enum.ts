@@ -1,16 +1,16 @@
 /**
  * Toast position
  */
-export enum SnotifyPosition {
-  left_top = 'leftTop',
-  left_center = 'leftCenter',
-  left_bottom = 'leftBottom',
+export class SnotifyPosition {
+  static left_top = 'leftTop';
+  static left_center = 'leftCenter';
+  static left_bottom = 'leftBottom';
 
-  right_top = 'rightTop',
-  right_center = 'rightCenter',
-  right_bottom = 'rightBottom',
+  static right_top = 'rightTop';
+  static right_center = 'rightCenter';
+  static right_bottom = 'rightBottom';
 
-  center_top = 'centerTop',
-  center_center = 'centerCenter',
-  center_bottom = 'centerBottom'
+  static center_top = 'centerTop';
+  static center_center = 'centerCenter';
+  static center_bottom = 'centerBottom';
 }
