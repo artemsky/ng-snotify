@@ -70,15 +70,17 @@ export class SnotifyService {
         for (const key in source) {
           if (SnotifyService.isObject(source[key])) {
             target[key] = SnotifyService.mergeDeep(target[key], source[key]);
-          } else if (Array.isArray(source[key])) {
-            if (!target[key]) {
-              Object.assign(target, { [key]: source[key] });
-            } else {
-              target[key].forEach((value, i) => {
-                target[key][i] = SnotifyService.mergeDeep(value, source[key][i]);
-              });
-            }
-          } else {
+          }
+          // else if (Array.isArray(source[key])) {
+          //   if (!target[key]) {
+          //     Object.assign(target, { [key]: source[key] });
+          //   } else {
+          //     target[key].forEach((value, i) => {
+          //       target[key][i] = SnotifyService.mergeDeep(value, source[key][i]);
+          //     });
+          //   }
+          // }
+          else {
             Object.assign(target, { [key]: source[key] });
           }
         }
@@ -319,7 +321,8 @@ export class SnotifyService {
             {text: 'Ok', action: null, bold: true},
             {text: 'Cancel', action: () => this.remove(id), bold: false},
           ]
-        }, config,
+        },
+        config,
         {
           type: SnotifyType.CONFIRM,
           closeOnClick: false,

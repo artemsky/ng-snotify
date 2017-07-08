@@ -19,5 +19,9 @@ export class ButtonsComponent {
    * Get prompt input value
    */
   @Input() text: string;
+  /**
+   * Get toast id
+   */
+  @Input() id: number;
   constructor() {}
 }

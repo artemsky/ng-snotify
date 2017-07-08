@@ -18,7 +18,7 @@ export interface SnotifyButton {
    * @returns {void}
    * @default null | () => this.remove(id)
    */
-  action?: (text?: string) => void;
+  action?: (id?: number, text?: string) => void;
   /**
    * Should button text be bold.
    * @default true | false

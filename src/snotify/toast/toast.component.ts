@@ -135,6 +135,7 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Prompt input value changed
    */
   onPromptChanged(value: string) {
+    this.state.prompt = value;
     this.lifecycle(SnotifyAction.onInput, value)
   }
 

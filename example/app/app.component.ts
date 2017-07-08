@@ -195,7 +195,7 @@ export class AppComponent implements OnInit {
       buttons: [
         {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
         {text: 'No', action: () => console.log('Clicked: No')},
-        {text: 'Later', action: () => console.log('Clicked: Later')},
+        {text: 'Later', action: (toastId) => {console.log('Clicked: Later'); this.snotifyService.remove(toastId); } },
         {text: 'Close', action: () => {console.log('Clicked: No'); this.snotifyService.remove(id); }, bold: true},
       ]
     });
@@ -214,8 +214,8 @@ export class AppComponent implements OnInit {
       closeOnClick: this.closeClick,
       pauseOnHover: this.pauseHover,
       buttons: [
-        {text: 'Yes', action: (text) => console.log('Said Yes: ' + text)},
-        {text: 'No', action: (text) => { console.log('Said No: ' + text); this.snotifyService.remove(id); }},
+        {text: 'Yes', action: (toastId, text) => console.log('Said Yes: ' + text + ' ID: ' + toastId)},
+        {text: 'No', action: (toastId, text) => { console.log('Said No: ' + text); this.snotifyService.remove(id); }},
       ],
       placeholder: 'This is the example placeholder which you can pass' // Max-length = 40
     });
