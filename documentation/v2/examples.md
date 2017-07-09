@@ -1,4 +1,4 @@
-## Examples
+# Examples
 
 * [Toasts](#toasts)
 * [Callbacks](#callbacks)

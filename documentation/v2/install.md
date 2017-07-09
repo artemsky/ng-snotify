@@ -1,3 +1,5 @@
+# Installation
+
 ###### NPM 5
 `npm install ng-snotify`
 ###### yarn

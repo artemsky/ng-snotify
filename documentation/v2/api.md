@@ -1,22 +1,24 @@
+# API
+
 * [SnotifyService](#snotifyservice)
-* * [Methods](#methods)
-* * [Callbacks](#callbacks)
+  * [Methods](#methods)
+  * [Callbacks](#callbacks)
 * [Enums](#enums)
-* * [SnotifyAction](#snotifyaction)
-* * [SnotifyPosition](#snotifyposition)
-* * [SnotifyType](#snotifytype)
+  * [SnotifyAction](#snotifyaction)
+  * [SnotifyPosition](#snotifyposition)
+  * [SnotifyType](#snotifytype)
 * [Interfaces](#interfaces)
-* * [SnotifyConfig](#snotifyconfig)
-* * [SnotifyOptions](#snotifyoptions)
-* * [SnotifyButton](#snotifybutton)
-* * [SnotifyInfo](#snotifyinfo)
-* * [Snotify](#snotify)
-* * [SnotifyAnimate](#snotifyanimate)
+  * [SnotifyConfig](#snotifyconfig)
+  * [SnotifyOptions](#snotifyoptions)
+  * [SnotifyButton](#snotifybutton)
+  * [SnotifyInfo](#snotifyinfo)
+  * [Snotify](#snotify)
+  * [SnotifyAnimate](#snotifyanimate)
 
-# SnotifyService
-## Methods
+## SnotifyService
+### Methods
 
-### Toasts
+#### Toasts
 
 > Toast notifications with different styles
 ```typescript
@@ -41,7 +43,7 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 `prompt(body: string, title?: string, config: SnotifyConfig): number`
 
 
-### Other
+#### Other
 
 `setConfig(config: SnotifyConfig, options?: SnotifyOptions): void`
 > Set global configuration object
@@ -55,7 +57,7 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 `clear(): void`
 > Clear notifications array
 
-## Callbacks
+### Callbacks
 
 `onInit(toast?: SnotifyToast) => void`
 > Emits on toast has been initialized
@@ -79,11 +81,11 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 > Emits at `prompt` input value change
 
 
-# Enums
+## Enums
 
 ***
 
-## SnotifyAction
+### SnotifyAction
 
 ```typescript
   onInit = 3
@@ -94,7 +96,7 @@ error(body: string, title?: string, config?: SnotifyConfig): number
   onHoverLeave = 12
 ```
 
-## SnotifyPosition
+### SnotifyPosition
 
 ```typescript
   left_top = 'leftTop'
@@ -110,7 +112,7 @@ error(body: string, title?: string, config?: SnotifyConfig): number
   center_bottom = 'centerBottom'
 ```
 
-## SnotifyType
+### SnotifyType
 
 ```typescript
   SIMPLE = 'simple'
@@ -124,38 +126,38 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 ```
 
 
-# Interfaces
+## Interfaces
 
 ***
 
-## SnotifyConfig 
+### SnotifyConfig 
 
-> ### timeout?  
+> #### timeout?  
 **Type:** `Number`  
 **Default:** `2000`  
 **Description:** Toast timeout in milliseconds. 0 - Disable timeout
 
-> ### showProgressBar?
+> #### showProgressBar?
 **Type:** `Boolean`  
 **Default:** `true`  
 **Description:** Enable/Disable progress bar. Disabled if timeout is 0.
 
-> ### type?
+> #### type?
 **Type:** [SnotifyType](#snotifytype)  
 **Default:** Depends on toast type - success | async | error | etc...  
 **Description:** Type of toast, affects toast style. It's not recommended to change it.
 
-> ### closeOnClick?
+> #### closeOnClick?
 **Type:** `Boolean`  
 **Default:** `true`  
 **Description:** Enable/Disable toast close by clicking on it
 
-> ### pauseOnHover?
+> #### pauseOnHover?
 **Type:** `Boolean`  
 **Default:** `true`  
 **Description:** Enable/Disable pause on mouse enter
 
-> ### buttons?
+> #### buttons?
 **Type:** [SnotifyButton](#snotifybutton)[]  
 **Default:**  
 ```typescript
@@ -168,132 +170,132 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 **Description:** Buttons config for Confirmation & Prompt types
 
 
-> ### placeholder?
+> #### placeholder?
 **Type:** `String`  
 **Default:** Default: `Enter answer here...`  
 **Description:** Placeholder for Prompt toast
 
-> ### titleMaxLength?
+> #### titleMaxLength?
 **Type:** `Number`  
 **Default:** `16`  
 **Description:** Toast title maximum length
 
-> ### bodyMaxLength?
+> #### bodyMaxLength?
 **Type:** `Number`  
 **Default:** `150`  
 **Description:** Toast body maximum length
 
-> ### icon?
+> #### icon?
 **Type:** `string`  
 **Default:** null  
 **Description:** Custom icon url/path.
 
-> ### backdrop?
+> #### backdrop?
 **Type:** `number`  
 **Default:** -1  
 **Description:** Backdrop opacity. Range - `0.0 - 1.0`. Disabled `-1` 
 
-> ### animation?
+> #### animation?
 **Type:** [SnotifyAnimate](#snotifyanimate)  
 **Default:** -1  
 **Description:** Backdrop opacity. Range - `0.0 - 1.0`. Disabled `-1` 
 
 ***
-## SnotifyOptions
+### SnotifyOptions
 
-> ### maxOnScreen?
+> #### maxOnScreen?
 **Type:** `Number`  
 **Default:** `8`  
 **Description:** Max toast items on screen.  
 For example you want to display 3 toasts max at the time. But for some purposes your system calls it 10 times.  
 With this option, 3 toast will be shown. And after each of it will disappear, new toast from the queue will be shown.
 
-> ### newOnTop?
+> #### newOnTop?
 **Type:** `Boolean`  
 **Default:** `true`  
 **Description:** Should new items come from top or bottom side.  
 This option created for styling purposes.  
 For example, if your toast position is TOP-RIGHT. It's not very nice, when items comes from top and pulls down all other toasts
 
-> ### position?
+> #### position?
 **Type:** [SnotifyPosition](#snotifyposition)  
 **Default:** `right_bottom`  
 **Description:** Toasts position on screen
 
-> ### maxHeight?
+> #### maxHeight?
 **Type:** `Number`  
 **Default:** `300`  
 **Description:** Toast maximum height in pixels
 
 ***
 
-## SnotifyButton
+### SnotifyButton
 
-> ### text
+> #### text
 **Type:** `String`  
 **Default:** `2000`  
 **Description:** Toast timeout in milliseconds. 0 - Disable timeout
 
-> ### action?: (id?: number, text?: string) => void
+> #### action?: (id?: number, text?: string) => void
 **Type:** `Callback`  
 **Default:** `null`  
 **Description:** Action which will be called after button click.
 
-> ### bold?
+> #### bold?
 **Type:** `Boolean`  
 **Default:** Yes - `true` | No - `false`  
 **Description:** Make button text bold or not
 
 ***
 
-## SnotifyInfo
+### SnotifyInfo
 
-> ### action
+> #### action
 **Type:** [SnotifyAction](#snotifyaction)  
 **Description:** Toast lifecycle action (onInit, onDestroy, etc...)
 
-> ### toast
+> #### toast
 **Type:** [SnotifyToast](#snotify)  
 **Description:** Toast which triggered this action
 
-> ### value?
+> #### value?
 **Type:** `String`  
 **Description:** Prompt toast input value
 
 ***
 
-## Snotify
+### Snotify
 
-> ### title
+> #### title
 **Type:** `String`  
 **Description:** Toast Title
 
-> ### body
+> #### body
 **Type:** `String`  
 **Description:** Toast message
 
-> ### config?
+> #### config?
 **Type:** [SnotifyConfig](#snotifyconfig)  
 **Description:** Toast configuration object
 ***
 
-## SnotifyAnimate
+### SnotifyAnimate
 
-> ### enter
+> #### enter
 **Type:** `'fadeInLeft' | 'fadeInRight' | 'fadeInUp' | 'fadeInDown' | string;`  
 **Description:** In animation
 
-> ### exit
+> #### exit
 **Type:** `'fadeOutLeft' | 'fadeOutRight' | 'fadeOutUp' | 'fadeOutDown' | string;`  
 **Description:** Out animation
 
-> ### time?
+> #### time?
 **Type:** `Number`  
 **Default:** `400`  
 **Description:** Animation time in ms
 
 
-##### Defaults
+###### Defaults
 
 ```typescript
 case SnotifyPosition.left_top:

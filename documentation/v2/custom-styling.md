@@ -1,3 +1,5 @@
+# Custom Styling
+
 > ###### Note. I'am using `scss` syntax
 
 According to Angular [component styling](https://angular.io/docs/ts/latest/guide/component-styles.html). We can override component our component styles.
