@@ -66,4 +66,4 @@ Please, you have 2 classes `.snotifyToast-show` and `.snotifyToast-remove`.
 ### Full example
 Import **[snotify-override.scss](https://github.com/artemsky/ng-snotify/blob/master/example/app/snotify-override.scss)** in the **[app.component.scss](https://github.com/artemsky/ng-snotify/blob/master/example/app/app.component.scss#L3)** example app
 
-###### If you want to dive deeper, and override more, you can find all default styling [here](https://github.com/artemsky/ng-snotify/blob/master/src/snotify/toast/toast.component.scss)
+###### If you want to dive deeper, and override more, you can find look at default styling at [source](https://github.com/artemsky/ng-snotify/blob/master/src/snotify) `**/*.scss` files
