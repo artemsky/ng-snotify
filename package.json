@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run link:src && ng serve",
-    "example:build": "ng build --base-href=/ng-snotify/  --output-path=docs/",
+    "example:build": "npm run lib:build && npm run link:dist && ng serve -aot -prod --open",
     "example:build:prod": "ng build -prod --base-href=/ng-snotify/  --output-path=docs/",
     "example:test": "ng test",
     "example:lint": "ng lint",

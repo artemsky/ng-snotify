@@ -16,4 +16,4 @@ before_script:
 install:
   - npm install
 script:
-  - lib:build
+  - npm run lib:build
