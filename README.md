@@ -31,7 +31,7 @@ _______
 
 ## Documentation and Examples
 
-Documentation - [here](documentation)
+Documentation - [here](documentation)  
 Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)  
 Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/index.html)  
 
@@ -52,7 +52,9 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
   - rewrite components. Now more optimized. Divided into separate components.
   - Optimized for AOT build in right way.
   - rewrite [documentation](documentation)
-  - update dependencies (thx @compodoc/compodoc) for better [Auto-Docs](https://artemsky.github.io/ng-snotify/documentation/index.html)
+  - update dependencies
+    - Auto-documentation add - Interfaces (thx @compodoc/compodoc)
+    - Auto-documentation add - Default values (thx @compodoc/compodoc)
 
 
 ### v1.4.0
