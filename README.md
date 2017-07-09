@@ -12,7 +12,7 @@ https://artemsky.github.io/ng-snotify/
 ## Features
 
 - 8 types of toast notifications (async, confirm, prompt and more...)
-- Many config options (backdrop, timeout, max items, position and much more)
+- Many config options (icons, backdrop, timeout, position and much more)
 - Custom styling
 - Custom css animations
 - Callbacks
@@ -42,14 +42,18 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 ## Change Log
 
 ### v2.0.0
+- **Breaking changes -** [Look migration guide](documentation/v1-to-v2-migration-guide.md)
+- **Features**
+  - Now unlimited amount of buttons.
+  - New [callback](documentation/v2/api.md#callbacks) `onInput` for **prompt** toast
+  - reduce start code amount
+  - add custom [animations](documentation/v2/animations.md)
+- **Fixes**
+  - rewrite components. Now more optimized. Divided into separate components.
+  - Optimized for AOT build in right way.
+  - rewrite [documentation](documentation)
+  - update dependencies (thx @compodoc/compodoc) for better [Auto-Docs](https://artemsky.github.io/ng-snotify/documentation/index.html)
 
-- rewrite components. Now more optimized. Divided into separate components.
-- Optimized for AOT build in right way.
-- rewrite [documentation](documentation)
-- reduce start code amount
-- add custom [animations](documentation/v2/animations.md)
-- update dependencies (thx @compodoc/compodoc) for better [Auto-Docs](https://artemsky.github.io/ng-snotify/documentation/index.html) 
-- few breaking changes. [Look migration guide](documentation/v1-to-v2-migration-guide.md)
 
 ### v1.4.0
 
