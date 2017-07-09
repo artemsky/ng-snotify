@@ -138,7 +138,7 @@
 **Description:** Enable/Disable progress bar. Disabled if timeout is 0.
 
 > ### type?
-**Type:** [SnotifyType](https://github.com/artemsky/ng-snotify/wiki/Enums#snotifytype)  
+**Type:** [SnotifyType](#snotifytype)  
 **Default:**: Depends on toast type - success | async | error | etc...  
 **Description:** Type of toast, affects toast style. It's not recommended to change it.
 
@@ -153,7 +153,7 @@
 **Description:** Enable/Disable pause on mouse enter
 
 > ### buttons?
-**Type:** [[SnotifyButton](https://github.com/artemsky/ng-snotify/wiki/Interfaces#snotifybutton), [SnotifyButton](https://github.com/artemsky/ng-snotify/wiki/Interfaces#snotifybutton)] | [[SnotifyButton](https://github.com/artemsky/ng-snotify/wiki/Interfaces#snotifybutton)]  
+**Type:** [[SnotifyButton](#snotifybutton), [SnotifyButton](#snotifybutton)] | [[SnotifyButton](#snotifybutton)]  
 **Default:**  
 ```typescript
 [ 
@@ -215,7 +215,7 @@ This option created for styling purposes.
 For example, if your toast position is TOP-RIGHT. It's not very nice, when items comes from top and pulls down all other toasts
 
 > ### position?
-**Type:** [SnotifyPosition](https://github.com/artemsky/ng-snotify/wiki/Enums#snotifyposition)  
+**Type:** [SnotifyPosition](#snotifyposition)  
 **Default:** `right_bottom`  
 **Description:** Toasts position on screen
 
@@ -253,11 +253,11 @@ For example, if your toast position is TOP-RIGHT. It's not very nice, when items
 ## SnotifyInfo
 
 > ### action
-**Type:** [SnotifyAction](https://github.com/artemsky/ng-snotify/wiki/Enums#snotifyaction)  
+**Type:** [SnotifyAction](#snotifyaction)  
 **Description:** Toast lifecycle action (onInit, onDestroy, etc...)
 
 > ### toast
-**Type:** [SnotifyToast](https://github.com/artemsky/ng-snotify/wiki/Interfaces#snotify)  
+**Type:** [SnotifyToast](#snotify)  
 **Description:** Toast which triggered this action
 
 ***
@@ -273,7 +273,7 @@ For example, if your toast position is TOP-RIGHT. It's not very nice, when items
 **Description:** Toast message
 
 > ### config?
-**Type:** [SnotifyConfig](https://github.com/artemsky/ng-snotify/wiki/Interfaces#snotifyconfig)  
+**Type:** [SnotifyConfig](#snotifyconfig)  
 **Description:** Toast configuration object
 
 

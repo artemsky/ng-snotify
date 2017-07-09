@@ -18,8 +18,7 @@ this.snotifyService.success('Example title!', 'Example body content', {
 
 ###### Observable
 You should pass Promise or Observable of type SnotifyConfig to change some data or do some other actions  
-More information how to work with observables:  
-https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
+More information how to work with observables - [here](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md)
 ```typescript
 this.snotifyService.async('Example title', 'Example body content',
       Observable.create(observer => {

@@ -31,7 +31,7 @@ One changeable thing here is `.snotify-simple` where **simple** is the type of a
 So you can swap it to change toast type target.
 
 > **Important! Types are lowercase**  
-> You can find all types in [SnotifyType](https://github.com/artemsky/ng-snotify/wiki/Enums#snotifytype) interface
+> You can find all types in [SnotifyType](api.md#snotifytype) interface
 
 All types has the same structure except **prompt**. Because it has no progress bar
 
@@ -62,6 +62,6 @@ Please, you have 2 classes `.snotifyToast-show` and `.snotifyToast-remove`.
 }
 ```
 ### Full example
-Import **[snotify-override.scss](https://github.com/artemsky/ng-snotify/blob/master/example/app/snotify-override.scss)** in the **[app.component.scss](https://github.com/artemsky/ng-snotify/blob/master/example/app/app.component.scss#L3)** example app
+Import **[snotify-override.scss](https://github.com/artemsky/ng-snotify/blob/master/example/app/snotify-override.scss)** in the **[app.component.scss](https://github.com/artemsky/ng-snotify/blob/v1/example/app/app.component.scss#L3)** example app
 
-###### If you want to dive deeper, and override more, you can find all default styling [here](https://github.com/artemsky/ng-snotify/blob/master/src/snotify/toast/toast.component.scss)
+###### If you want to dive deeper, and override more, you can find all default styling [here](https://github.com/artemsky/ng-snotify/blob/v1/src/snotify/toast/toast.component.scss)

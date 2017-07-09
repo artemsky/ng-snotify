@@ -11,11 +11,13 @@ https://artemsky.github.io/ng-snotify/
 
 ## Features
 
-- 8 types of toast notifications
-- Flexible, Configurable
+- 8 types of toast notifications (async, confirm, prompt and more...)
+- Many config options (backdrop, timeout, max items, position and much more)
 - Custom styling
-- Lifecycle callbacks
-- Fully CSS, no angular animations dependency!
+- Custom css animations
+- Callbacks
+
+![Snotify Gif](https://github.com/artemsky/ng-snotify/blob/master/example/assets/ng-snotify.gif)
 
 _______
 
@@ -27,21 +29,27 @@ _______
 ###### yarn
 `yarn add ng-snotify`
 
-Detailed instruction - [here](https://github.com/artemsky/ng-snotify/wiki/Install)
-
 ## Documentation and Examples
 
-Wiki - [here](https://github.com/artemsky/ng-snotify/wiki)  
-Examples - [here](https://github.com/artemsky/ng-snotify/wiki/Examples)  
+Documentation - [here](documentation)
 Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)  
-Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html)  
-Development - [here](https://github.com/artemsky/ng-snotify/wiki/Development)
+Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/index.html)  
 
 ## License
 
 MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
+
+### v2.0.0
+
+- rewrite components. Now more optimized. Divided into separate components.
+- Optimized for AOT build in right way.
+- rewrite [documentation](documentation)
+- reduce start code amount
+- add custom [animations](documentation/v2/animations.md)
+- update dependencies (thx @compodoc/compodoc) for better [Auto-Docs](https://artemsky.github.io/ng-snotify/documentation/index.html) 
+- few breaking changes. [Look migration guide](documentation/v1-to-v2-migration-guide.md)
 
 ### v1.4.0
 
