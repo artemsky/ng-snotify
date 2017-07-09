@@ -13,7 +13,7 @@ Now minimal amount of code is `simple('Some text here')`
 3. Take a look at your configurations
 * Global options
 **Transition removed**
-Integrated animations changed with animate.css. More about - [here](v2/animations.md)
+Integrated animations changed with **animate.css**. More about - [here](v2/animations.md)
 * Buttons  
 Now there are 2 action params, where 1st = toast id. 2nd - text (if it's the prompt toast)
 ```typescript

@@ -1,6 +1,7 @@
 ## Overview
 * [Basic Examples](v2/examples.md)
 * [Installation](v2/install.md)
+* [Animations](v2/animations.md)
 * [Custom Styling](v2/custom-styling.md)
 * [Development Guide](v2/development.md)
 
