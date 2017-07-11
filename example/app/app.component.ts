@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'Snotify title!';
   body = 'Lorem ipsum dolor sit amet!';
   timeout = 3000;
-  position:SnotifyPosition = SnotifyPosition.right_bottom;
+  position: SnotifyPosition = SnotifyPosition.right_bottom;
   progressBar = true;
   closeClick = true;
   newTop = true;

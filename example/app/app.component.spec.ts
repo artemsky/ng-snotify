@@ -65,4 +65,45 @@ describe('App: CompleteGuideFinalWebpack', () => {
     expect(compiled.querySelector('.snotifyToast .snotifyToast__title').textContent).toContain('Ng-Snotify t');
   }));
 
+  it('should execute confirm button action', async(() => {
+    let result = null;
+
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    const service = fixture.debugElement.injector.get(SnotifyService);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+
+    const toastID = service.confirm('Ng-Snotify', null, {
+      buttons: [
+        {text: 'Yes', action: (id) => result = id}
+      ]
+    });
+    fixture.detectChanges();
+    compiled.querySelector('.snotifyToast button').click();
+
+    expect(result).toEqual(toastID);
+  }));
+
+  it('should create prompt toast with 4 buttons', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    const service = fixture.debugElement.injector.get(SnotifyService);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+
+    service.prompt('Ng-Snotify', null, {
+      buttons: [
+        {text: 'Yes'},
+        {text: 'Yes'},
+        {text: 'Yes'},
+        {text: 'Yes'},
+      ]
+    });
+    fixture.detectChanges();
+
+
+    expect(compiled.querySelectorAll('.snotifyToast button').length).toEqual(4);
+  }));
+
 });
