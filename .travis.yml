@@ -17,4 +17,5 @@ install:
   - npm install
 script:
   - npm run lib:build
+  - npm install ng-snotify
   - npm run example:test
