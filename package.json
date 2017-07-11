@@ -19,7 +19,7 @@
     "docs:serve": "npm run docs:build -- -s",
     "docs:watch": "npm run docs:build -- -s -w",
     "lint": "tslint --type-check -p src/tsconfig.es5.json src/**/*.ts",
-    "test": "tsc && karma start",
+    "test": "tsc && karma start --single-run",
     "lib:lint": "npm run lint && npm run example:lint",
     "lib:build": "npm run lib:lint && npm run build && npm run link:dist && npm run example:build:prod && npm run docs"
   },
