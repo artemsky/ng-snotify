@@ -36,15 +36,15 @@
     <div class="row">
       <div class="col-sm-12">
         <select [(ngModel)]="position" id="position" class="form-control">
-          <option [ngValue]="0">LEFT - TOP</option>
-          <option [ngValue]="1">LEFT - CENTER</option>
-          <option [ngValue]="2">LEFT - BOTTOM</option>
-          <option [ngValue]="3">RIGHT - TOP</option>
-          <option [ngValue]="4">RIGHT - CENTER</option>
-          <option [ngValue]="5">RIGHT - BOTTOM</option>
-          <option [ngValue]="6">CENTER - TOP</option>
-          <option [ngValue]="7">CENTER - CENTER</option>
-          <option [ngValue]="8">CENTER - BOTTOM</option>
+          <option [ngValue]="'leftTop'">LEFT - TOP</option>
+          <option [ngValue]="'leftCenter'">LEFT - CENTER</option>
+          <option [ngValue]="'leftBottom'">LEFT - BOTTOM</option>
+          <option [ngValue]="'rightTop'">RIGHT - TOP</option>
+          <option [ngValue]="'rightCenter'">RIGHT - CENTER</option>
+          <option [ngValue]="'rightBottom'">RIGHT - BOTTOM</option>
+          <option [ngValue]="'centerTop'">CENTER - TOP</option>
+          <option [ngValue]="'centerCenter'">CENTER - CENTER</option>
+          <option [ngValue]="'centerBottom'">CENTER - BOTTOM</option>
         </select>
       </div>
     </div>
