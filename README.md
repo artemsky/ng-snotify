@@ -52,6 +52,7 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
   - rewrite components. Now more optimized. Divided into separate components.
   - Optimized for AOT build in right way.
   - rewrite [documentation](documentation)
+  - add few test in example app
   - update dependencies
     - Auto-documentation add - Interfaces (thx @compodoc/compodoc)
     - Auto-documentation add - Default values (thx @compodoc/compodoc)
@@ -107,7 +108,3 @@ You can see an example of custom icon by calling *Simple toast* in the example a
 ### v1.0.0
 
 - First release
-
-## Future
-
-- rename component to `ng2-snotify` due semantic purpose 

@@ -33,7 +33,7 @@ One changeable thing here is `.snotify-simple` where **simple** is the type of a
 So you can swap it to change toast type target.
 
 > **Important! Types are lowercase**  
-> You can find all types in [SnotifyType](https://github.com/artemsky/ng-snotify/wiki/Enums#snotifytype) interface
+> You can find all types in [SnotifyType](api.md#snotifytype) interface
 
 All types has the same structure except **prompt**. Because it has no progress bar
 

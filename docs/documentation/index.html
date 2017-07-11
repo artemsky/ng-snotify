@@ -403,24 +403,47 @@
 <p><a href="https://artemsky.github.io/ng-snotify/">https://artemsky.github.io/ng-snotify/</a></p>
 <h2 id="features">Features</h2>
 <ul>
-<li>8 types of toast notifications</li>
-<li>Flexible, Configurable</li>
+<li>8 types of toast notifications (async, confirm, prompt and more...)</li>
+<li>Many config options (icons, backdrop, timeout, position and much more)</li>
 <li>Custom styling</li>
-<li>Lifecycle callbacks</li>
-<li>Fully CSS, no angular animations dependency!</li>
+<li>Custom css animations</li>
+<li>Callbacks</li>
 </ul>
+<p><img src="https://github.com/artemsky/ng-snotify/blob/master/example/assets/ng-snotify.gif" alt="Snotify Gif" class="img-responsive"></p>
 <hr>
 <h2 id="installation">Installation</h2>
 <h6 id="npm-5">NPM 5</h6>
 <p><code>npm install ng-snotify</code></p>
 <h6 id="yarn">yarn</h6>
 <p><code>yarn add ng-snotify</code></p>
-<p>Detailed instruction - <a href="https://github.com/artemsky/ng-snotify/wiki/Install">here</a></p>
 <h2 id="documentation-and-examples">Documentation and Examples</h2>
-<p>Wiki - <a href="https://github.com/artemsky/ng-snotify/wiki">here</a><br>Examples - <a href="https://github.com/artemsky/ng-snotify/wiki/Examples">here</a><br>Example application source - <a href="https://github.com/artemsky/ng-snotify/tree/master/example/app">here</a><br>Auto-Documentation - <a href="https://artemsky.github.io/ng-snotify/documentation/injectables/SnotifyService.html">here</a><br>Development - <a href="https://github.com/artemsky/ng-snotify/wiki/Development">here</a></p>
+<p>Documentation - <a href="documentation">here</a><br>Example application source - <a href="https://github.com/artemsky/ng-snotify/tree/master/example/app">here</a><br>Auto-Documentation - <a href="https://artemsky.github.io/ng-snotify/documentation/index.html">here</a>  </p>
 <h2 id="license">License</h2>
 <p>MIT © <a href="mailto:mr.artemsky@gmail.com">artemsky</a></p>
 <h2 id="change-log">Change Log</h2>
+<h3 id="v2-0-0">v2.0.0</h3>
+<ul>
+<li><strong>Breaking changes -</strong> <a href="documentation/v1-to-v2-migration-guide.md">Look migration guide</a></li>
+<li><strong>Features</strong><ul>
+<li>Now unlimited amount of buttons.</li>
+<li>New <a href="documentation/v2/api.md#callbacks">callback</a> <code>onInput</code> for <strong>prompt</strong> toast</li>
+<li>reduce start code amount</li>
+<li>add custom <a href="documentation/v2/animations.md">animations</a></li>
+</ul>
+</li>
+<li><strong>Fixes</strong><ul>
+<li>rewrite components. Now more optimized. Divided into separate components.</li>
+<li>Optimized for AOT build in right way.</li>
+<li>rewrite <a href="documentation">documentation</a></li>
+<li>add few test in example app</li>
+<li>update dependencies<ul>
+<li>Auto-documentation add - Interfaces (thx @compodoc/compodoc)</li>
+<li>Auto-documentation add - Default values (thx @compodoc/compodoc)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="v1-4-0">v1.4.0</h3>
 <ul>
 <li>add backdrop (<a href="https://github.com/artemsky/ng-snotify/issues/15">#15</a>)</li>
@@ -470,10 +493,6 @@
 <h3 id="v1-0-0">v1.0.0</h3>
 <ul>
 <li>First release</li>
-</ul>
-<h2 id="future">Future</h2>
-<ul>
-<li>rename component to <code>ng2-snotify</code> due semantic purpose </li>
 </ul>
 
 
