@@ -17,8 +17,6 @@ https://artemsky.github.io/ng-snotify/
 - Custom css animations
 - Callbacks
 
-![Snotify Gif](https://giphy.com/embed/l4FGKBjMsq4eJBaJa)
-
 _______
 
 ## Installation
