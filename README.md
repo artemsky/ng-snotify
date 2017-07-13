@@ -17,7 +17,7 @@ https://artemsky.github.io/ng-snotify/
 - Custom css animations
 - Callbacks
 
-![Snotify Gif](https://github.com/artemsky/ng-snotify/blob/master/example/assets/ng-snotify.gif)
+![Snotify Gif](https://cdn.rawgit.com/artemsky/ng-snotify/08ff31c6/example/assets/ng-snotify.gif)
 
 _______
 
@@ -31,7 +31,7 @@ _______
 
 ## Documentation and Examples
 
-Documentation - [here](documentation)  
+Documentation - [here](https://github.com/artemsky/ng-snotify/tree/master/documentation)  
 Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)  
 Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/index.html)  
 
@@ -42,16 +42,16 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 ## Change Log
 
 ### v2.0.0
-- **Breaking changes -** [Look migration guide](documentation/v1-to-v2-migration-guide.md)
+- **Breaking changes -** [Look migration guide](https://github.com/artemsky/ng-snotify/tree/master/documentation/v1-to-v2-migration-guide.md)
 - **Features**
   - Now unlimited amount of buttons.
-  - New [callback](documentation/v2/api.md#callbacks) `onInput` for **prompt** toast
+  - New [callback](https://github.com/artemsky/ng-snotify/tree/master/documentation/v2/api.md#callbacks) `onInput` for **prompt** toast
   - reduce start code amount
-  - add custom [animations](documentation/v2/animations.md)
+  - add custom [animations](https://github.com/artemsky/ng-snotify/tree/master/documentation/v2/animations.md)
 - **Fixes**
   - rewrite components. Now more optimized. Divided into separate components.
   - Optimized for AOT build in right way.
-  - rewrite [documentation](documentation)
+  - rewrite [documentation](https://github.com/artemsky/ng-snotify/tree/master/documentation)
   - add few test in example app
   - update dependencies
     - Auto-documentation add - Interfaces (thx @compodoc/compodoc)
