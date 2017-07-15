@@ -39,6 +39,11 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
    * Backdrop Opacity
    */
   backdrop: number;
+  /**
+   * Activate margin for horizontal center positions
+   * @type {Boolean}
+   */
+  negativeMargin = false;
 
 
   constructor(private service: SnotifyService, private render: Renderer2, private snotify: ElementRef) { }
@@ -116,7 +121,11 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
   }
 
   ngAfterContentChecked() {
-    this.snotify.nativeElement.style.marginTop = -(this.snotify.nativeElement.offsetHeight / 2) + 'px';
+    if (this.negativeMargin) {
+      this.snotify.nativeElement.style.marginTop = -(this.snotify.nativeElement.offsetHeight / 2) + 'px';
+    } else {
+      this.snotify.nativeElement.style.marginTop = 0;
+    }
   }
 
   /**
@@ -142,6 +151,16 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
   setPosition(position: SnotifyPosition): void {
     this.render.removeAttribute(this.snotify.nativeElement, 'class');
     this.render.addClass(this.snotify.nativeElement, `snotify-${position}`);
+
+    switch (position) {
+      case SnotifyPosition.center_center:
+      case SnotifyPosition.right_center:
+      case SnotifyPosition.left_center:
+        this.negativeMargin = true;
+        break;
+      default:
+        this.negativeMargin = false;
+    }
   }
 
   /**
