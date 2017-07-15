@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import { Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
 import {SnotifyAction} from '../enum/SnotifyAction.enum';
@@ -29,7 +29,7 @@ export class ToastComponent implements OnInit, OnDestroy {
       progress: 0,
       animation: '',
       time: 0,
-      isDestroying: false,
+      isDestroying: false
     },
     promptType: SnotifyType.PROMPT,
     prompt: ''
@@ -49,7 +49,6 @@ export class ToastComponent implements OnInit, OnDestroy {
   /*
   Life cycles
    */
-
   /**
    * Init base options. Subscribe to toast changed, toast deleted
    */

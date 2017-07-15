@@ -9,7 +9,7 @@
   'animation-duration': state.toast.time + 'ms'
   }"
   (animationend)="onExitTransitionEnd()"
-  (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+  (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" #toastEl>
   <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
     <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': state.toast.progress + '%'}"></span>
   </div>

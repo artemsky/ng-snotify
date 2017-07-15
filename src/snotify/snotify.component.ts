@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core';
+import { AfterContentChecked, Component, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
@@ -13,7 +13,7 @@ import {SnotifyPosition} from './enum/SnotifyPosition.enum';
   templateUrl: './snotify.component.html',
   styleUrls: ['./snotify.component.scss']
 })
-export class SnotifyComponent implements OnInit, OnDestroy {
+export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked {
   /**
    * Toasts array
    */
@@ -39,6 +39,8 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    * Backdrop Opacity
    */
   backdrop: number;
+
+
   constructor(private service: SnotifyService, private render: Renderer2, private snotify: ElementRef) { }
 
   /**
@@ -111,6 +113,10 @@ export class SnotifyComponent implements OnInit, OnDestroy {
       }
     );
 
+  }
+
+  ngAfterContentChecked() {
+    this.snotify.nativeElement.style.marginTop = -(this.snotify.nativeElement.offsetHeight / 2) + 'px';
   }
 
   /**

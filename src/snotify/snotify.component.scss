@@ -38,7 +38,6 @@ $backdrop-color: #000000;
 :host(.snotify-rightCenter),
 :host(.snotify-centerCenter) {
   top: 50%;
-  transform: translateY(-50%);
 }
 :host(.snotify-leftBottom),
 :host(.snotify-rightBottom),
