@@ -19,8 +19,6 @@ https://artemsky.github.io/ng-snotify/
 
 ![Snotify Gif](https://gifyu.com/images/ng-snotify.gif)
 
-_______
-
 ## Installation
 
 ###### NPM 5
