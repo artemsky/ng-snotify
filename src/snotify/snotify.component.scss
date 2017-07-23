@@ -1,6 +1,6 @@
 $backdrop-color: #000000;
 
-:host {
+ng-snotify {
   display: block;
   position: fixed;
   width: 300px;
@@ -11,37 +11,37 @@ $backdrop-color: #000000;
   }
 }
 
-:host(.snotify-leftTop),
-:host(.snotify-leftCenter),
-:host(.snotify-leftBottom) {
+.snotify-leftTop,
+.snotify-leftCenter,
+.snotify-leftBottom {
   left: 10px;
 }
 
-:host(.snotify-rightTop),
-:host(.snotify-rightCenter),
-:host(.snotify-rightBottom) {
+.snotify-rightTop,
+.snotify-rightCenter,
+.snotify-rightBottom {
   right: 10px;
 }
 
-:host(.snotify-centerTop),
-:host(.snotify-centerCenter),
-:host(.snotify-centerBottom) {
+.snotify-centerTop,
+.snotify-centerCenter,
+.snotify-centerBottom {
   left: calc(50% - 300px/2);
 }
 
-:host(.snotify-leftTop),
-:host(.snotify-rightTop),
-:host(.snotify-rightTop) {
+.snotify-leftTop,
+.snotify-rightTop,
+.snotify-rightTop {
   top: 10px;
 }
-:host(.snotify-leftCenter),
-:host(.snotify-rightCenter),
-:host(.snotify-centerCenter) {
+.snotify-leftCenter,
+.snotify-rightCenter,
+.snotify-centerCenter {
   top: 50%;
 }
-:host(.snotify-leftBottom),
-:host(.snotify-rightBottom),
-:host(.snotify-centerBottom) {
+.snotify-leftBottom,
+.snotify-rightBottom,
+.snotify-centerBottom {
   bottom: 10px;
 }
 

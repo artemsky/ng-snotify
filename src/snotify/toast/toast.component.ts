@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
 import {SnotifyAction} from '../enum/SnotifyAction.enum';
@@ -8,7 +8,8 @@ import {SnotifyType} from '../enum/SnotifyType.enum';
 @Component({
   selector: 'ng-snotify-toast',
   templateUrl: './toast.component.html',
-  styleUrls: ['./toast.component.scss']
+  styleUrls: ['./toast.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ToastComponent implements OnInit, OnDestroy {
   /**

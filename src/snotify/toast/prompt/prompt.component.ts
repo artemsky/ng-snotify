@@ -1,10 +1,15 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {
+  ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output,
+  ViewEncapsulation
+} from '@angular/core';
 import {SnotifyService} from '../../snotify.service';
 
 @Component({
   selector: 'ng-snotify-prompt',
   templateUrl: './prompt.component.html',
-  styleUrls: ['./prompt.component.scss']
+  styleUrls: ['./prompt.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 
 /**

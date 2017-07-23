@@ -6,8 +6,8 @@ import { ToastComponent } from './snotify/toast/toast.component';
 import { IconComponent } from './snotify/toast/icon/icon.component';
 import { SnotifyService } from './snotify/snotify.service';
 import { TruncatePipe } from './snotify/pipes/truncate.pipe';
-import {ButtonsComponent} from './snotify/toast/button/buttons.component';
-import {PromptComponent} from './snotify/toast/prompt/prompt.component';
+import { ButtonsComponent } from './snotify/toast/button/buttons.component';
+import { PromptComponent } from './snotify/toast/prompt/prompt.component';
 
 export * from './snotify/snotify.component';
 export * from './snotify/snotify.service';

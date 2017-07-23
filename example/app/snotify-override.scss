@@ -37,18 +37,6 @@ $confirm-progressBarPercentage: lighten(#80cbc4, 15%);
 $prompt-bg: lighten(#009688, 15%);
 $prompt-color: lighten(#e0f2f1, 15%);
 
-:host /deep/ .snotifyToast-show {
-  transform: translate(0, 0) !important;
-  opacity: 1 !important;
-}
-
-:host /deep/ .snotifyToast-remove {
-  max-height: 0 !important;
-  overflow: hidden !important;
-  transform: translate(0, 50%) !important;
-  opacity: 0 !important;
-}
-
 :host /deep/ .snotify-simple {
   background-color: $simple-bg !important;
   .snotifyToast__progressBar {

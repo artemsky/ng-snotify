@@ -1,4 +1,4 @@
-import { AfterContentChecked, Component, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import {AfterContentChecked, Component, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
@@ -11,7 +11,7 @@ import {SnotifyPosition} from './enum/SnotifyPosition.enum';
 @Component({
   selector: 'ng-snotify',
   templateUrl: './snotify.component.html',
-  styleUrls: ['./snotify.component.scss']
+  styleUrls: ['./snotify.component.scss'],
 })
 export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked {
   /**

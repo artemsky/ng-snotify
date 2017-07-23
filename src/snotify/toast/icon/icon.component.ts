@@ -1,10 +1,11 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {SnotifyType} from '../../enum/SnotifyType.enum';
 
 @Component({
   selector: 'ng-snotify-icon',
   templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.scss']
+  styleUrls: ['./icon.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 
 /**
