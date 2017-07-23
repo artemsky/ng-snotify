@@ -10,5 +10,5 @@
 In the end you should re-link lib to the `dist` folder, and test
 
 - `example:build`
-- Be sure you pass `npm run lint`
+- Be sure you pass `npm run lint` and `npm test`
 - Make a pull request
