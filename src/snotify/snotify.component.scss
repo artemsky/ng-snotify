@@ -1,6 +1,6 @@
 $backdrop-color: #000000;
 
-ng-snotify {
+:host {
   display: block;
   position: fixed;
   width: 300px;
@@ -11,37 +11,37 @@ ng-snotify {
   }
 }
 
-.snotify-leftTop,
-.snotify-leftCenter,
-.snotify-leftBottom {
+:host(.snotify-leftTop),
+:host(.snotify-leftCenter),
+:host(.snotify-leftBottom) {
   left: 10px;
 }
 
-.snotify-rightTop,
-.snotify-rightCenter,
-.snotify-rightBottom {
+:host(.snotify-rightTop),
+:host(.snotify-rightCenter),
+:host(.snotify-rightBottom) {
   right: 10px;
 }
 
-.snotify-centerTop,
-.snotify-centerCenter,
-.snotify-centerBottom {
+:host(.snotify-centerTop),
+:host(.snotify-centerCenter),
+:host(.snotify-centerBottom) {
   left: calc(50% - 300px/2);
 }
 
-.snotify-leftTop,
-.snotify-rightTop,
-.snotify-rightTop {
+:host(.snotify-leftTop),
+:host(.snotify-rightTop),
+:host(.snotify-rightTop) {
   top: 10px;
 }
-.snotify-leftCenter,
-.snotify-rightCenter,
-.snotify-centerCenter {
+:host(.snotify-leftCenter),
+:host(.snotify-rightCenter),
+:host(.snotify-centerCenter) {
   top: 50%;
 }
-.snotify-leftBottom,
-.snotify-rightBottom,
-.snotify-centerBottom {
+:host(.snotify-leftBottom),
+:host(.snotify-rightBottom),
+:host(.snotify-centerBottom) {
   bottom: 10px;
 }
 

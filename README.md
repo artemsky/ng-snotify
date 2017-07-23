@@ -39,6 +39,11 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
 
+### v2.1.0
+  - optimize components rerender
+  - update angular 4.3.0 -> 4.3.1
+  - update other dependencies
+
 ### v2.0.3
   - fix horizontal center backdrop thx [ktriek](https://github.com/artemsky/ng-snotify/pull/18)
   - update angular 4.2.6 -> 4.3.0
@@ -111,3 +116,8 @@ You can see an example of custom icon by calling *Simple toast* in the example a
 ### v1.0.0
 
 - First release
+
+
+###### @TODO
+
+- Since `/deep/` deprecated, implement style API
