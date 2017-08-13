@@ -11,6 +11,7 @@ import {Snotify} from './interfaces/Snotify.interface';
 import {SnotifyPosition} from './enum/SnotifyPosition.enum';
 import {SnotifyAction} from './enum/SnotifyAction.enum';
 import {SnotifyType} from './enum/SnotifyType.enum';
+import {SafeHtml} from '@angular/platform-browser';
 
 /**
  * SnotifyService - create, remove, config toasts
@@ -411,4 +412,17 @@ export class SnotifyService {
     return id;
   }
 
+  /**
+   * Creates empty toast with html string inside
+   * @param {string | SafeHtml} html
+   * @param {SnotifyConfig} config
+   * @returns {number}
+   */
+  html(html: string | SafeHtml, config?: SnotifyConfig): number {
+    return this.create({
+      title: null,
+      body: null,
+      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.SIMPLE, html}, config),
+    });
+  }
 }

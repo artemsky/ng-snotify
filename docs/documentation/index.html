@@ -72,6 +72,9 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
+                                    <a href="./modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
                                 </li>
                         </ul>
@@ -88,6 +91,9 @@
                         <ul class="links collapse "
                                 id="xs-components-links"
                             >
+                                <li class="link">
+                                    <a href="./components/AppComponent.html" >AppComponent</a>
+                                </li>
                                 <li class="link">
                                     <a href="./components/ButtonsComponent.html" >ButtonsComponent</a>
                                 </li>
@@ -118,6 +124,9 @@
                         <ul class="links collapse "
                                 id="xs-classes-links"
                             >
+                                <li class="link">
+                                    <a href="./classes/APage.html" >APage</a>
+                                </li>
                                 <li class="link">
                                     <a href="./classes/SnotifyPosition.html" >SnotifyPosition</a>
                                 </li>
@@ -196,10 +205,26 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
-                        <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="./miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
                     </li>
+            
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -267,6 +292,9 @@
                                        id="modules-links"
                    >
                                        <li class="link">
+                                           <a href="./modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/SnotifyModule.html" >SnotifyModule</a>
                                        </li>
                                </ul>
@@ -283,6 +311,9 @@
                                <ul class="links collapse "
                                        id="components-links"
                    >
+                                       <li class="link">
+                                           <a href="./components/AppComponent.html" >AppComponent</a>
+                                       </li>
                                        <li class="link">
                                            <a href="./components/ButtonsComponent.html" >ButtonsComponent</a>
                                        </li>
@@ -313,6 +344,9 @@
                                <ul class="links collapse "
                                        id="classes-links"
                    >
+                                       <li class="link">
+                                           <a href="./classes/APage.html" >APage</a>
+                                       </li>
                                        <li class="link">
                                            <a href="./classes/SnotifyPosition.html" >SnotifyPosition</a>
                                        </li>
@@ -391,10 +425,26 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
-                               <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="./miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
                            </li>
+                   
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -422,7 +472,7 @@
 <li>Custom css animations</li>
 <li>Callbacks</li>
 </ul>
-<p><img src="https://gifyu.com/images/ng-snotify.gif" alt="Snotify Gif" class="img-responsive"></p>
+<p><img src="https://thumbs.gfycat.com/ReliableReflectingFireant-size_restricted.gif" alt="Snotify Gif" class="img-responsive"></p>
 <h2 id="installation">Installation</h2>
 <h6 id="npm-5">NPM 5</h6>
 <p><code>npm install ng-snotify</code></p>
@@ -433,11 +483,20 @@
 <h2 id="license">License</h2>
 <p>MIT © <a href="mailto:mr.artemsky@gmail.com">artemsky</a></p>
 <h2 id="change-log">Change Log</h2>
+<h3 id="v2-2-0">v2.2.0</h3>
+<ul>
+<li>thx <a href="https://github.com/artemsky/ng-snotify/issues/19">ganeshkantu</a>, now you can pass HTML into toasts within config object, or use new <em>html</em> toast type</li>
+<li>update angular 4.3.0 -&gt; 4.3.4 (and other dev dependencies)</li>
+</ul>
+<h3 id="v2-1-0">v2.1.0</h3>
+<ul>
+<li>optimize components rerender</li>
+<li>update angular 4.3.0 -&gt; 4.3.1 (and other dev dependencies)</li>
+</ul>
 <h3 id="v2-0-3">v2.0.3</h3>
 <ul>
 <li>fix horizontal center backdrop thx <a href="https://github.com/artemsky/ng-snotify/pull/18">ktriek</a></li>
-<li>update angular 4.2.6 -&gt; 4.3.0</li>
-<li>update other dependencies</li>
+<li>update angular 4.2.6 -&gt; 4.3.0 (and other dev dependencies)</li>
 </ul>
 <h3 id="v2-0-0">v2.0.0</h3>
 <ul>
@@ -511,6 +570,10 @@
 <h3 id="v1-0-0">v1.0.0</h3>
 <ul>
 <li>First release</li>
+</ul>
+<h6 id="-todo">@TODO</h6>
+<ul>
+<li>Since <code>/deep/</code> deprecated, implement style API</li>
 </ul>
 
 

@@ -19,4 +19,8 @@ export interface Snotify {
    * @type {SnotifyConfig}
    */
   config?: SnotifyConfig;
+  /**
+   * Html content
+   */
+  html?: any;
 }

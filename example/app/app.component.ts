@@ -196,7 +196,7 @@ export class AppComponent implements OnInit {
         {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
         {text: 'No', action: () => console.log('Clicked: No')},
         {text: 'Later', action: (toastId) => {console.log('Clicked: Later'); this.snotifyService.remove(toastId); } },
-        {text: 'Close', action: () => {console.log('Clicked: No'); this.snotifyService.remove(id); }, bold: true},
+        {text: 'Close', action: () => {console.log('Clicked: Close'); this.snotifyService.remove(id); }, bold: true},
       ]
     });
   }
@@ -219,6 +219,13 @@ export class AppComponent implements OnInit {
       ],
       placeholder: 'This is the example placeholder which you can pass' // Max-length = 40
     });
+  }
+
+  onHtml() {
+    this.setGlobal();
+
+    this.snotifyService.html(`<div class="snotifyToast__title" *ngIf="toast.title"><b>Html Bold Title</b></div>
+    <div class="snotifyToast__body"><i>Html</i> <b>toast</b> <u>content</u></div> `);
   }
 
 

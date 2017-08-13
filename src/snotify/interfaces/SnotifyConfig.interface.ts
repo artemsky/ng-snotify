@@ -1,6 +1,7 @@
 import {SnotifyButton} from './SnotifyButton.interface';
 import {SnotifyAnimate} from './SnotifyAnimate.interface';
 import {SnotifyType} from '../enum/SnotifyType.enum';
+import {SafeHtml} from '@angular/platform-browser';
 
 export interface SnotifyConfig {
   /**
@@ -87,6 +88,13 @@ export interface SnotifyConfig {
   /**
    * Animation config
    * @type {SnotifyAnimate}
+   * @default -1
    */
-  animation?: SnotifyAnimate
+  animation?: SnotifyAnimate,
+  /**
+   * Html string witch overrides toast content
+   * @type {string | SafeHtml}
+   * @default null
+   */
+  html?: string | SafeHtml,
 }

@@ -27,7 +27,7 @@ success(body: string, title?: string, config?: SnotifyConfig): number
 info(body: string, title?: string, config?: SnotifyConfig): number
 warning(body: string, title?: string, config?: SnotifyConfig): number
 error(body: string, title?: string, config?: SnotifyConfig): number
-````
+```
 
 > Toast notification of style - *info* and loading spinner. It changes style depending on success or error `promise|observable`.  
 > You can change displayed data during the loading process using Observable.next()
@@ -41,6 +41,10 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 > Toast notification of style - *confirm* with buttons(configurable) and input field
 
 `prompt(body: string, title?: string, config: SnotifyConfig): number`
+
+> Toast notification of custom style(default - Simple). Renders your html string inside `.snotifyToast__inner`
+
+`html(html: string | SafeHtml, config: SnotifyConfig): number`
 
 
 #### Other
@@ -199,6 +203,11 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 **Type:** [SnotifyAnimate](#snotifyanimate)  
 **Default:** -1  
 **Description:** Backdrop opacity. Range - `0.0 - 1.0`. Disabled `-1` 
+
+> #### html?
+**Type:** `string | SafeHtml`
+**Default:** null  
+**Description:** Toast inner html. When set, overrides toast content.
 
 ***
 ### SnotifyOptions

@@ -106,4 +106,15 @@ describe('App: CompleteGuideFinalWebpack', () => {
     expect(compiled.querySelectorAll('.snotifyToast button').length).toEqual(4);
   }));
 
+  it('should create html toast with html content', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    const service = fixture.debugElement.injector.get(SnotifyService);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    service.html(`<strong>HTML Toast Content</strong>`);
+    fixture.detectChanges();
+    expect(compiled.querySelector('.snotifyToast .snotifyToast__inner').textContent).toContain('HTML Toast Content');
+  }));
+
 });

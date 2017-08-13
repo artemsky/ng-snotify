@@ -39,15 +39,17 @@ MIT © [artemsky](mailto:mr.artemsky@gmail.com)
 
 ## Change Log
 
+### v2.2.0
+  - thx [ganeshkantu](https://github.com/artemsky/ng-snotify/issues/19), now you can pass HTML into toasts within config object, or use new *html* toast type
+  - update angular 4.3.0 -> 4.3.4 (and other dev dependencies)
+
 ### v2.1.0
   - optimize components rerender
-  - update angular 4.3.0 -> 4.3.1
-  - update other dependencies
+  - update angular 4.3.0 -> 4.3.1 (and other dev dependencies)
 
 ### v2.0.3
   - fix horizontal center backdrop thx [ktriek](https://github.com/artemsky/ng-snotify/pull/18)
-  - update angular 4.2.6 -> 4.3.0
-  - update other dependencies
+  - update angular 4.2.6 -> 4.3.0 (and other dev dependencies)
 
 ### v2.0.0
 - **Breaking changes -** [Look migration guide](https://github.com/artemsky/ng-snotify/tree/master/documentation/v1-to-v2-migration-guide.md)
