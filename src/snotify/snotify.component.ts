@@ -1,7 +1,4 @@
-import {
-  Component, OnDestroy, OnInit,
-  ViewEncapsulation
-} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
@@ -23,6 +20,9 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    * Toasts array
    */
   notifications: SnotifyNotifications;
+  /**
+   * Toasts emitter
+   */
   emitter: Subscription;
   /**
    * Listens for options has been changed
@@ -127,6 +127,11 @@ export class SnotifyComponent implements OnInit, OnDestroy {
 
   }
 
+  /**
+   * Split toasts toasts into different objects
+   * @param {SnotifyToast[]} toasts
+   * @returns {SnotifyNotifications}
+   */
   splitToasts(toasts: SnotifyToast[]): SnotifyNotifications {
     const result: SnotifyNotifications = {};
 
