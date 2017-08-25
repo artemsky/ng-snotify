@@ -1,5 +1,8 @@
 import {SnotifyToast} from '../toast/snotify-toast.model';
 
+/**
+ * Notifications object
+ */
 export interface SnotifyNotifications {
   left_top?: SnotifyToast[];
   left_center?: SnotifyToast[];
