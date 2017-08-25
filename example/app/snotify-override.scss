@@ -37,7 +37,7 @@ $confirm-progressBarPercentage: lighten(#80cbc4, 15%);
 $prompt-bg: lighten(#009688, 15%);
 $prompt-color: lighten(#e0f2f1, 15%);
 
-:host /deep/ .snotify-simple {
+.snotify-simple {
   background-color: $simple-bg !important;
   .snotifyToast__progressBar {
     background-color: $simple-progressBar !important;
@@ -51,7 +51,7 @@ $prompt-color: lighten(#e0f2f1, 15%);
   }
 }
 
-:host /deep/ .snotify-success {
+.snotify-success {
   background-color: $success-bg !important;
   .snotifyToast__progressBar {
     background-color: $success-progressBar !important;
@@ -64,7 +64,7 @@ $prompt-color: lighten(#e0f2f1, 15%);
   }
 }
 
-:host /deep/ .snotify-info {
+.snotify-info {
   background-color: $info-bg !important;
   .snotifyToast__progressBar {
     background-color: $info-progressBar !important;
@@ -78,7 +78,7 @@ $prompt-color: lighten(#e0f2f1, 15%);
 
 }
 
-:host /deep/ .snotify-warning {
+.snotify-warning {
   background-color: $warning-bg !important;
   .snotifyToast__progressBar {
     background-color: $warning-progressBar !important;
@@ -93,7 +93,7 @@ $prompt-color: lighten(#e0f2f1, 15%);
 
 }
 
-:host /deep/ .snotify-error {
+.snotify-error {
   background-color: $error-bg !important;
   .snotifyToast__progressBar {
     background-color: $error-progressBar !important;
@@ -106,7 +106,7 @@ $prompt-color: lighten(#e0f2f1, 15%);
   }
 }
 
-:host /deep/ .snotify-async {
+.snotify-async {
   background-color: $async-bg !important;
   .snotifyToast__progressBar {
     background-color: $async-progressBar !important;
@@ -120,7 +120,7 @@ $prompt-color: lighten(#e0f2f1, 15%);
 
 }
 
-:host /deep/ .snotify-confirm {
+.snotify-confirm {
   background-color: $confirm-bg !important;
   .snotifyToast__progressBar {
     background-color: $confirm-progressBar !important;
@@ -133,7 +133,7 @@ $prompt-color: lighten(#e0f2f1, 15%);
   }
 }
 
-:host /deep/ .snotify-prompt {
+.snotify-prompt {
   background-color: $prompt-bg !important;
   .snotifyToast__body {
     color: $prompt-color !important;

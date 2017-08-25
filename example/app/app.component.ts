@@ -5,7 +5,7 @@ import {SnotifyService, SnotifyToast, SnotifyPosition} from 'ng-snotify';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   title = 'Snotify title!';
@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   newTop = true;
   backdrop = -1;
   dockMax = 6;
+  blockMax = 3;
   pauseHover = true;
   maxHeight = 300;
   titleMaxLength = 15;
@@ -81,6 +82,7 @@ export class AppComponent implements OnInit {
       newOnTop: this.newTop,
       position: this.position,
       maxOnScreen: this.dockMax,
+      maxAtPosition: this.blockMax,
       maxHeight: this.maxHeight
     });
   }

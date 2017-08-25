@@ -1,10 +1,14 @@
-import {AfterContentChecked, Component, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core';
+import {
+  Component, OnDestroy, OnInit,
+  ViewEncapsulation
+} from '@angular/core';
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
 import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
 import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
 import {SnotifyAction} from './enum/SnotifyAction.enum';
+import {SnotifyNotifications} from './interfaces/SnotifyNotifications.interface';
 import {SnotifyPosition} from './enum/SnotifyPosition.enum';
 
 
@@ -12,12 +16,13 @@ import {SnotifyPosition} from './enum/SnotifyPosition.enum';
   selector: 'ng-snotify',
   templateUrl: './snotify.component.html',
   styleUrls: ['./snotify.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked {
+export class SnotifyComponent implements OnInit, OnDestroy {
   /**
    * Toasts array
    */
-  notifications: SnotifyToast[];
+  notifications: SnotifyNotifications;
   emitter: Subscription;
   /**
    * Listens for options has been changed
@@ -36,17 +41,20 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
    */
   dockSize_b: number | undefined;
   /**
+   * Helper for slice pipe (maxAtPosition)
+   */
+  blockSize_a: number;
+  /**
+   * Helper for slice pipe (maxAtPosition)
+   */
+  blockSize_b: number | undefined;
+  /**
    * Backdrop Opacity
    */
   backdrop: number;
-  /**
-   * Activate margin for horizontal center positions
-   * @type {Boolean}
-   */
-  negativeMargin = false;
 
 
-  constructor(private service: SnotifyService, private render: Renderer2, private snotify: ElementRef) { }
+  constructor(private service: SnotifyService) { }
 
   /**
    * Init base options. Subscribe to options, lifecycle change
@@ -56,12 +64,11 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
     this.optionsSubscription = this.service.optionsChanged.subscribe((options: SnotifyOptions) => {
       this.setOptions(options);
     });
-    this.setPosition(this.service.options.position);
 
     this.emitter = this.service.emitter.subscribe(
       (toasts: SnotifyToast[]) => {
-        this.notifications = toasts;
-        const list = this.notifications.filter(toast => toast.config.backdrop >= 0);
+        this.notifications = this.splitToasts(toasts.slice(this.dockSize_a, this.dockSize_b));
+        const list = toasts.filter(toast => toast.config.backdrop >= 0);
 
         if (list.length) {
           this.backdrop = 0;
@@ -120,12 +127,20 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
 
   }
 
-  ngAfterContentChecked() {
-    if (this.negativeMargin) {
-      this.snotify.nativeElement.style.marginTop = -(this.snotify.nativeElement.offsetHeight / 2) + 'px';
-    } else {
-      this.snotify.nativeElement.style.marginTop = 0;
+  splitToasts(toasts: SnotifyToast[]): SnotifyNotifications {
+    const result: SnotifyNotifications = {};
+
+    for (const property in SnotifyPosition) {
+      if (SnotifyPosition.hasOwnProperty(property)) {
+        result[SnotifyPosition[property]] = [];
+      }
     }
+
+    toasts.forEach((toast: SnotifyToast) => {
+      result[toast.config.position as string].push(toast);
+    });
+
+    return result;
   }
 
   /**
@@ -136,30 +151,13 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
     if (this.service.options.newOnTop) {
       this.dockSize_a = -options.maxOnScreen;
       this.dockSize_b = undefined;
+      this.blockSize_a = -options.maxAtPosition;
+      this.blockSize_b = undefined;
     } else {
       this.dockSize_a = 0;
       this.dockSize_b = options.maxOnScreen;
-    }
-
-    this.setPosition(options.position);
-  }
-
-  /**
-   * Set notifications position
-   * @param position {SnotifyPosition}
-   */
-  setPosition(position: SnotifyPosition): void {
-    this.render.removeAttribute(this.snotify.nativeElement, 'class');
-    this.render.addClass(this.snotify.nativeElement, `snotify-${position}`);
-
-    switch (position) {
-      case SnotifyPosition.center_center:
-      case SnotifyPosition.right_center:
-      case SnotifyPosition.left_center:
-        this.negativeMargin = true;
-        break;
-      default:
-        this.negativeMargin = false;
+      this.blockSize_a = 0;
+      this.blockSize_b = options.maxAtPosition;
     }
   }
 

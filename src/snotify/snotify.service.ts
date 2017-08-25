@@ -98,6 +98,7 @@ export class SnotifyService {
       newOnTop: true,
       position: SnotifyPosition.right_bottom,
       maxOnScreen: 8,
+      maxAtPosition: 8,
       maxHeight: 300
     };
   }
@@ -178,6 +179,7 @@ export class SnotifyService {
    * @param toast {SnotifyToast}
    */
   private add(toast: SnotifyToast): void {
+    toast.config.position = this.options.position;
     if (this._options.newOnTop) {
       this.notifications.unshift(toast);
     } else {

@@ -38,12 +38,9 @@ $confirm-progressBarPercentage: #80cbc4;
 $prompt-bg: #009688;
 $prompt-color: #e0f2f1;
 
-ng-snotify-toast {
+.snotifyToast {
   display: block;
   cursor: pointer;
-}
-
-.snotifyToast {
   background-color: $simple-bg;
   max-height: 300px;
   height: 100%;
@@ -51,6 +48,7 @@ ng-snotify-toast {
   opacity: 0;
   border-radius: 5px;
   overflow: hidden;
+  pointer-events: auto;
 
   &__inner {
     display: flex;
