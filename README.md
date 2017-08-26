@@ -12,9 +12,10 @@ https://artemsky.github.io/ng-snotify/
 ## Features
 
 - 9 types of toast notifications (async, confirm, prompt and more...)
+- Ability to create toasts in different positions at the same time
 - Many config options (icons, backdrop, timeout, position and much more)
-- Custom styling
-- Custom css animations
+- Custom fully controlled styling including animations
+- Repository includes 3 different styles. So you can use on of them, or create your own.
 - Callbacks
 - Custom HTML
 - 5.3KB minified and gzipped

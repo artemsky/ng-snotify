@@ -1,0 +1,1656 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-snotify</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+                 <link rel="stylesheet" href="../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-snotify</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">ng-snotify</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                                <li class="link">
+                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./changelog.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
+                                    <a href="./license.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>LICENSE
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse "
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ButtonsComponent.html" >ButtonsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/IconComponent.html" >IconComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PromptComponent.html" >PromptComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SnotifyComponent.html" >SnotifyComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ToastComponent.html"  data-type="entity-link" class="active" >ToastComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/APage.html" >APage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/SnotifyPosition.html" >SnotifyPosition</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/SnotifyService.html" >SnotifyService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/Snotify.html" >Snotify</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyAnimate.html" >SnotifyAnimate</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyInfo.html" >SnotifyInfo</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyNotifications.html" >SnotifyNotifications</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-pipes-links"
+                            >
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/KeysPipe.html" >KeysPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">ng-snotify</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./changelog.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>CHANGELOG
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./license.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>LICENSE
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse "
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SnotifyModule.html" >SnotifyModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ButtonsComponent.html" >ButtonsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/IconComponent.html" >IconComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PromptComponent.html" >PromptComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SnotifyComponent.html" >SnotifyComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ToastComponent.html"  data-type="entity-link" class="active" >ToastComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/APage.html" >APage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/SnotifyPosition.html" >SnotifyPosition</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/SnotifyService.html" >SnotifyService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/Snotify.html" >Snotify</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyAnimate.html" >SnotifyAnimate</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyButton.html" >SnotifyButton</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyConfig.html" >SnotifyConfig</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyInfo.html" >SnotifyInfo</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyNotifications.html" >SnotifyNotifications</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#pipes-links"
+                   >
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/KeysPipe.html" >KeysPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ToastComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+    </li>
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/snotify/toast/toast.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnDestroy-interface.html" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>ng-snotify-toast</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./toast.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+        <h3 id="index">Index</h3>
+        <table class="table table-sm table-bordered index-table">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                 <a href="#interval">interval</a>
+                            </li>
+                            <li>
+                                 <a href="#maxHeight">maxHeight</a>
+                            </li>
+                            <li>
+                                 <a href="#state">state</a>
+                            </li>
+                            <li>
+                                 <a href="#toastChangedSubscription">toastChangedSubscription</a>
+                            </li>
+                            <li>
+                                 <a href="#toastDeletedSubscription">toastDeletedSubscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                 <a href="#initToast">initToast</a>
+                            </li>
+                            <li>
+                                 <a href="#lifecycle">lifecycle</a>
+                            </li>
+                            <li>
+                                 <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                 <a href="#onClick">onClick</a>
+                            </li>
+                            <li>
+                                 <a href="#onExitTransitionEnd">onExitTransitionEnd</a>
+                            </li>
+                            <li>
+                                 <a href="#onMouseEnter">onMouseEnter</a>
+                            </li>
+                            <li>
+                                 <a href="#onMouseLeave">onMouseLeave</a>
+                            </li>
+                            <li>
+                                 <a href="#onPromptChanged">onPromptChanged</a>
+                            </li>
+                            <li>
+                                 <a href="#onRemove">onRemove</a>
+                            </li>
+                            <li>
+                                 <a href="#startTimeout">startTimeout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#toast">toast</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(service: <a href="../injectables/SnotifyService.html">SnotifyService</a>, snotify: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>)</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/snotify/toast/toast.component.ts:45</a></div>
+                                </td>
+                            </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="toast"></a>
+                            <code>toast</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>Get toast from notifications array</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast</a></code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/snotify/toast/toast.component.ts:17</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+    </section>
+
+
+    <section>
+        
+            <h3 id="methods">
+                Methods
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="initToast"></a>
+                            <b> initToast</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>initToast(toast: <a href="../interfaces/Snotify.html">SnotifyToast</a>)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/snotify/toast/toast.component.ts:158</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Initialize base toast config</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>toast</td>
+                                                      <td>
+                                                              <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast</a></code>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="lifecycle"></a>
+                            <b> lifecycle</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>lifecycle(action: <a href="../interfaces/Snotify.html">SnotifyAction</a>, promptValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="197" class="link-to-prism">src/snotify/toast/toast.component.ts:197</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Lifecycle trigger</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>action</td>
+                                                      <td>
+                                                              <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyAction</a></code>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>promptValue</td>
+                                                      <td>
+                                                              <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyAction</a></code>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="ngOnDestroy"></a>
+                            <b> ngOnDestroy</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnDestroy()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/snotify/toast/toast.component.ts:82</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Unsubscribe subscriptions</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="ngOnInit"></a>
+                            <b> ngOnInit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnInit()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/snotify/toast/toast.component.ts:55</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Init base options. Subscribe to toast changed, toast deleted</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="onClick"></a>
+                            <b> onClick</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onClick()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/snotify/toast/toast.component.ts:95</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Trigger OnClick lifecycle</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="onExitTransitionEnd"></a>
+                            <b> onExitTransitionEnd</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onExitTransitionEnd()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="144" class="link-to-prism">src/snotify/toast/toast.component.ts:144</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Remove toast completely after animation</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="onMouseEnter"></a>
+                            <b> onMouseEnter</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onMouseEnter()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/snotify/toast/toast.component.ts:116</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Trigger onHoverEnter lifecycle</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="onMouseLeave"></a>
+                            <b> onMouseLeave</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onMouseLeave()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="126" class="link-to-prism">src/snotify/toast/toast.component.ts:126</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Trigger onHoverLeave lifecycle</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="onPromptChanged"></a>
+                            <b> onPromptChanged</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onPromptChanged(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">src/snotify/toast/toast.component.ts:136</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Prompt input value changed</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="onRemove"></a>
+                            <b> onRemove</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onRemove()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/snotify/toast/toast.component.ts:105</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Trigger beforeDestroy lifecycle. Removes toast</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="startTimeout"></a>
+                            <b> startTimeout</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>startTimeout(currentProgress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="177" class="link-to-prism">src/snotify/toast/toast.component.ts:177</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Start progress bar</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>currentProgress</td>
+                                                      <td>
+                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" >Number</a></code>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        
+            <h3 id="inputs">
+                Properties
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="interval"></a>
+                            <b> interval</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>interval:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+    
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/snotify/toast/toast.component.ts:45</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Toast progress interval</p>
+    </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="maxHeight"></a>
+                            <b> maxHeight</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>maxHeight:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+    
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/snotify/toast/toast.component.ts:41</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Toast maximum height in pixels</p>
+    </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="state"></a>
+                            <b> state</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>state:     <code></code>
+    </code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/snotify/toast/toast.component.ts:26</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Toast state</p>
+    </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="toastChangedSubscription"></a>
+                            <b> toastChangedSubscription</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>toastChangedSubscription:     <code>Subscription</code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code>Subscription</code>
+    
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/snotify/toast/toast.component.ts:20</a></div>
+                                </td>
+                            </tr>
+    
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="toastDeletedSubscription"></a>
+                            <b> toastDeletedSubscription</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>toastDeletedSubscription:     <code>Subscription</code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code>Subscription</code>
+    
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/snotify/toast/toast.component.ts:19</a></div>
+                                </td>
+                            </tr>
+    
+    
+                </tbody>
+            </table>
+    </section>
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import {Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from &#x27;@angular/core&#x27;;
+import {SnotifyService} from &#x27;../snotify.service&#x27;;
+import {SnotifyToast} from &#x27;./snotify-toast.model&#x27;;
+import {SnotifyAction} from &#x27;../enum/SnotifyAction.enum&#x27;;
+import {Subscription} from &#x27;rxjs/Subscription&#x27;;
+import {SnotifyType} from &#x27;../enum/SnotifyType.enum&#x27;;
+
+@Component({
+  selector: &#x27;ng-snotify-toast&#x27;,
+  templateUrl: &#x27;./toast.component.html&#x27;,
+  encapsulation: ViewEncapsulation.None,
+})
+export class ToastComponent implements OnInit, OnDestroy {
+  /**
+   * Get toast from notifications array
+   */
+  @Input() toast: SnotifyToast;
+
+  toastDeletedSubscription: Subscription;
+  toastChangedSubscription: Subscription;
+
+  /**
+   * Toast state
+   * @type {Object}
+   */
+  state &#x3D; {
+    toast: {
+      type: &#x27;&#x27;,
+      progress: 0,
+      animation: &#x27;&#x27;,
+      time: 0,
+      isDestroying: false
+    },
+    promptType: SnotifyType.PROMPT,
+    prompt: &#x27;&#x27;
+  };
+
+  /**
+   * Toast maximum height in pixels
+   */
+  maxHeight: number;
+  /**
+   * Toast progress interval
+   */
+  interval: any;
+
+  constructor(private service: SnotifyService, private snotify: ElementRef) { }
+
+  /*
+  Life cycles
+   */
+  /**
+   * Init base options. Subscribe to toast changed, toast deleted
+   */
+  ngOnInit() {
+    this.maxHeight &#x3D; this.service.options.maxHeight;
+    this.initToast();
+    this.toastChangedSubscription &#x3D; this.service.toastChanged.subscribe(
+      (toast: SnotifyToast) &#x3D;&gt; {
+        if (this.toast.id &#x3D;&#x3D;&#x3D; toast.id) {
+          this.initToast(toast);
+        }
+      }
+    );
+
+    this.toastDeletedSubscription &#x3D; this.service.toastDeleted.subscribe(
+      (id) &#x3D;&gt; {
+        if (this.toast.id &#x3D;&#x3D;&#x3D; id) {
+          this.onRemove();
+        }
+      }
+    );
+    this.state.toast.type &#x3D; this.toast.config.type as string;
+    this.state.toast.time &#x3D; this.toast.config.animation.time;
+    this.state.toast.animation &#x3D; this.toast.config.animation.enter;
+    this.lifecycle(SnotifyAction.onInit);
+  }
+
+  /**
+   * Unsubscribe subscriptions
+   */
+  ngOnDestroy(): void {
+    this.lifecycle(SnotifyAction.afterDestroy);
+    this.toastChangedSubscription.unsubscribe();
+    this.toastDeletedSubscription.unsubscribe();
+  }
+
+  /*
+  Event hooks
+   */
+
+  /**
+   * Trigger OnClick lifecycle
+   */
+  onClick() {
+    this.lifecycle(SnotifyAction.onClick);
+    if (this.toast.config.closeOnClick) {
+      this.service.remove(this.toast.id);
+    }
+  }
+
+  /**
+   * Trigger beforeDestroy lifecycle. Removes toast
+   */
+  onRemove() {
+    this.state.toast.isDestroying &#x3D; true;
+    clearInterval(this.interval);
+    this.state.toast.animation &#x3D; this.toast.config.animation.exit;
+    this.maxHeight &#x3D; 0;
+    this.lifecycle(SnotifyAction.beforeDestroy);
+  }
+
+  /**
+   * Trigger onHoverEnter lifecycle
+   */
+  onMouseEnter() {
+    this.lifecycle(SnotifyAction.onHoverEnter);
+    if (this.toast.config.pauseOnHover) {
+      clearInterval(this.interval);
+    }
+  }
+
+  /**
+   * Trigger onHoverLeave lifecycle
+   */
+  onMouseLeave() {
+    if (this.toast.config.pauseOnHover &amp;&amp; this.state.toast.type !&#x3D;&#x3D; SnotifyType.PROMPT) {
+      this.startTimeout(this.state.toast.progress);
+    }
+    this.lifecycle(SnotifyAction.onHoverLeave);
+  }
+
+  /**
+   * Prompt input value changed
+   */
+  onPromptChanged(value: string) {
+    this.state.prompt &#x3D; value;
+    this.lifecycle(SnotifyAction.onInput, value)
+  }
+
+  /**
+   * Remove toast completely after animation
+   */
+  onExitTransitionEnd() {
+    if (this.state.toast.isDestroying) {
+      this.service.remove(this.toast.id, true);
+    }
+  }
+
+  /*
+   Common
+   */
+
+  /**
+   * Initialize base toast config
+   * @param toast {SnotifyToast}
+   */
+  initToast(toast?: SnotifyToast) {
+    if (toast) {
+      if (this.toast.config.type !&#x3D;&#x3D; toast.config.type) {
+        clearInterval(this.interval);
+      }
+      this.toast &#x3D; toast;
+    }
+    if (this.toast.config.timeout &gt; 0) {
+      this.startTimeout(0);
+    } else {
+      this.toast.config.showProgressBar &#x3D; false;
+      this.toast.config.pauseOnHover &#x3D; false;
+    }
+  }
+
+  /**
+   * Start progress bar
+   * @param currentProgress {Number}
+   */
+  startTimeout(currentProgress: number) {
+    const refreshRate &#x3D; 10;
+    if (this.state.toast.isDestroying) {
+      return;
+    }
+    this.state.toast.progress &#x3D; currentProgress;
+    const step &#x3D; refreshRate / this.toast.config.timeout * 100;
+      this.interval &#x3D; setInterval(() &#x3D;&gt; {
+        this.state.toast.progress +&#x3D; step;
+        if (this.state.toast.progress &gt;&#x3D; 100) {
+          this.service.remove(this.toast.id);
+        }
+      }, refreshRate);
+  }
+
+  /**
+   * Lifecycle trigger
+   * @param action {SnotifyAction}
+   * @param promptValue {SnotifyAction}
+   */
+  lifecycle(action: SnotifyAction, promptValue?: string) {
+    return this.service.lifecycle.next({
+      action,
+      toast: this.toast,
+      value: promptValue
+    });
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div
+  class&#x3D;&quot;snotifyToast animated&quot;
+  [ngClass]&#x3D;&quot;[&#x27;snotify-&#x27; + toast.config.type, state.toast.animation]&quot;
+  [ngStyle]&#x3D;&quot;{
+  &#x27;max-height&#x27;: maxHeight + &#x27;px&#x27;,
+  &#x27;-webkit-transition&#x27;: state.toast.time + 300 + &#x27;ms&#x27;,
+  transition: state.toast.time + 300 + &#x27;ms&#x27;,
+  &#x27;-webkit-animation-duration&#x27;: state.toast.time + &#x27;ms&#x27;,
+  &#x27;animation-duration&#x27;: state.toast.time + &#x27;ms&#x27;
+  }&quot;
+  (animationend)&#x3D;&quot;onExitTransitionEnd()&quot;
+  (click)&#x3D;&quot;onClick()&quot; (mouseenter)&#x3D;&quot;onMouseEnter()&quot; (mouseleave)&#x3D;&quot;onMouseLeave()&quot; #toastEl&gt;
+  &lt;div class&#x3D;&quot;snotifyToast__progressBar&quot; *ngIf&#x3D;&quot;toast.config.showProgressBar&quot;&gt;
+    &lt;span class&#x3D;&quot;snotifyToast__progressBar__percentage&quot; [ngStyle]&#x3D;&quot;{&#x27;width&#x27;: state.toast.progress + &#x27;%&#x27;}&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;snotifyToast__inner&quot; *ngIf&#x3D;&quot;!toast.config.html; else toastHTML&quot;&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__title&quot; *ngIf&#x3D;&quot;toast.title&quot;&gt;{{toast.title | truncate : toast.config.titleMaxLength}}&lt;/div&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__body&quot;&gt;{{toast.body | truncate : toast.config.bodyMaxLength}}&lt;/div&gt;
+    &lt;ng-snotify-prompt *ngIf&#x3D;&quot;state.toast.type &#x3D;&#x3D;&#x3D; state.promptType&quot;
+                       [placeholder]&#x3D;&quot;toast.config.placeholder&quot;
+                       (valueChanged)&#x3D;&quot;onPromptChanged($event)&quot;&gt;
+    &lt;/ng-snotify-prompt&gt;
+    &lt;ng-snotify-icon *ngIf&#x3D;&quot;!toast.config.icon; else elseBlock&quot; class&#x3D;&quot;snotify-icon&quot; [type]&#x3D;&quot;state.toast.type&quot;&gt;&lt;/ng-snotify-icon&gt;
+    &lt;ng-template #elseBlock&gt;
+      &lt;img class&#x3D;&quot;snotify-icon&quot; [src]&#x3D;&#x27;toast.config.icon&#x27; /&gt;
+    &lt;/ng-template&gt;
+  &lt;/div&gt;
+  &lt;ng-template #toastHTML&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__inner&quot; [innerHTML]&#x3D;&quot;toast.config.html&quot;&gt;&lt;/div&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-snotify-button *ngIf&#x3D;&quot;toast.config.buttons&quot; [buttons]&#x3D;&quot;toast.config.buttons&quot; [text]&#x3D;&quot;state.toast.type &#x3D;&#x3D;&#x3D; state.promptType ? state.prompt : null&quot; [id]&#x3D;&quot;toast.id&quot;&gt;&lt;/ng-snotify-button&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div  class="snotifyToast animated"  [ngClass]="[\'snotify-\' + toast.config.type, state.toast.animation]"  [ngStyle]="{  \'max-height\': maxHeight + \'px\',  \'-webkit-transition\': state.toast.time + 300 + \'ms\',  transition: state.toast.time + 300 + \'ms\',  \'-webkit-animation-duration\': state.toast.time + \'ms\',  \'animation-duration\': state.toast.time + \'ms\'  }"  (animationend)="onExitTransitionEnd()"  (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" #toastEl>  <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">    <span class="snotifyToast__progressBar__percentage" [ngStyle]="{\'width\': state.toast.progress + \'%\'}"></span>  </div>  <div class="snotifyToast__inner" *ngIf="!toast.config.html; else toastHTML">    <div class="snotifyToast__title" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>    <div class="snotifyToast__body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>    <ng-snotify-prompt *ngIf="state.toast.type === state.promptType"                       [placeholder]="toast.config.placeholder"                       (valueChanged)="onPromptChanged($event)">    </ng-snotify-prompt>    <ng-snotify-icon *ngIf="!toast.config.icon; else elseBlock" class="snotify-icon" [type]="state.toast.type"></ng-snotify-icon>    <ng-template #elseBlock>      <img class="snotify-icon" [src]=\'toast.config.icon\' />    </ng-template>  </div>  <ng-template #toastHTML>    <div class="snotifyToast__inner" [innerHTML]="toast.config.html"></div>  </ng-template>  <ng-snotify-button *ngIf="toast.config.buttons" [buttons]="toast.config.buttons" [text]="state.toast.type === state.promptType ? state.prompt : null" [id]="toast.id"></ng-snotify-button></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsComponent', 'selector': 'ng-snotify-button'},{'name': 'IconComponent', 'selector': 'ng-snotify-icon'},{'name': 'PromptComponent', 'selector': 'ng-snotify-prompt'},{'name': 'SnotifyComponent', 'selector': 'ng-snotify'},{'name': 'ToastComponent', 'selector': 'ng-snotify-toast'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ToastComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+    </body>
+</html>
