@@ -228,7 +228,12 @@ export class AppComponent implements OnInit {
     this.setGlobal();
 
     this.snotifyService.html(`<div class="snotifyToast__title" *ngIf="toast.title"><b>Html Bold Title</b></div>
-    <div class="snotifyToast__body"><i>Html</i> <b>toast</b> <u>content</u></div> `);
+    <div class="snotifyToast__body"><i>Html</i> <b>toast</b> <u>content</u></div> `, {
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover,
+    });
   }
 
 

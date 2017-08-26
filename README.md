@@ -19,7 +19,7 @@ https://artemsky.github.io/ng-snotify/
 - Custom HTML
 - 5.3KB minified and gzipped
 
-![Snotify Gif](https://thumbs.gfycat.com/ReliableReflectingFireant-size_restricted.gif)
+![Snotify Gif](https://thumbs.gfycat.com/SoftGranularDalmatian-size_restricted.gif)
 
 ## Installation
 

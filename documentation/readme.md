@@ -27,7 +27,7 @@ _______________
 
 * [Basic Examples](v2/examples.md)
 * [Installation](v2/install.md)
-* [Custom Styling](v2/custom-styling.md)
+* [Styling](v2/styling.md)
 * [Animations](v2/animations.md)
 * [Development Guide](v2/development.md)
 * [API](v2/api.md)
