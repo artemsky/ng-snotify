@@ -7,7 +7,7 @@
   </div>
   <div class="form-group">
     <label for="body">Body</label>
-    <textarea [(ngModel)]="body" id="body" rows="3" class="form-control"></textarea>
+    <textarea [(ngModel)]="body" id="body" rows="2" class="form-control"></textarea>
   </div>
   <div class="row">
     <div class="col-xs-6">
@@ -23,14 +23,21 @@
       </div>
     </div>
   </div>
-  <div class="form-group">
-    <label for="timeout">Timeout</label>
-    <input [(ngModel)]="timeout" type="number" id="timeout" class="form-control">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label for="timeout">Timeout</label>
+        <input [(ngModel)]="timeout" type="number" id="timeout" class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label for="maxheight">Toast max-height</label>
+        <input [(ngModel)]="maxHeight" type="number" id="maxheight" class="form-control">
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="maxheight">Toast max-height</label>
-    <input [(ngModel)]="maxHeight" type="number" id="maxheight" class="form-control">
-  </div>
+
   <div class="form-group">
     <label for="position">Position</label>
     <div class="row">
@@ -92,7 +99,7 @@
     <div class="col-xs-6">
       <div class="form-group">
         <label for="dockMax">
-          Max items on screen
+          Max on screen
         </label>
         <input [(ngModel)]="dockMax" type="number" id="dockMax" class="form-control" min="1">
       </div>
@@ -103,6 +110,19 @@
           Max at position
         </label>
         <input [(ngModel)]="blockMax" type="number" id="blockMax" class="form-control" min="1">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="style">Toast Style</label>
+    <div class="row">
+      <div class="col-sm-12">
+        <select [(ngModel)]="style" id="style" class="form-control">
+          <option [ngValue]="'material'">Material</option>
+          <option [ngValue]="'dark'">Dark</option>
+          <option [ngValue]="'simple'">Simple</option>
+        </select>
       </div>
     </div>
   </div>
@@ -146,4 +166,4 @@
     <h6>MIT &copy; 2017 <a href="https://github.com/artemsky/">artemsky</a></h6>
   </div>
 </footer>
-<ng-snotify></ng-snotify>
+<ng-snotify class="{{style}}"></ng-snotify>

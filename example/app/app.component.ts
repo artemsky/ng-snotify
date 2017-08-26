@@ -8,6 +8,7 @@ import {SnotifyService, SnotifyToast, SnotifyPosition} from 'ng-snotify';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  style = 'material';
   title = 'Snotify title!';
   body = 'Lorem ipsum dolor sit amet!';
   timeout = 3000;
