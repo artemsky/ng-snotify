@@ -179,7 +179,7 @@ export class SnotifyService {
    * @param toast {SnotifyToast}
    */
   private add(toast: SnotifyToast): void {
-    toast.config.position = this.options.position;
+    toast.config.position = toast.config.position || this.options.position;
     if (this._options.newOnTop) {
       this.notifications.unshift(toast);
     } else {
