@@ -209,6 +209,11 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 **Default:** null  
 **Description:** Toast inner html. When set, overrides toast content.
 
+> #### position?
+**Type:** [SnotifyPosition](#snotifyposition) 
+**Default:** null  
+**Description:** Toasts position on screen.
+
 ***
 ### SnotifyOptions
 
