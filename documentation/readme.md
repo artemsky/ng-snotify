@@ -2,7 +2,7 @@
 * [Basic Examples](v3/examples.md)
 * [Installation](v3/install.md)
 * [Animations](v3/animations.md)
-* [Custom Styling](v3/custom-styling.md)
+* [Styling](v3/styling.md)
 * [Development Guide](v3/development.md)
 
 ## API
@@ -27,7 +27,7 @@ _______________
 
 * [Basic Examples](v2/examples.md)
 * [Installation](v2/install.md)
-* [Styling](v2/styling.md)
+* [Styling](v2/custom-styling.md)
 * [Animations](v2/animations.md)
 * [Development Guide](v2/development.md)
 * [API](v2/api.md)
