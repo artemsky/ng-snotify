@@ -4,7 +4,6 @@ import {SnotifyType} from '../../enum/SnotifyType.enum';
 @Component({
   selector: 'ng-snotify-icon',
   templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 

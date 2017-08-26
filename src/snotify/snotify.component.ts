@@ -12,7 +12,6 @@ import {SnotifyPosition} from './enum/SnotifyPosition.enum';
 @Component({
   selector: 'ng-snotify',
   templateUrl: './snotify.component.html',
-  styleUrls: ['./snotify.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class SnotifyComponent implements OnInit, OnDestroy {

@@ -8,7 +8,6 @@ import {SnotifyType} from '../enum/SnotifyType.enum';
 @Component({
   selector: 'ng-snotify-toast',
   templateUrl: './toast.component.html',
-  styleUrls: ['./toast.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class ToastComponent implements OnInit, OnDestroy {

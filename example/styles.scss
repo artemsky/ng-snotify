@@ -1,3 +1,5 @@
+@import "~ng-snotify/styles/simple";
+
 .snotify-icon {
   object-fit: cover;
   width: 100%;
@@ -5,4 +7,3 @@
   object-position: center;
 }
 
-@import "app/snotify-override.scss";

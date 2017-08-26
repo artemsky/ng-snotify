@@ -4,7 +4,6 @@ import {SnotifyButton} from '../../interfaces/SnotifyButton.interface';
 @Component({
   selector: 'ng-snotify-button',
   templateUrl: './buttons.component.html',
-  styleUrls: ['./buttons.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })

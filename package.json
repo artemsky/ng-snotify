@@ -86,6 +86,7 @@
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-rollup": "^2.14.0",
+    "gulp-sass": "^3.1.0",
     "jasmine-core": "^2.7.0",
     "jasmine-spec-reporter": "^4.2.1",
     "karma": "~1.7.0",

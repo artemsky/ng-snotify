@@ -1,12 +1,13 @@
 /* eslint-disable */
-var gulp = require('gulp'),
+const gulp = require('gulp'),
   path = require('path'),
   ngc = require('@angular/compiler-cli/src/main').main,
   rollup = require('gulp-rollup'),
   rename = require('gulp-rename'),
   del = require('del'),
   runSequence = require('run-sequence'),
-  inlineResources = require('./tools/gulp/inline-resources');
+  inlineResources = require('./tools/gulp/inline-resources'),
+  sass = require('gulp-sass');
 
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'src');
@@ -195,6 +196,23 @@ gulp.task('clean:build', function () {
   return deleteFolders([buildFolder]);
 });
 
+/**
+ * 12. Compile styles into separate bundle
+ */
+gulp.task('styles:build', function () {
+  return gulp.src([`${srcFolder}/styles/*.scss`])
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(`${distFolder}/styles`));
+});
+
+/**
+ * 13. Copy styles src
+ */
+gulp.task('styles:copy', function () {
+  return gulp.src([`${srcFolder}/styles/**`])
+    .pipe(gulp.dest(`${distFolder}/styles`));
+});
+
 gulp.task('compile', function () {
   runSequence(
     'clean:dist',
@@ -227,7 +245,7 @@ gulp.task('watch', function () {
 
 gulp.task('clean', ['clean:dist', 'clean:tmp', 'clean:build']);
 
-gulp.task('build', ['clean', 'compile']);
+gulp.task('build', ['clean', 'compile', 'styles:build', 'styles:copy']);
 gulp.task('build:watch', ['build', 'watch']);
 gulp.task('default', ['build:watch']);
 

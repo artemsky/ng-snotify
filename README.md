@@ -17,7 +17,7 @@ https://artemsky.github.io/ng-snotify/
 - Custom css animations
 - Callbacks
 - Custom HTML
-- 7.5KB minified and gzipped
+- 5.3KB minified and gzipped
 
 ![Snotify Gif](https://thumbs.gfycat.com/ReliableReflectingFireant-size_restricted.gif)
 
