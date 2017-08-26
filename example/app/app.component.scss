@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide');
 
-//@import 'snotify-override';
-
 main {
   position: fixed;
   top: 0;
@@ -34,6 +32,10 @@ aside {
     .btn {
       padding: 6px 9px;
     }
+  }
+
+  h3 {
+    margin: 0;
   }
 }
 

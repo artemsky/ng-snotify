@@ -49,6 +49,12 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./changelog.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
                                     <a href="./license.html"
                                         >
                                         <span class="fa fa-file-text-o"></span>LICENSE
@@ -183,6 +189,9 @@
                                     <a href="../interfaces/SnotifyInfo.html" >SnotifyInfo</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../interfaces/SnotifyNotifications.html" >SnotifyNotifications</a>
+                                </li>
+                                <li class="link">
                                     <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                 </li>
                         </ul>
@@ -199,6 +208,9 @@
                         <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
+                                <li class="link">
+                                    <a href="../pipes/KeysPipe.html" >KeysPipe</a>
+                                </li>
                                 <li class="link">
                                     <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
                                 </li>
@@ -267,6 +279,12 @@
                                        </li>
                                        <li class="link">
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./changelog.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>CHANGELOG
+                                           </a>
                                        </li>
                                        <li class="link">
                                            <a href="./license.html"
@@ -403,6 +421,9 @@
                                            <a href="../interfaces/SnotifyInfo.html" >SnotifyInfo</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../interfaces/SnotifyNotifications.html" >SnotifyNotifications</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                        </li>
                                </ul>
@@ -419,6 +440,9 @@
                                <ul class="links collapse "
                                        id="pipes-links"
                    >
+                                       <li class="link">
+                                           <a href="../pipes/KeysPipe.html" >KeysPipe</a>
+                                       </li>
                                        <li class="link">
                                            <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
                                        </li>
@@ -499,7 +523,6 @@
     <p class="comment">
                 <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
                 <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnDestroy-interface.html" target="_blank" >OnDestroy</a></code>
-                <code><a href="https://angular.io/docs/ts/latest/api/core/index/AfterContentChecked-interface.html" target="_blank" >AfterContentChecked</a></code>
     </p>
 
 
@@ -509,6 +532,10 @@
         <tbody>
 
 
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
 
 
 
@@ -524,10 +551,6 @@
                 <td class="col-md-9"><code>ng-snotify</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>snotify.component.scss</code></td>
-            </tr>
 
 
 
@@ -557,6 +580,12 @@
                                  <a href="#backdrop">backdrop</a>
                             </li>
                             <li>
+                                 <a href="#blockSize_a">blockSize_a</a>
+                            </li>
+                            <li>
+                                 <a href="#blockSize_b">blockSize_b</a>
+                            </li>
+                            <li>
                                  <a href="#dockSize_a">dockSize_a</a>
                             </li>
                             <li>
@@ -567,9 +596,6 @@
                             </li>
                             <li>
                                  <a href="#lifecycleSubscription">lifecycleSubscription</a>
-                            </li>
-                            <li>
-                                 <a href="#negativeMargin">negativeMargin</a>
                             </li>
                             <li>
                                  <a href="#notifications">notifications</a>
@@ -589,9 +615,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                 <a href="#ngAfterContentChecked">ngAfterContentChecked</a>
-                            </li>
-                            <li>
                                  <a href="#ngOnDestroy">ngOnDestroy</a>
                             </li>
                             <li>
@@ -601,7 +624,7 @@
                                  <a href="#setOptions">setOptions</a>
                             </li>
                             <li>
-                                 <a href="#setPosition">setPosition</a>
+                                 <a href="#splitToasts">splitToasts</a>
                             </li>
                         </ul>
                     </td>
@@ -616,12 +639,12 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(service: <a href="../injectables/SnotifyService.html">SnotifyService</a>, render: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, snotify: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>)</code>
+                            <code>constructor(service: <a href="../injectables/SnotifyService.html">SnotifyService</a>)</code>
                         </td>
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/snotify/snotify.component.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/snotify/snotify.component.ts:53</a></div>
                                 </td>
                             </tr>
     
@@ -640,38 +663,6 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <a name="ngAfterContentChecked"></a>
-                            <b> ngAfterContentChecked</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>ngAfterContentChecked()</code>
-                        </td>
-                    </tr>
-    
-    
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/snotify/snotify.component.ts:123</a></div>
-                                </td>
-                            </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <a name="ngOnDestroy"></a>
                             <b> ngOnDestroy</b>
                         </td>
@@ -685,7 +676,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="169" class="link-to-prism">src/snotify/snotify.component.ts:169</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="171" class="link-to-prism">src/snotify/snotify.component.ts:171</a></div>
                                 </td>
                             </tr>
     
@@ -719,7 +710,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/snotify/snotify.component.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/snotify/snotify.component.ts:61</a></div>
                                 </td>
                             </tr>
     
@@ -753,7 +744,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/snotify/snotify.component.ts:135</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="154" class="link-to-prism">src/snotify/snotify.component.ts:154</a></div>
                                 </td>
                             </tr>
     
@@ -800,26 +791,26 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <a name="setPosition"></a>
-                            <b> setPosition</b>
+                            <a name="splitToasts"></a>
+                            <b> splitToasts</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>setPosition(position: <a href="../interfaces/Snotify.html">SnotifyPosition</a>)</code>
+    <code>splitToasts(toasts: [])</code>
                         </td>
                     </tr>
     
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">src/snotify/snotify.component.ts:151</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">src/snotify/snotify.component.ts:134</a></div>
                                 </td>
                             </tr>
     
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Set notifications position</p>
+                                <div class="io-description"><p>Split toasts toasts into different objects</p>
     </div>
     
                                 <div class="io-description">
@@ -834,9 +825,8 @@
                                             </thead>
                                             <tbody>
                                                     <tr>
-                                                      <td>position</td>
+                                                      <td>toasts</td>
                                                       <td>
-                                                              <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyPosition</a></code>
                                                       </td>
                                                       <td></td>
                                                     </tr>
@@ -846,7 +836,7 @@
                                 <div>
                                 </div>
                                 <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <b>Returns : </b>    <code><a href="../interfaces/SnotifyNotifications.html" target="_self" >SnotifyNotifications</a></code>
     
                                 </div>
                                     <div class="io-description">
@@ -885,13 +875,83 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/snotify/snotify.component.ts:41</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/snotify/snotify.component.ts:53</a></div>
                                 </td>
                             </tr>
     
                     <tr>
                         <td class="col-md-4">
                             <div class="io-description"><p>Backdrop Opacity</p>
+    </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="blockSize_a"></a>
+                            <b> blockSize_a</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>blockSize_a:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+    
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/snotify/snotify.component.ts:45</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Helper for slice pipe (maxAtPosition)</p>
+    </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="blockSize_b"></a>
+                            <b> blockSize_b</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>blockSize_b:     <code>number|</code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code>number|</code>
+    
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/snotify/snotify.component.ts:49</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Helper for slice pipe (maxAtPosition)</p>
     </div>
                         </td>
                     </tr>
@@ -920,7 +980,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/snotify/snotify.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/snotify/snotify.component.ts:37</a></div>
                                 </td>
                             </tr>
     
@@ -955,7 +1015,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/snotify/snotify.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/snotify/snotify.component.ts:41</a></div>
                                 </td>
                             </tr>
     
@@ -990,10 +1050,16 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/snotify/snotify.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/snotify/snotify.component.ts:25</a></div>
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Toasts emitter</p>
+    </div>
+                        </td>
+                    </tr>
     
                 </tbody>
             </table>
@@ -1019,7 +1085,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/snotify/snotify.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/snotify/snotify.component.ts:33</a></div>
                                 </td>
                             </tr>
     
@@ -1036,59 +1102,25 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <a name="negativeMargin"></a>
-                            <b> negativeMargin</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>negativeMargin:     <code></code>
-    </code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value : </i><code>false</code>
-                            </td>
-                        </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/snotify/snotify.component.ts:46</a></div>
-                                </td>
-                            </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>Activate margin for horizontal center positions</p>
-    </div>
-                        </td>
-                    </tr>
-    
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <a name="notifications"></a>
                             <b> notifications</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>notifications:     <code>[]</code>
+                            <code>notifications:     <code><a href="../interfaces/SnotifyNotifications.html" target="_self" >SnotifyNotifications</a></code>
     </code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <i>Type : </i>    <code>[]</code>
+                                <i>Type : </i>    <code><a href="../interfaces/SnotifyNotifications.html" target="_self" >SnotifyNotifications</a></code>
     
                             </td>
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/snotify/snotify.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/snotify/snotify.component.ts:21</a></div>
                                 </td>
                             </tr>
     
@@ -1123,7 +1155,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/snotify/snotify.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/snotify/snotify.component.ts:29</a></div>
                                 </td>
                             </tr>
     
@@ -1141,26 +1173,30 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import {AfterContentChecked, Component, ElementRef, OnDestroy, OnInit, Renderer2} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import {Component, OnDestroy, OnInit, ViewEncapsulation} from &#x27;@angular/core&#x27;;
 import {SnotifyService} from &#x27;./snotify.service&#x27;;
 import {SnotifyToast} from &#x27;./toast/snotify-toast.model&#x27;;
 import {Subscription} from &#x27;rxjs/Subscription&#x27;;
 import {SnotifyOptions} from &#x27;./interfaces/SnotifyOptions.interface&#x27;;
 import {SnotifyInfo} from &#x27;./interfaces/SnotifyInfo.interface&#x27;;
 import {SnotifyAction} from &#x27;./enum/SnotifyAction.enum&#x27;;
+import {SnotifyNotifications} from &#x27;./interfaces/SnotifyNotifications.interface&#x27;;
 import {SnotifyPosition} from &#x27;./enum/SnotifyPosition.enum&#x27;;
 
 
 @Component({
   selector: &#x27;ng-snotify&#x27;,
   templateUrl: &#x27;./snotify.component.html&#x27;,
-  styleUrls: [&#x27;./snotify.component.scss&#x27;],
+  encapsulation: ViewEncapsulation.None
 })
-export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked {
+export class SnotifyComponent implements OnInit, OnDestroy {
   /**
    * Toasts array
    */
-  notifications: SnotifyToast[];
+  notifications: SnotifyNotifications;
+  /**
+   * Toasts emitter
+   */
   emitter: Subscription;
   /**
    * Listens for options has been changed
@@ -1179,17 +1215,20 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
    */
   dockSize_b: number | undefined;
   /**
+   * Helper for slice pipe (maxAtPosition)
+   */
+  blockSize_a: number;
+  /**
+   * Helper for slice pipe (maxAtPosition)
+   */
+  blockSize_b: number | undefined;
+  /**
    * Backdrop Opacity
    */
   backdrop: number;
-  /**
-   * Activate margin for horizontal center positions
-   * @type {Boolean}
-   */
-  negativeMargin &#x3D; false;
 
 
-  constructor(private service: SnotifyService, private render: Renderer2, private snotify: ElementRef) { }
+  constructor(private service: SnotifyService) { }
 
   /**
    * Init base options. Subscribe to options, lifecycle change
@@ -1199,12 +1238,11 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
     this.optionsSubscription &#x3D; this.service.optionsChanged.subscribe((options: SnotifyOptions) &#x3D;&gt; {
       this.setOptions(options);
     });
-    this.setPosition(this.service.options.position);
 
     this.emitter &#x3D; this.service.emitter.subscribe(
       (toasts: SnotifyToast[]) &#x3D;&gt; {
-        this.notifications &#x3D; toasts;
-        const list &#x3D; this.notifications.filter(toast &#x3D;&gt; toast.config.backdrop &gt;&#x3D; 0);
+        this.notifications &#x3D; this.splitToasts(toasts.slice(this.dockSize_a, this.dockSize_b));
+        const list &#x3D; toasts.filter(toast &#x3D;&gt; toast.config.backdrop &gt;&#x3D; 0);
 
         if (list.length) {
           this.backdrop &#x3D; 0;
@@ -1263,12 +1301,25 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
 
   }
 
-  ngAfterContentChecked() {
-    if (this.negativeMargin) {
-      this.snotify.nativeElement.style.marginTop &#x3D; -(this.snotify.nativeElement.offsetHeight / 2) + &#x27;px&#x27;;
-    } else {
-      this.snotify.nativeElement.style.marginTop &#x3D; 0;
+  /**
+   * Split toasts toasts into different objects
+   * @param {SnotifyToast[]} toasts
+   * @returns {SnotifyNotifications}
+   */
+  splitToasts(toasts: SnotifyToast[]): SnotifyNotifications {
+    const result: SnotifyNotifications &#x3D; {};
+
+    for (const property in SnotifyPosition) {
+      if (SnotifyPosition.hasOwnProperty(property)) {
+        result[SnotifyPosition[property]] &#x3D; [];
+      }
     }
+
+    toasts.forEach((toast: SnotifyToast) &#x3D;&gt; {
+      result[toast.config.position as string].push(toast);
+    });
+
+    return result;
   }
 
   /**
@@ -1279,30 +1330,13 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
     if (this.service.options.newOnTop) {
       this.dockSize_a &#x3D; -options.maxOnScreen;
       this.dockSize_b &#x3D; undefined;
+      this.blockSize_a &#x3D; -options.maxAtPosition;
+      this.blockSize_b &#x3D; undefined;
     } else {
       this.dockSize_a &#x3D; 0;
       this.dockSize_b &#x3D; options.maxOnScreen;
-    }
-
-    this.setPosition(options.position);
-  }
-
-  /**
-   * Set notifications position
-   * @param position {SnotifyPosition}
-   */
-  setPosition(position: SnotifyPosition): void {
-    this.render.removeAttribute(this.snotify.nativeElement, &#x27;class&#x27;);
-    this.render.addClass(this.snotify.nativeElement, &#x60;snotify-${position}&#x60;);
-
-    switch (position) {
-      case SnotifyPosition.center_center:
-      case SnotifyPosition.right_center:
-      case SnotifyPosition.left_center:
-        this.negativeMargin &#x3D; true;
-        break;
-      default:
-        this.negativeMargin &#x3D; false;
+      this.blockSize_a &#x3D; 0;
+      this.blockSize_b &#x3D; options.maxAtPosition;
     }
   }
 
@@ -1321,8 +1355,11 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
 
     <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;snotify-backdrop&quot; *ngIf&#x3D;&quot;backdrop &gt;&#x3D; 0&quot; [style.opacity]&#x3D;&quot;backdrop&quot;&gt;&lt;/div&gt;
-&lt;ng-snotify-toast *ngFor&#x3D;&quot;let notification of notifications| slice:dockSize_a:dockSize_b&quot; [toast]&#x3D;&quot;notification&quot;&gt;
-&lt;/ng-snotify-toast&gt;
+
+&lt;div *ngFor&#x3D;&quot;let position of notifications | keys&quot; class&#x3D;&quot;snotify snotify-{{position}}&quot;&gt;
+  &lt;ng-snotify-toast *ngFor&#x3D;&quot;let notification of notifications[position] | slice:blockSize_a:blockSize_b&quot; [toast]&#x3D;&quot;notification&quot;&gt;
+  &lt;/ng-snotify-toast&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -1349,7 +1386,7 @@ export class SnotifyComponent implements OnInit, OnDestroy, AfterContentChecked 
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="snotify-backdrop" *ngIf="backdrop >= 0" [style.opacity]="backdrop"></div><ng-snotify-toast *ngFor="let notification of notifications| slice:dockSize_a:dockSize_b" [toast]="notification"></ng-snotify-toast></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="snotify-backdrop" *ngIf="backdrop >= 0" [style.opacity]="backdrop"></div><div *ngFor="let position of notifications | keys" class="snotify snotify-{{position}}">  <ng-snotify-toast *ngFor="let notification of notifications[position] | slice:blockSize_a:blockSize_b" [toast]="notification">  </ng-snotify-toast></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsComponent', 'selector': 'ng-snotify-button'},{'name': 'IconComponent', 'selector': 'ng-snotify-icon'},{'name': 'PromptComponent', 'selector': 'ng-snotify-prompt'},{'name': 'SnotifyComponent', 'selector': 'ng-snotify'},{'name': 'ToastComponent', 'selector': 'ng-snotify-toast'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SnotifyComponent'};

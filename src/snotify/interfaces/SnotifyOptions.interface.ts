@@ -15,6 +15,14 @@ export interface SnotifyOptions {
    */
   maxOnScreen?: number;
   /**
+   * Max toast items at position.
+   *
+   * Same as maxOnScreen, but affects only current toast position (like rightBottom)
+   * @type {number}
+   * @default 8
+   */
+  maxAtPosition?: number;
+  /**
    * Should new items come from top or bottom side.
    *
    * > This option created for styling purposes.

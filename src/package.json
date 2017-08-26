@@ -1,7 +1,7 @@
 {
   "name": "ng-snotify",
   "description": "Angular 2 notifications center",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "https://artemsky.github.io/ng-snotify"

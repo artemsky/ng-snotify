@@ -5,9 +5,10 @@ import {SnotifyService, SnotifyToast, SnotifyPosition} from 'ng-snotify';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  style = 'material';
   title = 'Snotify title!';
   body = 'Lorem ipsum dolor sit amet!';
   timeout = 3000;
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
   newTop = true;
   backdrop = -1;
   dockMax = 6;
+  blockMax = 3;
   pauseHover = true;
   maxHeight = 300;
   titleMaxLength = 15;
@@ -81,6 +83,7 @@ export class AppComponent implements OnInit {
       newOnTop: this.newTop,
       position: this.position,
       maxOnScreen: this.dockMax,
+      maxAtPosition: this.blockMax,
       maxHeight: this.maxHeight
     });
   }
@@ -225,7 +228,12 @@ export class AppComponent implements OnInit {
     this.setGlobal();
 
     this.snotifyService.html(`<div class="snotifyToast__title" *ngIf="toast.title"><b>Html Bold Title</b></div>
-    <div class="snotifyToast__body"><i>Html</i> <b>toast</b> <u>content</u></div> `);
+    <div class="snotifyToast__body"><i>Html</i> <b>toast</b> <u>content</u></div> `, {
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover,
+    });
   }
 
 

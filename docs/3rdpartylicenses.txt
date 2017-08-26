@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-@angular/core@4.3.4 MIT
+@angular/core@4.3.6 MIT
 
 bootstrap@3.3.7 MIT
 The MIT License (MIT)
@@ -46,11 +46,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-@angular/http@4.3.4 MIT
+@angular/http@4.3.6 MIT
 
-@angular/forms@4.3.4 MIT
+@angular/forms@4.3.6 MIT
 
-zone.js@0.8.16 MIT
+zone.js@0.8.17 MIT
 The MIT License
 
 Copyright (c) 2016 Google, Inc.
@@ -97,11 +97,11 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-@angular/platform-browser@4.3.4 MIT
+@angular/platform-browser@4.3.6 MIT
 
-@angular/common@4.3.4 MIT
+@angular/common@4.3.6 MIT
 
-css-loader@0.28.4 MIT
+css-loader@0.28.5 MIT
 Copyright JS Foundation and other contributors
 
 Permission is hereby granted, free of charge, to any person obtaining

@@ -2,6 +2,7 @@ import {SnotifyButton} from './SnotifyButton.interface';
 import {SnotifyAnimate} from './SnotifyAnimate.interface';
 import {SnotifyType} from '../enum/SnotifyType.enum';
 import {SafeHtml} from '@angular/platform-browser';
+import {SnotifyPosition} from '../enum/SnotifyPosition.enum';
 
 export interface SnotifyConfig {
   /**
@@ -97,4 +98,10 @@ export interface SnotifyConfig {
    * @default null
    */
   html?: string | SafeHtml,
+  /**
+   * Toasts position on screen
+   * @type {SnotifyPosition}
+   * @default SnotifyPosition.right_bottom
+   */
+  position?: SnotifyPosition;
 }
