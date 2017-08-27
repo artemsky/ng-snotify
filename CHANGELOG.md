@@ -1,7 +1,7 @@
 ## Change Log
 
 ### v3.0.0
-  - Remover style encapsulation. Now you can style component directly in your global styles.scss(css) without using `/deep/` directive. 
+  - Removed style encapsulation. Now you can style component directly in your global styles.scss(css) without using `/deep/` directive. 
   - Added 3 themes. Now styles are outside of the component. You should read [migration guide](documentation/v2-to-v3-migration-guide.md)
   - Added the ability to simultaneously display toasts in different positions of the screen
   - Added `maxAtPosition` option, so you can control max toast count at the position
