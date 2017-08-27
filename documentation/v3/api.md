@@ -20,7 +20,7 @@
 
 #### Toasts
 
-> Toast notifications with different styles
+> Toast notifications with different classNames and icons. `.snotify-${METHOD_NAME}`
 ```typescript
 simple(body: string, title?: string, config?: SnotifyConfig): number 
 success(body: string, title?: string, config?: SnotifyConfig): number
@@ -40,11 +40,11 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 
 > Toast notification of style - *confirm* with buttons(configurable) and input field
 
-`prompt(body: string, title?: string, config: SnotifyConfig): number`
+`prompt(body: string, title?: string, config?: SnotifyConfig): number`
 
 > Toast notification of custom style(default - Simple). Renders your html string inside `.snotifyToast__inner`
 
-`html(html: string | SafeHtml, config: SnotifyConfig): number`
+`html(html: string | SafeHtml, config?: SnotifyConfig): number`
 
 
 #### Other
