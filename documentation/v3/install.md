@@ -45,3 +45,8 @@ export class AppComponent {
 }
 
 ```
+
+
+#### Import Styles
+
+You can find this information - [here](styling.md)
