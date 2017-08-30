@@ -75,7 +75,9 @@ export class SnotifyComponent implements OnInit, OnDestroy {
             this.backdrop = list[list.length - 1].config.backdrop;
           }, 10)
         } else {
-          this.backdrop = 0;
+          if (this.backdrop > 0) {
+            this.backdrop = 0;
+          }
           setTimeout(() => {
             this.backdrop = -1;
           }, 400)

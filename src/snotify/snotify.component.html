@@ -1,5 +1,4 @@
 <div class="snotify-backdrop" *ngIf="backdrop >= 0" [style.opacity]="backdrop"></div>
-
 <div *ngFor="let position of notifications | keys" class="snotify snotify-{{position}}">
   <ng-snotify-toast *ngFor="let notification of notifications[position] | slice:blockSize_a:blockSize_b" [toast]="notification">
   </ng-snotify-toast>

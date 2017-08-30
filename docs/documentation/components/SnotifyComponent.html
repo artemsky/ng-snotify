@@ -676,7 +676,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="171" class="link-to-prism">src/snotify/snotify.component.ts:171</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="173" class="link-to-prism">src/snotify/snotify.component.ts:173</a></div>
                                 </td>
                             </tr>
     
@@ -744,7 +744,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="154" class="link-to-prism">src/snotify/snotify.component.ts:154</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="156" class="link-to-prism">src/snotify/snotify.component.ts:156</a></div>
                                 </td>
                             </tr>
     
@@ -804,7 +804,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">src/snotify/snotify.component.ts:134</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">src/snotify/snotify.component.ts:136</a></div>
                                 </td>
                             </tr>
     
@@ -1250,7 +1250,9 @@ export class SnotifyComponent implements OnInit, OnDestroy {
             this.backdrop &#x3D; list[list.length - 1].config.backdrop;
           }, 10)
         } else {
-          this.backdrop &#x3D; 0;
+          if (this.backdrop &gt; 0) {
+            this.backdrop &#x3D; 0;
+          }
           setTimeout(() &#x3D;&gt; {
             this.backdrop &#x3D; -1;
           }, 400)
@@ -1355,7 +1357,6 @@ export class SnotifyComponent implements OnInit, OnDestroy {
 
     <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;snotify-backdrop&quot; *ngIf&#x3D;&quot;backdrop &gt;&#x3D; 0&quot; [style.opacity]&#x3D;&quot;backdrop&quot;&gt;&lt;/div&gt;
-
 &lt;div *ngFor&#x3D;&quot;let position of notifications | keys&quot; class&#x3D;&quot;snotify snotify-{{position}}&quot;&gt;
   &lt;ng-snotify-toast *ngFor&#x3D;&quot;let notification of notifications[position] | slice:blockSize_a:blockSize_b&quot; [toast]&#x3D;&quot;notification&quot;&gt;
   &lt;/ng-snotify-toast&gt;

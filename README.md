@@ -32,7 +32,7 @@ https://artemsky.github.io/ng-snotify/
 
 ## Documentation and Examples
 
-Documentation - [here](https://github.com/artemsky/ng-snotify/tree/master/documentation)  
+Documentation - [here](https://github.com/artemsky/ng-snotify/tree/master/documentation#overview)  
 Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)  
 Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/index.html)  
 Change Log - [here](https://github.com/artemsky/ng-snotify/blob/master/CHANGELOG.md)

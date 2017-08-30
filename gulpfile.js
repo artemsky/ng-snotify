@@ -231,7 +231,7 @@ gulp.task('compile', function () {
         console.log('ERROR:', err.message);
         deleteFolders([distFolder, tmpFolder, buildFolder]);
       } else {
-        console.log('Compilation finished successfully');
+        console.log('LIBRARY: compilation finished successfully');
       }
     });
 });
@@ -245,7 +245,20 @@ gulp.task('watch', function () {
 
 gulp.task('clean', ['clean:dist', 'clean:tmp', 'clean:build']);
 
-gulp.task('build', ['clean', 'compile', 'styles:build', 'styles:copy']);
+gulp.task('build', runSequence(
+  'clean',
+  'compile',
+  'styles:build',
+  'styles:copy',
+  function (err) {
+    if (err) {
+      console.log('ERROR:', err.message);
+      deleteFolders([distFolder, tmpFolder, buildFolder]);
+    } else {
+      console.log('STYLES: compilation finished successfully');
+    }
+  })
+);
 gulp.task('build:watch', ['build', 'watch']);
 gulp.task('default', ['build:watch']);
 

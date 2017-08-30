@@ -1,10 +1,11 @@
 {
   "name": "ng-snotify",
   "description": "Angular 2 notifications center",
-  "version": "3.0.0",
+  "version": "3.0.1",
+  "homepage": "https://artemsky.github.io/ng-snotify",
   "repository": {
     "type": "git",
-    "url": "https://artemsky.github.io/ng-snotify"
+    "url": "https://github.com/artemsky/ng-snotify"
   },
   "author": {
     "name": "artemsky",
@@ -34,7 +35,8 @@
     "snotify",
     "ng-snotify",
     "ng2-snotify",
-    "angular2 notifications"
+    "angular2 notifications",
+    "toaster"
   ],
   "license": "MIT",
   "bugs": {
