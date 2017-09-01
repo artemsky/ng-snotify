@@ -20,6 +20,8 @@ https://artemsky.github.io/ng-snotify/
 - Custom HTML
 - 5.3KB minified and gzipped
 
+###### Looking for an Vue.js 2 version? [Here](https://github.com/artemsky/vue-snotify/)
+
 ![Snotify Gif](https://thumbs.gfycat.com/SoftGranularDalmatian-size_restricted.gif)
 
 ## Installation
