@@ -201,8 +201,8 @@ error(body: string, title?: string, config?: SnotifyConfig): number
 
 > #### animation?
 **Type:** [SnotifyAnimate](#snotifyanimate)  
-**Default:** -1  
-**Description:** Backdrop opacity. Range - `0.0 - 1.0`. Disabled `-1` 
+**Default:** Depends on toast position
+**Description:** Animation configuration object.
 
 > #### html?
 **Type:** `string | SafeHtml`
