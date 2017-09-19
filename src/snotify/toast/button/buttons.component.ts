@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input, ViewEncapsulation} from '@angular/core';
 import {SnotifyButton} from '../../interfaces/SnotifyButton.interface';
+import {SnotifyService} from '../../snotify.service';
 
 @Component({
   selector: 'ng-snotify-button',
@@ -24,5 +25,9 @@ export class ButtonsComponent {
    * Get toast id
    */
   @Input() id: number;
-  constructor() {}
+  constructor(private service: SnotifyService) {}
+
+  remove() {
+    this.service.remove(this.id);
+  }
 }

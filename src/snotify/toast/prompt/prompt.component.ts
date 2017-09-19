@@ -3,6 +3,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {SnotifyService} from '../../snotify.service';
+import {uuid} from '../../utils';
 
 @Component({
   selector: 'ng-snotify-prompt',
@@ -39,7 +40,7 @@ export class PromptComponent implements OnInit {
   isPromptFocused = false;
 
   constructor() {
-    this.id = SnotifyService.generateRandomId();
+    this.id = uuid();
   }
 
   /**

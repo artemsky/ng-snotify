@@ -1,13 +1,21 @@
 /**
  * Toast type.
  */
-export class SnotifyType {
-  static SIMPLE = 'simple';
-  static SUCCESS = 'success';
-  static ERROR = 'error';
-  static WARNING = 'warning';
-  static INFO = 'info';
-  static ASYNC = 'async';
-  static CONFIRM = 'confirm';
-  static PROMPT = 'prompt';
-}
+export type SnotifyType = 'simple'
+  | 'success'
+  | 'error'
+  | 'warning'
+  | 'info'
+  | 'async'
+  | 'confirm'
+  | 'prompt';
+export const SnotifyType = {
+  simple: 'simple',
+  success: 'success',
+  error: 'error',
+  warning: 'warning',
+  info: 'info',
+  async: 'async',
+  confirm: 'confirm',
+  prompt: 'prompt'
+};

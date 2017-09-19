@@ -15,7 +15,7 @@
   </div>
   <div class="snotifyToast__inner" *ngIf="!toast.config.html; else toastHTML">
     <div class="snotifyToast__title" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>
-    <div class="snotifyToast__body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>
+    <div class="snotifyToast__body" *ngIf="toast.body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>
     <ng-snotify-prompt *ngIf="state.toast.type === state.promptType"
                        [placeholder]="toast.config.placeholder"
                        (valueChanged)="onPromptChanged($event)">

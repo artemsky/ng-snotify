@@ -31,7 +31,7 @@ export class ToastComponent implements OnInit, OnDestroy {
       time: 0,
       isDestroying: false
     },
-    promptType: SnotifyType.PROMPT,
+    promptType: SnotifyType.prompt,
     prompt: ''
   };
 
@@ -70,7 +70,7 @@ export class ToastComponent implements OnInit, OnDestroy {
         }
       }
     );
-    this.state.toast.type = this.toast.config.type as string;
+    this.state.toast.type = this.toast.config.type;
     this.state.toast.time = this.toast.config.animation.time;
     this.state.toast.animation = this.toast.config.animation.enter;
     this.lifecycle(SnotifyAction.onInit);
@@ -124,7 +124,7 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Trigger onHoverLeave lifecycle
    */
   onMouseLeave() {
-    if (this.toast.config.pauseOnHover && this.state.toast.type !== SnotifyType.PROMPT) {
+    if (this.toast.config.pauseOnHover && this.state.toast.type !== SnotifyType.prompt) {
       this.startTimeout(this.state.toast.progress);
     }
     this.lifecycle(SnotifyAction.onHoverLeave);
