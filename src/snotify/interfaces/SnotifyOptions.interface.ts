@@ -1,5 +1,5 @@
 // tslint:disable:no-trailing-whitespace
-import {SnotifyPosition} from '../enum/SnotifyPosition.enum';
+import {SnotifyPosition} from '../enums/SnotifyPosition.enum';
 /**
  * Global configuration object
  */

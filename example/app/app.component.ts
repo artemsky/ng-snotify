@@ -142,47 +142,63 @@ export class AppComponent implements OnInit {
 
   onAsyncLoading() {
     this.setGlobal();
-    this.snotifyService.async(this.body, this.title,
-      /*
-      You should pass Promise or Observable of type SnotifyConfig to change some data or do some other actions
-      More information how to work with observables:
-      https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
-       */
+    const ob =  Observable.create(observer => {
+      setTimeout(() => {
+        observer.next({
+          body: 'Still loading.....',
+        });
+      }, 1000);
+    });
 
-      // new Promise((resolve, reject) => {
-      //   setTimeout(() => reject(), 1000);
-      //   setTimeout(() => resolve(), 1500);
-      // })
-      Observable.create(observer => {
-          setTimeout(() => {
-            observer.next({
-              body: 'Still loading.....',
-            });
-            }, 1000);
-
-        setTimeout(() => {
-          observer.next({
-            title: 'Success',
-            body: 'Example. Data loaded!',
-            config: {
-              closeOnClick: true,
-              timeout: 5000,
-              showProgressBar: true
-            }
-          });
-          observer.complete();
-        }, 5000);
-
-          // setTimeout(() => {
-          //   observer.error({
-          //     title: 'Error',
-          //     body: 'Example. Error 404. Service not found',
-          //   });
-          // }, 6000);
-
-        }
-      )
-    );
+    this.snotifyService.async(this.body, ob);
+    this.snotifyService.async(this.body, this.title, ob);
+    this.snotifyService.async(this.body, ob, {
+      icon: 'https://placehold.it/48x100'
+    });
+    this.snotifyService.async(this.body, this.title, ob, {
+      icon: 'https://placehold.it/48x100'
+    });
+    // this.snotifyService.async(this.body, this.title,
+    //   /*
+    //   You should pass Promise or Observable of type SnotifyConfig to change some data or do some other actions
+    //   More information how to work with observables:
+    //   https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
+    //    */
+    //
+    //   // new Promise((resolve, reject) => {
+    //   //   setTimeout(() => reject(), 1000);
+    //   //   setTimeout(() => resolve(), 1500);
+    //   // })
+    //   Observable.create(observer => {
+    //       setTimeout(() => {
+    //         observer.next({
+    //           body: 'Still loading.....',
+    //         });
+    //         }, 1000);
+    //
+    //     setTimeout(() => {
+    //       observer.next({
+    //         title: 'Success',
+    //         body: 'Example. Data loaded!',
+    //         config: {
+    //           closeOnClick: true,
+    //           timeout: 5000,
+    //           showProgressBar: true
+    //         }
+    //       });
+    //       observer.complete();
+    //     }, 5000);
+    //
+    //       // setTimeout(() => {
+    //       //   observer.error({
+    //       //     title: 'Error',
+    //       //     body: 'Example. Error 404. Service not found',
+    //       //   });
+    //       // }, 6000);
+    //
+    //     }
+    //   )
+    // );
   }
 
   onConfirmation() {

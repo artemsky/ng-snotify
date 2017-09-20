@@ -8,13 +8,14 @@ import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
 import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
 import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
-import {SnotifyPosition} from './enum/SnotifyPosition.enum';
-import {SnotifyAction} from './enum/SnotifyAction.enum';
-import {SnotifyType} from './enum/SnotifyType.enum';
+import {SnotifyPosition} from './enums/SnotifyPosition.enum';
+import {SnotifyAction} from './enums/SnotifyAction.enum';
+import {SnotifyStyle} from './enums/SnotifyStyle.enum';
+import {SnotifyType} from './types/snotify.type'
 import {SafeHtml} from '@angular/platform-browser';
-import {TransformArgument} from './transform-argument.decorator';
+import {TransformArgument} from './decorators/transform-argument.decorator';
 import {mergeDeep, uuid} from './utils';
-import {SetDefaultConfig} from './set-default-config.decorator';
+import {SetDefaultConfig} from './decorators/set-default-config.decorator';
 
 /**
  * SnotifyService - create, remove, config toasts
@@ -68,7 +69,7 @@ export class SnotifyService {
    * emit changes in notifications array
    */
   private emit(): void {
-    this.emitter.next(this.getAll());
+    this.emitter.next(this.notifications.slice());
   }
 
   /**
@@ -121,18 +122,10 @@ export class SnotifyService {
   /**
    * returns SnotifyToast object
    * @param id {Number}
-   * @return {undefined|SnotifyToast}
+   * @return {SnotifyToast|undefined}
    */
   get(id: number): SnotifyToast {
     return this.notifications.find(toast => toast.id === id);
-  }
-
-  /**
-   * returns copy of notifications array
-   * @return {SnotifyToast[]}
-   */
-  private getAll(): SnotifyToast[] {
-    return this.notifications.slice();
   }
 
   /**
@@ -466,68 +459,87 @@ export class SnotifyService {
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
-   * @param title {String}
    * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
-   * @return {number}
+   * @returns {number}
    */
   async(body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): number
-  async(body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>, config: SnotifyConfig): number
+  /**
+   * Creates async toast with Info style. Pass action, and resolve or reject it.
+   * @param body {String}
+   * @param title {String}
+   * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
+   * @returns {number}
+   */
   async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): number
+  /**
+   * Creates async toast with Info style. Pass action, and resolve or reject it.
+   * @param body {String}
+   * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
+   * @param [config] {SnotifyConfig}
+   * @returns {number}
+   */
+  async(body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>, config: SnotifyConfig): number
+  /**
+   * Creates async toast with Info style. Pass action, and resolve or reject it.
+   * @param body {String}
+   * @param title {String}
+   * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
+   * @param [config] {SnotifyConfig}
+   * @returns {number}
+   */
   async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>, config: SnotifyConfig): number
+  /**
+   * Transform toast arguments into {Snotify} object
+   */
   @TransformArgument
+  /**
+   * Determines current toast type and collects default configuration
+   */
+  @SetDefaultConfig
   async(args: any): number {
-    return 1;
-    // if (typeof args.action === SnotifyConfig)
-    // let async: Observable<any>;
-    // if (action instanceof Promise) {
-    //   async = PromiseObservable.create(action);
-    // } else {
-    //   async = action;
-    // }
-    //
-    // const id = this.simple(body, title, {
-    //   pauseOnHover: false,
-    //   closeOnClick: false,
-    //   timeout: 0,
-    //   showProgressBar: false,
-    //   type: SnotifyType.ASYNC
-    // });
-    //
-    // const toast = this.get(id);
-    // let latestToast = Object.assign({}, toast);
-    //
-    // const updateToast = (type: SnotifyType, data?: SnotifyConfig) => {
-    //   if (!data) {
-    //     latestToast = mergeDeep(toast, latestToast, {config: {type: type}}) as SnotifyToast;
-    //   } else {
-    //     latestToast = mergeDeep(toast, data, {config: {type: type}}) as SnotifyToast;
-    //   }
-    //
-    //   this.toastChanged.next(latestToast);
-    // };
-    //
-    // const lifecycleSubscription = this.lifecycle.subscribe(
-    //   (info: SnotifyInfo) => {
-    //     if (info.action === SnotifyAction.onInit && info.toast.id === id) {
-    //       const subscription: Subscription = async.subscribe(
-    //         (next?: SnotifyConfig) => {
-    //           updateToast(SnotifyType.ASYNC, next);
-    //         },
-    //         (error?: SnotifyConfig) => {
-    //           updateToast(SnotifyType.ERROR, error);
-    //           subscription.unsubscribe();
-    //         },
-    //         () => {
-    //           updateToast(SnotifyType.SUCCESS);
-    //           subscription.unsubscribe();
-    //           lifecycleSubscription.unsubscribe();
-    //         }
-    //       );
-    //     }
-    //   }
-    // );
-    //
-    // return id;
+    let async: Observable<any>;
+    if (args.action instanceof Promise) {
+      async = PromiseObservable.create(args.action );
+    } else {
+      async = args.action;
+    }
+
+    const id = this.create(args);
+    const toast = this.get(id);
+    let latestToast = Object.assign({}, toast);
+
+    const updateToast = (type: SnotifyType, data?: SnotifyConfig) => {
+      if (!data) {
+        latestToast = mergeDeep(toast, latestToast, {config: {type: type}}) as SnotifyToast;
+      } else {
+        latestToast = mergeDeep(toast, data, {config: {type: type}}) as SnotifyToast;
+      }
+
+      this.toastChanged.next(latestToast);
+    };
+
+    const lifecycleSubscription = this.lifecycle.subscribe(
+      (info: SnotifyInfo) => {
+        if (info.action === SnotifyAction.onInit && info.toast.id === id) {
+          const subscription: Subscription = async.subscribe(
+            (next?: SnotifyConfig) => {
+              updateToast(SnotifyStyle.async, next);
+            },
+            (error?: SnotifyConfig) => {
+              updateToast(SnotifyStyle.error, error);
+              subscription.unsubscribe();
+            },
+            () => {
+              updateToast(SnotifyStyle.success);
+              subscription.unsubscribe();
+              lifecycleSubscription.unsubscribe();
+            }
+          );
+        }
+      }
+    );
+
+    return id;
   }
 
   /**
@@ -540,7 +552,7 @@ export class SnotifyService {
     return this.create({
       title: null,
       body: null,
-      config: mergeDeep(this.config, {type: SnotifyType.simple, html}, config),
+      config: mergeDeep(this.config, {type: SnotifyStyle.simple, html}, config),
     });
   }
 }

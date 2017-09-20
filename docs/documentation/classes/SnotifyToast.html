@@ -139,9 +139,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html"  data-type="entity-link" class="active" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -194,6 +191,9 @@
                                 <li class="link">
                                     <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyStyles.html" >SnotifyStyles</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -230,6 +230,12 @@
                             >
                                 <li class="link">
                                   <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
                                 </li>
                                 <li class="link">
                                   <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
@@ -371,9 +377,6 @@
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html"  data-type="entity-link" class="active" >SnotifyToast</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -426,6 +429,9 @@
                                        <li class="link">
                                            <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyStyles.html" >SnotifyStyles</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -462,6 +468,12 @@
                    >
                                        <li class="link">
                                          <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
                                        </li>
                                        <li class="link">
                                          <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
@@ -562,7 +574,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, title: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, config: <a href="../interfaces/SnotifyConfig.html">SnotifyConfig</a>)</code>
+                                    <code>constructor(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, title: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, config?: <a href="../interfaces/SnotifyConfig.html">SnotifyConfig</a>)</code>
                                 </td>
                             </tr>
                                     <tr>
@@ -571,6 +583,62 @@
                                         </td>
                                     </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div>
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>id</td>
+                                                              <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>title</td>
+                                                              <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>body</td>
+                                                              <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>config</td>
+                                                              <td>
+                                                                        <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+                                                              </td>
+                                                              <td>
+                                                                      true
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -587,12 +655,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="body"></a>
-                                    <b><span class="modifier">Public</span> body</b>
+                                    <span class="name"><b><span class="modifier">Public</span> body</b><a href="#body"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-"></span><code>body:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    <span class="modifier-icon fa fa-reset"></span><code>body:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
             </code>
                                 </td>
                             </tr>
@@ -616,12 +684,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="config"></a>
-                                    <b><span class="modifier">Public</span> config</b>
+                                    <span class="name"><b><span class="modifier">Public</span> config</b><a href="#config"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-"></span><code>config:     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
+                                    <span class="modifier-icon fa fa-reset"></span><code>config:     <code><a href="../interfaces/SnotifyConfig.html" target="_self" >SnotifyConfig</a></code>
             </code>
                                 </td>
                             </tr>
@@ -645,12 +713,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="id"></a>
-                                    <b><span class="modifier">Public</span> id</b>
+                                    <span class="name"><b><span class="modifier">Public</span> id</b><a href="#id"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-"></span><code>id:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    <span class="modifier-icon fa fa-reset"></span><code>id:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
             </code>
                                 </td>
                             </tr>
@@ -674,12 +742,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="title"></a>
-                                    <b><span class="modifier">Public</span> title</b>
+                                    <span class="name"><b><span class="modifier">Public</span> title</b><a href="#title"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-"></span><code>title:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    <span class="modifier-icon fa fa-reset"></span><code>title:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
             </code>
                                 </td>
                             </tr>

@@ -1,8 +1,8 @@
 import {SnotifyButton} from './SnotifyButton.interface';
 import {SnotifyAnimate} from './SnotifyAnimate.interface';
-import {SnotifyType} from '../enum/SnotifyType.enum';
+import {SnotifyType} from '../types/snotify.type';
 import {SafeHtml} from '@angular/platform-browser';
-import {SnotifyPosition} from '../enum/SnotifyPosition.enum';
+import {SnotifyPosition} from '../enums/SnotifyPosition.enum';
 
 export interface SnotifyConfig {
   /**
@@ -24,7 +24,7 @@ export interface SnotifyConfig {
    * It's not recommended to change it.
    * Depends on toast type.
    * @type {SnotifyType}
-   * @default SnotifyType.SIMPLE | SnotifyType.SUCCESS | SnotifyType. ERROR | SnotifyType.WARNING etc..
+   * @default SnotifyStyle.SIMPLE | SnotifyStyle.SUCCESS | SnotifyStyle. ERROR | SnotifyStyle.WARNING etc..
    */
   type?: SnotifyType;
   /**

@@ -139,9 +139,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html"  data-type="entity-link" class="active" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -194,6 +191,9 @@
                                 <li class="link">
                                     <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyStyles.html" >SnotifyStyles</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -230,6 +230,12 @@
                             >
                                 <li class="link">
                                   <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/functions.html" data-type="entity-link"  class="active" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
                                 </li>
                                 <li class="link">
                                   <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
@@ -371,9 +377,6 @@
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html"  data-type="entity-link" class="active" >SnotifyType</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -426,6 +429,9 @@
                                        <li class="link">
                                            <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyStyles.html" >SnotifyStyles</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -464,6 +470,12 @@
                                          <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
                                        </li>
                                        <li class="link">
+                                         <a href="../miscellaneous/functions.html" data-type="entity-link"  class="active" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
+                                       </li>
+                                       <li class="link">
                                          <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
                                        </li>
                                </ul>
@@ -479,7 +491,7 @@
                    
                    </nav>
                </div>
-               <div class="content class">
+               <div class="content miscellaneous-functions">
                    <div class="content-data">
 
 
@@ -489,338 +501,214 @@
 
 
 
+
+
+
 <ol class="breadcrumb">
-  <li>Classes</li>
-  <li>SnotifyType</li>
+  <li>Miscellaneous - Functions</li>
 </ol>
 
-<ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
-    </li>
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#isObject">isObject</a>
+                        </li>
+                        <li>
+                            <a href="#mergeDeep">mergeDeep</a>
+                        </li>
+                        <li>
+                            <a href="#SetDefaultConfig">SetDefaultConfig</a>
+                        </li>
+                        <li>
+                            <a href="#TransformArgument">TransformArgument</a>
+                        </li>
+                        <li>
+                            <a href="#uuid">uuid</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
-
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-    </li>
-</ul>
-
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="info">
-        <p class="comment">
-            <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/snotify/enum/SnotifyType.enum.ts</code>
-        </p>
-
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Toast type.</p>
-
-            </p>
-
-
-
-
-            <section>
-                <h3 id="index">Index</h3>
-                <table class="table table-sm table-bordered index-table">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <h6><b>Properties</b></h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <ul class="index-list">
-                                    <li>
-                                        <span class="modifier">Static</span> <a href="#ASYNC">ASYNC</a>
-                                    </li>
-                                    <li>
-                                        <span class="modifier">Static</span> <a href="#CONFIRM">CONFIRM</a>
-                                    </li>
-                                    <li>
-                                        <span class="modifier">Static</span> <a href="#ERROR">ERROR</a>
-                                    </li>
-                                    <li>
-                                        <span class="modifier">Static</span> <a href="#INFO">INFO</a>
-                                    </li>
-                                    <li>
-                                        <span class="modifier">Static</span> <a href="#PROMPT">PROMPT</a>
-                                    </li>
-                                    <li>
-                                        <span class="modifier">Static</span> <a href="#SIMPLE">SIMPLE</a>
-                                    </li>
-                                    <li>
-                                        <span class="modifier">Static</span> <a href="#SUCCESS">SUCCESS</a>
-                                    </li>
-                                    <li>
-                                        <span class="modifier">Static</span> <a href="#WARNING">WARNING</a>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-
-
-
-            <section>
-                
-                    <h3 id="inputs">
-                        Properties
-                    </h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="ASYNC"></a>
-                                    <b><span class="modifier">Static</span> ASYNC</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-export"></span><code>ASYNC:     <code></code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>async</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/snotify/enum/SnotifyType.enum.ts:10</a></div>
-                                        </td>
-                                    </tr>
-            
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="CONFIRM"></a>
-                                    <b><span class="modifier">Static</span> CONFIRM</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-export"></span><code>CONFIRM:     <code></code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>confirm</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/snotify/enum/SnotifyType.enum.ts:11</a></div>
-                                        </td>
-                                    </tr>
-            
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="ERROR"></a>
-                                    <b><span class="modifier">Static</span> ERROR</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-export"></span><code>ERROR:     <code></code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>error</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/snotify/enum/SnotifyType.enum.ts:7</a></div>
-                                        </td>
-                                    </tr>
-            
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="INFO"></a>
-                                    <b><span class="modifier">Static</span> INFO</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-export"></span><code>INFO:     <code></code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>info</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/snotify/enum/SnotifyType.enum.ts:9</a></div>
-                                        </td>
-                                    </tr>
-            
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="PROMPT"></a>
-                                    <b><span class="modifier">Static</span> PROMPT</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-export"></span><code>PROMPT:     <code></code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>prompt</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/snotify/enum/SnotifyType.enum.ts:12</a></div>
-                                        </td>
-                                    </tr>
-            
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="SIMPLE"></a>
-                                    <b><span class="modifier">Static</span> SIMPLE</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-export"></span><code>SIMPLE:     <code></code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>simple</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/snotify/enum/SnotifyType.enum.ts:5</a></div>
-                                        </td>
-                                    </tr>
-            
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="SUCCESS"></a>
-                                    <b><span class="modifier">Static</span> SUCCESS</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-export"></span><code>SUCCESS:     <code></code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>success</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/snotify/enum/SnotifyType.enum.ts:6</a></div>
-                                        </td>
-                                    </tr>
-            
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="WARNING"></a>
-                                    <b><span class="modifier">Static</span> WARNING</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-export"></span><code>WARNING:     <code></code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>warning</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/snotify/enum/SnotifyType.enum.ts:8</a></div>
-                                        </td>
-                                    </tr>
-            
-            
-                        </tbody>
-                    </table>
-            </section>
+    <h3>src/snotify/utils.ts</h3>
+    <section>
+        <h3></h3>        <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="isObject"></a>
+                            <span class="name"><b> isObject</b><a href="#isObject"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>isObject(item: undefined)</code>
+                        </td>
+                    </tr>
+    
+    
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Simple is object check.</p>
     </div>
-
-
-    <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">export class SnotifyType {
-  static SIMPLE &#x3D; &#x27;simple&#x27;;
-  static SUCCESS &#x3D; &#x27;success&#x27;;
-  static ERROR &#x3D; &#x27;error&#x27;;
-  static WARNING &#x3D; &#x27;warning&#x27;;
-  static INFO &#x3D; &#x27;info&#x27;;
-  static ASYNC &#x3D; &#x27;async&#x27;;
-  static CONFIRM &#x3D; &#x27;confirm&#x27;;
-  static PROMPT &#x3D; &#x27;prompt&#x27;;
-}
-</code></pre>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>item</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="mergeDeep"></a>
+                            <span class="name"><b> mergeDeep</b><a href="#mergeDeep"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>mergeDeep(sources: undefined)</code>
+                        </td>
+                    </tr>
+    
+    
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Deep merge objects.</p>
     </div>
-</div>
-
-
-
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>sources</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="uuid"></a>
+                            <span class="name"><b> uuid</b><a href="#uuid"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>uuid()</code>
+                        </td>
+                    </tr>
+    
+    
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Generates random id</p>
+    </div>
+    
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+    <h3>src/snotify/decorators/set-default-config.decorator.ts</h3>
+    <section>
+        <h3></h3>        <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="SetDefaultConfig"></a>
+                            <span class="name"><b> SetDefaultConfig</b><a href="#SetDefaultConfig"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>SetDefaultConfig(target: undefined, propertyKey: undefined, descriptor: undefined)</code>
+                        </td>
+                    </tr>
+    
+    
+    
+                </tbody>
+            </table>
+    </section>
+    <h3>src/snotify/decorators/transform-argument.decorator.ts</h3>
+    <section>
+        <h3></h3>        <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="TransformArgument"></a>
+                            <span class="name"><b> TransformArgument</b><a href="#TransformArgument"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>TransformArgument(target: undefined, propertyKey: undefined, descriptor: undefined)</code>
+                        </td>
+                    </tr>
+    
+    
+    
+                </tbody>
+            </table>
+    </section>
 
 
                    </div><div class="search-results">

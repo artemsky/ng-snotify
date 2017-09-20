@@ -539,6 +539,9 @@ i {
 thead.coverage-header >tr>td, thead.coverage-header>tr>th {
     border-bottom-width: 0;
 }
+th[role=columnheader].statements:not(.no-sort):after {
+    margin-left: 10px;
+}
 .coverage-count {
     color: grey;
     font-size: 12px;
@@ -619,6 +622,9 @@ thead.coverage-header >tr>td, thead.coverage-header>tr>th {
     display: none;
 }
 .modifier-icon.method .fa-lock {
+    margin-right: 0;
+}
+.modifier-icon.fa-reset {
     margin-right: 0;
 }
 
@@ -744,4 +750,19 @@ ul.index-list {
     column-count: 3;
     line-height: 25px;
     margin-bottom: 0;
+}
+
+.no-graph {
+    text-align: center;
+    height: 175px;
+    line-height: 175px;
+}
+
+.name a {
+    display: none;
+    color: #6e6e6e;
+    margin-left: 5px;
+}
+.name:hover a {
+    display: inline-block;
 }

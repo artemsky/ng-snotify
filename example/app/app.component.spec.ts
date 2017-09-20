@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {SnotifyModule, SnotifyService} from 'ng-snotify';
-import {SnotifyPosition} from '../../src/snotify/enum/SnotifyPosition.enum';
+import {SnotifyPosition} from '../../src/snotify/enums/SnotifyPosition.enum';
 
 describe('NgSnotify Testing', () => {
   beforeEach(() => {

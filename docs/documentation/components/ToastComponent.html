@@ -139,9 +139,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -194,6 +191,9 @@
                                 <li class="link">
                                     <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyStyles.html" >SnotifyStyles</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -230,6 +230,12 @@
                             >
                                 <li class="link">
                                   <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
                                 </li>
                                 <li class="link">
                                   <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
@@ -371,9 +377,6 @@
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -426,6 +429,9 @@
                                        <li class="link">
                                            <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyStyles.html" >SnotifyStyles</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -462,6 +468,12 @@
                    >
                                        <li class="link">
                                          <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
                                        </li>
                                        <li class="link">
                                          <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
@@ -671,6 +683,43 @@
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>service</td>
+                                                      <td>
+                                                                <code><a href="../injectables/SnotifyService.html" target="_self" >SnotifyService</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>snotify</td>
+                                                      <td>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -703,6 +752,8 @@
     </section>
 
 
+
+
     <section>
         
             <h3 id="methods">
@@ -713,12 +764,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="initToast"></a>
-                            <b> initToast</b>
+                            <span class="name"><b> initToast</b><a href="#initToast"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>initToast(toast: <a href="../interfaces/Snotify.html">SnotifyToast</a>)</code>
+    <code>initToast(toast?: <a href="../interfaces/Snotify.html">SnotifyToast</a>)</code>
                         </td>
                     </tr>
     
@@ -741,6 +792,7 @@
                                                 <tr>
                                                     <td>Name</td>
                                                     <td>Type</td>
+                                                    <td>Optional</td>
                                                     <td>Description</td>
                                                 </tr>
                                             </thead>
@@ -749,6 +801,9 @@
                                                       <td>toast</td>
                                                       <td>
                                                               <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast</a></code>
+                                                      </td>
+                                                      <td>
+                                                          true
                                                       </td>
                                                       <td></td>
                                                     </tr>
@@ -773,12 +828,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="lifecycle"></a>
-                            <b> lifecycle</b>
+                            <span class="name"><b> lifecycle</b><a href="#lifecycle"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>lifecycle(action: <a href="../interfaces/Snotify.html">SnotifyAction</a>, promptValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+    <code>lifecycle(action: <a href="../interfaces/Snotify.html">SnotifyAction</a>, promptValue?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                         </td>
                     </tr>
     
@@ -801,6 +856,7 @@
                                                 <tr>
                                                     <td>Name</td>
                                                     <td>Type</td>
+                                                    <td>Optional</td>
                                                     <td>Description</td>
                                                 </tr>
                                             </thead>
@@ -810,12 +866,17 @@
                                                       <td>
                                                               <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyAction</a></code>
                                                       </td>
+                                                      <td>
+                                                      </td>
                                                       <td></td>
                                                     </tr>
                                                     <tr>
                                                       <td>promptValue</td>
                                                       <td>
-                                                              <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyAction</a></code>
+                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                      </td>
+                                                      <td>
+                                                          true
                                                       </td>
                                                       <td></td>
                                                     </tr>
@@ -840,7 +901,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnDestroy"></a>
-                            <b> ngOnDestroy</b>
+                            <span class="name"><b> ngOnDestroy</b><a href="#ngOnDestroy"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -874,7 +935,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnInit"></a>
-                            <b> ngOnInit</b>
+                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -908,7 +969,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onClick"></a>
-                            <b> onClick</b>
+                            <span class="name"><b> onClick</b><a href="#onClick"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -942,7 +1003,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onExitTransitionEnd"></a>
-                            <b> onExitTransitionEnd</b>
+                            <span class="name"><b> onExitTransitionEnd</b><a href="#onExitTransitionEnd"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -976,7 +1037,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onMouseEnter"></a>
-                            <b> onMouseEnter</b>
+                            <span class="name"><b> onMouseEnter</b><a href="#onMouseEnter"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1010,7 +1071,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onMouseLeave"></a>
-                            <b> onMouseLeave</b>
+                            <span class="name"><b> onMouseLeave</b><a href="#onMouseLeave"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1044,7 +1105,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onPromptChanged"></a>
-                            <b> onPromptChanged</b>
+                            <span class="name"><b> onPromptChanged</b><a href="#onPromptChanged"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1066,9 +1127,38 @@
     </div>
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>value</td>
+                                                      <td>
+                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1078,7 +1168,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onRemove"></a>
-                            <b> onRemove</b>
+                            <span class="name"><b> onRemove</b><a href="#onRemove"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1112,7 +1202,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="startTimeout"></a>
-                            <b> startTimeout</b>
+                            <span class="name"><b> startTimeout</b><a href="#startTimeout"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1140,6 +1230,7 @@
                                                 <tr>
                                                     <td>Name</td>
                                                     <td>Type</td>
+                                                    <td>Optional</td>
                                                     <td>Description</td>
                                                 </tr>
                                             </thead>
@@ -1147,7 +1238,9 @@
                                                     <tr>
                                                       <td>currentProgress</td>
                                                       <td>
-                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" >Number</a></code>
+                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                      </td>
+                                                      <td>
                                                       </td>
                                                       <td></td>
                                                     </tr>
@@ -1179,7 +1272,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="interval"></a>
-                            <b> interval</b>
+                            <span class="name"><b> interval</b><a href="#interval"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1214,7 +1307,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="maxHeight"></a>
-                            <b> maxHeight</b>
+                            <span class="name"><b> maxHeight</b><a href="#maxHeight"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1249,7 +1342,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="state"></a>
-                            <b> state</b>
+                            <span class="name"><b> state</b><a href="#state"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1278,7 +1371,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="toastChangedSubscription"></a>
-                            <b> toastChangedSubscription</b>
+                            <span class="name"><b> toastChangedSubscription</b><a href="#toastChangedSubscription"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1307,7 +1400,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="toastDeletedSubscription"></a>
-                            <b> toastDeletedSubscription</b>
+                            <span class="name"><b> toastDeletedSubscription</b><a href="#toastDeletedSubscription"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1339,9 +1432,9 @@
         <pre class="line-numbers"><code class="language-typescript">import {Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from &#x27;@angular/core&#x27;;
 import {SnotifyService} from &#x27;../snotify.service&#x27;;
 import {SnotifyToast} from &#x27;./snotify-toast.model&#x27;;
-import {SnotifyAction} from &#x27;../enum/SnotifyAction.enum&#x27;;
+import {SnotifyAction} from &#x27;../enums/SnotifyAction.enum&#x27;;
 import {Subscription} from &#x27;rxjs/Subscription&#x27;;
-import {SnotifyType} from &#x27;../enum/SnotifyType.enum&#x27;;
+import {SnotifyStyle} from &#x27;../enums/SnotifyStyle.enum&#x27;;
 
 @Component({
   selector: &#x27;ng-snotify-toast&#x27;,
@@ -1369,7 +1462,7 @@ export class ToastComponent implements OnInit, OnDestroy {
       time: 0,
       isDestroying: false
     },
-    promptType: SnotifyType.PROMPT,
+    promptType: SnotifyStyle.prompt,
     prompt: &#x27;&#x27;
   };
 
@@ -1408,7 +1501,7 @@ export class ToastComponent implements OnInit, OnDestroy {
         }
       }
     );
-    this.state.toast.type &#x3D; this.toast.config.type as string;
+    this.state.toast.type &#x3D; this.toast.config.type;
     this.state.toast.time &#x3D; this.toast.config.animation.time;
     this.state.toast.animation &#x3D; this.toast.config.animation.enter;
     this.lifecycle(SnotifyAction.onInit);
@@ -1462,7 +1555,7 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Trigger onHoverLeave lifecycle
    */
   onMouseLeave() {
-    if (this.toast.config.pauseOnHover &amp;&amp; this.state.toast.type !&#x3D;&#x3D; SnotifyType.PROMPT) {
+    if (this.toast.config.pauseOnHover &amp;&amp; this.state.toast.type !&#x3D;&#x3D; SnotifyStyle.prompt) {
       this.startTimeout(this.state.toast.progress);
     }
     this.lifecycle(SnotifyAction.onHoverLeave);
@@ -1562,7 +1655,7 @@ export class ToastComponent implements OnInit, OnDestroy {
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;snotifyToast__inner&quot; *ngIf&#x3D;&quot;!toast.config.html; else toastHTML&quot;&gt;
     &lt;div class&#x3D;&quot;snotifyToast__title&quot; *ngIf&#x3D;&quot;toast.title&quot;&gt;{{toast.title | truncate : toast.config.titleMaxLength}}&lt;/div&gt;
-    &lt;div class&#x3D;&quot;snotifyToast__body&quot;&gt;{{toast.body | truncate : toast.config.bodyMaxLength}}&lt;/div&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__body&quot; *ngIf&#x3D;&quot;toast.body&quot;&gt;{{toast.body | truncate : toast.config.bodyMaxLength}}&lt;/div&gt;
     &lt;ng-snotify-prompt *ngIf&#x3D;&quot;state.toast.type &#x3D;&#x3D;&#x3D; state.promptType&quot;
                        [placeholder]&#x3D;&quot;toast.config.placeholder&quot;
                        (valueChanged)&#x3D;&quot;onPromptChanged($event)&quot;&gt;
@@ -1603,7 +1696,7 @@ export class ToastComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  class="snotifyToast animated"  [ngClass]="[\'snotify-\' + toast.config.type, state.toast.animation]"  [ngStyle]="{  \'max-height\': maxHeight + \'px\',  \'-webkit-transition\': state.toast.time + 300 + \'ms\',  transition: state.toast.time + 300 + \'ms\',  \'-webkit-animation-duration\': state.toast.time + \'ms\',  \'animation-duration\': state.toast.time + \'ms\'  }"  (animationend)="onExitTransitionEnd()"  (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" #toastEl>  <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">    <span class="snotifyToast__progressBar__percentage" [ngStyle]="{\'width\': state.toast.progress + \'%\'}"></span>  </div>  <div class="snotifyToast__inner" *ngIf="!toast.config.html; else toastHTML">    <div class="snotifyToast__title" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>    <div class="snotifyToast__body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>    <ng-snotify-prompt *ngIf="state.toast.type === state.promptType"                       [placeholder]="toast.config.placeholder"                       (valueChanged)="onPromptChanged($event)">    </ng-snotify-prompt>    <ng-snotify-icon *ngIf="!toast.config.icon; else elseBlock" class="snotify-icon" [type]="state.toast.type"></ng-snotify-icon>    <ng-template #elseBlock>      <img class="snotify-icon" [src]=\'toast.config.icon\' />    </ng-template>  </div>  <ng-template #toastHTML>    <div class="snotifyToast__inner" [innerHTML]="toast.config.html"></div>  </ng-template>  <ng-snotify-button *ngIf="toast.config.buttons" [buttons]="toast.config.buttons" [text]="state.toast.type === state.promptType ? state.prompt : null" [id]="toast.id"></ng-snotify-button></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div  class="snotifyToast animated"  [ngClass]="[\'snotify-\' + toast.config.type, state.toast.animation]"  [ngStyle]="{  \'max-height\': maxHeight + \'px\',  \'-webkit-transition\': state.toast.time + 300 + \'ms\',  transition: state.toast.time + 300 + \'ms\',  \'-webkit-animation-duration\': state.toast.time + \'ms\',  \'animation-duration\': state.toast.time + \'ms\'  }"  (animationend)="onExitTransitionEnd()"  (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" #toastEl>  <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">    <span class="snotifyToast__progressBar__percentage" [ngStyle]="{\'width\': state.toast.progress + \'%\'}"></span>  </div>  <div class="snotifyToast__inner" *ngIf="!toast.config.html; else toastHTML">    <div class="snotifyToast__title" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>    <div class="snotifyToast__body" *ngIf="toast.body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>    <ng-snotify-prompt *ngIf="state.toast.type === state.promptType"                       [placeholder]="toast.config.placeholder"                       (valueChanged)="onPromptChanged($event)">    </ng-snotify-prompt>    <ng-snotify-icon *ngIf="!toast.config.icon; else elseBlock" class="snotify-icon" [type]="state.toast.type"></ng-snotify-icon>    <ng-template #elseBlock>      <img class="snotify-icon" [src]=\'toast.config.icon\' />    </ng-template>  </div>  <ng-template #toastHTML>    <div class="snotifyToast__inner" [innerHTML]="toast.config.html"></div>  </ng-template>  <ng-snotify-button *ngIf="toast.config.buttons" [buttons]="toast.config.buttons" [text]="state.toast.type === state.promptType ? state.prompt : null" [id]="toast.id"></ng-snotify-button></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsComponent', 'selector': 'ng-snotify-button'},{'name': 'IconComponent', 'selector': 'ng-snotify-icon'},{'name': 'PromptComponent', 'selector': 'ng-snotify-prompt'},{'name': 'SnotifyComponent', 'selector': 'ng-snotify'},{'name': 'ToastComponent', 'selector': 'ng-snotify-toast'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ToastComponent'};

@@ -139,9 +139,6 @@
                                 <li class="link">
                                     <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -194,6 +191,9 @@
                                 <li class="link">
                                     <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../interfaces/SnotifyStyles.html" >SnotifyStyles</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -230,6 +230,12 @@
                             >
                                 <li class="link">
                                   <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
                                 </li>
                                 <li class="link">
                                   <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
@@ -371,9 +377,6 @@
                                        <li class="link">
                                            <a href="../classes/SnotifyToast.html" >SnotifyToast</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../classes/SnotifyType.html" >SnotifyType</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -426,6 +429,9 @@
                                        <li class="link">
                                            <a href="../interfaces/SnotifyOptions.html" >SnotifyOptions</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../interfaces/SnotifyStyles.html" >SnotifyStyles</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -462,6 +468,12 @@
                    >
                                        <li class="link">
                                          <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
                                        </li>
                                        <li class="link">
                                          <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
@@ -648,9 +660,39 @@
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>service</td>
+                                                      <td>
+                                                                <code><a href="../injectables/SnotifyService.html" target="_self" >SnotifyService</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
+
+
 
 
 
@@ -664,7 +706,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnDestroy"></a>
-                            <b> ngOnDestroy</b>
+                            <span class="name"><b> ngOnDestroy</b><a href="#ngOnDestroy"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -698,7 +740,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnInit"></a>
-                            <b> ngOnInit</b>
+                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -732,7 +774,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="setOptions"></a>
-                            <b> setOptions</b>
+                            <span class="name"><b> setOptions</b><a href="#setOptions"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -760,6 +802,7 @@
                                                 <tr>
                                                     <td>Name</td>
                                                     <td>Type</td>
+                                                    <td>Optional</td>
                                                     <td>Description</td>
                                                 </tr>
                                             </thead>
@@ -768,6 +811,8 @@
                                                       <td>options</td>
                                                       <td>
                                                               <code><a href="../interfaces/SnotifyOptions.html" target="_self" >SnotifyOptions</a></code>
+                                                      </td>
+                                                      <td>
                                                       </td>
                                                       <td></td>
                                                     </tr>
@@ -792,12 +837,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="splitToasts"></a>
-                            <b> splitToasts</b>
+                            <span class="name"><b> splitToasts</b><a href="#splitToasts"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>splitToasts(toasts: [])</code>
+    <code>splitToasts(toasts: <a href="../interfaces/Snotify.html">SnotifyToast[]</a>)</code>
                         </td>
                     </tr>
     
@@ -820,12 +865,16 @@
                                                 <tr>
                                                     <td>Name</td>
                                                     <td>Type</td>
+                                                    <td>Optional</td>
                                                     <td>Description</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                     <tr>
                                                       <td>toasts</td>
+                                                      <td>
+                                                              <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast[]</a></code>
+                                                      </td>
                                                       <td>
                                                       </td>
                                                       <td></td>
@@ -858,7 +907,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="backdrop"></a>
-                            <b> backdrop</b>
+                            <span class="name"><b> backdrop</b><a href="#backdrop"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -893,7 +942,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="blockSize_a"></a>
-                            <b> blockSize_a</b>
+                            <span class="name"><b> blockSize_a</b><a href="#blockSize_a"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -928,18 +977,18 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="blockSize_b"></a>
-                            <b> blockSize_b</b>
+                            <span class="name"><b> blockSize_b</b><a href="#blockSize_b"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>blockSize_b:     <code>number|</code>
+                            <code>blockSize_b:     <code>number | </code>
     </code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <i>Type : </i>    <code>number|</code>
+                                <i>Type : </i>    <code>number | </code>
     
                             </td>
                         </tr>
@@ -963,7 +1012,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="dockSize_a"></a>
-                            <b> dockSize_a</b>
+                            <span class="name"><b> dockSize_a</b><a href="#dockSize_a"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -998,18 +1047,18 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="dockSize_b"></a>
-                            <b> dockSize_b</b>
+                            <span class="name"><b> dockSize_b</b><a href="#dockSize_b"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>dockSize_b:     <code>number|</code>
+                            <code>dockSize_b:     <code>number | </code>
     </code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <i>Type : </i>    <code>number|</code>
+                                <i>Type : </i>    <code>number | </code>
     
                             </td>
                         </tr>
@@ -1033,7 +1082,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="emitter"></a>
-                            <b> emitter</b>
+                            <span class="name"><b> emitter</b><a href="#emitter"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1068,7 +1117,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="lifecycleSubscription"></a>
-                            <b> lifecycleSubscription</b>
+                            <span class="name"><b> lifecycleSubscription</b><a href="#lifecycleSubscription"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1103,7 +1152,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="notifications"></a>
-                            <b> notifications</b>
+                            <span class="name"><b> notifications</b><a href="#notifications"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1138,7 +1187,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="optionsSubscription"></a>
-                            <b> optionsSubscription</b>
+                            <span class="name"><b> optionsSubscription</b><a href="#optionsSubscription"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1179,9 +1228,9 @@ import {SnotifyToast} from &#x27;./toast/snotify-toast.model&#x27;;
 import {Subscription} from &#x27;rxjs/Subscription&#x27;;
 import {SnotifyOptions} from &#x27;./interfaces/SnotifyOptions.interface&#x27;;
 import {SnotifyInfo} from &#x27;./interfaces/SnotifyInfo.interface&#x27;;
-import {SnotifyAction} from &#x27;./enum/SnotifyAction.enum&#x27;;
+import {SnotifyAction} from &#x27;./enums/SnotifyAction.enum&#x27;;
 import {SnotifyNotifications} from &#x27;./interfaces/SnotifyNotifications.interface&#x27;;
-import {SnotifyPosition} from &#x27;./enum/SnotifyPosition.enum&#x27;;
+import {SnotifyPosition} from &#x27;./enums/SnotifyPosition.enum&#x27;;
 
 
 @Component({

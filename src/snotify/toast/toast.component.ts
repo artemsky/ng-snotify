@@ -1,9 +1,9 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
-import {SnotifyAction} from '../enum/SnotifyAction.enum';
+import {SnotifyAction} from '../enums/SnotifyAction.enum';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyType} from '../enum/SnotifyType.enum';
+import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
 
 @Component({
   selector: 'ng-snotify-toast',
@@ -31,7 +31,7 @@ export class ToastComponent implements OnInit, OnDestroy {
       time: 0,
       isDestroying: false
     },
-    promptType: SnotifyType.prompt,
+    promptType: SnotifyStyle.prompt,
     prompt: ''
   };
 
@@ -124,7 +124,7 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Trigger onHoverLeave lifecycle
    */
   onMouseLeave() {
-    if (this.toast.config.pauseOnHover && this.state.toast.type !== SnotifyType.prompt) {
+    if (this.toast.config.pauseOnHover && this.state.toast.type !== SnotifyStyle.prompt) {
       this.startTimeout(this.state.toast.progress);
     }
     this.lifecycle(SnotifyAction.onHoverLeave);

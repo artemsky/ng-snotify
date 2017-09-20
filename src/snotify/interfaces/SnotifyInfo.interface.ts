@@ -1,5 +1,5 @@
 import {SnotifyToast} from '../toast/snotify-toast.model';
-import {SnotifyAction} from '../enum/SnotifyAction.enum';
+import {SnotifyAction} from '../enums/SnotifyAction.enum';
 
 /**
  * Toast lifecycle information

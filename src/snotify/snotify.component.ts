@@ -4,9 +4,9 @@ import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
 import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
 import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
-import {SnotifyAction} from './enum/SnotifyAction.enum';
+import {SnotifyAction} from './enums/SnotifyAction.enum';
 import {SnotifyNotifications} from './interfaces/SnotifyNotifications.interface';
-import {SnotifyPosition} from './enum/SnotifyPosition.enum';
+import {SnotifyPosition} from './enums/SnotifyPosition.enum';
 
 
 @Component({
