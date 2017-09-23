@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {PromiseObservable} from 'rxjs/observable/PromiseObservable';
 import {Subscription} from 'rxjs/Subscription';
 import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
-import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
+// import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
 import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
 import {SnotifyPosition} from './enums/SnotifyPosition.enum';
@@ -15,7 +15,9 @@ import {SnotifyType} from './types/snotify.type'
 import {SafeHtml} from '@angular/platform-browser';
 import {TransformArgument} from './decorators/transform-argument.decorator';
 import {mergeDeep, uuid} from './utils';
-import {SetDefaultConfig} from './decorators/set-default-config.decorator';
+import {SetToastType} from './decorators/set-toast-type.decorator';
+import {ToastDefaults} from './toastDefaults';
+import {SnotifyDefaults} from './interfaces/SnotifyDefaults.interface';
 
 /**
  * SnotifyService - create, remove, config toasts
@@ -25,13 +27,11 @@ import {SetDefaultConfig} from './decorators/set-default-config.decorator';
 export class SnotifyService {
   readonly emitter = new Subject<SnotifyToast[]>();
   readonly lifecycle = new Subject<SnotifyInfo>();
-  readonly optionsChanged = new Subject<SnotifyOptions>();
+  // readonly optionsChanged = new Subject<SnotifyOptions>();
   readonly toastChanged = new Subject<SnotifyToast>();
   readonly toastDeleted = new Subject<number>();
-  private config: SnotifyConfig;
-  private _options: SnotifyOptions;
+  // private _options: SnotifyOptions;
   private notifications: SnotifyToast[] = [];
-  private _defaultAnimationTime = 400;
 
   // Callbacks
   onInit: (info?: SnotifyToast) => void;
@@ -42,29 +42,8 @@ export class SnotifyService {
   beforeDestroy: (info?: SnotifyToast) => void;
   afterDestroy: (info?: SnotifyToast) => void;
 
-  /**
-   * Constructor - initialize base configuration objects
-   */
-  constructor() {
-    this.config = {
-      showProgressBar: true,
-      timeout: 2000,
-      closeOnClick: true,
-      pauseOnHover: true,
-      bodyMaxLength: 150,
-      titleMaxLength: 16,
-      backdrop: -1,
-      animation: {enter: 'fadeInUp', exit: 'fadeOutRight', time: this._defaultAnimationTime}
-    };
-    this._options = {
-      newOnTop: true,
-      position: SnotifyPosition.right_bottom,
-      maxOnScreen: 8,
-      maxAtPosition: 8,
-      maxHeight: 300
-    };
+  constructor(@Inject('SnotifyConfig') public config: SnotifyDefaults) {
   }
-
   /**
    * emit changes in notifications array
    */
@@ -73,51 +52,12 @@ export class SnotifyService {
   }
 
   /**
-   * Set global config
-   * @param config {SnotifyConfig}
-   * @param options {SnotifyOptions}
-   */
-  setConfig(config: SnotifyConfig, options?: SnotifyOptions): void {
-    this._options = mergeDeep(this._options, options);
-    this.config = mergeDeep(this.config,
-      {
-        animation: ((position) => {
-          switch (position) {
-            case SnotifyPosition.left_top:
-              return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this._defaultAnimationTime};
-            case SnotifyPosition.left_center:
-              return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this._defaultAnimationTime};
-            case SnotifyPosition.left_bottom:
-              return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this._defaultAnimationTime};
-
-            case SnotifyPosition.right_top:
-              return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this._defaultAnimationTime};
-            case SnotifyPosition.right_center:
-              return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this._defaultAnimationTime};
-            case SnotifyPosition.right_bottom:
-              return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this._defaultAnimationTime};
-
-            case SnotifyPosition.center_top:
-              return {enter: 'fadeInDown', exit: 'fadeOutUp', time: this._defaultAnimationTime};
-            case SnotifyPosition.center_center:
-              return {enter: 'fadeIn', exit: 'fadeOut', time: this._defaultAnimationTime};
-            case SnotifyPosition.center_bottom:
-              return {enter: 'fadeInUp', exit: 'fadeOutDown', time: this._defaultAnimationTime};
-          }
-        })(this._options.position)
-      },
-      config);
-
-    this.optionsChanged.next(this._options);
-  }
-
-  /**
    * get SnotifyOptions
    * @return {SnotifyOptions}
    */
-  get options(){
-    return this._options;
-  }
+  // get options(){
+  //   return this._options;
+  // }
 
   /**
    * returns SnotifyToast object
@@ -133,8 +73,7 @@ export class SnotifyService {
    * @param toast {SnotifyToast}
    */
   private add(toast: SnotifyToast): void {
-    toast.config.position = toast.config.position || this.options.position;
-    if (this._options.newOnTop) {
+    if (toast.config.newOnTop) {
       this.notifications.unshift(toast);
     } else {
       this.notifications.push(toast);
@@ -171,8 +110,17 @@ export class SnotifyService {
    * @return {number}
    */
   private create(snotify: Snotify): number {
+    this.config.global =
+      mergeDeep(this.config.global, this.config.toast[snotify.config.type], snotify.config);
     const id = uuid();
-    this.add(new SnotifyToast(id, snotify.title, snotify.body, snotify.config));
+    this.add(
+      new SnotifyToast(
+        id,
+        snotify.title,
+        snotify.body,
+        Object.assign({}, this.config.global)
+      )
+    );
     return id;
   }
 
@@ -211,7 +159,7 @@ export class SnotifyService {
   /**
    * Determines current toast type and collects default configuration
    */
-  @SetDefaultConfig
+  @SetToastType
   simple(args: any): number {
     return this.create(args);
   }
@@ -251,7 +199,7 @@ export class SnotifyService {
   /**
    * Determines current toast type and collects default configuration
    */
-  @SetDefaultConfig
+  @SetToastType
   success(args: any): number {
     return this.create(args);
   }
@@ -291,7 +239,7 @@ export class SnotifyService {
   /**
    * Determines current toast type and collects default configuration
    */
-  @SetDefaultConfig
+  @SetToastType
   error(args: any): number {
     return this.create(args);
   }
@@ -331,7 +279,7 @@ export class SnotifyService {
   /**
    * Determines current toast type and collects default configuration
    */
-  @SetDefaultConfig
+  @SetToastType
   info(args: any): number {
     return this.create(args);
   }
@@ -371,7 +319,7 @@ export class SnotifyService {
   /**
    * Determines current toast type and collects default configuration
    */
-  @SetDefaultConfig
+  @SetToastType
   warning(args: any): number {
     return this.create(args);
   }
@@ -411,7 +359,7 @@ export class SnotifyService {
   /**
    * Determines current toast type and collects default configuration
    */
-  @SetDefaultConfig
+  @SetToastType
   confirm(args: any): number {
     return this.create(args);
   }
@@ -451,7 +399,7 @@ export class SnotifyService {
   /**
    * Determines current toast type and collects default configuration
    */
-  @SetDefaultConfig
+  @SetToastType
   prompt(args: any): number {
     return this.create(args);
   }
@@ -495,7 +443,7 @@ export class SnotifyService {
   /**
    * Determines current toast type and collects default configuration
    */
-  @SetDefaultConfig
+  @SetToastType
   async(args: any): number {
     let async: Observable<any>;
     if (args.action instanceof Promise) {

@@ -53,7 +53,7 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Init base options. Subscribe to toast changed, toast deleted
    */
   ngOnInit() {
-    this.maxHeight = this.service.options.maxHeight;
+    this.maxHeight = this.service.config.global.maxHeight;
     this.initToast();
     this.toastChangedSubscription = this.service.toastChanged.subscribe(
       (toast: SnotifyToast) => {

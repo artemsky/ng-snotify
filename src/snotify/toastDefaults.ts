@@ -1,7 +1,6 @@
 import {SnotifyPosition} from './enums/SnotifyPosition.enum';
 import {SnotifyStyle} from './enums/SnotifyStyle.enum';
 import {SnotifyAnimate} from './interfaces/SnotifyAnimate.interface';
-
 export const ToastDefaults = {
   global: {
     showProgressBar: true,
@@ -60,6 +59,7 @@ export const ToastDefaults = {
       type: SnotifyStyle.prompt,
     },
     [SnotifyStyle.confirm]: {
+      timeout: 0,
       closeOnClick: false,
       type: SnotifyStyle.confirm,
     },

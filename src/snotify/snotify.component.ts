@@ -2,11 +2,11 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
 import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
 import {SnotifyAction} from './enums/SnotifyAction.enum';
 import {SnotifyNotifications} from './interfaces/SnotifyNotifications.interface';
 import {SnotifyPosition} from './enums/SnotifyPosition.enum';
+
 
 
 @Component({
@@ -23,10 +23,6 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    * Toasts emitter
    */
   emitter: Subscription;
-  /**
-   * Listens for options has been changed
-   */
-  optionsSubscription: Subscription;
   /**
    * Listens for lifecycle has been triggered
    */
@@ -52,20 +48,27 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    */
   backdrop: number;
 
-
-  constructor(private service: SnotifyService) { }
+  constructor(private service: SnotifyService) {}
 
   /**
    * Init base options. Subscribe to options, lifecycle change
    */
   ngOnInit() {
-    this.setOptions(this.service.options);
-    this.optionsSubscription = this.service.optionsChanged.subscribe((options: SnotifyOptions) => {
-      this.setOptions(options);
-    });
-
     this.emitter = this.service.emitter.subscribe(
       (toasts: SnotifyToast[]) => {
+
+        if (this.service.config.global.newOnTop) {
+          this.dockSize_a = -this.service.config.global.maxOnScreen;
+          this.dockSize_b = undefined;
+          this.blockSize_a = -this.service.config.global.maxAtPosition;
+          this.blockSize_b = undefined;
+        } else {
+          this.dockSize_a = 0;
+          this.dockSize_b = this.service.config.global.maxOnScreen;
+          this.blockSize_a = 0;
+          this.blockSize_b = this.service.config.global.maxAtPosition;
+        }
+
         this.notifications = this.splitToasts(toasts.slice(this.dockSize_a, this.dockSize_b));
         const list = toasts.filter(toast => toast.config.backdrop >= 0);
 
@@ -150,29 +153,10 @@ export class SnotifyComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Setup global options object
-   * @param options {SnotifyOptions}
-   */
-  setOptions(options: SnotifyOptions): void {
-    if (this.service.options.newOnTop) {
-      this.dockSize_a = -options.maxOnScreen;
-      this.dockSize_b = undefined;
-      this.blockSize_a = -options.maxAtPosition;
-      this.blockSize_b = undefined;
-    } else {
-      this.dockSize_a = 0;
-      this.dockSize_b = options.maxOnScreen;
-      this.blockSize_a = 0;
-      this.blockSize_b = options.maxAtPosition;
-    }
-  }
-
-  /**
    * Unsubscribe subscriptions
    */
   ngOnDestroy() {
     this.emitter.unsubscribe();
-    this.optionsSubscription.unsubscribe();
     this.lifecycleSubscription.unsubscribe();
   }
 

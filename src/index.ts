@@ -16,7 +16,7 @@ export * from './snotify/interfaces/Snotify.interface';
 export * from './snotify/interfaces/SnotifyButton.interface';
 export * from './snotify/interfaces/SnotifyConfig.interface';
 export * from './snotify/interfaces/SnotifyInfo.interface';
-export * from './snotify/interfaces/SnotifyOptions.interface';
+// export * from './snotify/interfaces/SnotifyOptions.interface';
 export * from './snotify/interfaces/SnotifyNotifications.interface';
 export * from './snotify/enums/SnotifyAction.enum';
 export * from './snotify/enums/SnotifyPosition.enum';
@@ -28,6 +28,7 @@ export * from './snotify/pipes/keys.pipe';
 
 export * from './snotify/toast/button/buttons.component';
 export * from './snotify/toast/prompt/prompt.component';
+export * from './snotify/toastDefaults';
 
 @NgModule({
   imports: [
