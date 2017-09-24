@@ -5,10 +5,8 @@ import {Observable} from 'rxjs/Observable';
 import {PromiseObservable} from 'rxjs/observable/PromiseObservable';
 import {Subscription} from 'rxjs/Subscription';
 import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
-// import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
 import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
-import {SnotifyPosition} from './enums/SnotifyPosition.enum';
 import {SnotifyAction} from './enums/SnotifyAction.enum';
 import {SnotifyStyle} from './enums/SnotifyStyle.enum';
 import {SnotifyType} from './types/snotify.type'
@@ -16,7 +14,6 @@ import {SafeHtml} from '@angular/platform-browser';
 import {TransformArgument} from './decorators/transform-argument.decorator';
 import {mergeDeep, uuid} from './utils';
 import {SetToastType} from './decorators/set-toast-type.decorator';
-import {ToastDefaults} from './toastDefaults';
 import {SnotifyDefaults} from './interfaces/SnotifyDefaults.interface';
 
 /**
@@ -27,10 +24,8 @@ import {SnotifyDefaults} from './interfaces/SnotifyDefaults.interface';
 export class SnotifyService {
   readonly emitter = new Subject<SnotifyToast[]>();
   readonly lifecycle = new Subject<SnotifyInfo>();
-  // readonly optionsChanged = new Subject<SnotifyOptions>();
   readonly toastChanged = new Subject<SnotifyToast>();
   readonly toastDeleted = new Subject<number>();
-  // private _options: SnotifyOptions;
   private notifications: SnotifyToast[] = [];
 
   // Callbacks
@@ -51,13 +46,9 @@ export class SnotifyService {
     this.emitter.next(this.notifications.slice());
   }
 
-  /**
-   * get SnotifyOptions
-   * @return {SnotifyOptions}
-   */
-  // get options(){
-  //   return this._options;
-  // }
+  on(event: any, action: () => void) {
+    //
+  }
 
   /**
    * returns SnotifyToast object
@@ -83,8 +74,8 @@ export class SnotifyService {
 
   /**
    * If ID passed, emits toast animation remove, if ID & REMOVE passed, removes toast from notifications array
-   * @param id {Number}
-   * @param remove {Boolean}
+   * @param id {number}
+   * @param remove {boolean}
    */
   remove(id?: number, remove?: boolean): void {
     if (!id) {
@@ -109,19 +100,17 @@ export class SnotifyService {
    * @param snotify {Snotify}
    * @return {number}
    */
-  private create(snotify: Snotify): number {
+  private create(snotify: Snotify): SnotifyToast {
     this.config.global =
       mergeDeep(this.config.global, this.config.toast[snotify.config.type], snotify.config);
-    const id = uuid();
-    this.add(
-      new SnotifyToast(
-        id,
-        snotify.title,
-        snotify.body,
-        Object.assign({}, this.config.global)
-      )
+    const toast = new SnotifyToast(
+      uuid(),
+      snotify.title,
+      snotify.body,
+      Object.assign({}, this.config.global)
     );
-    return id;
+    this.add(toast);
+    return toast;
   }
 
   /**
@@ -129,21 +118,21 @@ export class SnotifyService {
    * @param body {String}
    * @returns {number}
    */
-  simple(body: string): number
+  simple(body: string): SnotifyToast
   /**
    * Create toast with simple style returns toast id;
    * @param body {String}
    * @param title {String}
    * @returns {number}
    */
-  simple(body: string, title: string): number
+  simple(body: string, title: string): SnotifyToast
   /**
    * Create toast with simple style returns toast id;
    * @param body {String}
    * @param config {SnotifyConfig}
    * @returns {number}
    */
-  simple(body: string, config: SnotifyConfig): number
+  simple(body: string, config: SnotifyConfig): SnotifyToast
   /**
    * Create toast with simple style  returns toast id;
    * @param [body] {String}
@@ -151,7 +140,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  simple(body: string, title: string, config: SnotifyConfig): number
+  simple(body: string, title: string, config: SnotifyConfig): SnotifyToast
   /**
    * Transform toast arguments into {Snotify} object
    */
@@ -160,7 +149,7 @@ export class SnotifyService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  simple(args: any): number {
+  simple(args: any): SnotifyToast {
     return this.create(args);
   }
 
@@ -169,21 +158,21 @@ export class SnotifyService {
    * @param body {String}
    * @returns {number}
    */
-  success(body: string): number
+  success(body: string): SnotifyToast
   /**
    * Create toast with success style returns toast id;
    * @param body {String}
    * @param title {String}
    * @returns {number}
    */
-  success(body: string, title: string): number
+  success(body: string, title: string): SnotifyToast
   /**
    * Create toast with success style returns toast id;
    * @param body {String}
    * @param config {SnotifyConfig}
    * @returns {number}
    */
-  success(body: string, config: SnotifyConfig): number
+  success(body: string, config: SnotifyConfig): SnotifyToast
   /**
    * Create toast with success style  returns toast id;
    * @param [body] {String}
@@ -191,7 +180,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  success(body: string, title: string, config: SnotifyConfig): number
+  success(body: string, title: string, config: SnotifyConfig): SnotifyToast
   /**
    * Transform toast arguments into {Snotify} object
    */
@@ -200,7 +189,7 @@ export class SnotifyService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  success(args: any): number {
+  success(args: any): SnotifyToast {
     return this.create(args);
   }
 
@@ -209,21 +198,21 @@ export class SnotifyService {
    * @param body {String}
    * @returns {number}
    */
-  error(body: string): number
+  error(body: string): SnotifyToast
   /**
    * Create toast with error style returns toast id;
    * @param body {String}
    * @param title {String}
    * @returns {number}
    */
-  error(body: string, title: string): number
+  error(body: string, title: string): SnotifyToast
   /**
    * Create toast with error style returns toast id;
    * @param body {String}
    * @param config {SnotifyConfig}
    * @returns {number}
    */
-  error(body: string, config: SnotifyConfig): number
+  error(body: string, config: SnotifyConfig): SnotifyToast
   /**
    * Create toast with error style  returns toast id;
    * @param [body] {String}
@@ -231,7 +220,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  error(body: string, title: string, config: SnotifyConfig): number
+  error(body: string, title: string, config: SnotifyConfig): SnotifyToast
   /**
    * Transform toast arguments into {Snotify} object
    */
@@ -240,7 +229,7 @@ export class SnotifyService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  error(args: any): number {
+  error(args: any): SnotifyToast {
     return this.create(args);
   }
 
@@ -249,21 +238,21 @@ export class SnotifyService {
    * @param body {String}
    * @returns {number}
    */
-  info(body: string): number
+  info(body: string): SnotifyToast
   /**
    * Create toast with info style returns toast id;
    * @param body {String}
    * @param title {String}
    * @returns {number}
    */
-  info(body: string, title: string): number
+  info(body: string, title: string): SnotifyToast
   /**
    * Create toast with info style returns toast id;
    * @param body {String}
    * @param config {SnotifyConfig}
    * @returns {number}
    */
-  info(body: string, config: SnotifyConfig): number
+  info(body: string, config: SnotifyConfig): SnotifyToast
   /**
    * Create toast with info style  returns toast id;
    * @param [body] {String}
@@ -271,7 +260,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  info(body: string, title: string, config: SnotifyConfig): number
+  info(body: string, title: string, config: SnotifyConfig): SnotifyToast
   /**
    * Transform toast arguments into {Snotify} object
    */
@@ -280,7 +269,7 @@ export class SnotifyService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  info(args: any): number {
+  info(args: any): SnotifyToast {
     return this.create(args);
   }
 
@@ -289,21 +278,21 @@ export class SnotifyService {
    * @param body {String}
    * @returns {number}
    */
-  warning(body: string): number
+  warning(body: string): SnotifyToast
   /**
    * Create toast with warning style returns toast id;
    * @param body {String}
    * @param title {String}
    * @returns {number}
    */
-  warning(body: string, title: string): number
+  warning(body: string, title: string): SnotifyToast
   /**
    * Create toast with warning style returns toast id;
    * @param body {String}
    * @param config {SnotifyConfig}
    * @returns {number}
    */
-  warning(body: string, config: SnotifyConfig): number
+  warning(body: string, config: SnotifyConfig): SnotifyToast
   /**
    * Create toast with warning style  returns toast id;
    * @param [body] {String}
@@ -311,7 +300,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  warning(body: string, title: string, config: SnotifyConfig): number
+  warning(body: string, title: string, config: SnotifyConfig): SnotifyToast
   /**
    * Transform toast arguments into {Snotify} object
    */
@@ -320,7 +309,7 @@ export class SnotifyService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  warning(args: any): number {
+  warning(args: any): SnotifyToast {
     return this.create(args);
   }
 
@@ -329,21 +318,21 @@ export class SnotifyService {
    * @param body {String}
    * @returns {number}
    */
-  confirm(body: string): number
+  confirm(body: string): SnotifyToast
   /**
    * Create toast with confirm style returns toast id;
    * @param body {String}
    * @param title {String}
    * @returns {number}
    */
-  confirm(body: string, title: string): number
+  confirm(body: string, title: string): SnotifyToast
   /**
    * Create toast with confirm style returns toast id;
    * @param body {String}
    * @param config {SnotifyConfig}
    * @returns {number}
    */
-  confirm(body: string, config: SnotifyConfig): number
+  confirm(body: string, config: SnotifyConfig): SnotifyToast
   /**
    * Create toast with confirm style  returns toast id;
    * @param [body] {String}
@@ -351,7 +340,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  confirm(body: string, title: string, config: SnotifyConfig): number
+  confirm(body: string, title: string, config: SnotifyConfig): SnotifyToast
   /**
    * Transform toast arguments into {Snotify} object
    */
@@ -360,7 +349,7 @@ export class SnotifyService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  confirm(args: any): number {
+  confirm(args: any): SnotifyToast {
     return this.create(args);
   }
 
@@ -369,21 +358,21 @@ export class SnotifyService {
    * @param body {String}
    * @returns {number}
    */
-  prompt(body: string): number
+  prompt(body: string): SnotifyToast
   /**
    * Create toast with Prompt style {with two buttons}, returns toast id;
    * @param body {String}
    * @param title {String}
    * @returns {number}
    */
-  prompt(body: string, title: string): number
+  prompt(body: string, title: string): SnotifyToast
   /**
    * Create toast with Prompt style {with two buttons}, returns toast id;
    * @param body {String}
    * @param config {SnotifyConfig}
    * @returns {number}
    */
-  prompt(body: string, config: SnotifyConfig): number
+  prompt(body: string, config: SnotifyConfig): SnotifyToast
   /**
    * Create toast with Prompt style {with two buttons}, returns toast id;
    * @param [body] {String}
@@ -391,7 +380,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  prompt(body: string, title: string, config: SnotifyConfig): number
+  prompt(body: string, title: string, config: SnotifyConfig): SnotifyToast
   /**
    * Transform toast arguments into {Snotify} object
    */
@@ -400,7 +389,7 @@ export class SnotifyService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  prompt(args: any): number {
+  prompt(args: any): SnotifyToast {
     return this.create(args);
   }
 
@@ -410,7 +399,7 @@ export class SnotifyService {
    * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
    * @returns {number}
    */
-  async(body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): number
+  async(body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): SnotifyToast
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
@@ -418,7 +407,7 @@ export class SnotifyService {
    * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
    * @returns {number}
    */
-  async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): number
+  async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): SnotifyToast
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
@@ -426,7 +415,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  async(body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>, config: SnotifyConfig): number
+  async(body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>, config: SnotifyConfig): SnotifyToast
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
@@ -435,7 +424,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>, config: SnotifyConfig): number
+  async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>, config: SnotifyConfig): SnotifyToast
   /**
    * Transform toast arguments into {Snotify} object
    */
@@ -444,7 +433,7 @@ export class SnotifyService {
    * Determines current toast type and collects default configuration
    */
   @SetToastType
-  async(args: any): number {
+  async(args: any): SnotifyToast {
     let async: Observable<any>;
     if (args.action instanceof Promise) {
       async = PromiseObservable.create(args.action );
@@ -452,8 +441,8 @@ export class SnotifyService {
       async = args.action;
     }
 
-    const id = this.create(args);
-    const toast = this.get(id);
+
+    const toast = this.create(args);
     let latestToast = Object.assign({}, toast);
 
     const updateToast = (type: SnotifyType, data?: SnotifyConfig) => {
@@ -466,9 +455,8 @@ export class SnotifyService {
       this.toastChanged.next(latestToast);
     };
 
-    const lifecycleSubscription = this.lifecycle.subscribe(
-      (info: SnotifyInfo) => {
-        if (info.action === SnotifyAction.onInit && info.toast.id === id) {
+    toast.on('init',
+      (info: SnotifyToast) => {
           const subscription: Subscription = async.subscribe(
             (next?: SnotifyConfig) => {
               updateToast(SnotifyStyle.async, next);
@@ -480,14 +468,12 @@ export class SnotifyService {
             () => {
               updateToast(SnotifyStyle.success);
               subscription.unsubscribe();
-              lifecycleSubscription.unsubscribe();
             }
           );
-        }
       }
     );
 
-    return id;
+    return toast;
   }
 
   /**
@@ -496,7 +482,7 @@ export class SnotifyService {
    * @param {SnotifyConfig} config
    * @returns {number}
    */
-  html(html: string | SafeHtml, config?: SnotifyConfig): number {
+  html(html: string | SafeHtml, config?: SnotifyConfig): SnotifyToast {
     return this.create({
       title: null,
       body: null,

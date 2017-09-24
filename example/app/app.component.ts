@@ -84,7 +84,14 @@ export class AppComponent implements OnInit {
   }
 
   onSuccess() {
-    this.snotifyService.success(this.body, this.title, this.getConfig());
+    this.snotifyService.success(this.body, this.title, this.getConfig())
+      .on('init', () => {
+        alert(1);
+      }).on('click', () => {
+        alert(2);
+      }).on('mouseenter', () => {
+        alert(3);
+      })
   }
 
   onInfo() {
@@ -173,11 +180,11 @@ export class AppComponent implements OnInit {
      At the action of the first button we can get what user entered into input field.
      At the second we can't get it. But we can remove this toast
      */
-    const id = this.snotifyService.prompt(this.body, this.title, {
+    this.snotifyService.prompt(this.body, this.title, {
         ...this.getConfig(),
       buttons: [
-        {text: 'Yes', action: (toastId, text) => console.log('Said Yes: ' + text + ' ID: ' + toastId)},
-        {text: 'No', action: (toastId, text) => { console.log('Said No: ' + text); this.snotifyService.remove(id); }},
+        {text: 'Yes', action: (id, text) => console.log('Said Yes: ' + text + ' ID: ' + id)},
+        {text: 'No', action: (id, text) => { console.log('Said No: ' + text); this.snotifyService.remove(id); }},
       ],
       placeholder: 'This is the example placeholder which you can pass' // Max-length = 40
     });

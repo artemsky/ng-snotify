@@ -1,7 +1,6 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
-import {SnotifyAction} from '../enums/SnotifyAction.enum';
 import {Subscription} from 'rxjs/Subscription';
 import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
 
@@ -73,14 +72,14 @@ export class ToastComponent implements OnInit, OnDestroy {
     this.state.toast.type = this.toast.config.type;
     this.state.toast.time = this.toast.config.animation.time;
     this.state.toast.animation = this.toast.config.animation.enter;
-    this.lifecycle(SnotifyAction.onInit);
+    this.toast.eventEmitter.next('init');
   }
 
   /**
    * Unsubscribe subscriptions
    */
   ngOnDestroy(): void {
-    this.lifecycle(SnotifyAction.afterDestroy);
+    this.toast.eventEmitter.next('destroyed');
     this.toastChangedSubscription.unsubscribe();
     this.toastDeletedSubscription.unsubscribe();
   }
@@ -93,7 +92,7 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Trigger OnClick lifecycle
    */
   onClick() {
-    this.lifecycle(SnotifyAction.onClick);
+    this.toast.eventEmitter.next('click');
     if (this.toast.config.closeOnClick) {
       this.service.remove(this.toast.id);
     }
@@ -107,14 +106,14 @@ export class ToastComponent implements OnInit, OnDestroy {
     clearInterval(this.interval);
     this.state.toast.animation = this.toast.config.animation.exit;
     this.maxHeight = 0;
-    this.lifecycle(SnotifyAction.beforeDestroy);
+    this.toast.eventEmitter.next('hidden');
   }
 
   /**
    * Trigger onHoverEnter lifecycle
    */
   onMouseEnter() {
-    this.lifecycle(SnotifyAction.onHoverEnter);
+    this.toast.eventEmitter.next('mouseenter');
     if (this.toast.config.pauseOnHover) {
       clearInterval(this.interval);
     }
@@ -127,7 +126,7 @@ export class ToastComponent implements OnInit, OnDestroy {
     if (this.toast.config.pauseOnHover && this.state.toast.type !== SnotifyStyle.prompt) {
       this.startTimeout(this.state.toast.progress);
     }
-    this.lifecycle(SnotifyAction.onHoverLeave);
+    this.toast.eventEmitter.next('mouseleave');
   }
 
   /**
@@ -135,7 +134,8 @@ export class ToastComponent implements OnInit, OnDestroy {
    */
   onPromptChanged(value: string) {
     this.state.prompt = value;
-    this.lifecycle(SnotifyAction.onInput, value)
+    this.toast.eventEmitter.next('input');
+    // this.lifecycle(SnotifyAction.onInput, value)
   }
 
   /**
@@ -187,19 +187,6 @@ export class ToastComponent implements OnInit, OnDestroy {
           this.service.remove(this.toast.id);
         }
       }, refreshRate);
-  }
-
-  /**
-   * Lifecycle trigger
-   * @param action {SnotifyAction}
-   * @param promptValue {SnotifyAction}
-   */
-  lifecycle(action: SnotifyAction, promptValue?: string) {
-    return this.service.lifecycle.next({
-      action,
-      toast: this.toast,
-      value: promptValue
-    });
   }
 
 }
