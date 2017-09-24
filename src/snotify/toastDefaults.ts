@@ -17,35 +17,7 @@ export const ToastDefaults = {
     icon: null,
     html: null,
     position: SnotifyPosition.right_bottom,
-    animation: {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: 400}
-    // options
-    // get animation () {
-    //   switch (this.position) {
-    //     case SnotifyPosition.left_top:
-    //       return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this.transition};
-    //     case SnotifyPosition.left_center:
-    //       return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this.transition};
-    //     case SnotifyPosition.left_bottom:
-    //       return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this.transition};
-    //
-    //     case SnotifyPosition.right_top:
-    //       return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this.transition};
-    //     case SnotifyPosition.right_center:
-    //       return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this.transition};
-    //     case SnotifyPosition.right_bottom:
-    //       return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this.transition};
-    //
-    //     case SnotifyPosition.center_top:
-    //       return {enter: 'fadeInDown', exit: 'fadeOutUp', time: this.transition};
-    //     case SnotifyPosition.center_center:
-    //       return {enter: 'fadeIn', exit: 'fadeOut', time: this.transition};
-    //     case SnotifyPosition.center_bottom:
-    //       return {enter: 'fadeInUp', exit: 'fadeOutDown', time: this.transition};
-    //   }
-    // },
-    // set animation (animation: SnotifyAnimate) {
-    //   this.animation = animation;
-    // }
+    animation: {enter: 'fadeIn', exit: 'fadeOut', time: 400}
   },
   type: {
     [SnotifyStyle.prompt]: {
