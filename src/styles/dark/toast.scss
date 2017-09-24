@@ -14,6 +14,14 @@ $toast-progressBarPercentage: #4c4c4c;
   overflow: hidden;
   pointer-events: auto;
 
+  &--in {
+    animation: appear;
+  }
+
+  &--out {
+    animation: disappear;
+  }
+
   &__inner {
     display: flex;
     flex-flow: column nowrap;

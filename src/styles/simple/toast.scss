@@ -24,6 +24,14 @@ $prompt-border-color: $confirm-border-color;
   overflow: hidden;
   pointer-events: auto;
 
+  &--in {
+    animation: appear;
+  }
+
+  &--out {
+    animation: disappear;
+  }
+
   &__inner {
     display: flex;
     flex-flow: column nowrap;

@@ -1,0 +1,19 @@
+@keyframes appear {
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 50vh;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    max-height: 50vh;
+  }
+
+  100% {
+    max-height: 0;
+  }
+}

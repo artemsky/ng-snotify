@@ -1,5 +1,5 @@
 import {
-  AfterContentInit, AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit,
+  AfterContentInit, Component, Input, OnDestroy, OnInit,
   ViewEncapsulation
 } from '@angular/core';
 import {SnotifyService} from '../snotify.service';
