@@ -20,7 +20,7 @@
                        [placeholder]="toast.config.placeholder"
                        (valueChanged)="onPromptChanged($event)">
     </ng-snotify-prompt>
-    <ng-snotify-icon *ngIf="!toast.config.icon; else elseBlock" class="snotify-icon" [type]="state.toast.type"></ng-snotify-icon>
+    <div *ngIf="!toast.config.icon; else elseBlock" [ngClass]="['snotify-icon', 'snotify-icon--' + state.toast.type]"></div>
     <ng-template #elseBlock>
       <img class="snotify-icon" [src]='toast.config.icon' />
     </ng-template>

@@ -144,7 +144,7 @@ export class AppComponent implements OnInit {
             }
           });
           observer.complete();
-        }, 5000);
+        }, 50000);
 
           // setTimeout(() => {
           //   observer.error({
