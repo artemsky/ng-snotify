@@ -11,6 +11,7 @@ export class SnotifyToast {
   readonly eventEmitter = new Subject<SnotifyEvent>();
   private _eventsHolder: Subscription[] = [];
   value: string;
+  valid = true;
   constructor (public id: number,
                public title: string,
                public body: string,

@@ -163,8 +163,9 @@ export class AppComponent implements OnInit {
     /*
     Here we pass an buttons array, which contains of 2 element of type SnotifyButton
      */
+    const {timeout, closeOnClick, ...config} = this.getConfig(); // Omit props what i don't need
     this.snotifyService.confirm(this.body, this.title, {
-      ...this.getConfig(),
+      ...config,
       buttons: [
         {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
         {text: 'No', action: () => console.log('Clicked: No')},
@@ -180,10 +181,12 @@ export class AppComponent implements OnInit {
      At the action of the first button we can get what user entered into input field.
      At the second we can't get it. But we can remove this toast
      */
-    this.snotifyService.prompt(this.body, this.title, {
-        ...this.getConfig(),
+    const {timeout, closeOnClick, ...config} = this.getConfig(); // Omit props what i don't need
+    const toast = this.snotifyService.prompt(this.body, this.title, {
+      ...config,
       buttons: [
-        {text: 'Yes', action: (id, text) => console.log('Said Yes: ' + text + ' ID: ' + id)},
+        {text: 'Yes', action: (id, text) => console.log(toast.valid = !toast.valid)
+        },
         {text: 'No', action: (id, text) => { console.log('Said No: ' + text); this.snotifyService.remove(id); }},
       ],
       placeholder: 'This is the example placeholder which you can pass' // Max-length = 40

@@ -1,4 +1,7 @@
-import {Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {
+  AfterContentInit, AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit,
+  ViewEncapsulation
+} from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
@@ -9,7 +12,7 @@ import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
   templateUrl: './toast.component.html',
   encapsulation: ViewEncapsulation.None,
 })
-export class ToastComponent implements OnInit, OnDestroy {
+export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
   /**
    * Get toast from notifications array
    */
@@ -23,37 +26,25 @@ export class ToastComponent implements OnInit, OnDestroy {
    * @type {Object}
    */
   state = {
-    toast: {
-      type: '',
-      progress: 0,
-      animation: '',
-      time: 0,
-      isDestroying: false
-    },
-    promptType: SnotifyStyle.prompt,
-    prompt: ''
+    progress: 0,
+    animation: '',
+    isDestroying: false,
+    promptType: SnotifyStyle.prompt
   };
 
-  /**
-   * Toast maximum height in pixels
-   */
-  maxHeight: number;
   /**
    * Toast progress interval
    */
   interval: any;
 
-  constructor(private service: SnotifyService, private snotify: ElementRef) { }
+  constructor(private service: SnotifyService) { }
 
-  /*
-  Life cycles
-   */
+  // Lifecycles
+
   /**
    * Init base options. Subscribe to toast changed, toast deleted
    */
   ngOnInit() {
-    this.maxHeight = this.service.config.global.maxHeight;
-    this.initToast();
     this.toastChangedSubscription = this.service.toastChanged.subscribe(
       (toast: SnotifyToast) => {
         if (this.toast.id === toast.id) {
@@ -61,7 +52,6 @@ export class ToastComponent implements OnInit, OnDestroy {
         }
       }
     );
-
     this.toastDeletedSubscription = this.service.toastDeleted.subscribe(
       (id) => {
         if (this.toast.id === id) {
@@ -69,10 +59,16 @@ export class ToastComponent implements OnInit, OnDestroy {
         }
       }
     );
-    this.state.toast.type = this.toast.config.type;
-    this.state.toast.time = this.toast.config.animation.time;
-    this.state.toast.animation = this.toast.config.animation.enter;
     this.toast.eventEmitter.next('init');
+  }
+
+  ngAfterContentInit() {
+    this.state.animation = 'snotifyToast--in';
+    this.initToast();
+    setTimeout(() => {
+      this.state.animation = this.toast.config.animation.enter;
+    }, 10)
+
   }
 
   /**
@@ -102,11 +98,14 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Trigger beforeDestroy lifecycle. Removes toast
    */
   onRemove() {
-    this.state.toast.isDestroying = true;
+    this.toast.eventEmitter.next('hide');
+    this.state.isDestroying = true;
     clearInterval(this.interval);
-    this.state.toast.animation = this.toast.config.animation.exit;
-    this.maxHeight = 0;
-    this.toast.eventEmitter.next('hidden');
+    this.state.animation = this.toast.config.animation.exit;
+    setTimeout(() => {
+      this.state.animation = 'snotifyToast--out';
+      this.toast.eventEmitter.next('hidden');
+    }, this.toast.config.animation.time / 4);
   }
 
   /**
@@ -123,8 +122,8 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Trigger onHoverLeave lifecycle
    */
   onMouseLeave() {
-    if (this.toast.config.pauseOnHover && this.state.toast.type !== SnotifyStyle.prompt) {
-      this.startTimeout(this.state.toast.progress);
+    if (this.toast.config.pauseOnHover && this.toast.config.timeout) {
+      this.startTimeout(this.state.progress);
     }
     this.toast.eventEmitter.next('mouseleave');
   }
@@ -133,16 +132,15 @@ export class ToastComponent implements OnInit, OnDestroy {
    * Prompt input value changed
    */
   onPromptChanged(value: string) {
-    this.state.prompt = value;
     this.toast.eventEmitter.next('input');
-    // this.lifecycle(SnotifyAction.onInput, value)
+    this.toast.value = value;
   }
 
   /**
    * Remove toast completely after animation
    */
   onExitTransitionEnd() {
-    if (this.state.toast.isDestroying) {
+    if (this.state.isDestroying) {
       this.service.remove(this.toast.id, true);
     }
   }
@@ -176,14 +174,14 @@ export class ToastComponent implements OnInit, OnDestroy {
    */
   startTimeout(currentProgress: number) {
     const refreshRate = 10;
-    if (this.state.toast.isDestroying) {
+    if (this.state.isDestroying) {
       return;
     }
-    this.state.toast.progress = currentProgress;
+    this.state.progress = currentProgress;
     const step = refreshRate / this.toast.config.timeout * 100;
       this.interval = setInterval(() => {
-        this.state.toast.progress += step;
-        if (this.state.toast.progress >= 100) {
+        this.state.progress += step;
+        if (this.state.progress >= 100) {
           this.service.remove(this.toast.id);
         }
       }, refreshRate);

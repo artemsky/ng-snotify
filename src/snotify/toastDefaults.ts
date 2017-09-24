@@ -65,23 +65,28 @@ export const ToastDefaults = {
     },
     [SnotifyStyle.simple]: {
       type: SnotifyStyle.simple,
-      buttons: null
+      buttons: null,
+      icon: null
     },
     [SnotifyStyle.success]: {
       type: SnotifyStyle.success,
-      buttons: null
+      buttons: null,
+      icon: null
     },
     [SnotifyStyle.error]: {
       type: SnotifyStyle.error,
-      buttons: null
+      buttons: null,
+      icon: null
     },
     [SnotifyStyle.warning]: {
       type: SnotifyStyle.warning,
-      buttons: null
+      buttons: null,
+      icon: null
     },
     [SnotifyStyle.info]: {
       type: SnotifyStyle.info,
-      buttons: null
+      buttons: null,
+      icon: null
     },
     [SnotifyStyle.async]: {
       pauseOnHover: false,
@@ -89,7 +94,8 @@ export const ToastDefaults = {
       timeout: 0,
       showProgressBar: false,
       type: SnotifyStyle.async,
-      buttons: null
+      buttons: null,
+      icon: null
     }
   }
 };
