@@ -2,8 +2,6 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
-import {SnotifyAction} from './enums/SnotifyAction.enum';
 import {SnotifyNotifications} from './interfaces/SnotifyNotifications.interface';
 import {SnotifyPosition} from './enums/SnotifyPosition.enum';
 
@@ -23,10 +21,6 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    * Toasts emitter
    */
   emitter: Subscription;
-  /**
-   * Listens for lifecycle has been triggered
-   */
-  lifecycleSubscription: Subscription;
   /**
    * Helper for slice pipe (maxOnScreen)
    */
@@ -83,48 +77,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
           }
           setTimeout(() => {
             this.backdrop = -1;
-          }, 400)
-        }
-      }
-    );
-    this.lifecycleSubscription = this.service.lifecycle.subscribe(
-      (info: SnotifyInfo) => {
-        switch (info.action) {
-          case SnotifyAction.onInit:
-            if (this.service.onInit) {
-              this.service.onInit(info.toast);
-            }
-            break;
-          case SnotifyAction.onClick:
-            if (this.service.onClick) {
-              this.service.onClick(info.toast);
-            }
-            break;
-          case SnotifyAction.onHoverEnter:
-            if (this.service.onHoverEnter) {
-              this.service.onHoverEnter(info.toast);
-            }
-            break;
-          case SnotifyAction.onHoverLeave:
-            if (this.service.onHoverLeave) {
-              this.service.onHoverLeave(info.toast);
-            }
-            break;
-          case SnotifyAction.beforeDestroy:
-            if (this.service.beforeDestroy) {
-              this.service.beforeDestroy(info.toast);
-            }
-            break;
-          case SnotifyAction.afterDestroy:
-            if (this.service.afterDestroy) {
-              this.service.afterDestroy(info.toast);
-            }
-            break;
-          case SnotifyAction.onInput:
-            if (this.service.onInput) {
-              this.service.onInput(info.toast, info.value);
-            }
-            break;
+          }, this.service.config.global.animation.time)
         }
       }
     );
@@ -157,7 +110,6 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    */
   ngOnDestroy() {
     this.emitter.unsubscribe();
-    this.lifecycleSubscription.unsubscribe();
   }
 
 }

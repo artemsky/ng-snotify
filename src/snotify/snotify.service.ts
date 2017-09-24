@@ -4,10 +4,8 @@ import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {PromiseObservable} from 'rxjs/observable/PromiseObservable';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
 import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
-import {SnotifyAction} from './enums/SnotifyAction.enum';
 import {SnotifyStyle} from './enums/SnotifyStyle.enum';
 import {SnotifyType} from './types/snotify.type'
 import {SafeHtml} from '@angular/platform-browser';
@@ -23,7 +21,6 @@ import {SnotifyDefaults} from './interfaces/SnotifyDefaults.interface';
 // tslint:disable:unified-signatures
 export class SnotifyService {
   readonly emitter = new Subject<SnotifyToast[]>();
-  readonly lifecycle = new Subject<SnotifyInfo>();
   readonly toastChanged = new Subject<SnotifyToast>();
   readonly toastDeleted = new Subject<number>();
   private notifications: SnotifyToast[] = [];

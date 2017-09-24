@@ -8,7 +8,7 @@ import {SnotifyConfig} from '../../src/snotify/interfaces/SnotifyConfig.interfac
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   style = 'material';
   title = 'Snotify title!';
   body = 'Lorem ipsum dolor sit amet!';
@@ -18,50 +18,14 @@ export class AppComponent implements OnInit {
   closeClick = true;
   newTop = true;
   backdrop = -1;
-  dockMax = 6;
-  blockMax = 3;
+  dockMax = 8;
+  blockMax = 6;
   pauseHover = true;
   maxHeight = 300;
   titleMaxLength = 15;
   bodyMaxLength = 80;
 
   constructor(private snotifyService: SnotifyService) {}
-
-  ngOnInit() {
-
-    // this.snotifyService.onInit = (toast: SnotifyToast) => {
-    //   console.log('on Init', toast);
-    //   /*
-    //    At each callback you can change toast data directly.
-    //    toast.title = "New Title"
-    //    toast.body = "Some new value"
-    //    */
-    // };
-    //
-    // this.snotifyService.onHoverEnter = (toast: SnotifyToast) => {
-    //   console.log('Hover enter', toast);
-    // };
-    //
-    // this.snotifyService.onHoverLeave = (toast: SnotifyToast) => {
-    //   console.log('Hover leave', toast);
-    // };
-    //
-    // this.snotifyService.onClick = (toast: SnotifyToast) => {
-    //   console.log('Clicked', toast);
-    // };
-    //
-    // this.snotifyService.beforeDestroy = (toast: SnotifyToast) => {
-    //   console.log('Before Destroy', toast);
-    // };
-    //
-    // this.snotifyService.afterDestroy = (toast: SnotifyToast) => {
-    //   console.log('After Destroy', toast);
-    // };
-    //
-    // this.snotifyService.onInput = (toast: SnotifyToast, value: string) => {
-    //   console.log('On Input', value, toast);
-    // };
-  }
 
   /*
   Change global configuration
