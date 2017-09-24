@@ -77,7 +77,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
           }
           setTimeout(() => {
             this.backdrop = -1;
-          }, this.service.config.global.animation.time)
+          }, this.service.config.toast.animation.time)
         }
       }
     );

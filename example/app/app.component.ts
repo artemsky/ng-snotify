@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {SnotifyService, SnotifyToast, SnotifyPosition} from 'ng-snotify';
-import {SnotifyConfig} from '../../src/snotify/interfaces/SnotifyConfig.interface';
+import {SnotifyConfig} from '../../src/snotify/interfaces/SnotifyToastConfig.interface';
 
 @Component({
   selector: 'app-root',
@@ -49,15 +49,7 @@ export class AppComponent {
 
   onSuccess() {
     this.snotifyService.success(this.body, this.title, this.getConfig())
-      .on('init', () => {
-        alert(1);
-      }).on('click', () => {
-        alert(2);
-      }).on('mouseenter', () => {
-        alert(3);
-      })
   }
-
   onInfo() {
     this.snotifyService.info(this.body, this.title, this.getConfig());
   }
@@ -93,6 +85,7 @@ export class AppComponent {
       Observable.create(observer => {
           setTimeout(() => {
             observer.next({
+
               body: 'Still loading.....',
             });
             }, 1000);
@@ -108,14 +101,14 @@ export class AppComponent {
             }
           });
           observer.complete();
-        }, 50000);
+        }, this.timeout);
 
-          // setTimeout(() => {
-          //   observer.error({
-          //     title: 'Error',
-          //     body: 'Example. Error 404. Service not found',
-          //   });
-          // }, 6000);
+          setTimeout(() => {
+            observer.error({
+              title: 'Error',
+              body: 'Example. Error 404. Service not found',
+            });
+          }, 2000);
 
         },
         this.getConfig()

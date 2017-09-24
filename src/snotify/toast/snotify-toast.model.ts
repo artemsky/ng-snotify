@@ -1,4 +1,4 @@
-import {SnotifyConfig} from '../interfaces/SnotifyConfig.interface';
+import {SnotifyConfig} from '../interfaces/SnotifyToastConfig.interface';
 import {Subject} from 'rxjs/Subject';
 import {SnotifyEvent} from '../types/event.type';
 import {SnotifyStyle} from '../enums/SnotifyStyle.enum';

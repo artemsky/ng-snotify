@@ -208,9 +208,6 @@ $prompt-color: #e0f2f1;
 
 .snotify-prompt {
   background-color: $prompt-bg;
-  .snotifyToast__inner {
-    padding: 10px 15px;
-  }
   ng-snotify-prompt {
     width: 100%;
   }
@@ -219,5 +216,12 @@ $prompt-color: #e0f2f1;
   }
   .snotifyToast__body {
     color: $prompt-color;
+  }
+}
+
+.snotify-confirm,
+.snotify-prompt {
+  .snotifyToast__inner {
+    padding: 10px 15px;
   }
 }

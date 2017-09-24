@@ -4,7 +4,7 @@ import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {PromiseObservable} from 'rxjs/observable/PromiseObservable';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
+import {SnotifyConfig} from './interfaces/SnotifyToastConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
 import {SnotifyStyle} from './enums/SnotifyStyle.enum';
 import {SnotifyType} from './types/snotify.type'
@@ -25,15 +25,6 @@ export class SnotifyService {
   readonly toastDeleted = new Subject<number>();
   private notifications: SnotifyToast[] = [];
 
-  // Callbacks
-  onInit: (info?: SnotifyToast) => void;
-  onClick: (info?: SnotifyToast) => void;
-  onHoverEnter: (info?: SnotifyToast) => void;
-  onHoverLeave: (info?: SnotifyToast) => void;
-  onInput: (info?: SnotifyToast, value?: string) => void;
-  beforeDestroy: (info?: SnotifyToast) => void;
-  afterDestroy: (info?: SnotifyToast) => void;
-
   constructor(@Inject('SnotifyConfig') public config: SnotifyDefaults) {
   }
   /**
@@ -41,10 +32,6 @@ export class SnotifyService {
    */
   private emit(): void {
     this.emitter.next(this.notifications.slice());
-  }
-
-  on(event: any, action: () => void) {
-    //
   }
 
   /**
@@ -98,16 +85,20 @@ export class SnotifyService {
    * @return {number}
    */
   private create(snotify: Snotify): SnotifyToast {
-    this.config.global =
-      mergeDeep(this.config.global, this.config.toast[snotify.config.type], snotify.config);
+    const config =
+      mergeDeep(this.config.toast, this.config.type[snotify.config.type], snotify.config);
     const toast = new SnotifyToast(
       uuid(),
       snotify.title,
       snotify.body,
-      Object.assign({}, this.config.global)
+      config
     );
     this.add(toast);
     return toast;
+  }
+
+  setDefaults(defaults: SnotifyDefaults) {
+    this.config = mergeDeep(this.config, defaults) as SnotifyDefaults;
   }
 
   /**
@@ -396,7 +387,7 @@ export class SnotifyService {
    * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
    * @returns {number}
    */
-  async(body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): SnotifyToast
+  async(body: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
@@ -404,7 +395,7 @@ export class SnotifyService {
    * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
    * @returns {number}
    */
-  async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): SnotifyToast
+  async(body: string, title: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
@@ -412,7 +403,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  async(body: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>, config: SnotifyConfig): SnotifyToast
+  async(body: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyConfig): SnotifyToast
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
@@ -421,7 +412,7 @@ export class SnotifyService {
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
-  async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>, config: SnotifyConfig): SnotifyToast
+  async(body: string, title: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyConfig): SnotifyToast
   /**
    * Transform toast arguments into {Snotify} object
    */
@@ -440,30 +431,20 @@ export class SnotifyService {
 
 
     const toast = this.create(args);
-    let latestToast = Object.assign({}, toast);
-
-    const updateToast = (type: SnotifyType, data?: SnotifyConfig) => {
-      if (!data) {
-        latestToast = mergeDeep(toast, latestToast, {config: {type: type}}) as SnotifyToast;
-      } else {
-        latestToast = mergeDeep(toast, data, {config: {type: type}}) as SnotifyToast;
-      }
-
-      this.toastChanged.next(latestToast);
-    };
 
     toast.on('init',
       (info: SnotifyToast) => {
+        console.log(info)
           const subscription: Subscription = async.subscribe(
-            (next?: SnotifyConfig) => {
-              updateToast(SnotifyStyle.async, next);
+            (next?: Snotify) => {
+              this.mergeToast(toast, next)
             },
-            (error?: SnotifyConfig) => {
-              updateToast(SnotifyStyle.error, error);
+            (error?: Snotify) => {
+              this.mergeToast(toast, error, SnotifyStyle.error);
               subscription.unsubscribe();
             },
             () => {
-              updateToast(SnotifyStyle.success);
+              this.mergeToast(toast, null, SnotifyStyle.success);
               subscription.unsubscribe();
             }
           );
@@ -471,6 +452,25 @@ export class SnotifyService {
     );
 
     return toast;
+  }
+
+  private mergeToast(toast, next, type?: SnotifyType) {
+    if (next.body) {
+      toast.body = next.body;
+    }
+    if (next.title) {
+      toast.title = next.title;
+    }
+    if (type) {
+      toast.config = mergeDeep(toast.config, this.config.global, this.config.toast[type], {type}, next.config)
+    } else {
+      toast.config = mergeDeep(toast.config, next.config)
+    }
+    if (next.html) {
+      toast.config.html = next.html;
+    }
+    console.log(toast)
+    this.toastChanged.next(toast);
   }
 
   /**
