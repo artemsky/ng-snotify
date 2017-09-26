@@ -2,12 +2,13 @@
  * Toast event types
  */
 export type SnotifyEvent
-  = 'init'
+  = 'beforeShow'
+  | 'shown'
   | 'input'
   | 'click'
   | 'mouseenter'
   | 'mouseleave'
-  | 'hide'
+  | 'beforeHide'
   | 'hidden'
   | 'destroyed';
 

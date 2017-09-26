@@ -15,11 +15,11 @@ $toast-progressBarPercentage: #4c4c4c;
   pointer-events: auto;
 
   &--in {
-    animation: appear;
+    animation-name: appear;
   }
 
   &--out {
-    animation: disappear;
+    animation-name: disappear;
   }
 
   &__inner {

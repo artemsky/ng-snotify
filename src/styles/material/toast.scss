@@ -48,11 +48,11 @@ $prompt-color: #e0f2f1;
   pointer-events: auto;
 
   &--in {
-    animation: appear;
+    animation-name: appear;
   }
 
   &--out {
-    animation: disappear;
+    animation-name: disappear;
   }
 
   &__inner {

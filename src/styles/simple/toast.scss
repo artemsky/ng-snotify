@@ -25,11 +25,11 @@ $prompt-border-color: $confirm-border-color;
   pointer-events: auto;
 
   &--in {
-    animation: appear;
+    animation-name: appear;
   }
 
   &--out {
-    animation: disappear;
+    animation-name: disappear;
   }
 
   &__inner {
@@ -119,7 +119,7 @@ $prompt-border-color: $confirm-border-color;
 }
 
 .snotify-prompt {
-  border-left: $border-width solid $prompt-border-color;
+  border-left: $border-width solid $prompt-border-color;animation-name
   ng-snotify-prompt {
     width: 100%;
   }

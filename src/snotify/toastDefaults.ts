@@ -7,6 +7,7 @@ export const ToastDefaults = {
     maxAtPosition: 8
   },
   toast: {
+    type: SnotifyStyle.simple,
     showProgressBar: true,
     timeout: 2000,
     closeOnClick: true,

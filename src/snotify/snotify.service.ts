@@ -93,6 +93,7 @@ export class SnotifyService {
       snotify.body,
       config
     );
+    console.log(toast)
     this.add(toast);
     return toast;
   }
@@ -429,12 +430,10 @@ export class SnotifyService {
       async = args.action;
     }
 
-
     const toast = this.create(args);
 
-    toast.on('init',
+    toast.on('shown',
       (info: SnotifyToast) => {
-        console.log(info)
           const subscription: Subscription = async.subscribe(
             (next?: Snotify) => {
               this.mergeToast(toast, next)
@@ -444,7 +443,7 @@ export class SnotifyService {
               subscription.unsubscribe();
             },
             () => {
-              this.mergeToast(toast, null, SnotifyStyle.success);
+              this.mergeToast(toast, {}, SnotifyStyle.success);
               subscription.unsubscribe();
             }
           );
@@ -469,7 +468,6 @@ export class SnotifyService {
     if (next.html) {
       toast.config.html = next.html;
     }
-    console.log(toast)
     this.toastChanged.next(toast);
   }
 
@@ -483,7 +481,10 @@ export class SnotifyService {
     return this.create({
       title: null,
       body: null,
-      config: mergeDeep(this.config, {type: SnotifyStyle.simple, html}, config),
+      config: {
+        ...config,
+        ...{html}
+      }
     });
   }
 }

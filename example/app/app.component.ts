@@ -71,49 +71,72 @@ export class AppComponent {
   }
 
   onAsyncLoading() {
-    this.snotifyService.async(this.body, this.title,
-      /*
-      You should pass Promise or Observable of type SnotifyConfig to change some data or do some other actions
+    // const errorAction = Observable.create(observer => {
+    //   setTimeout(() => {
+    //     observer.error({
+    //       title: 'Error',
+    //       body: 'Example. Error 404. Service not found',
+    //     });
+    //   }, 2000);
+    // });
+    //
+    // const successAction = Observable.create(observer => {
+    //   setTimeout(() => {
+    //     observer.next({
+    //       body: 'Still loading.....',
+    //     });
+    //   }, 1000);
+    //
+    //   setTimeout(() => {
+    //     observer.next({
+    //       title: 'Success',
+    //       body: 'Example. Data loaded!',
+    //       config: {
+    //         closeOnClick: true,
+    //         timeout: 5000,
+    //         showProgressBar: true
+    //       }
+    //     });
+    //     observer.complete();
+    //   }, this.timeout);
+    // });
+
+    /*
+      You should pass Promise or Observable of type Snotify to change some data or do some other actions
       More information how to work with observables:
       https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
-       */
+     */
 
-      // new Promise((resolve, reject) => {
-      //   setTimeout(() => reject(), 1000);
-      //   setTimeout(() => resolve(), 1500);
-      // })
-      Observable.create(observer => {
-          setTimeout(() => {
-            observer.next({
+    // const justAPromise = new Promise((resolve, reject) => {
+    //   setTimeout(() => reject({
+    //     title: 'Error!!!',
+    //     body: 'We got an example error!'
+    //   }), 1000);
+    //   setTimeout(() => resolve(), 1500);
+    // });
 
-              body: 'Still loading.....',
-            });
-            }, 1000);
+    this.snotifyService.async(this.body, this.title, Observable.create(observer => {
+      setTimeout(() => {
+        observer.next({
+          body: 'Still loading.....',
+        });
+      }, 1000);
 
-        setTimeout(() => {
-          observer.next({
-            title: 'Success',
-            body: 'Example. Data loaded!',
-            config: {
-              closeOnClick: true,
-              timeout: 5000,
-              showProgressBar: true
-            }
-          });
-          observer.complete();
-        }, this.timeout);
-
-          setTimeout(() => {
-            observer.error({
-              title: 'Error',
-              body: 'Example. Error 404. Service not found',
-            });
-          }, 2000);
-
-        },
-        this.getConfig()
-      )
-    );
+      setTimeout(() => {
+        observer.next({
+          title: 'Success',
+          body: 'Example. Data loaded!',
+          config: {
+            closeOnClick: true,
+            timeout: 5000,
+            showProgressBar: true
+          }
+        });
+        observer.complete();
+      }, this.timeout);
+    }), this.getConfig());
+    // this.snotifyService.async(this.body, successAction, this.getConfig());
+    // this.snotifyService.async(this.body, this.title, justAPromise, this.getConfig());
   }
 
   onConfirmation() {
@@ -151,7 +174,7 @@ export class AppComponent {
   }
 
   onHtml() {
-    const html = `<div class="snotifyToast__title" *ngIf="toast.title"><b>Html Bold Title</b></div>
+    const html = `<div class="snotifyToast__title"><b>Html Bold Title</b></div>
     <div class="snotifyToast__body"><i>Html</i> <b>toast</b> <u>content</u></div>`;
     this.snotifyService.html(html, this.getConfig());
   }

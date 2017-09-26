@@ -19,7 +19,7 @@ export class SnotifyToast {
     if (this.config.type === SnotifyStyle.prompt) {
       this.value = '';
     }
-    this.on('destroyed', () => {
+    this.on('hidden', () => {
       this._eventsHolder.forEach((subscription: Subscription) => {
         subscription.unsubscribe();
       })

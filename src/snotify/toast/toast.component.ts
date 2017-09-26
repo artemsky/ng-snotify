@@ -26,6 +26,7 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
    * @type {Object}
    */
   state = {
+    paused: false,
     progress: 0,
     animation: '',
     isDestroying: false,
@@ -37,14 +38,15 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   interval: any;
 
-  constructor(private service: SnotifyService) { }
+  constructor (private service: SnotifyService) {
+  }
 
   // Lifecycles
 
   /**
    * Init base options. Subscribe to toast changed, toast deleted
    */
-  ngOnInit() {
+  ngOnInit () {
     this.toastChangedSubscription = this.service.toastChanged.subscribe(
       (toast: SnotifyToast) => {
         if (this.toast.id === toast.id) {
@@ -59,22 +61,25 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
         }
       }
     );
-    this.toast.eventEmitter.next('init');
+    this.state.animation = 'snotifyToast--in';
   }
 
-  ngAfterContentInit() {
-    this.state.animation = 'snotifyToast--in';
+  ngAfterContentInit () {
+    this.toast.eventEmitter.next('beforeShow');
+    console.log('beforeShow')
+    // this.state.animation = 'snotifyToast--in';
     this.initToast();
-    setTimeout(() => {
-      this.state.animation = this.toast.config.animation.enter;
-    }, 10)
+    // setTimeout(() => {
+    this.state.animation = this.toast.config.animation.enter;
+    // }, 10)
 
   }
 
   /**
    * Unsubscribe subscriptions
    */
-  ngOnDestroy(): void {
+  ngOnDestroy (): void {
+    console.log('destroyed')
     this.toast.eventEmitter.next('destroyed');
     this.toastChangedSubscription.unsubscribe();
     this.toastDeletedSubscription.unsubscribe();
@@ -87,7 +92,7 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
   /**
    * Trigger OnClick lifecycle
    */
-  onClick() {
+  onClick () {
     this.toast.eventEmitter.next('click');
     if (this.toast.config.closeOnClick) {
       this.service.remove(this.toast.id);
@@ -97,33 +102,37 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
   /**
    * Trigger beforeDestroy lifecycle. Removes toast
    */
-  onRemove() {
-    this.toast.eventEmitter.next('hide');
+  onRemove () {
+    console.log('beforeHide')
+    this.toast.eventEmitter.next('beforeHide');
     this.state.isDestroying = true;
     clearInterval(this.interval);
     this.state.animation = this.toast.config.animation.exit;
     setTimeout(() => {
+      console.log('hidden');
       this.state.animation = 'snotifyToast--out';
-      this.toast.eventEmitter.next('hidden');
-    }, this.toast.config.animation.time / 4);
+      // this.toast.eventEmitter.next('hidden');
+      // this.service.remove(this.toast.id, true);
+    }, this.toast.config.animation.time);
   }
 
   /**
    * Trigger onHoverEnter lifecycle
    */
-  onMouseEnter() {
+  onMouseEnter () {
     this.toast.eventEmitter.next('mouseenter');
     if (this.toast.config.pauseOnHover) {
-      clearInterval(this.interval);
+      this.state.paused = true;
     }
   }
 
   /**
    * Trigger onHoverLeave lifecycle
    */
-  onMouseLeave() {
+  onMouseLeave () {
     if (this.toast.config.pauseOnHover && this.toast.config.timeout) {
-      this.startTimeout(this.state.progress);
+      this.state.paused = false;
+      this.startTimeout(this.toast.config.timeout * this.state.progress);
     }
     this.toast.eventEmitter.next('mouseleave');
   }
@@ -131,7 +140,7 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
   /**
    * Prompt input value changed
    */
-  onPromptChanged(value: string) {
+  onPromptChanged (value: string) {
     this.toast.eventEmitter.next('input');
     this.toast.value = value;
   }
@@ -139,10 +148,13 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
   /**
    * Remove toast completely after animation
    */
-  onExitTransitionEnd() {
+  onExitTransitionEnd () {
     if (this.state.isDestroying) {
-      this.service.remove(this.toast.id, true);
+      return this.service.remove(this.toast.id, true);
     }
+    console.log('shown');
+    this.state.isDestroying = true;
+    this.toast.eventEmitter.next('shown');
   }
 
   /*
@@ -153,38 +165,38 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
    * Initialize base toast config
    * @param toast {SnotifyToast}
    */
-  initToast(toast?: SnotifyToast) {
+  initToast (toast?: SnotifyToast) {
     if (toast) {
-      if (this.toast.config.type !== toast.config.type) {
-        clearInterval(this.interval);
-      }
-      this.toast = toast;
+      // this.toast = toast;
     }
     if (this.toast.config.timeout > 0) {
       this.startTimeout(0);
-    } else {
-      this.toast.config.showProgressBar = false;
-      this.toast.config.pauseOnHover = false;
     }
   }
 
   /**
    * Start progress bar
-   * @param currentProgress {Number}
+   * @param startTime {number}
+   * @default 0
    */
-  startTimeout(currentProgress: number) {
-    const refreshRate = 10;
-    if (this.state.isDestroying) {
-      return;
-    }
-    this.state.progress = currentProgress;
-    const step = refreshRate / this.toast.config.timeout * 100;
-      this.interval = setInterval(() => {
-        this.state.progress += step;
-        if (this.state.progress >= 100) {
-          this.service.remove(this.toast.id);
+  startTimeout (startTime: number = 0) {
+    const start = performance.now();
+    const calculate = () => {
+      const frame = requestAnimationFrame((timestamp) => {
+        const runtime = timestamp + startTime - start;
+        const progress = Math.min(runtime / this.toast.config.timeout, 1);
+        if (this.state.paused) {
+          cancelAnimationFrame(frame);
+        } else if (runtime < this.toast.config.timeout) {
+          this.state.progress = progress;
+          calculate();
+        } else {
+          this.state.progress = 1;
+          cancelAnimationFrame(frame);
         }
-      }, refreshRate);
+      })
+    };
+    calculate();
   }
 
 }
