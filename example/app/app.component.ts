@@ -72,56 +72,21 @@ export class AppComponent {
   }
 
   onAsyncLoading() {
-    // const errorAction = Observable.create(observer => {
-    //   setTimeout(() => {
-    //     observer.error({
-    //       title: 'Error',
-    //       body: 'Example. Error 404. Service not found',
-    //     });
-    //   }, 2000);
-    // });
-    //
-    // const successAction = Observable.create(observer => {
-    //   setTimeout(() => {
-    //     observer.next({
-    //       body: 'Still loading.....',
-    //     });
-    //   }, 1000);
-    //
-    //   setTimeout(() => {
-    //     observer.next({
-    //       title: 'Success',
-    //       body: 'Example. Data loaded!',
-    //       config: {
-    //         closeOnClick: true,
-    //         timeout: 5000,
-    //         showProgressBar: true
-    //       }
-    //     });
-    //     observer.complete();
-    //   }, this.timeout);
-    // });
+    const errorAction = Observable.create(observer => {
+      setTimeout(() => {
+        observer.error({
+          title: 'Error',
+          body: 'Example. Error 404. Service not found',
+        });
+      }, 2000);
+    });
 
-    /*
-      You should pass Promise or Observable of type Snotify to change some data or do some other actions
-      More information how to work with observables:
-      https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
-     */
-
-    // const justAPromise = new Promise((resolve, reject) => {
-    //   setTimeout(() => reject({
-    //     title: 'Error!!!',
-    //     body: 'We got an example error!'
-    //   }), 1000);
-    //   setTimeout(() => resolve(), 1500);
-    // });
-
-    this.snotifyService.async(this.body, this.title, Observable.create(observer => {
+    const successAction = Observable.create(observer => {
       setTimeout(() => {
         observer.next({
           body: 'Still loading.....',
         });
-      }, 1000);
+      }, 2000);
 
       setTimeout(() => {
         observer.next({
@@ -134,10 +99,25 @@ export class AppComponent {
           }
         });
         observer.complete();
-      }, this.timeout);
-    }), this.getConfig());
-    // this.snotifyService.async(this.body, successAction, this.getConfig());
-    // this.snotifyService.async(this.body, this.title, justAPromise, this.getConfig());
+      }, 5000);
+    });
+
+    /*
+      You should pass Promise or Observable of type Snotify to change some data or do some other actions
+      More information how to work with observables:
+      https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
+     */
+    const {timeout, ...config} = this.getConfig(); // Omit timeout
+    this.snotifyService.async('This will resolve with error', 'Async', errorAction, config);
+    this.snotifyService.async('This will resolve with success', successAction, config);
+    this.snotifyService.async('Called with promise', 'Error async',
+      new Promise((resolve, reject) => {
+        setTimeout(() => reject({
+          title: 'Error!!!',
+          body: 'We got an example error!'
+        }), 1000);
+        setTimeout(() => resolve(), 1500);
+      }));
   }
 
   onConfirmation() {

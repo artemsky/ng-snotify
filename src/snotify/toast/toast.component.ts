@@ -62,6 +62,9 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
         }
       }
     );
+    if (!this.toast.config.timeout) {
+      this.toast.config.showProgressBar = false;
+    }
     console.log('mounted')
     this.toast.eventEmitter.next('mounted');
     this.state.animation = 'snotifyToast--in';
