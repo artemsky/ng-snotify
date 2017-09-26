@@ -93,7 +93,6 @@ export class SnotifyService {
       snotify.body,
       config
     );
-    console.log(toast)
     this.add(toast);
     return toast;
   }

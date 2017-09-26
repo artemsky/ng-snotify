@@ -2,7 +2,8 @@
  * Toast event types
  */
 export type SnotifyEvent
-  = 'beforeShow'
+  = 'mounted'
+  | 'beforeShow'
   | 'shown'
   | 'input'
   | 'click'

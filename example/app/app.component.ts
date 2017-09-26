@@ -49,6 +49,7 @@ export class AppComponent {
 
   onSuccess() {
     this.snotifyService.success(this.body, this.title, this.getConfig())
+    this.snotifyService.success(this.body, this.title, this.getConfig())
   }
   onInfo() {
     this.snotifyService.info(this.body, this.title, this.getConfig());
