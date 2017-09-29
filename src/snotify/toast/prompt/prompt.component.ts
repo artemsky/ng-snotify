@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output,
   ViewEncapsulation
 } from '@angular/core';
-import {SnotifyService} from '../../snotify.service';
 import {uuid} from '../../utils';
 
 @Component({

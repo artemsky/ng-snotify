@@ -48,7 +48,7 @@ export class SnotifyService {
    * @param toast {SnotifyToast}
    */
   private add(toast: SnotifyToast): void {
-    if (toast.config.newOnTop) {
+    if (this.config.global.newOnTop) {
       this.notifications.unshift(toast);
     } else {
       this.notifications.push(toast);
@@ -84,7 +84,7 @@ export class SnotifyService {
    * @param snotify {Snotify}
    * @return {number}
    */
-  private create(snotify: Snotify): SnotifyToast {
+  create(snotify: Snotify): SnotifyToast {
     const config =
       mergeDeep(this.config.toast, this.config.type[snotify.config.type], snotify.config);
     const toast = new SnotifyToast(
@@ -97,8 +97,8 @@ export class SnotifyService {
     return toast;
   }
 
-  setDefaults(defaults: SnotifyDefaults) {
-    this.config = mergeDeep(this.config, defaults) as SnotifyDefaults;
+  setDefaults(defaults: SnotifyDefaults): SnotifyDefaults {
+    return this.config = mergeDeep(this.config, defaults) as SnotifyDefaults;
   }
 
   /**
@@ -384,7 +384,7 @@ export class SnotifyService {
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
-   * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
+   * @param action {Promise<Snotify> | Observable<Snotify>}
    * @returns {number}
    */
   async(body: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
@@ -392,14 +392,14 @@ export class SnotifyService {
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
    * @param title {String}
-   * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
+   * @param action {Promise<Snotify> | Observable<Snotify>}
    * @returns {number}
    */
   async(body: string, title: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
-   * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
+   * @param action {Promise<Snotify> | Observable<Snotify>}
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
@@ -408,7 +408,7 @@ export class SnotifyService {
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
    * @param title {String}
-   * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
+   * @param action {Promise<Snotify> | Observable<Snotify>}
    * @param [config] {SnotifyConfig}
    * @returns {number}
    */
@@ -431,8 +431,8 @@ export class SnotifyService {
 
     const toast = this.create(args);
 
-    toast.on('shown',
-      (info: SnotifyToast) => {
+    toast.on('mounted',
+      () => {
           const subscription: Subscription = async.subscribe(
             (next?: Snotify) => {
               this.mergeToast(toast, next)

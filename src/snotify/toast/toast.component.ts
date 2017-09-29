@@ -65,7 +65,6 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
     if (!this.toast.config.timeout) {
       this.toast.config.showProgressBar = false;
     }
-    console.log('mounted')
     this.toast.eventEmitter.next('mounted');
     this.state.animation = 'snotifyToast--in';
   }
@@ -74,7 +73,6 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
     setTimeout(() => {
       this.stateChanged.emit('beforeShow');
       this.toast.eventEmitter.next('beforeShow');
-      console.log('beforeShow')
       this.state.animation = this.toast.config.animation.enter;
     }, this.service.config.toast.animation.time / 5); // time to show toast push animation (snotifyToast--in)
   }
@@ -83,7 +81,6 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
    * Unsubscribe subscriptions
    */
   ngOnDestroy (): void {
-    console.log('destroyed')
     cancelAnimationFrame(this.animationFrame);
     this.toast.eventEmitter.next('destroyed');
     this.toastChangedSubscription.unsubscribe();
@@ -108,13 +105,11 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
    * Trigger beforeDestroy lifecycle. Removes toast
    */
   onRemove () {
-    console.log('beforeHide')
     this.state.isDestroying = true;
     this.stateChanged.emit('beforeHide');
     this.toast.eventEmitter.next('beforeHide');
     this.state.animation = this.toast.config.animation.exit;
     setTimeout(() => {
-      console.log('hidden');
       this.stateChanged.emit('hidden');
       this.state.animation = 'snotifyToast--out';
       this.toast.eventEmitter.next('hidden');
@@ -159,7 +154,6 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
       return;
     }
     this.initToast();
-    console.log('shown');
     this.toast.eventEmitter.next('shown');
   }
 

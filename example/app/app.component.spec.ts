@@ -133,7 +133,7 @@ describe('NgSnotify Testing', () => {
     const compiled = fixture.debugElement.nativeElement;
     fixture.detectChanges();
     service.setConfig(null, {
-      position: SnotifyPosition.right_bottom,
+      position: SnotifyPosition.rightBottom,
       maxAtPosition: 3
     });
     fixture.detectChanges();
@@ -154,10 +154,10 @@ describe('NgSnotify Testing', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     service.simple('Test', null, {
-      position: SnotifyPosition.center_bottom
+      position: SnotifyPosition.centerBottom
     });
     service.success('Test', null, {
-      position: SnotifyPosition.left_bottom
+      position: SnotifyPosition.leftBottom
     });
     fixture.detectChanges();
     expect(compiled.querySelectorAll('.snotify-leftBottom > ng-snotify-toast').length).toEqual(1);

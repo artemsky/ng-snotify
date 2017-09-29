@@ -1,9 +1,8 @@
+import {SnotifyToast} from '../toast/snotify-toast.model';
 /**
  * Buttons config.
- * By default there are two buttons exists only on type PROMPT & CONFIRM.
- *
- * Default - 1st button | 2nd button
  */
+
 export interface SnotifyButton {
   /**
    * Button text
@@ -18,7 +17,7 @@ export interface SnotifyButton {
    * @returns {void}
    * @default null | () => this.remove(id)
    */
-  action?: (id?: number, text?: string) => void;
+  action?: (toast: SnotifyToast) => void;
   /**
    * Should button text be bold.
    * @default true | false

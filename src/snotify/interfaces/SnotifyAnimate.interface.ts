@@ -6,17 +6,17 @@
 export interface SnotifyAnimate {
   /**
    * In animation
-   * @type {'fadeOutLeft' | 'fadeOutRight' | 'fadeOutUp' | 'fadeOutDown' | string}
+   * @type {string}
    *
-   * @default Depends on toast position
+   * @default 'fadeIn'
    */
-  enter: 'fadeInLeft' | 'fadeInRight' | 'fadeInUp' | 'fadeInDown' | string;
+  enter: string;
   /**
    * Out animation
-   * @type {'fadeOutLeft' | 'fadeOutRight' | 'fadeOutUp' | 'fadeOutDown' | string}
-   * @default Depends on toast position
+   * @type {string}
+   * @default 'fadeOut'
    */
-  exit: 'fadeOutLeft' | 'fadeOutRight' | 'fadeOutUp' | 'fadeOutDown' | string;
+  exit: string;
   /**
    * Animation time in ms
    * @type {number}

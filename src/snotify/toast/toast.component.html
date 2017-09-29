@@ -31,5 +31,5 @@
   <ng-template #toastHTML>
     <div class="snotifyToast__inner" [innerHTML]="toast.config.html"></div>
   </ng-template>
-  <ng-snotify-button *ngIf="toast.config.buttons" [buttons]="toast.config.buttons" [text]="toast.value ? toast.value : null" [id]="toast.id"></ng-snotify-button>
+  <ng-snotify-button *ngIf="toast.config.buttons" [toast]="toast"></ng-snotify-button>
 </div>

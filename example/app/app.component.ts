@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {SnotifyService, SnotifyToast, SnotifyPosition} from 'ng-snotify';
-import {SnotifyConfig} from '../../src/snotify/interfaces/SnotifyToastConfig.interface';
+import {SnotifyService, SnotifyPosition, SnotifyConfig} from 'ng-snotify';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +12,7 @@ export class AppComponent {
   title = 'Snotify title!';
   body = 'Lorem ipsum dolor sit amet!';
   timeout = 3000;
-  position: SnotifyPosition = SnotifyPosition.right_bottom;
+  position: SnotifyPosition = SnotifyPosition.rightBottom;
   progressBar = true;
   closeClick = true;
   newTop = true;
@@ -31,15 +30,18 @@ export class AppComponent {
   Change global configuration
    */
   getConfig(): SnotifyConfig {
+    this.snotifyService.setDefaults({
+      global: {
+        newOnTop: this.newTop,
+        maxAtPosition: this.blockMax,
+        maxOnScreen: this.dockMax,
+      }
+    });
     return {
       bodyMaxLength: this.bodyMaxLength,
       titleMaxLength: this.titleMaxLength,
       backdrop: this.backdrop,
-      newOnTop: this.newTop,
       position: this.position,
-      maxOnScreen: this.dockMax,
-      maxAtPosition: this.blockMax,
-      maxHeight: this.maxHeight,
       timeout: this.timeout,
       showProgressBar: this.progressBar,
       closeOnClick: this.closeClick,
@@ -48,8 +50,7 @@ export class AppComponent {
   }
 
   onSuccess() {
-    this.snotifyService.success(this.body, this.title, this.getConfig())
-    this.snotifyService.success(this.body, this.title, this.getConfig())
+    this.snotifyService.success(this.body, this.title, this.getConfig());
   }
   onInfo() {
     this.snotifyService.info(this.body, this.title, this.getConfig());
@@ -114,7 +115,10 @@ export class AppComponent {
       new Promise((resolve, reject) => {
         setTimeout(() => reject({
           title: 'Error!!!',
-          body: 'We got an example error!'
+          body: 'We got an example error!',
+          config: {
+            closeOnClick: true
+          }
         }), 1000);
         setTimeout(() => resolve(), 1500);
       }));
@@ -130,8 +134,8 @@ export class AppComponent {
       buttons: [
         {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
         {text: 'No', action: () => console.log('Clicked: No')},
-        {text: 'Later', action: (id) => {console.log('Clicked: Later'); this.snotifyService.remove(id); } },
-        {text: 'Close', action: (id) => {console.log('Clicked: Close'); this.snotifyService.remove(id); }, bold: true},
+        {text: 'Later', action: (toast) => {console.log('Clicked: Later'); this.snotifyService.remove(toast.id); } },
+        {text: 'Close', action: (toast) => {console.log('Clicked: Close'); this.snotifyService.remove(toast.id); }, bold: true},
       ]
     });
   }
@@ -143,12 +147,12 @@ export class AppComponent {
      At the second we can't get it. But we can remove this toast
      */
     const {timeout, closeOnClick, ...config} = this.getConfig(); // Omit props what i don't need
-    const toast = this.snotifyService.prompt(this.body, this.title, {
+    this.snotifyService.prompt(this.body, this.title, {
       ...config,
       buttons: [
-        {text: 'Yes', action: (id, text) => console.log(toast.valid = !toast.valid)
+        {text: 'Yes', action: (toast) => console.log(toast.valid = !toast.valid)
         },
-        {text: 'No', action: (id, text) => { console.log('Said No: ' + text); this.snotifyService.remove(id); }},
+        {text: 'No', action: (toast) => { console.log('Said No: ' + toast.value); this.snotifyService.remove(toast.id); }},
       ],
       placeholder: 'This is the example placeholder which you can pass' // Max-length = 40
     });

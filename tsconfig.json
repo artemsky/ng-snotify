@@ -1,8 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist-example/out-tsc",
-    "baseUrl": "dist-example",
+    "outDir": "./demo-example/out-tsc",
+    "baseUrl": "demo-example",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",

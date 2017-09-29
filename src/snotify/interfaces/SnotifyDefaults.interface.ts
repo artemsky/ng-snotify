@@ -6,9 +6,9 @@ import {SnotifyGlobalConfig} from './SnotifGlobalConfig.interface';
  * Global configuration object
  */
 export interface SnotifyDefaults {
-  global: SnotifyGlobalConfig,
-  toast: SnotifyConfig,
-  type: {
+  global?: SnotifyGlobalConfig,
+  toast?: SnotifyConfig,
+  type?: {
     [key: string]: SnotifyConfig
   }
 }
