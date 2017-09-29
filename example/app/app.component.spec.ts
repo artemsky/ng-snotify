@@ -3,7 +3,7 @@
 import { FormsModule } from '@angular/forms';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {SnotifyModule, SnotifyService} from 'ng-snotify';
+import {SnotifyModule, SnotifyService, ToastDefaults} from 'ng-snotify';
 import {SnotifyPosition} from '../../src/snotify/enums/SnotifyPosition.enum';
 
 describe('NgSnotify Testing', () => {
@@ -13,7 +13,10 @@ describe('NgSnotify Testing', () => {
       declarations: [
         AppComponent
       ],
-      providers: [SnotifyService]
+      providers: [
+        { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+        SnotifyService
+      ]
     });
   });
 
@@ -37,9 +40,7 @@ describe('NgSnotify Testing', () => {
     const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
-    expect(service.config).toEqual(jasmine.objectContaining({
-      ...service.config
-    }));
+    expect(service.config).toEqual(jasmine.objectContaining(ToastDefaults));
     done();
   });
 
