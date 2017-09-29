@@ -4,7 +4,7 @@ import {SnotifyType} from '../types/snotify.type';
 import {SafeHtml} from '@angular/platform-browser';
 import {SnotifyPosition} from '../enums/SnotifyPosition.enum';
 
-export interface SnotifyConfig {
+export interface SnotifyToastConfig {
 
   /**
    * Toast timeout in milliseconds.

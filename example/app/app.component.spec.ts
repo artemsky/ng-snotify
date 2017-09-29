@@ -37,11 +37,8 @@ describe('NgSnotify Testing', () => {
     const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
-    expect(service.options).toEqual(jasmine.objectContaining({
-      ...service.options,
-      newOnTop: false,
-      position: app.position,
-      maxHeight: 500
+    expect(service.config).toEqual(jasmine.objectContaining({
+      ...service.config
     }));
     done();
   });
@@ -126,15 +123,19 @@ describe('NgSnotify Testing', () => {
     done();
   });
 
-  it('should create 3 toasts max at rightBottom position', (done) => {
+  it('should create 3 toasts max at rightTop position', (done) => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     const compiled = fixture.debugElement.nativeElement;
     fixture.detectChanges();
-    service.setConfig(null, {
-      position: SnotifyPosition.rightBottom,
-      maxAtPosition: 3
+    service.setDefaults({
+      global: {
+        maxAtPosition: 3
+      },
+      toast: {
+        position: SnotifyPosition.rightTop,
+      }
     });
     fixture.detectChanges();
 
@@ -143,7 +144,7 @@ describe('NgSnotify Testing', () => {
     service.error('Test');
 
     fixture.detectChanges();
-    expect(compiled.querySelectorAll('.snotify-rightBottom > ng-snotify-toast').length).toEqual(3);
+    expect(compiled.querySelectorAll('.snotify-rightTop > ng-snotify-toast').length).toEqual(3);
     done();
   });
 

@@ -1,5 +1,5 @@
 // tslint:disable:no-trailing-whitespace
-import {SnotifyConfig} from './SnotifyToastConfig.interface';
+import {SnotifyToastConfig} from './SnotifyToastConfig.interface';
 import {SnotifyGlobalConfig} from './SnotifGlobalConfig.interface';
 
 /**
@@ -7,8 +7,8 @@ import {SnotifyGlobalConfig} from './SnotifGlobalConfig.interface';
  */
 export interface SnotifyDefaults {
   global?: SnotifyGlobalConfig,
-  toast?: SnotifyConfig,
+  toast?: SnotifyToastConfig,
   type?: {
-    [key: string]: SnotifyConfig
+    [key: string]: SnotifyToastConfig
   }
 }

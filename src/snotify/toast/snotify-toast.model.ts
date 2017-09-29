@@ -1,4 +1,4 @@
-import {SnotifyConfig} from '../interfaces/SnotifyToastConfig.interface';
+import {SnotifyToastConfig} from '../interfaces/SnotifyToastConfig.interface';
 import {Subject} from 'rxjs/Subject';
 import {SnotifyEvent} from '../types/event.type';
 import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
@@ -15,7 +15,7 @@ export class SnotifyToast {
   constructor (public id: number,
                public title: string,
                public body: string,
-               public config: SnotifyConfig) {
+               public config: SnotifyToastConfig) {
     if (this.config.type === SnotifyStyle.prompt) {
       this.value = '';
     }

@@ -1,4 +1,4 @@
-import {SnotifyConfig} from './SnotifyToastConfig.interface';
+import {SnotifyToastConfig} from './SnotifyToastConfig.interface';
 import {SafeHtml} from '@angular/platform-browser';
 
 /**
@@ -17,9 +17,9 @@ export interface Snotify {
   body?: string;
   /**
    * Config object
-   * @type {SnotifyConfig}
+   * @type {SnotifyToastConfig}
    */
-  config?: SnotifyConfig;
+  config?: SnotifyToastConfig;
   /**
    * Html content
    */

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {SnotifyService, SnotifyPosition, SnotifyConfig} from 'ng-snotify';
+import {SnotifyService, SnotifyPosition, SnotifyToastConfig} from 'ng-snotify';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +29,7 @@ export class AppComponent {
   /*
   Change global configuration
    */
-  getConfig(): SnotifyConfig {
+  getConfig(): SnotifyToastConfig {
     this.snotifyService.setDefaults({
       global: {
         newOnTop: this.newTop,
