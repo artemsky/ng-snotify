@@ -41,24 +41,6 @@ export function mergeDeep(...sources) {
   return target;
 }
 
-// var adiv = document.getElementById('Notes')
-// var starttime
-//
-// function animate(timestamp, el, dist, duration){
-//   //if browser doesn't support requestAnimationFrame, generate our own timestamp using Date:
-//   var timestamp = timestamp;
-//   var runtime = timestamp - starttime
-//   var progress = runtime / duration
-//   progress = Math.min(progress, 1)
-//   el.style.left = (dist * progress).toFixed(2) + 'px'
-//   if (runtime < duration){ // if duration not met yet
-//     requestAnimationFrame(function(timestamp){ // call requestAnimationFrame again with parameters
-//       moveit(timestamp, el, dist, duration)
-//     })
-//   }
-// }
-
-
 export function animate(start: number, duration: number, callback: (currentValue: number, progress: number) => void) {
   let endTime;
   requestAnimationFrame((timestamp) => endTime = timestamp + duration);

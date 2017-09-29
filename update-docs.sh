@@ -1,7 +1,5 @@
 rm -rf demo
-npm run lib:build
-npm run link:dist
-npm run example:build
+npm run example:build:prod
 cd docs
 rm -rf _book
 gitbook install
@@ -11,4 +9,4 @@ cd ../demo
 git init
 git add -A
 git commit -m 'update demo'
-git push -f git@github.com:artemsky/vue-snotify.git master:gh-pages
+git push -f git@github.com:artemsky/ng-snotify.git master:gh-pages
