@@ -13,7 +13,7 @@
   (toast: Snotify) => void
   ```
   
-  > * [Snotify](interfaces.md#snotify)
+  > [Snotify](interfaces.md#snotify)
   
 # Events
 
@@ -28,7 +28,7 @@
  - `"hidden"`
  - `"destroyed"`
  
- > Events type - [SnotifyEvent](types#snotifyevent) 
+ > Events type - [SnotifyEvent](types.md#snotifyevent) 
  
   ```js
     toast.on( "click", (toast: Snotify) => {

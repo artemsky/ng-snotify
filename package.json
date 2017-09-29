@@ -22,7 +22,7 @@
     "test": "tsc && karma start --single-run",
     "lib:lint": "npm run lint && npm run example:lint",
     "lib:build": "npm run lib:lint && npm run build && npm run link:dist && npm run example:build:prod && npm run docs",
-    "docs:build": "gitbook build ./documentation ./demo/documentation",
+    "docs:build": "gitbook build ./docs ./demo/documentation",
     "docs:deploy": "bash ./update-docs.sh"
   },
   "homepage": "https://artemsky.github.io/ng-snotify",
