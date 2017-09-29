@@ -63,7 +63,7 @@
 ### SnotifyDefaults
 
 ### global
-- type: [SnotifyGlobalConfig]()
+- type: [SnotifyGlobalConfig](options.md#snotifyglobalconfig)
 > Notifications dock config
 
 ### toast
@@ -73,7 +73,7 @@
 ### type
 - type: `{ [key: SnotifyType]: SnotifyConfig }`
 > Toast type default config  
-> Example can be found in [options](options.md#defaultconfig) defaults
+> Example can be found in [options](options.md#setting-default-configuration) defaults
 
 
 ### SnotifyStyles
