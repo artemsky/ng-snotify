@@ -126,4 +126,9 @@
       border-color: $error;
     }
   }
+  &--valid {
+    .snotifyToast__input__label::before {
+      border-color: $success;
+    }
+  }
 }

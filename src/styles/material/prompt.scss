@@ -127,4 +127,10 @@
       border-color: $error-bg;
     }
   }
+
+  &--valid {
+    .snotifyToast__input__label::before {
+      border-color: $success-bg;
+    }
+  }
 }

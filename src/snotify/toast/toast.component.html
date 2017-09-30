@@ -3,7 +3,7 @@
   'snotifyToast animated',
    'snotify-' + toast.config.type,
     state.animation,
-    toast.valid ? 'snotifyToast--valid' : 'snotifyToast--invalid'
+    toast.valid === undefined ? '' : (toast.valid ? 'snotifyToast--valid' : 'snotifyToast--invalid')
   ]"
   [ngStyle]="{
   '-webkit-transition': toast.config.animation.time + 'ms',
