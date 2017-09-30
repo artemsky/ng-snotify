@@ -2,6 +2,7 @@
 
 ## toast.on( event, callback )
 
+> You can chain callbacks `on(e, func).on(e, func)...`
 
 ### Callback
 

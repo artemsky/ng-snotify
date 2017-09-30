@@ -9,7 +9,7 @@
 #### Import Module
 Import SnotifyModule, also you can try SnotifyModule.forRoot() if you have build errors  
 And provide SnotifyService with default configuration object  
-> How to change ToastDefaults config - [options](api/options.md)
+> How to change ToastDefaults config - [options](api/snotify.md#setdefaults)  
 
 ```typescript
 // Import your library

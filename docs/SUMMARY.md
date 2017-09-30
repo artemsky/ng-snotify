@@ -49,3 +49,4 @@
   * [Animations](essentials/animations.md)
   * [Styling](essentials/styling.md)
   * [Development](essentials/development.md)
+* [Upgrading from v3](essentials/upgrade.md)
