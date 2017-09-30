@@ -20,15 +20,15 @@ Signature:
 
 ### value
 
-- type: `Subject<SnotifyEvent>` *readonly*
+- type: `string` *readonly*
 - default: `''`
 > It is defined only if toast type === `prompt`. Another case it stays `undefined`
 
 
 ### valid
 
-- type: `Subject<SnotifyEvent>`
-- default: `true`
+- type: `boolean`
+- default: `undefined`
 > Finds out if toast is valid or not.  
 > Helper class to support `prompt` input validation.  
 > Apply `snotifyToast--valid` or `snotifyToast--invalid` class names
@@ -57,6 +57,6 @@ Signature:
 
 ### config
 
-- type: [SnotifyConfig](options.md#snotifyconfig)
+- type: [SnotifyToastConfig](options.md#snotifytoastconfig)
 - default: `<Automatically generated value>`
-> Merges [default config](options.md#defaultconfig) with toast type config
+> Merges [default config](options.md#setting-default-configuration) with toast type config

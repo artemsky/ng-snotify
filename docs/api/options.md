@@ -68,7 +68,7 @@ export class AppModule { }
 
 - type: [SnotifyButton[]](interfaces.md#snotifybutton)
 - default: 
-  ```js
+  ```typescript
     [
       {text: 'Ok', action: null, bold: true},
       {text: 'Cancel', action: null, bold: false},

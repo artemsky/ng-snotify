@@ -61,7 +61,7 @@ const errorAction = Observable.create(observer => {
 service.async('This will resolve with error', 'Async', errorAction);
 ```
 
-#### Prompt
+#### Prompt & Validation
 ```typescript
 const yesAction = (toast: SnotifyToast) => {
   if (!toast.value.match('snotify')) {

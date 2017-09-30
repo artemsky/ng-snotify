@@ -17,14 +17,14 @@
 
 ### html
 - type: `string` | [SafeHtml](https://angular.io/api/platform-browser/SafeHtml)  
-> Toast configuration object
+> Toast html content inside `.snotifyToast__inner`
 
 
 ## SnotifyButton
 
 ### text
 - type: `string`   
-> Toast timeout in milliseconds. 0 - Disable timeout
+> Button text
 
 ### action
 - type: `function` 
@@ -77,6 +77,7 @@
 
 
 ### SnotifyStyles
+> Append snotify-${name} class name to snotify element
 
 ### simple
 - type: [SnotifyType](types.md#snotifytype)
