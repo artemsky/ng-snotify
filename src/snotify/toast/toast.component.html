@@ -1,26 +1,27 @@
 <div
-  class="snotifyToast animated"
-  [ngClass]="['snotify-' + toast.config.type, state.toast.animation]"
+  [ngClass]="[
+  'snotifyToast animated',
+   'snotify-' + toast.config.type,
+    state.animation,
+    toast.valid === undefined ? '' : (toast.valid ? 'snotifyToast--valid' : 'snotifyToast--invalid')
+  ]"
   [ngStyle]="{
-  'max-height': maxHeight + 'px',
-  '-webkit-transition': state.toast.time + 300 + 'ms',
-  transition: state.toast.time + 300 + 'ms',
-  '-webkit-animation-duration': state.toast.time + 'ms',
-  'animation-duration': state.toast.time + 'ms'
+  '-webkit-transition': toast.config.animation.time + 'ms',
+  transition: toast.config.animation.time + 'ms',
+  '-webkit-animation-duration': toast.config.animation.time + 'ms',
+  'animation-duration': toast.config.animation.time + 'ms'
   }"
   (animationend)="onExitTransitionEnd()"
-  (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" #toastEl>
+  (click)="onClick()" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
   <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
-    <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': state.toast.progress + '%'}"></span>
+    <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': (state.progress * 100) + '%'}"></span>
   </div>
   <div class="snotifyToast__inner" *ngIf="!toast.config.html; else toastHTML">
     <div class="snotifyToast__title" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>
-    <div class="snotifyToast__body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>
-    <ng-snotify-prompt *ngIf="state.toast.type === state.promptType"
-                       [placeholder]="toast.config.placeholder"
-                       (valueChanged)="onPromptChanged($event)">
+    <div class="snotifyToast__body" *ngIf="toast.body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>
+    <ng-snotify-prompt *ngIf="toast.config.type === state.promptType" [toast]="toast">
     </ng-snotify-prompt>
-    <ng-snotify-icon *ngIf="!toast.config.icon; else elseBlock" class="snotify-icon" [type]="state.toast.type"></ng-snotify-icon>
+    <div *ngIf="!toast.config.icon; else elseBlock" [ngClass]="['snotify-icon', 'snotify-icon--' + toast.config.type]"></div>
     <ng-template #elseBlock>
       <img class="snotify-icon" [src]='toast.config.icon' />
     </ng-template>
@@ -28,5 +29,5 @@
   <ng-template #toastHTML>
     <div class="snotifyToast__inner" [innerHTML]="toast.config.html"></div>
   </ng-template>
-  <ng-snotify-button *ngIf="toast.config.buttons" [buttons]="toast.config.buttons" [text]="state.toast.type === state.promptType ? state.prompt : null" [id]="toast.id"></ng-snotify-button>
+  <ng-snotify-button *ngIf="toast.config.buttons" [toast]="toast"></ng-snotify-button>
 </div>

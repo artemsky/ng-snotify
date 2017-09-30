@@ -18,3 +18,5 @@ install:
 script:
   - npm run lib:build
   - npm run test
+  - npm run example:build:prod
+  - npm run compodoc:build

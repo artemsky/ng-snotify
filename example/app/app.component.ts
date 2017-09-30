@@ -1,239 +1,168 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {SnotifyService, SnotifyToast, SnotifyPosition} from 'ng-snotify';
+import {SnotifyService, SnotifyPosition, SnotifyToastConfig} from 'ng-snotify';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   style = 'material';
   title = 'Snotify title!';
   body = 'Lorem ipsum dolor sit amet!';
   timeout = 3000;
-  position: SnotifyPosition = SnotifyPosition.right_bottom;
+  position: SnotifyPosition = SnotifyPosition.rightBottom;
   progressBar = true;
   closeClick = true;
   newTop = true;
   backdrop = -1;
-  dockMax = 6;
-  blockMax = 3;
+  dockMax = 8;
+  blockMax = 6;
   pauseHover = true;
-  maxHeight = 300;
   titleMaxLength = 15;
   bodyMaxLength = 80;
 
   constructor(private snotifyService: SnotifyService) {}
 
-  ngOnInit() {
-    this.snotifyService.setConfig({
-      timeout: 3000,
-      titleMaxLength: 14,
-      bodyMaxLength: 40
-    }, {
-      newOnTop: false,
-      position: this.position,
-      maxHeight: 500
-    });
-
-    this.snotifyService.onInit = (toast: SnotifyToast) => {
-      console.log('on Init', toast);
-      /*
-       At each callback you can change toast data directly.
-       toast.title = "New Title"
-       toast.body = "Some new value"
-       */
-    };
-
-    this.snotifyService.onHoverEnter = (toast: SnotifyToast) => {
-      console.log('Hover enter', toast);
-    };
-
-    this.snotifyService.onHoverLeave = (toast: SnotifyToast) => {
-      console.log('Hover leave', toast);
-    };
-
-    this.snotifyService.onClick = (toast: SnotifyToast) => {
-      console.log('Clicked', toast);
-    };
-
-    this.snotifyService.beforeDestroy = (toast: SnotifyToast) => {
-      console.log('Before Destroy', toast);
-    };
-
-    this.snotifyService.afterDestroy = (toast: SnotifyToast) => {
-      console.log('After Destroy', toast);
-    };
-
-    this.snotifyService.onInput = (toast: SnotifyToast, value: string) => {
-      console.log('On Input', value, toast);
-    };
-  }
-
   /*
   Change global configuration
    */
-  setGlobal() {
-    this.snotifyService.setConfig({
+  getConfig(): SnotifyToastConfig {
+    this.snotifyService.setDefaults({
+      global: {
+        newOnTop: this.newTop,
+        maxAtPosition: this.blockMax,
+        maxOnScreen: this.dockMax,
+      }
+    });
+    return {
       bodyMaxLength: this.bodyMaxLength,
       titleMaxLength: this.titleMaxLength,
-      backdrop: this.backdrop
-    }, {
-      newOnTop: this.newTop,
+      backdrop: this.backdrop,
       position: this.position,
-      maxOnScreen: this.dockMax,
-      maxAtPosition: this.blockMax,
-      maxHeight: this.maxHeight
-    });
+      timeout: this.timeout,
+      showProgressBar: this.progressBar,
+      closeOnClick: this.closeClick,
+      pauseOnHover: this.pauseHover
+    };
   }
 
   onSuccess() {
-    this.setGlobal();
-    this.snotifyService.success(this.body, this.title, {
-      timeout: this.timeout,
-      showProgressBar: this.progressBar,
-      closeOnClick: this.closeClick,
-      pauseOnHover: this.pauseHover
-    });
+    this.snotifyService.success(this.body, this.title, this.getConfig());
   }
-
   onInfo() {
-    this.setGlobal();
-    this.snotifyService.info(this.body, this.title, {
-      timeout: this.timeout,
-      showProgressBar: this.progressBar,
-      closeOnClick: this.closeClick,
-      pauseOnHover: this.pauseHover
-    });
+    this.snotifyService.info(this.body, this.title, this.getConfig());
   }
   onError() {
-    this.setGlobal();
-    this.snotifyService.error(this.body, this.title, {
-      timeout: this.timeout,
-      showProgressBar: this.progressBar,
-      closeOnClick: this.closeClick,
-      pauseOnHover: this.pauseHover
-    });
+    this.snotifyService.error(this.body, this.title, this.getConfig());
   }
   onWarning() {
-    this.setGlobal();
-    this.snotifyService.warning(this.body, this.title, {
-      timeout: this.timeout,
-      showProgressBar: this.progressBar,
-      closeOnClick: this.closeClick,
-      pauseOnHover: this.pauseHover
-    });
+    this.snotifyService.warning(this.body, this.title, this.getConfig());
   }
   onSimple() {
-    this.setGlobal();
 
     // const icon = `assets/custom-svg.svg`;
     const icon = `https://placehold.it/48x100`;
 
     this.snotifyService.simple(this.body, this.title, {
-      timeout: this.timeout,
-      showProgressBar: this.progressBar,
-      closeOnClick: this.closeClick,
-      pauseOnHover: this.pauseHover,
+      ...this.getConfig(),
       icon: icon
     });
   }
 
   onAsyncLoading() {
-    this.setGlobal();
-    this.snotifyService.async(this.body, this.title,
-      /*
-      You should pass Promise or Observable of type SnotifyConfig to change some data or do some other actions
+    const errorAction = Observable.create(observer => {
+      setTimeout(() => {
+        observer.error({
+          title: 'Error',
+          body: 'Example. Error 404. Service not found',
+        });
+      }, 2000);
+    });
+
+    const successAction = Observable.create(observer => {
+      setTimeout(() => {
+        observer.next({
+          body: 'Still loading.....',
+        });
+      }, 2000);
+
+      setTimeout(() => {
+        observer.next({
+          title: 'Success',
+          body: 'Example. Data loaded!',
+          config: {
+            closeOnClick: true,
+            timeout: 5000,
+            showProgressBar: true
+          }
+        });
+        observer.complete();
+      }, 5000);
+    });
+
+    /*
+      You should pass Promise or Observable of type Snotify to change some data or do some other actions
       More information how to work with observables:
       https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md
-       */
-
-      // new Promise((resolve, reject) => {
-      //   setTimeout(() => reject(), 1000);
-      //   setTimeout(() => resolve(), 1500);
-      // })
-      Observable.create(observer => {
-          setTimeout(() => {
-            observer.next({
-              body: 'Still loading.....',
-            });
-            }, 1000);
-
-        setTimeout(() => {
-          observer.next({
-            title: 'Success',
-            body: 'Example. Data loaded!',
-            config: {
-              closeOnClick: true,
-              timeout: 5000,
-              showProgressBar: true
-            }
-          });
-          observer.complete();
-        }, 5000);
-
-          // setTimeout(() => {
-          //   observer.error({
-          //     title: 'Error',
-          //     body: 'Example. Error 404. Service not found',
-          //   });
-          // }, 6000);
-
-        }
-      )
-    );
+     */
+    const {timeout, ...config} = this.getConfig(); // Omit timeout
+    this.snotifyService.async('This will resolve with error', 'Async', errorAction, config);
+    this.snotifyService.async('This will resolve with success', successAction, config);
+    this.snotifyService.async('Called with promise', 'Error async',
+      new Promise((resolve, reject) => {
+        setTimeout(() => reject({
+          title: 'Error!!!',
+          body: 'We got an example error!',
+          config: {
+            closeOnClick: true
+          }
+        }), 1000);
+        setTimeout(() => resolve(), 1500);
+      }));
   }
 
   onConfirmation() {
-    this.setGlobal();
     /*
     Here we pass an buttons array, which contains of 2 element of type SnotifyButton
      */
-    const id = this.snotifyService.confirm(this.body, this.title, {
-      timeout: this.timeout,
-      showProgressBar: this.progressBar,
-      closeOnClick: this.closeClick,
-      pauseOnHover: this.pauseHover,
+    const {timeout, closeOnClick, ...config} = this.getConfig(); // Omit props what i don't need
+    this.snotifyService.confirm(this.body, this.title, {
+      ...config,
       buttons: [
         {text: 'Yes', action: () => console.log('Clicked: Yes'), bold: false},
         {text: 'No', action: () => console.log('Clicked: No')},
-        {text: 'Later', action: (toastId) => {console.log('Clicked: Later'); this.snotifyService.remove(toastId); } },
-        {text: 'Close', action: () => {console.log('Clicked: Close'); this.snotifyService.remove(id); }, bold: true},
+        {text: 'Later', action: (toast) => {console.log('Clicked: Later'); this.snotifyService.remove(toast.id); } },
+        {text: 'Close', action: (toast) => {console.log('Clicked: Close'); this.snotifyService.remove(toast.id); }, bold: true},
       ]
     });
   }
 
   onPrompt() {
-    this.setGlobal();
     /*
      Here we pass an buttons array, which contains of 2 element of type SnotifyButton
      At the action of the first button we can get what user entered into input field.
      At the second we can't get it. But we can remove this toast
      */
-    const id = this.snotifyService.prompt(this.body, this.title, {
-      timeout: this.timeout,
-      showProgressBar: this.progressBar,
-      closeOnClick: this.closeClick,
-      pauseOnHover: this.pauseHover,
+    const {timeout, closeOnClick, ...config} = this.getConfig(); // Omit props what i don't need
+    this.snotifyService.prompt(this.body, this.title, {
+      ...config,
       buttons: [
-        {text: 'Yes', action: (toastId, text) => console.log('Said Yes: ' + text + ' ID: ' + toastId)},
-        {text: 'No', action: (toastId, text) => { console.log('Said No: ' + text); this.snotifyService.remove(id); }},
+        {text: 'Yes', action: (toast) => console.log('Said Yes: ' + toast.value) },
+        {text: 'No', action: (toast) => { console.log('Said No: ' + toast.value); this.snotifyService.remove(toast.id); }},
       ],
-      placeholder: 'This is the example placeholder which you can pass' // Max-length = 40
+      placeholder: 'Enter "ng-snotify" to validate this input' // Max-length = 40
+    }).on('input', (toast) => {
+      console.log(toast.value)
+      toast.valid = !!toast.value.match('ng-snotify');
     });
   }
 
   onHtml() {
-    this.setGlobal();
-
-    this.snotifyService.html(`<div class="snotifyToast__title" *ngIf="toast.title"><b>Html Bold Title</b></div>
-    <div class="snotifyToast__body"><i>Html</i> <b>toast</b> <u>content</u></div> `, {
-      timeout: this.timeout,
-      showProgressBar: this.progressBar,
-      closeOnClick: this.closeClick,
-      pauseOnHover: this.pauseHover,
-    });
+    const html = `<div class="snotifyToast__title"><b>Html Bold Title</b></div>
+    <div class="snotifyToast__body"><i>Html</i> <b>toast</b> <u>content</u></div>`;
+    this.snotifyService.html(html, this.getConfig());
   }
 
 

@@ -1,7 +1,8 @@
 # Node
 node_modules/*
 npm-debug.log
-docs/*
+/demo
+/demo-example
 # DO NOT IGNORE TYPESCRIPT FILES FOR NPM
 # TypeScript
 # *.js
@@ -12,7 +13,6 @@ docs/*
 .idea
 .project
 .settings
-.idea/*
 *.iml
 
 # VS Code

@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input, ViewEncapsulation} from '@angular/core';
-import {SnotifyButton} from '../../interfaces/SnotifyButton.interface';
+import {SnotifyService} from '../../snotify.service';
+import {SnotifyToast} from '../snotify-toast.model';
 
 @Component({
   selector: 'ng-snotify-button',
@@ -15,14 +16,13 @@ export class ButtonsComponent {
   /**
    * Get buttons Array
    */
-  @Input() buttons: SnotifyButton[];
+  @Input() toast: SnotifyToast;
+  constructor(private service: SnotifyService) {}
+
   /**
-   * Get prompt input value
+   * remove toast
    */
-  @Input() text: string;
-  /**
-   * Get toast id
-   */
-  @Input() id: number;
-  constructor() {}
+  remove() {
+    this.service.remove(this.toast.id);
+  }
 }

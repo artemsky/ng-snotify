@@ -1,177 +1,46 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {PromiseObservable} from 'rxjs/observable/PromiseObservable';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
-import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
-import {SnotifyConfig} from './interfaces/SnotifyConfig.interface';
+import {SnotifyToastConfig} from './interfaces/SnotifyToastConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
-import {SnotifyPosition} from './enum/SnotifyPosition.enum';
-import {SnotifyAction} from './enum/SnotifyAction.enum';
-import {SnotifyType} from './enum/SnotifyType.enum';
+import {SnotifyStyle} from './enums/SnotifyStyle.enum';
+import {SnotifyType} from './types/snotify.type'
 import {SafeHtml} from '@angular/platform-browser';
+import {TransformArgument} from './decorators/transform-argument.decorator';
+import {mergeDeep, uuid} from './utils';
+import {SetToastType} from './decorators/set-toast-type.decorator';
+import {SnotifyDefaults} from './interfaces/SnotifyDefaults.interface';
 
 /**
  * SnotifyService - create, remove, config toasts
  */
 @Injectable()
+// tslint:disable:unified-signatures
 export class SnotifyService {
   readonly emitter = new Subject<SnotifyToast[]>();
-  readonly lifecycle = new Subject<SnotifyInfo>();
-  readonly optionsChanged = new Subject<SnotifyOptions>();
   readonly toastChanged = new Subject<SnotifyToast>();
   readonly toastDeleted = new Subject<number>();
-  private config: SnotifyConfig;
-  private _options: SnotifyOptions;
   private notifications: SnotifyToast[] = [];
-  private _defaultAnimationTime = 400;
 
-  // Callbacks
-  onInit: (info?: SnotifyToast) => void;
-  onClick: (info?: SnotifyToast) => void;
-  onHoverEnter: (info?: SnotifyToast) => void;
-  onHoverLeave: (info?: SnotifyToast) => void;
-  onInput: (info?: SnotifyToast, value?: string) => void;
-  beforeDestroy: (info?: SnotifyToast) => void;
-  afterDestroy: (info?: SnotifyToast) => void;
-
-  /**
-   * Generates random id
-   * @return {number}
-   */
-  static generateRandomId(): number {
-    return Math.floor(Math.random() * (Date.now() - 1)) + 1;
+  constructor(@Inject('SnotifyToastConfig') public config: SnotifyDefaults) {
   }
-
-  /**
-   * Simple is object check.
-   * @param item {Object<any>}
-   * @returns {boolean}
-   */
-  static isObject(item): boolean {
-    return (item && typeof item === 'object' && !Array.isArray(item) && item !== null);
-  }
-
-  /**
-   * Deep merge objects.
-   * @param sources {Array<Object>}
-   * @returns {Object<any>}
-   */
-  static mergeDeep(...sources) {
-    const target = {};
-    if (!sources.length) {
-      return target;
-    }
-
-    while (sources.length > 0) {
-      const source = sources.shift();
-      if (SnotifyService.isObject(source)) {
-        for (const key in source) {
-          if (SnotifyService.isObject(source[key])) {
-            target[key] = SnotifyService.mergeDeep(target[key], source[key]);
-          } else {
-            Object.assign(target, { [key]: source[key] });
-          }
-        }
-      }
-    }
-    return target;
-  }
-
-  /**
-   * Constructor - initialize base configuration objects
-   */
-  constructor() {
-    this.config = {
-      showProgressBar: true,
-      timeout: 2000,
-      closeOnClick: true,
-      pauseOnHover: true,
-      bodyMaxLength: 150,
-      titleMaxLength: 16,
-      backdrop: -1,
-      animation: {enter: 'fadeInUp', exit: 'fadeOutRight', time: this._defaultAnimationTime}
-    };
-    this._options = {
-      newOnTop: true,
-      position: SnotifyPosition.right_bottom,
-      maxOnScreen: 8,
-      maxAtPosition: 8,
-      maxHeight: 300
-    };
-  }
-
   /**
    * emit changes in notifications array
    */
   private emit(): void {
-    this.emitter.next(this.getAll());
-  }
-
-  /**
-   * Set global config
-   * @param config {SnotifyConfig}
-   * @param options {SnotifyOptions}
-   */
-  setConfig(config: SnotifyConfig, options?: SnotifyOptions): void {
-    this._options = SnotifyService.mergeDeep(this._options, options);
-    this.config = SnotifyService.mergeDeep(this.config,
-      {
-        animation: ((position) => {
-          switch (position) {
-            case SnotifyPosition.left_top:
-              return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this._defaultAnimationTime};
-            case SnotifyPosition.left_center:
-              return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this._defaultAnimationTime};
-            case SnotifyPosition.left_bottom:
-              return {enter: 'fadeInLeft', exit: 'fadeOutLeft', time: this._defaultAnimationTime};
-
-            case SnotifyPosition.right_top:
-              return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this._defaultAnimationTime};
-            case SnotifyPosition.right_center:
-              return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this._defaultAnimationTime};
-            case SnotifyPosition.right_bottom:
-              return {enter: 'fadeInRight', exit: 'fadeOutRight', time: this._defaultAnimationTime};
-
-            case SnotifyPosition.center_top:
-              return {enter: 'fadeInDown', exit: 'fadeOutUp', time: this._defaultAnimationTime};
-            case SnotifyPosition.center_center:
-              return {enter: 'fadeIn', exit: 'fadeOut', time: this._defaultAnimationTime};
-            case SnotifyPosition.center_bottom:
-              return {enter: 'fadeInUp', exit: 'fadeOutDown', time: this._defaultAnimationTime};
-          }
-        })(this._options.position)
-      },
-      config);
-
-    this.optionsChanged.next(this._options);
-  }
-
-  /**
-   * get SnotifyOptions
-   * @return {SnotifyOptions}
-   */
-  get options(){
-    return this._options;
+    this.emitter.next(this.notifications.slice());
   }
 
   /**
    * returns SnotifyToast object
    * @param id {Number}
-   * @return {undefined|SnotifyToast}
+   * @return {SnotifyToast|undefined}
    */
   get(id: number): SnotifyToast {
     return this.notifications.find(toast => toast.id === id);
-  }
-
-  /**
-   * returns copy of notifications array
-   * @return {SnotifyToast[]}
-   */
-  private getAll(): SnotifyToast[] {
-    return this.notifications.slice();
   }
 
   /**
@@ -179,8 +48,7 @@ export class SnotifyService {
    * @param toast {SnotifyToast}
    */
   private add(toast: SnotifyToast): void {
-    toast.config.position = toast.config.position || this.options.position;
-    if (this._options.newOnTop) {
+    if (this.config.global.newOnTop) {
       this.notifications.unshift(toast);
     } else {
       this.notifications.push(toast);
@@ -190,8 +58,8 @@ export class SnotifyService {
 
   /**
    * If ID passed, emits toast animation remove, if ID & REMOVE passed, removes toast from notifications array
-   * @param id {Number}
-   * @param remove {Boolean}
+   * @param id {number}
+   * @param remove {boolean}
    */
   remove(id?: number, remove?: boolean): void {
     if (!id) {
@@ -216,215 +84,406 @@ export class SnotifyService {
    * @param snotify {Snotify}
    * @return {number}
    */
-  private create(snotify: Snotify): number {
-    const id = SnotifyService.generateRandomId();
-    this.add(new SnotifyToast(id, snotify.title, snotify.body, snotify.config || null));
-    return id;
+  create(snotify: Snotify): SnotifyToast {
+    const config =
+      mergeDeep(this.config.toast, this.config.type[snotify.config.type], snotify.config);
+    const toast = new SnotifyToast(
+      uuid(),
+      snotify.title,
+      snotify.body,
+      config
+    );
+    this.add(toast);
+    return toast;
+  }
+
+  setDefaults(defaults: SnotifyDefaults): SnotifyDefaults {
+    return this.config = mergeDeep(this.config, defaults) as SnotifyDefaults;
   }
 
   /**
-   * Create toast with Success style, returns toast id;
+   * Create toast with simple style returns toast id;
+   * @param body {String}
+   * @returns {number}
+   */
+  simple(body: string): SnotifyToast
+  /**
+   * Create toast with simple style returns toast id;
    * @param body {String}
    * @param title {String}
-   * @param config {SnotifyConfig}
-   * @return {number}
+   * @returns {number}
    */
-  success(body: string, title?: string, config?: SnotifyConfig): number {
-    return this.create({
-      title: title,
-      body: body,
-      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.SUCCESS}, config)
-    });
+  simple(body: string, title: string): SnotifyToast
+  /**
+   * Create toast with simple style returns toast id;
+   * @param body {String}
+   * @param config {SnotifyToastConfig}
+   * @returns {number}
+   */
+  simple(body: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Create toast with simple style  returns toast id;
+   * @param [body] {String}
+   * @param [title] {String}
+   * @param [config] {SnotifyToastConfig}
+   * @returns {number}
+   */
+  simple(body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Transform toast arguments into {Snotify} object
+   */
+  @TransformArgument
+  /**
+   * Determines current toast type and collects default configuration
+   */
+  @SetToastType
+  simple(args: any): SnotifyToast {
+    return this.create(args);
   }
 
   /**
-   * Create toast with Error style, returns toast id;
+   * Create toast with success style returns toast id;
+   * @param body {String}
+   * @returns {number}
+   */
+  success(body: string): SnotifyToast
+  /**
+   * Create toast with success style returns toast id;
    * @param body {String}
    * @param title {String}
-   * @param config {SnotifyConfig}
-   * @return {number}
+   * @returns {number}
    */
-  error(body: string, title?: string, config?: SnotifyConfig): number {
-    return this.create({
-      title: title,
-      body: body,
-      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.ERROR}, config)
-    });
+  success(body: string, title: string): SnotifyToast
+  /**
+   * Create toast with success style returns toast id;
+   * @param body {String}
+   * @param config {SnotifyToastConfig}
+   * @returns {number}
+   */
+  success(body: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Create toast with success style  returns toast id;
+   * @param [body] {String}
+   * @param [title] {String}
+   * @param [config] {SnotifyToastConfig}
+   * @returns {number}
+   */
+  success(body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Transform toast arguments into {Snotify} object
+   */
+  @TransformArgument
+  /**
+   * Determines current toast type and collects default configuration
+   */
+  @SetToastType
+  success(args: any): SnotifyToast {
+    return this.create(args);
   }
 
   /**
-   * Create toast with Info style, returns toast id;
+   * Create toast with error style returns toast id;
+   * @param body {String}
+   * @returns {number}
+   */
+  error(body: string): SnotifyToast
+  /**
+   * Create toast with error style returns toast id;
    * @param body {String}
    * @param title {String}
-   * @param config {SnotifyConfig}
-   * @return {number}
+   * @returns {number}
    */
-  info(body: string, title?: string, config?: SnotifyConfig): number {
-    return this.create({
-      title: title,
-      body: body,
-      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.INFO}, config)
-    });
+  error(body: string, title: string): SnotifyToast
+  /**
+   * Create toast with error style returns toast id;
+   * @param body {String}
+   * @param config {SnotifyToastConfig}
+   * @returns {number}
+   */
+  error(body: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Create toast with error style  returns toast id;
+   * @param [body] {String}
+   * @param [title] {String}
+   * @param [config] {SnotifyToastConfig}
+   * @returns {number}
+   */
+  error(body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Transform toast arguments into {Snotify} object
+   */
+  @TransformArgument
+  /**
+   * Determines current toast type and collects default configuration
+   */
+  @SetToastType
+  error(args: any): SnotifyToast {
+    return this.create(args);
   }
 
   /**
-   * Create toast with Warining style, returns toast id;
+   * Create toast with info style returns toast id;
+   * @param body {String}
+   * @returns {number}
+   */
+  info(body: string): SnotifyToast
+  /**
+   * Create toast with info style returns toast id;
    * @param body {String}
    * @param title {String}
-   * @param config {SnotifyConfig}
-   * @return {number}
+   * @returns {number}
    */
-  warning(body: string, title?: string, config?: SnotifyConfig): number {
-    return this.create({
-      title: title,
-      body: body,
-      config: SnotifyService.mergeDeep(this.config,  {type: SnotifyType.WARNING}, config)
-    });
+  info(body: string, title: string): SnotifyToast
+  /**
+   * Create toast with info style returns toast id;
+   * @param body {String}
+   * @param config {SnotifyToastConfig}
+   * @returns {number}
+   */
+  info(body: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Create toast with info style  returns toast id;
+   * @param [body] {String}
+   * @param [title] {String}
+   * @param [config] {SnotifyToastConfig}
+   * @returns {number}
+   */
+  info(body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Transform toast arguments into {Snotify} object
+   */
+  @TransformArgument
+  /**
+   * Determines current toast type and collects default configuration
+   */
+  @SetToastType
+  info(args: any): SnotifyToast {
+    return this.create(args);
   }
 
   /**
-   * Create toast without style, returns toast id;
+   * Create toast with warning style returns toast id;
+   * @param body {String}
+   * @returns {number}
+   */
+  warning(body: string): SnotifyToast
+  /**
+   * Create toast with warning style returns toast id;
    * @param body {String}
    * @param title {String}
-   * @param config {SnotifyConfig}
-   * @return {number}
+   * @returns {number}
    */
-  simple(body: string, title?: string, config?: SnotifyConfig): number {
-    return this.create({
-      title: title,
-      body: body,
-      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.SIMPLE}, config)
-    });
+  warning(body: string, title: string): SnotifyToast
+  /**
+   * Create toast with warning style returns toast id;
+   * @param body {String}
+   * @param config {SnotifyToastConfig}
+   * @returns {number}
+   */
+  warning(body: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Create toast with warning style  returns toast id;
+   * @param [body] {String}
+   * @param [title] {String}
+   * @param [config] {SnotifyToastConfig}
+   * @returns {number}
+   */
+  warning(body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Transform toast arguments into {Snotify} object
+   */
+  @TransformArgument
+  /**
+   * Determines current toast type and collects default configuration
+   */
+  @SetToastType
+  warning(args: any): SnotifyToast {
+    return this.create(args);
   }
 
   /**
-   * Create toast with Confirm style {with two buttons}, returns toast id;
+   * Create toast with confirm style returns toast id;
+   * @param body {String}
+   * @returns {number}
+   */
+  confirm(body: string): SnotifyToast
+  /**
+   * Create toast with confirm style returns toast id;
    * @param body {String}
    * @param title {String}
-   * @param config {SnotifyConfig}
-   * @return {number}
+   * @returns {number}
    */
-  confirm(body: string, title: string, config?: SnotifyConfig): number {
-    const id = this.create({
-      title: title,
-      body: body,
-      config: SnotifyService.mergeDeep(this.config,
-        {
-          buttons: [
-            {text: 'Ok', action: null, bold: true},
-            {text: 'Cancel', action: () => this.remove(id), bold: false},
-          ]
-        },
-        config,
-        {
-          type: SnotifyType.CONFIRM,
-          closeOnClick: false,
-        }
-      )
-    });
-    return id;
+  confirm(body: string, title: string): SnotifyToast
+  /**
+   * Create toast with confirm style returns toast id;
+   * @param body {String}
+   * @param config {SnotifyToastConfig}
+   * @returns {number}
+   */
+  confirm(body: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Create toast with confirm style  returns toast id;
+   * @param [body] {String}
+   * @param [title] {String}
+   * @param [config] {SnotifyToastConfig}
+   * @returns {number}
+   */
+  confirm(body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Transform toast arguments into {Snotify} object
+   */
+  @TransformArgument
+  /**
+   * Determines current toast type and collects default configuration
+   */
+  @SetToastType
+  confirm(args: any): SnotifyToast {
+    return this.create(args);
   }
 
   /**
    * Create toast with Prompt style {with two buttons}, returns toast id;
    * @param body {String}
-   * @param title {String}
-   * @param config {SnotifyConfig}
-   * @return {number}
+   * @returns {number}
    */
-  prompt(body: string, title?: string, config?: SnotifyConfig): number {
-    const id = this.create({
-      title: title,
-      body: body,
-      config: SnotifyService.mergeDeep(this.config,
-        {
-          buttons: [
-            {text: 'Ok', action: null, bold: true},
-            {text: 'Cancel', action: () => this.remove(id), bold: false},
-          ],
-          placeholder: 'Enter answer here...',
-        }, config,
-        {
-          timeout: 0,
-          closeOnClick: false,
-          type: SnotifyType.PROMPT,
-        }
-      )
-    });
-    return id;
+  prompt(body: string): SnotifyToast
+  /**
+   * Create toast with Prompt style {with two buttons}, returns toast id;
+   * @param body {String}
+   * @param title {String}
+   * @returns {number}
+   */
+  prompt(body: string, title: string): SnotifyToast
+  /**
+   * Create toast with Prompt style {with two buttons}, returns toast id;
+   * @param body {String}
+   * @param config {SnotifyToastConfig}
+   * @returns {number}
+   */
+  prompt(body: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Create toast with Prompt style {with two buttons}, returns toast id;
+   * @param [body] {String}
+   * @param [title] {String}
+   * @param [config] {SnotifyToastConfig}
+   * @returns {number}
+   */
+  prompt(body: string, title: string, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Transform toast arguments into {Snotify} object
+   */
+  @TransformArgument
+  /**
+   * Determines current toast type and collects default configuration
+   */
+  @SetToastType
+  prompt(args: any): SnotifyToast {
+    return this.create(args);
   }
 
   /**
    * Creates async toast with Info style. Pass action, and resolve or reject it.
    * @param body {String}
-   * @param title {String}
-   * @param action {Promise<SnotifyConfig> | Observable<SnotifyConfig>}
-   * @return {number}
+   * @param action {Promise<Snotify> | Observable<Snotify>}
+   * @returns {number}
    */
-  async(body: string, title: string, action: Promise<SnotifyConfig> | Observable<SnotifyConfig>): number {
+  async(body: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
+  /**
+   * Creates async toast with Info style. Pass action, and resolve or reject it.
+   * @param body {String}
+   * @param title {String}
+   * @param action {Promise<Snotify> | Observable<Snotify>}
+   * @returns {number}
+   */
+  async(body: string, title: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
+  /**
+   * Creates async toast with Info style. Pass action, and resolve or reject it.
+   * @param body {String}
+   * @param action {Promise<Snotify> | Observable<Snotify>}
+   * @param [config] {SnotifyToastConfig}
+   * @returns {number}
+   */
+  async(body: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Creates async toast with Info style. Pass action, and resolve or reject it.
+   * @param body {String}
+   * @param title {String}
+   * @param action {Promise<Snotify> | Observable<Snotify>}
+   * @param [config] {SnotifyToastConfig}
+   * @returns {number}
+   */
+  async(body: string, title: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyToastConfig): SnotifyToast
+  /**
+   * Transform toast arguments into {Snotify} object
+   */
+  @TransformArgument
+  /**
+   * Determines current toast type and collects default configuration
+   */
+  @SetToastType
+  async(args: any): SnotifyToast {
     let async: Observable<any>;
-    if (action instanceof Promise) {
-      async = PromiseObservable.create(action);
+    if (args.action instanceof Promise) {
+      async = PromiseObservable.create(args.action );
     } else {
-      async = action;
+      async = args.action;
     }
 
-    const id = this.simple(body, title, {
-      pauseOnHover: false,
-      closeOnClick: false,
-      timeout: 0,
-      showProgressBar: false,
-      type: SnotifyType.ASYNC
-    });
+    const toast = this.create(args);
 
-    const toast = this.get(id);
-    let latestToast = Object.assign({}, toast);
-
-    const updateToast = (type: SnotifyType, data?: SnotifyConfig) => {
-      if (!data) {
-        latestToast = SnotifyService.mergeDeep(toast, latestToast, {config: {type: type}}) as SnotifyToast;
-      } else {
-        latestToast = SnotifyService.mergeDeep(toast, data, {config: {type: type}}) as SnotifyToast;
-      }
-
-      this.toastChanged.next(latestToast);
-    };
-
-    const lifecycleSubscription = this.lifecycle.subscribe(
-      (info: SnotifyInfo) => {
-        if (info.action === SnotifyAction.onInit && info.toast.id === id) {
+    toast.on('mounted',
+      () => {
           const subscription: Subscription = async.subscribe(
-            (next?: SnotifyConfig) => {
-              updateToast(SnotifyType.ASYNC, next);
+            (next?: Snotify) => {
+              this.mergeToast(toast, next)
             },
-            (error?: SnotifyConfig) => {
-              updateToast(SnotifyType.ERROR, error);
+            (error?: Snotify) => {
+              this.mergeToast(toast, error, SnotifyStyle.error);
               subscription.unsubscribe();
             },
             () => {
-              updateToast(SnotifyType.SUCCESS);
+              this.mergeToast(toast, {}, SnotifyStyle.success);
               subscription.unsubscribe();
-              lifecycleSubscription.unsubscribe();
             }
           );
-        }
       }
     );
 
-    return id;
+    return toast;
+  }
+
+  private mergeToast(toast, next, type?: SnotifyType) {
+    if (next.body) {
+      toast.body = next.body;
+    }
+    if (next.title) {
+      toast.title = next.title;
+    }
+    if (type) {
+      toast.config = mergeDeep(toast.config, this.config.global, this.config.toast[type], {type}, next.config)
+    } else {
+      toast.config = mergeDeep(toast.config, next.config)
+    }
+    if (next.html) {
+      toast.config.html = next.html;
+    }
+    this.toastChanged.next(toast);
   }
 
   /**
    * Creates empty toast with html string inside
    * @param {string | SafeHtml} html
-   * @param {SnotifyConfig} config
+   * @param {SnotifyToastConfig} config
    * @returns {number}
    */
-  html(html: string | SafeHtml, config?: SnotifyConfig): number {
+  html(html: string | SafeHtml, config?: SnotifyToastConfig): SnotifyToast {
     return this.create({
       title: null,
       body: null,
-      config: SnotifyService.mergeDeep(this.config, {type: SnotifyType.SIMPLE, html}, config),
+      config: {
+        ...config,
+        ...{html}
+      }
     });
   }
 }

@@ -3,8 +3,8 @@
 import { FormsModule } from '@angular/forms';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {SnotifyModule, SnotifyService} from 'ng-snotify';
-import {SnotifyPosition} from '../../src/snotify/enum/SnotifyPosition.enum';
+import {SnotifyModule, SnotifyService, ToastDefaults} from 'ng-snotify';
+import {SnotifyPosition} from '../../src/snotify/enums/SnotifyPosition.enum';
 
 describe('NgSnotify Testing', () => {
   beforeEach(() => {
@@ -13,7 +13,10 @@ describe('NgSnotify Testing', () => {
       declarations: [
         AppComponent
       ],
-      providers: [SnotifyService]
+      providers: [
+        { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+        SnotifyService
+      ]
     });
   });
 
@@ -37,12 +40,7 @@ describe('NgSnotify Testing', () => {
     const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
-    expect(service.options).toEqual(jasmine.objectContaining({
-      ...service.options,
-      newOnTop: false,
-      position: app.position,
-      maxHeight: 500
-    }));
+    expect(service.config).toEqual(jasmine.objectContaining(ToastDefaults));
     done();
   });
 
@@ -126,15 +124,19 @@ describe('NgSnotify Testing', () => {
     done();
   });
 
-  it('should create 3 toasts max at rightBottom position', (done) => {
+  it('should create 3 toasts max at rightTop position', (done) => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     const compiled = fixture.debugElement.nativeElement;
     fixture.detectChanges();
-    service.setConfig(null, {
-      position: SnotifyPosition.right_bottom,
-      maxAtPosition: 3
+    service.setDefaults({
+      global: {
+        maxAtPosition: 3
+      },
+      toast: {
+        position: SnotifyPosition.rightTop,
+      }
     });
     fixture.detectChanges();
 
@@ -143,7 +145,7 @@ describe('NgSnotify Testing', () => {
     service.error('Test');
 
     fixture.detectChanges();
-    expect(compiled.querySelectorAll('.snotify-rightBottom > ng-snotify-toast').length).toEqual(3);
+    expect(compiled.querySelectorAll('.snotify-rightTop > ng-snotify-toast').length).toEqual(3);
     done();
   });
 
@@ -154,10 +156,10 @@ describe('NgSnotify Testing', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     service.simple('Test', null, {
-      position: SnotifyPosition.center_bottom
+      position: SnotifyPosition.centerBottom
     });
     service.success('Test', null, {
-      position: SnotifyPosition.left_bottom
+      position: SnotifyPosition.leftBottom
     });
     fixture.detectChanges();
     expect(compiled.querySelectorAll('.snotify-leftBottom > ng-snotify-toast').length).toEqual(1);

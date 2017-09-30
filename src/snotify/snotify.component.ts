@@ -2,11 +2,10 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyOptions} from './interfaces/SnotifyOptions.interface';
-import {SnotifyInfo} from './interfaces/SnotifyInfo.interface';
-import {SnotifyAction} from './enum/SnotifyAction.enum';
 import {SnotifyNotifications} from './interfaces/SnotifyNotifications.interface';
-import {SnotifyPosition} from './enum/SnotifyPosition.enum';
+import {SnotifyPosition} from './enums/SnotifyPosition.enum';
+import {SnotifyEvent} from './types/event.type';
+
 
 
 @Component({
@@ -23,14 +22,6 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    * Toasts emitter
    */
   emitter: Subscription;
-  /**
-   * Listens for options has been changed
-   */
-  optionsSubscription: Subscription;
-  /**
-   * Listens for lifecycle has been triggered
-   */
-  lifecycleSubscription: Subscription;
   /**
    * Helper for slice pipe (maxOnScreen)
    */
@@ -50,81 +41,70 @@ export class SnotifyComponent implements OnInit, OnDestroy {
   /**
    * Backdrop Opacity
    */
-  backdrop: number;
+  backdrop = -1;
+  /**
+   * How many toasts with backdrop in current queue
+   */
+  withBackdrop: SnotifyToast[];
 
-
-  constructor(private service: SnotifyService) { }
+  constructor(private service: SnotifyService) {}
 
   /**
    * Init base options. Subscribe to options, lifecycle change
    */
   ngOnInit() {
-    this.setOptions(this.service.options);
-    this.optionsSubscription = this.service.optionsChanged.subscribe((options: SnotifyOptions) => {
-      this.setOptions(options);
-    });
-
     this.emitter = this.service.emitter.subscribe(
       (toasts: SnotifyToast[]) => {
-        this.notifications = this.splitToasts(toasts.slice(this.dockSize_a, this.dockSize_b));
-        const list = toasts.filter(toast => toast.config.backdrop >= 0);
 
-        if (list.length) {
-          this.backdrop = 0;
-          setTimeout(() => {
-            this.backdrop = list[list.length - 1].config.backdrop;
-          }, 10)
+        if (this.service.config.global.newOnTop) {
+          this.dockSize_a = -this.service.config.global.maxOnScreen;
+          this.dockSize_b = undefined;
+          this.blockSize_a = -this.service.config.global.maxAtPosition;
+          this.blockSize_b = undefined;
+          this.withBackdrop = toasts.filter(toast => toast.config.backdrop >= 0);
         } else {
-          if (this.backdrop > 0) {
-            this.backdrop = 0;
-          }
-          setTimeout(() => {
-            this.backdrop = -1;
-          }, 400)
+          this.dockSize_a = 0;
+          this.dockSize_b = this.service.config.global.maxOnScreen;
+          this.blockSize_a = 0;
+          this.blockSize_b = this.service.config.global.maxAtPosition;
+          this.withBackdrop = toasts.filter(toast => toast.config.backdrop >= 0).reverse();
         }
+        this.notifications = this.splitToasts(toasts.slice(this.dockSize_a, this.dockSize_b));
+        this.stateChanged('mounted')
       }
     );
-    this.lifecycleSubscription = this.service.lifecycle.subscribe(
-      (info: SnotifyInfo) => {
-        switch (info.action) {
-          case SnotifyAction.onInit:
-            if (this.service.onInit) {
-              this.service.onInit(info.toast);
-            }
-            break;
-          case SnotifyAction.onClick:
-            if (this.service.onClick) {
-              this.service.onClick(info.toast);
-            }
-            break;
-          case SnotifyAction.onHoverEnter:
-            if (this.service.onHoverEnter) {
-              this.service.onHoverEnter(info.toast);
-            }
-            break;
-          case SnotifyAction.onHoverLeave:
-            if (this.service.onHoverLeave) {
-              this.service.onHoverLeave(info.toast);
-            }
-            break;
-          case SnotifyAction.beforeDestroy:
-            if (this.service.beforeDestroy) {
-              this.service.beforeDestroy(info.toast);
-            }
-            break;
-          case SnotifyAction.afterDestroy:
-            if (this.service.afterDestroy) {
-              this.service.afterDestroy(info.toast);
-            }
-            break;
-          case SnotifyAction.onInput:
-            if (this.service.onInput) {
-              this.service.onInput(info.toast, info.value);
-            }
-            break;
+
+  }
+
+  // TODO: fix backdrop if more than one toast called in a row
+  /**
+   * Changes the backdrop opacity
+   * @param {SnotifyEvent} event
+   */
+  stateChanged(event: SnotifyEvent) {
+    if (!this.withBackdrop.length) {
+      return;
+    }
+    switch (event) {
+      case 'mounted':
+        if (this.backdrop < 0) {
+          this.backdrop = 0;
         }
-      }
-    );
+        break;
+      case 'beforeShow':
+        this.backdrop = this.withBackdrop[this.withBackdrop.length - 1].config.backdrop;
+        break;
+      case 'beforeHide':
+        if (this.withBackdrop.length === 1) {
+          this.backdrop = 0;
+        }
+        break;
+      case 'hidden':
+        if (this.withBackdrop.length === 1) {
+          this.backdrop = -1;
+        }
+        break;
+    }
 
   }
 
@@ -150,30 +130,10 @@ export class SnotifyComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Setup global options object
-   * @param options {SnotifyOptions}
-   */
-  setOptions(options: SnotifyOptions): void {
-    if (this.service.options.newOnTop) {
-      this.dockSize_a = -options.maxOnScreen;
-      this.dockSize_b = undefined;
-      this.blockSize_a = -options.maxAtPosition;
-      this.blockSize_b = undefined;
-    } else {
-      this.dockSize_a = 0;
-      this.dockSize_b = options.maxOnScreen;
-      this.blockSize_a = 0;
-      this.blockSize_b = options.maxAtPosition;
-    }
-  }
-
-  /**
    * Unsubscribe subscriptions
    */
   ngOnDestroy() {
     this.emitter.unsubscribe();
-    this.optionsSubscription.unsubscribe();
-    this.lifecycleSubscription.unsubscribe();
   }
 
 }

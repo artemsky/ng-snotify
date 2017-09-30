@@ -1,68 +1,60 @@
-import {Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {
+  AfterContentInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output,
+  ViewEncapsulation
+} from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
-import {SnotifyAction} from '../enum/SnotifyAction.enum';
 import {Subscription} from 'rxjs/Subscription';
-import {SnotifyType} from '../enum/SnotifyType.enum';
+import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
+import {SnotifyEvent} from '../types/event.type';
 
 @Component({
   selector: 'ng-snotify-toast',
   templateUrl: './toast.component.html',
   encapsulation: ViewEncapsulation.None,
 })
-export class ToastComponent implements OnInit, OnDestroy {
+export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
   /**
    * Get toast from notifications array
    */
   @Input() toast: SnotifyToast;
+  @Output() stateChanged = new EventEmitter<SnotifyEvent>();
 
   toastDeletedSubscription: Subscription;
   toastChangedSubscription: Subscription;
+
+  /**
+   * requestAnimationFrame id
+   */
+  animationFrame: number;
 
   /**
    * Toast state
    * @type {Object}
    */
   state = {
-    toast: {
-      type: '',
-      progress: 0,
-      animation: '',
-      time: 0,
-      isDestroying: false
-    },
-    promptType: SnotifyType.PROMPT,
-    prompt: ''
+    paused: false,
+    progress: 0,
+    animation: '',
+    isDestroying: false,
+    promptType: SnotifyStyle.prompt
   };
 
-  /**
-   * Toast maximum height in pixels
-   */
-  maxHeight: number;
-  /**
-   * Toast progress interval
-   */
-  interval: any;
+  constructor (private service: SnotifyService) {}
 
-  constructor(private service: SnotifyService, private snotify: ElementRef) { }
+  // Lifecycles
 
-  /*
-  Life cycles
-   */
   /**
    * Init base options. Subscribe to toast changed, toast deleted
    */
-  ngOnInit() {
-    this.maxHeight = this.service.options.maxHeight;
-    this.initToast();
+  ngOnInit () {
     this.toastChangedSubscription = this.service.toastChanged.subscribe(
       (toast: SnotifyToast) => {
         if (this.toast.id === toast.id) {
-          this.initToast(toast);
+          this.initToast();
         }
       }
     );
-
     this.toastDeletedSubscription = this.service.toastDeleted.subscribe(
       (id) => {
         if (this.toast.id === id) {
@@ -70,17 +62,27 @@ export class ToastComponent implements OnInit, OnDestroy {
         }
       }
     );
-    this.state.toast.type = this.toast.config.type as string;
-    this.state.toast.time = this.toast.config.animation.time;
-    this.state.toast.animation = this.toast.config.animation.enter;
-    this.lifecycle(SnotifyAction.onInit);
+    if (!this.toast.config.timeout) {
+      this.toast.config.showProgressBar = false;
+    }
+    this.toast.eventEmitter.next('mounted');
+    this.state.animation = 'snotifyToast--in';
+  }
+
+  ngAfterContentInit () {
+    setTimeout(() => {
+      this.stateChanged.emit('beforeShow');
+      this.toast.eventEmitter.next('beforeShow');
+      this.state.animation = this.toast.config.animation.enter;
+    }, this.service.config.toast.animation.time / 5); // time to show toast push animation (snotifyToast--in)
   }
 
   /**
    * Unsubscribe subscriptions
    */
-  ngOnDestroy(): void {
-    this.lifecycle(SnotifyAction.afterDestroy);
+  ngOnDestroy (): void {
+    cancelAnimationFrame(this.animationFrame);
+    this.toast.eventEmitter.next('destroyed');
     this.toastChangedSubscription.unsubscribe();
     this.toastDeletedSubscription.unsubscribe();
   }
@@ -92,8 +94,8 @@ export class ToastComponent implements OnInit, OnDestroy {
   /**
    * Trigger OnClick lifecycle
    */
-  onClick() {
-    this.lifecycle(SnotifyAction.onClick);
+  onClick () {
+    this.toast.eventEmitter.next('click');
     if (this.toast.config.closeOnClick) {
       this.service.remove(this.toast.id);
     }
@@ -102,49 +104,49 @@ export class ToastComponent implements OnInit, OnDestroy {
   /**
    * Trigger beforeDestroy lifecycle. Removes toast
    */
-  onRemove() {
-    this.state.toast.isDestroying = true;
-    clearInterval(this.interval);
-    this.state.toast.animation = this.toast.config.animation.exit;
-    this.maxHeight = 0;
-    this.lifecycle(SnotifyAction.beforeDestroy);
+  onRemove () {
+    this.state.isDestroying = true;
+    this.stateChanged.emit('beforeHide');
+    this.toast.eventEmitter.next('beforeHide');
+    this.state.animation = this.toast.config.animation.exit;
+    setTimeout(() => {
+      this.stateChanged.emit('hidden');
+      this.state.animation = 'snotifyToast--out';
+      this.toast.eventEmitter.next('hidden');
+      setTimeout(() => this.service.remove(this.toast.id, true), this.toast.config.animation.time / 2);
+    }, this.toast.config.animation.time / 2);
   }
 
   /**
    * Trigger onHoverEnter lifecycle
    */
-  onMouseEnter() {
-    this.lifecycle(SnotifyAction.onHoverEnter);
+  onMouseEnter () {
+    this.toast.eventEmitter.next('mouseenter');
     if (this.toast.config.pauseOnHover) {
-      clearInterval(this.interval);
+      this.state.paused = true;
     }
   }
 
   /**
    * Trigger onHoverLeave lifecycle
    */
-  onMouseLeave() {
-    if (this.toast.config.pauseOnHover && this.state.toast.type !== SnotifyType.PROMPT) {
-      this.startTimeout(this.state.toast.progress);
+  onMouseLeave () {
+    if (this.toast.config.pauseOnHover && this.toast.config.timeout) {
+      this.state.paused = false;
+      this.startTimeout(this.toast.config.timeout * this.state.progress);
     }
-    this.lifecycle(SnotifyAction.onHoverLeave);
-  }
-
-  /**
-   * Prompt input value changed
-   */
-  onPromptChanged(value: string) {
-    this.state.prompt = value;
-    this.lifecycle(SnotifyAction.onInput, value)
+    this.toast.eventEmitter.next('mouseleave');
   }
 
   /**
    * Remove toast completely after animation
    */
-  onExitTransitionEnd() {
-    if (this.state.toast.isDestroying) {
-      this.service.remove(this.toast.id, true);
+  onExitTransitionEnd () {
+    if (this.state.isDestroying) {
+      return;
     }
+    this.initToast();
+    this.toast.eventEmitter.next('shown');
   }
 
   /*
@@ -153,53 +155,38 @@ export class ToastComponent implements OnInit, OnDestroy {
 
   /**
    * Initialize base toast config
-   * @param toast {SnotifyToast}
+   *
    */
-  initToast(toast?: SnotifyToast) {
-    if (toast) {
-      if (this.toast.config.type !== toast.config.type) {
-        clearInterval(this.interval);
-      }
-      this.toast = toast;
-    }
+  initToast (): void {
     if (this.toast.config.timeout > 0) {
       this.startTimeout(0);
-    } else {
-      this.toast.config.showProgressBar = false;
-      this.toast.config.pauseOnHover = false;
     }
   }
 
   /**
    * Start progress bar
-   * @param currentProgress {Number}
+   * @param startTime {number}
+   * @default 0
    */
-  startTimeout(currentProgress: number) {
-    const refreshRate = 10;
-    if (this.state.toast.isDestroying) {
-      return;
-    }
-    this.state.toast.progress = currentProgress;
-    const step = refreshRate / this.toast.config.timeout * 100;
-      this.interval = setInterval(() => {
-        this.state.toast.progress += step;
-        if (this.state.toast.progress >= 100) {
+  startTimeout (startTime: number = 0) {
+    const start = performance.now();
+    const calculate = () => {
+      this.animationFrame = requestAnimationFrame((timestamp) => {
+        const runtime = timestamp + startTime - start;
+        const progress = Math.min(runtime / this.toast.config.timeout, 1);
+        if (this.state.paused) {
+          cancelAnimationFrame(this.animationFrame);
+        } else if (runtime < this.toast.config.timeout) {
+          this.state.progress = progress;
+          calculate();
+        } else {
+          this.state.progress = 1;
+          cancelAnimationFrame(this.animationFrame);
           this.service.remove(this.toast.id);
         }
-      }, refreshRate);
-  }
-
-  /**
-   * Lifecycle trigger
-   * @param action {SnotifyAction}
-   * @param promptValue {SnotifyAction}
-   */
-  lifecycle(action: SnotifyAction, promptValue?: string) {
-    return this.service.lifecycle.next({
-      action,
-      toast: this.toast,
-      value: promptValue
-    });
+      })
+    };
+    calculate();
   }
 
 }
