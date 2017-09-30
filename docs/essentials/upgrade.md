@@ -4,6 +4,7 @@
 
 > Options totally reworked.  
   Now you have [setDefaults](../api/options.md#setting-default-configuration) method to change toast dock configuration.
+
 ```typescript
 // Import your library
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
