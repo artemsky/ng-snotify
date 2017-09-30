@@ -20,7 +20,6 @@ export class AppComponent {
   dockMax = 8;
   blockMax = 6;
   pauseHover = true;
-  maxHeight = 300;
   titleMaxLength = 15;
   bodyMaxLength = 80;
 
@@ -150,11 +149,13 @@ export class AppComponent {
     this.snotifyService.prompt(this.body, this.title, {
       ...config,
       buttons: [
-        {text: 'Yes', action: (toast) => console.log(toast.valid = !toast.valid)
-        },
+        {text: 'Yes', action: (toast) => console.log('Said Yes: ' + toast.value) },
         {text: 'No', action: (toast) => { console.log('Said No: ' + toast.value); this.snotifyService.remove(toast.id); }},
       ],
-      placeholder: 'This is the example placeholder which you can pass' // Max-length = 40
+      placeholder: 'Enter "ng-snotify" to validate this input' // Max-length = 40
+    }).on('input', (toast) => {
+      console.log(toast.value)
+      toast.valid = !!toast.value.match('ng-snotify');
     });
   }
 

@@ -33,8 +33,10 @@
       </div>
       <div class="col-xs-6">
         <div class="form-group">
-          <label for="maxheight">Toast max-height</label>
-          <input [(ngModel)]="maxHeight" type="number" id="maxheight" class="form-control">
+          <label for="backdrop">
+            Backdrop (0.0 - 1.0)
+          </label>
+          <input [(ngModel)]="backdrop" type="number" id="backdrop" class="form-control" min="-1" max="1">
         </div>
       </div>
     </div>
@@ -87,14 +89,6 @@
         </div>
       </div>
     </div>
-
-    <div class="form-group">
-      <label for="backdrop">
-        Backdrop (0-1)
-      </label>
-      <input [(ngModel)]="backdrop" type="number" id="backdrop" class="form-control" min="-1" max="1">
-    </div>
-
 
     <div class="row">
       <div class="col-xs-6">
@@ -162,7 +156,8 @@
     </main>
     <footer>
       <div class="footer">
-        <a href="documentation/index.html" target="_blank">Auto-Documentation</a> &#9673;
+        <a href="documentation/index.html" target="_blank">Documentation</a> &#9673;
+        <a href="compodoc/index.html" target="_blank">Compodoc</a> &#9673;
         <a href="https://github.com/artemsky/ng-snotify" target="_blank">GitHub</a> &#9673;
         <a href="https://www.npmjs.com/package/ng-snotify" target="_blank">NPM</a>
         <h6>MIT &copy; 2017 <a href="https://github.com/artemsky/">artemsky</a></h6>
