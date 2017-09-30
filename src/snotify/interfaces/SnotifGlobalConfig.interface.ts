@@ -1,5 +1,8 @@
 import {SnotifyPosition} from '../enums/SnotifyPosition.enum';
 
+/**
+ * Toast dock configuration
+ */
 export interface SnotifyGlobalConfig {
   /**
    * Max toast items on screen.

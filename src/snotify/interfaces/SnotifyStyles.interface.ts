@@ -1,5 +1,8 @@
 import {SnotifyType} from '../types/snotify.type';
 
+/**
+ * Toast styles
+ */
 export interface SnotifyStyles {
   simple: SnotifyType;
   success: SnotifyType;

@@ -1,5 +1,10 @@
 import {SnotifyPosition} from './enums/SnotifyPosition.enum';
 import {SnotifyStyle} from './enums/SnotifyStyle.enum';
+
+/**
+ * Snotify default configuration object
+ * @type {SnotifyDefaults}
+ */
 export const ToastDefaults = {
   global: {
     newOnTop: true,

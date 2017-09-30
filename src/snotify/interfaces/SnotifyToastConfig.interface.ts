@@ -4,6 +4,9 @@ import {SnotifyType} from '../types/snotify.type';
 import {SafeHtml} from '@angular/platform-browser';
 import {SnotifyPosition} from '../enums/SnotifyPosition.enum';
 
+/**
+ * Toast configuration object
+ */
 export interface SnotifyToastConfig {
 
   /**

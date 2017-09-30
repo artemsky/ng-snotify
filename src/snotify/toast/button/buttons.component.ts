@@ -19,6 +19,9 @@ export class ButtonsComponent {
   @Input() toast: SnotifyToast;
   constructor(private service: SnotifyService) {}
 
+  /**
+   * remove toast
+   */
   remove() {
     this.service.remove(this.toast.id);
   }

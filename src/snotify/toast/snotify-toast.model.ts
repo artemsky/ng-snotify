@@ -8,9 +8,24 @@ import {Subscription} from 'rxjs/Subscription';
  * Toast main model
  */
 export class SnotifyToast {
+  /**
+   * Emits {SnotifyEvent}
+   * @type {Subject<SnotifyEvent>}
+   */
   readonly eventEmitter = new Subject<SnotifyEvent>();
+  /**
+   * Holds all subscribers because we need to unsubscribe from all before toast get destroyed
+   * @type {Subscription[]}
+   * @private
+   */
   private _eventsHolder: Subscription[] = [];
+  /**
+   * Toast prompt value
+   */
   value: string;
+  /**
+   * Toast validator
+   */
   valid: boolean;
   constructor (public id: number,
                public title: string,
@@ -26,6 +41,12 @@ export class SnotifyToast {
     })
   }
 
+  /**
+   * Subscribe to toast events
+   * @param {SnotifyEvent} event
+   * @param {(toast: SnotifyToast) => void} action
+   * @returns {this}
+   */
   on (event: SnotifyEvent, action: (toast: this) => void): this {
     this._eventsHolder.push(
       this.eventEmitter.subscribe((e: SnotifyEvent) => {
