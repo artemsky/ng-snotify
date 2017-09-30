@@ -139,14 +139,6 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
   }
 
   /**
-   * Prompt input value changed
-   */
-  onPromptChanged (value: string) {
-    this.toast.value = value;
-    this.toast.eventEmitter.next('input');
-  }
-
-  /**
    * Remove toast completely after animation
    */
   onExitTransitionEnd () {
