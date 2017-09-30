@@ -14,7 +14,7 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
     SnotifyModule
   ],
   providers: [
-    { provide: 'SnotifyConfig', useValue: ToastDefaults}, // Default configuration
+    { provide: 'SnotifyToastConfig', useValue: ToastDefaults}, // Default configuration
     SnotifyService
   ]
 })
@@ -88,6 +88,6 @@ Now button action get only one param of type [SnotifyToast](../api/model.md#snot
  
 ## All another stuff should not touch you
 - Renamed
-  - SnotifyConfig -> SnotifyToastConfig
+  - SnotifyToastConfig -> SnotifyToastConfig
   - SnotifyOptions -> SnotifyGlobalConfig
 

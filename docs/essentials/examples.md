@@ -21,7 +21,7 @@ service.success('Example body content', 'Example title', {
 #### Async
 
 ###### Success
-You should pass Promise of type SnotifyConfig to change some data or do some other actions  
+You should pass Promise of type Snotify to change some data or do some other actions  
 ```typescript
 const successAction = Observable.create(observer => {
       setTimeout(() => {

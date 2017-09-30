@@ -21,7 +21,7 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
     SnotifyModule
   ],
   providers: [
-    { provide: 'SnotifyConfig', useValue: ToastDefaults},
+    { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
     SnotifyService
   ]
 })

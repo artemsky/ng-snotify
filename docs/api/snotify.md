@@ -15,9 +15,9 @@
 
   ```
   (body: string): SnotifyToast
-  (body: string, config: SnotifyConfig): SnotifyToast
+  (body: string, config: SnotifyToastConfig): SnotifyToast
   (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyConfig): SnotifyToast
+  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
   ```
   
 ### success
@@ -28,9 +28,9 @@
 
   ```
   (body: string): SnotifyToast
-  (body: string, config: SnotifyConfig): SnotifyToast
+  (body: string, config: SnotifyToastConfig): SnotifyToast
   (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyConfig): SnotifyToast
+  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
   ``` 
   
 ### info
@@ -41,9 +41,9 @@
 
   ```
   (body: string): SnotifyToast
-  (body: string, config: SnotifyConfig): SnotifyToast
+  (body: string, config: SnotifyToastConfig): SnotifyToast
   (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyConfig): SnotifyToast
+  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
   ```
   
 ### warning
@@ -54,9 +54,9 @@
 
   ```
   (body: string): SnotifyToast
-  (body: string, config: SnotifyConfig): SnotifyToast
+  (body: string, config: SnotifyToastConfig): SnotifyToast
   (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyConfig): SnotifyToast
+  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
   ```  
   
 ### error
@@ -67,9 +67,9 @@
 
   ```
   (body: string): SnotifyToast
-  (body: string, config: SnotifyConfig): SnotifyToast
+  (body: string, config: SnotifyToastConfig): SnotifyToast
   (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyConfig): SnotifyToast
+  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
   ```
 
 ### confirm
@@ -80,9 +80,9 @@
 
   ```
   (body: string): SnotifyToast
-  (body: string, config: SnotifyConfig): SnotifyToast
+  (body: string, config: SnotifyToastConfig): SnotifyToast
   (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyConfig): SnotifyToast
+  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
   ```
   > Toast notification with buttons  
   > Example - [here](../essentials/examples.md#confirm) 
@@ -95,9 +95,9 @@
 
   ```
   (body: string): SnotifyToast
-  (body: string, config: SnotifyConfig): SnotifyToast
+  (body: string, config: SnotifyToastConfig): SnotifyToast
   (body: string, title: string): SnotifyToast
-  (body: string, title: string, config: SnotifyConfig): SnotifyToast
+  (body: string, title: string, config: SnotifyToastConfig): SnotifyToast
   ```
   > Toast notification with buttons and input field
   > Example - [here](../essentials/examples.md#prompt)   
@@ -112,8 +112,8 @@
   ```
   (body: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
   (body: string, title: string, action: Promise<Snotify> | Observable<Snotify>): SnotifyToast
-  (body: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyConfig): SnotifyToast
-  (body: string, title: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyConfig): SnotifyToast
+  (body: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyToastConfig): SnotifyToast
+  (body: string, title: string, action: Promise<Snotify> | Observable<Snotify>, config: SnotifyToastConfig): SnotifyToast
   ```
   > Toast notification of style - *info* and loading spinner. It changes style depending on complete or error `Observable`.  
   > Example - [here](../essentials/examples.md#async)  
@@ -127,7 +127,7 @@
   Signature:
 
   ```
-   html(html: string | SafeHtml, config?: SnotifyConfig): SnotifyToast
+   html(html: string | SafeHtml, config?: SnotifyToastConfig): SnotifyToast
   ```
   > Toast notification of custom style(default - Simple). 
   > Renders your html string inside `.snotifyToast__inner`

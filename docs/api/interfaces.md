@@ -71,7 +71,7 @@
 > Toast config
 
 ### type
-- type: `{ [key: SnotifyType]: SnotifyConfig }`
+- type: `{ [key: SnotifyType]: SnotifyToastConfig }`
 > Toast type default config  
 > Example can be found in [options](options.md#setting-default-configuration) defaults
 

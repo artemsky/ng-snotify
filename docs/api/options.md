@@ -8,7 +8,7 @@
 > Of course you can use it like json, just omit imports, and replace `SnotifyStyle` & `SnotifyPosition` with string values.
 > Just be sure that you are follow [SnotifyDefaults](interfaces.md#snotifydefaults) interface.  
 > You should initialize `ng-snotify` with default configuration object.   
-> We provide it by custom object injection `{ provide: 'SnotifyConfig', useValue: ToastDefaults}` by default.
+> We provide it by custom object injection `{ provide: 'SnotifyToastConfig', useValue: ToastDefaults}` by default.
 
 ###### Example
 ```typescript
@@ -21,7 +21,7 @@ import {SnotifyModule, SnotifyService, ToastDefaults} from 'ng-snotify';
     SnotifyModule
   ],
   providers: [
-    { provide: 'SnotifyConfig', useValue: ToastDefaults},
+    { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
     SnotifyService
   ],
   bootstrap: [AppComponent]

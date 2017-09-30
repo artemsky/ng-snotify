@@ -94,9 +94,9 @@ You can see an example of custom icon by calling *Simple toast* in the example a
 
 - fix async toast ([#8](https://github.com/artemsky/ng-snotify/issues/8))
 - add `truncate` pipe
-- add toast `titleMaxLeght` and `bodyMaxLeght` to `SnotifyConfig`
+- add toast `titleMaxLeght` and `bodyMaxLeght` to `SnotifyToastConfig`
 - add toast `maxHeight` to `SnotifyOptions` ([#7](https://github.com/artemsky/ng-snotify/issues/7))
-- add body to **prompt** type and replace input preview text wih new option `placeholder` of `SnotifyConfig` type
+- add body to **prompt** type and replace input preview text wih new option `placeholder` of `SnotifyToastConfig` type
 
 ### v1.0.0
 
