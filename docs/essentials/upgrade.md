@@ -71,8 +71,22 @@ service.async(body, action)
 service.async(body, action, config)
 ```
 
-### 4. REMOVED
+### 4. Buttons
+
+Now button action get only one param of type [SnotifyToast](../api/model.md#snotifytoast) and by default removes toast
+
+```typescript
+ action: (toast: SnotifyToast) => service.remove(toast.id)
+```
+
+
+### 5. REMOVED
  - `setConfig`
+ - `maxHeight`
  
  
-## All another stuff should be the same
+## All another stuff should not touch you
+- Renamed
+  - SnotifyConfig -> SnotifyToastConfig
+  - SnotifyOptions -> SnotifyGlobalConfig
+

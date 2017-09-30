@@ -1,5 +1,16 @@
 ## Change Log
 
+### v4.0.0
+- **Breaking changes -** [Look migration guide](https://artemsky.github.io/ng-snotify/documentation/essentials/upgrade.html)
+- **Features**
+  - [New Documentation](https://artemsky.github.io/ng-snotify/documentation) based on gitbook
+  - Prompt input [validation](https://artemsky.github.io/ng-snotify/documentation/essentials/examples.html#prompt--validation)
+  - New [callbacks](https://artemsky.github.io/ng-snotify/documentation/api/callbacks.html) with jQuery-like syntax
+  - Reworked toast arguments ordering based on - see [function signatures](https://artemsky.github.io/ng-snotify/documentation/api/snotify.html)
+  - Replaced all animations and icons to styles (now it more customizable up to you)
+  - Add toast [default configuration](https://artemsky.github.io/ng-snotify/documentation/api/options.html)
+  - Reworked toast `timeout` interval - now based on `requestAnimationFrame`
+
 ### v3.0.1
   - fix invisible backdrop blinking
   
