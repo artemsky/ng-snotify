@@ -1,4 +1,4 @@
-# vue-snotify
+# ng-snotify
 
 ## Overview
 * [Installation](installation.md)
