@@ -1,5 +1,6 @@
 rm -rf demo
 npm run example:build:prod
+npm run compodoc:build
 cd docs
 rm -rf _book
 gitbook install

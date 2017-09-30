@@ -34,9 +34,9 @@ https://artemsky.github.io/ng-snotify/
 
 ## Documentation and Examples
 
-Documentation - [here](https://github.com/artemsky/ng-snotify/tree/master/documentation#overview)  
+Documentation - [here](https://github.com/artemsky/ng-snotify/tree/master/documentation)  
 Example application source - [here](https://github.com/artemsky/ng-snotify/tree/master/example/app)  
-Auto-Documentation - [here](https://artemsky.github.io/ng-snotify/documentation/index.html)  
+Auto-Documentation (Compodoc) - [here](https://artemsky.github.io/ng-snotify/compodoc/)  
 Change Log - [here](https://github.com/artemsky/ng-snotify/blob/master/CHANGELOG.md)
 
 ## License
