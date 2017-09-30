@@ -18,7 +18,7 @@ https://artemsky.github.io/ng-snotify/
 - Repository includes 3 different styles. So you can use on of them, or create your own.
 - Callbacks
 - Custom HTML
-- 5.3KB minified and gzipped
+- 4.3KB minified and gzipped
 
 ###### Looking for an Vue.js 2 version? [Here](https://github.com/artemsky/vue-snotify/)
 

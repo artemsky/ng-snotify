@@ -10,6 +10,7 @@
   - Replaced all animations and icons to styles (now it more customizable up to you)
   - Add toast [default configuration](https://artemsky.github.io/ng-snotify/documentation/api/options.html)
   - Reworked toast `timeout` interval - now based on `requestAnimationFrame`
+  - Now 1kb lighter :)
 
 ### v3.0.1
   - fix invisible backdrop blinking
