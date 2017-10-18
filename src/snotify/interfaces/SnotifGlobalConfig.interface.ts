@@ -32,9 +32,4 @@ export interface SnotifyGlobalConfig {
    * @default true
    */
   newOnTop?: boolean;
-  /**
-   * Toasts position on screen
-   * @type {SnotifyPosition}
-   * @default SnotifyPosition.right_bottom
-   */
 }

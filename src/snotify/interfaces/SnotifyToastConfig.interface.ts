@@ -95,13 +95,13 @@ export interface SnotifyToastConfig {
    * @type {SnotifyAnimate}
    * @default -1
    */
-  animation?: SnotifyAnimate,
+  animation?: SnotifyAnimate;
   /**
    * Html string witch overrides toast content
    * @type {string | SafeHtml}
    * @default null
    */
-  html?: string | SafeHtml,
+  html?: string | SafeHtml;
   /**
    * Toasts position on screen
    * @type {SnotifyPosition}
