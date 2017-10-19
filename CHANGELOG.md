@@ -1,5 +1,9 @@
 ## Change Log
 
+### v4.0.1
+- fix css icons width & height
+- update doc
+
 ### v4.0.0
 - **Breaking changes -** [Look migration guide](https://artemsky.github.io/ng-snotify/documentation/essentials/upgrade.html)
 - **Features**

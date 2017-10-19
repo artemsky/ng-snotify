@@ -3,6 +3,16 @@
 > Note. I'am using `scss` syntax. And there is no default theme.
 
 You should import one of this in your global style.scss like this `@import "~ng-snotify/styles/material";` or `@import "~ng-snotify/styles/material.css";` if you using css syntax.
+
+> if you using css syntax and angular-cli. Import styles directly in `.angular-cli.json`
+```json
+{
+  "styles": [
+          "../node_modules/ng-snotify/styles/{STYLE_NAME}.css",
+          "styles.css"
+  ]
+}
+```
 _________________
 
 **Snotify** offers you 3 themes.
