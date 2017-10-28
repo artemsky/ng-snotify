@@ -467,6 +467,7 @@ export class SnotifyService {
     if (next.html) {
       toast.config.html = next.html;
     }
+    this.emit();
     this.toastChanged.next(toast);
   }
 
