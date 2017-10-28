@@ -1,5 +1,10 @@
 ## Change Log
 
+### v4.0.2
+- fix toast reposition if position changed in async method
+- bump dependencies
+
+
 ### v4.0.1
 - fix css icons width & height
 - update doc
