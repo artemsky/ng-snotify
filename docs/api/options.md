@@ -105,7 +105,13 @@ export class AppModule { }
     vm.$snotify.simple('Example body', null, {
       icon: icon
     });
-  ```
+  ```  
+  
+### iconClass
+
+- type: `string`
+- default: `null`
+  > Custom icon class.  
   
 ### backdrop
 

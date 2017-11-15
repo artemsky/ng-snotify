@@ -1,5 +1,9 @@
 ## Change Log
 
+### v4.1.0
+- escape SVG icons bug with Safari, Firefox
+- add [iconClass](https://artemsky.github.io/ng-snotify/documentation/api/options.html#iconclass)
+
 ### v4.0.2
 - fix toast reposition if position changed in async method
 - bump dependencies
