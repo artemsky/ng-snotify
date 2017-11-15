@@ -82,6 +82,12 @@ export interface SnotifyToastConfig {
    * @default Depends on toast type. Look more in icon.component.html
    */
   icon?: string;
+
+  /**
+   * Custom icon class.
+   * @default null
+   */
+  iconClass?: string;
   /**
    * Backdrop opacity.
    * * **Range:** `0.0 - 1.0`.

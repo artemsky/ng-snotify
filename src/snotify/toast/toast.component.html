@@ -21,7 +21,7 @@
     <div class="snotifyToast__body" *ngIf="toast.body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>
     <ng-snotify-prompt *ngIf="toast.config.type === state.promptType" [toast]="toast">
     </ng-snotify-prompt>
-    <div *ngIf="!toast.config.icon; else elseBlock" [ngClass]="['snotify-icon', 'snotify-icon--' + toast.config.type]"></div>
+    <div *ngIf="!toast.config.icon; else elseBlock" [ngClass]="['snotify-icon', (toast.config.iconClass || 'snotify-icon--' + toast.config.type)]"></div>
     <ng-template #elseBlock>
       <img class="snotify-icon" [src]='toast.config.icon' />
     </ng-template>

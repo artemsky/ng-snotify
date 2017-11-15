@@ -21,6 +21,7 @@ export const ToastDefaults = {
     titleMaxLength: 16,
     backdrop: -1,
     icon: null,
+    iconClass: null,
     html: null,
     position: SnotifyPosition.rightBottom,
     animation: {enter: 'fadeIn', exit: 'fadeOut', time: 400}
