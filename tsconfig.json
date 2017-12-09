@@ -17,5 +17,9 @@
       "es2016",
       "dom"
     ]
-  }
+  },
+  "include": [
+    "example/**/*.ts",
+    "src/**/*.ts"
+  ]
 }

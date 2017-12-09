@@ -1,5 +1,8 @@
 ## Change Log
 
+### v4.2.0
+- add Angular 5+ support
+
 ### v4.1.0
 - escape SVG icons bug with Safari, Firefox
 - add [iconClass](https://artemsky.github.io/ng-snotify/documentation/api/options.html#iconclass)
