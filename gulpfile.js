@@ -5,7 +5,6 @@ const gulp = require('gulp'),
   rollup = require('gulp-rollup'),
   rename = require('gulp-rename'),
   del = require('del'),
-  runSequence = require('run-sequence'),
   inlineResources = require('./tools/gulp/inline-resources'),
   sass = require('gulp-sass');
 
@@ -79,12 +78,15 @@ gulp.task('rollup:fesm', function () {
         '@angular/core',
         '@angular/common',
         'rxjs',
-        'rxjs/observable/PromiseObservable',
       ],
 
-      // Format of generated bundle
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
-      format: 'es'
+      output: {
+        // Format of generated bundle
+        // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
+        format: 'es'
+      },
+
+
     }))
     .pipe(gulp.dest(distFolder));
 });
@@ -114,30 +116,29 @@ gulp.task('rollup:umd', function () {
         '@angular/core',
         '@angular/common',
         'rxjs',
-        'rxjs/observable/PromiseObservable',
       ],
 
-      // Format of generated bundle
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
-      format: 'umd',
+      output: {
+        // Format of generated bundle
+        // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
+        format: 'umd',
 
-      // Export mode to use
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#exports
-      exports: 'named',
+        // Export mode to use
+        // See https://github.com/rollup/rollup/wiki/JavaScript-API#exports
+        exports: 'named',
+        // The name to use for the module for UMD/IIFE bundles
+        // (required for bundles with exports)
+        // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
+        name: 'ng-snotify',
 
-      // The name to use for the module for UMD/IIFE bundles
-      // (required for bundles with exports)
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
-      name: 'ng-snotify',
-
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals
-      globals: {
-        typescript: 'ts',
-        '@angular/core': '@angular/core',
-        '@angular/common': '@angular/common',
-        'rxjs': 'rxjs',
-        'rxjs/observable/PromiseObservable': 'rxjs/observable/PromiseObservable',
-      }
+        // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals
+        globals: {
+          typescript: 'ts',
+          '@angular/core': '@angular/core',
+          '@angular/common': '@angular/common',
+          'rxjs': 'rxjs',
+        }
+      },
 
     }))
     .pipe(rename('ng-snotify.umd.js'))
@@ -201,28 +202,15 @@ gulp.task('styles:copy', function () {
     .pipe(gulp.dest(`${distFolder}/styles`));
 });
 
-gulp.task('compile', function () {
-  runSequence(
-    'clean:dist',
-    'copy:source',
-    'inline-resources',
-    'ngc',
-    'rollup:fesm',
-    'rollup:umd',
-    'copy:build',
-    'copy:manifest',
-    'copy:readme',
-    'clean:build',
-    'clean:tmp',
-    function (err) {
-      if (err) {
-        console.log('ERROR:', err.message);
-        deleteFolders([distFolder, tmpFolder, buildFolder]);
-      } else {
-        console.log('LIBRARY: compilation finished successfully');
-      }
-    });
-});
+gulp.task('compile', gulp.series(
+  'clean:dist',
+  'copy:source',
+  'inline-resources',
+  'ngc',
+  gulp.parallel('rollup:fesm', 'rollup:umd'),
+  gulp.parallel('copy:build', 'copy:manifest', 'copy:readme'),
+  gulp.parallel('clean:build', 'clean:tmp'),
+));
 
 /**
  * Watch for any change in the /src folder and compile files
@@ -231,24 +219,17 @@ gulp.task('watch', function () {
   gulp.watch(`${srcFolder}/**/*`, ['compile']);
 });
 
-gulp.task('clean', ['clean:dist', 'clean:tmp', 'clean:build']);
+gulp.task('clean', gulp.parallel('clean:dist', 'clean:tmp', 'clean:build'));
 
-gulp.task('build', runSequence(
+gulp.task('build', gulp.series(
   'clean',
   'compile',
   'styles:build',
   'styles:copy',
-  function (err) {
-    if (err) {
-      console.log('ERROR:', err.message);
-      deleteFolders([distFolder, tmpFolder, buildFolder]);
-    } else {
-      console.log('STYLES: compilation finished successfully');
-    }
-  })
-);
-gulp.task('build:watch', ['build', 'watch']);
-gulp.task('default', ['build:watch']);
+));
+
+gulp.task('build:watch', gulp.series('build', 'watch'));
+gulp.task('default', gulp.series('build:watch'));
 
 /**
  * Deletes the specified folder

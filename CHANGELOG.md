@@ -1,7 +1,11 @@
 ## Change Log
 
 ### v4.2.0
-- add Angular 5+ support
+- add Angular 6 support thx [MatissJanis](https://github.com/artemsky/ng-snotify/pull/43)
+
+
+### v4.2.0
+- add Angular 5 support
 
 ### v4.1.0
 - escape SVG icons bug with Safari, Firefox

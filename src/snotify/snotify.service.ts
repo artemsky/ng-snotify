@@ -1,7 +1,6 @@
 import {Inject, Injectable} from '@angular/core';
 import {SnotifyToast} from './toast/snotify-toast.model';
-import {Observable, Subject, Subscription} from 'rxjs';
-import {PromiseObservable} from 'rxjs/observable/PromiseObservable';
+import {Observable, Subject, Subscription, from} from 'rxjs';
 import {SnotifyToastConfig} from './interfaces/SnotifyToastConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
 import {SnotifyStyle} from './enums/SnotifyStyle.enum';
@@ -422,7 +421,7 @@ export class SnotifyService {
   async(args: any): SnotifyToast {
     let async: Observable<any>;
     if (args.action instanceof Promise) {
-      async = PromiseObservable.create(args.action );
+      async = from(args.action );
     } else {
       async = args.action;
     }
