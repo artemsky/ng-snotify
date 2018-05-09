@@ -2,6 +2,8 @@
 
 ### v4.2.0
 - add Angular 6 support thx [MatissJanis](https://github.com/artemsky/ng-snotify/pull/43)
+- add input `autofocus` to prompt toast
+- add wai-aria attrs [#36](https://github.com/artemsky/ng-snotify/issues/36)
 
 
 ### v4.2.0

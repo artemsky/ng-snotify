@@ -57,8 +57,8 @@
   "module": "ng-snotify.js",
   "typings": "ng-snotify.d.ts",
   "peerDependencies": {
-    "@angular/core": "^4.2.6",
-    "rxjs": "^5.4.1",
-    "zone.js": "^0.8.4"
+    "@angular/core": ">=4.2.6",
+    "rxjs": ">=5.4.1",
+    "zone.js": ">=0.8.4"
   }
 }
