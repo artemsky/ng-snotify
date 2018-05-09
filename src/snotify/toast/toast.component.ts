@@ -106,8 +106,8 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   onRemove () {
     this.state.isDestroying = true;
-    this.stateChanged.emit('beforeHide');
     this.toast.eventEmitter.next('beforeHide');
+    this.stateChanged.emit('beforeHide');
     this.state.animation = this.toast.config.animation.exit;
     setTimeout(() => {
       this.stateChanged.emit('hidden');
