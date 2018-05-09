@@ -1,5 +1,5 @@
 <span class="snotifyToast__input" [ngClass]="{'snotifyToast__input--filled': isPromptFocused}">
-  <input (input)="toast.value = $event.target.value; toast.eventEmitter.next('input')"
+  <input (input)="toast.value = $event.target.value; toast.eventEmitter.next('input')" autofocus
          class="snotifyToast__input__field" type="text"
          [id]="toast.id"
          (focus)="isPromptFocused = true"

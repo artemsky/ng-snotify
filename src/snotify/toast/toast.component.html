@@ -1,4 +1,5 @@
-<div
+<div [attr.role]="toast.config.type === state.promptType ? 'dialog' : 'alert'" [attr.aria-labelledby]="'snotify_'+toast.id"
+     [attr.aria-modal]="toast.config.type === state.promptType"
   [ngClass]="[
   'snotifyToast animated',
    'snotify-' + toast.config.type,
@@ -17,7 +18,7 @@
     <span class="snotifyToast__progressBar__percentage" [ngStyle]="{'width': (state.progress * 100) + '%'}"></span>
   </div>
   <div class="snotifyToast__inner" *ngIf="!toast.config.html; else toastHTML">
-    <div class="snotifyToast__title" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>
+    <div class="snotifyToast__title" [attr.id]="'snotify_'+toast.id" *ngIf="toast.title">{{toast.title | truncate : toast.config.titleMaxLength}}</div>
     <div class="snotifyToast__body" *ngIf="toast.body">{{toast.body | truncate : toast.config.bodyMaxLength}}</div>
     <ng-snotify-prompt *ngIf="toast.config.type === state.promptType" [toast]="toast">
     </ng-snotify-prompt>
