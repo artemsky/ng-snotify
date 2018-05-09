@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {SnotifyService, SnotifyPosition, SnotifyToastConfig} from 'ng-snotify';
 
 @Component({
