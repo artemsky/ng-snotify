@@ -1,13 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { FormsModule } from '@angular/forms';
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {SnotifyModule, SnotifyService, ToastDefaults} from 'ng-snotify';
 import {SnotifyPosition} from '../../src/snotify/enums/SnotifyPosition.enum';
 
 describe('NgSnotify Testing', () => {
-  beforeEach(() => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ FormsModule, SnotifyModule ],
       declarations: [
@@ -17,27 +20,27 @@ describe('NgSnotify Testing', () => {
         { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
         SnotifyService
       ]
-    });
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create the app', (done) => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
     done();
   });
 
   it(`should render title in a h1 tag 'Ng-Snotify'`, (done) => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.brand h1').textContent).toContain('Ng-Snotify');
     done();
   });
 
   it(`should init basic options`, (done) => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
     expect(service.config).toEqual(jasmine.objectContaining(ToastDefaults));
@@ -45,8 +48,6 @@ describe('NgSnotify Testing', () => {
   });
 
   it('should create success toast with body', (done) => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
@@ -57,8 +58,6 @@ describe('NgSnotify Testing', () => {
   });
 
   it('should create simple toast with body and title', (done) => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
@@ -71,9 +70,6 @@ describe('NgSnotify Testing', () => {
 
   it('should execute confirm button action', (done) => {
     let result = null;
-
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
@@ -91,8 +87,6 @@ describe('NgSnotify Testing', () => {
   });
 
   it('should create prompt toast with 4 buttons', (done) => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
@@ -113,8 +107,6 @@ describe('NgSnotify Testing', () => {
   });
 
   it('should create html toast with html content', (done) => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
@@ -125,8 +117,6 @@ describe('NgSnotify Testing', () => {
   });
 
   it('should create 3 toasts max at rightTop position', (done) => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     const compiled = fixture.debugElement.nativeElement;
     fixture.detectChanges();
@@ -150,8 +140,6 @@ describe('NgSnotify Testing', () => {
   });
 
   it('should create toasts at different positions', (done) => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

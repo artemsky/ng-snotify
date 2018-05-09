@@ -76,8 +76,8 @@
               "example/styles.scss"
             ],
             "assets": [
-              "example/assets",
-              "example/favicon.ico"
+              { "glob": "**/*", "input": "example/assets/", "output": "/assets/" },
+              { "glob": "example/favicon.ico", "input": "/src", "output": "/" }
             ]
           }
         },
