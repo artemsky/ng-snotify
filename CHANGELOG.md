@@ -1,9 +1,10 @@
 ## Change Log
 
-### v4.2.0
+### v4.3.0
 - add Angular 6 support thx [MatissJanis](https://github.com/artemsky/ng-snotify/pull/43)
 - add input `autofocus` to prompt toast
 - add wai-aria attrs [#36](https://github.com/artemsky/ng-snotify/issues/36)
+- add fix backdrop [#41](https://github.com/artemsky/ng-snotify/issues/41)
 
 
 ### v4.2.0
