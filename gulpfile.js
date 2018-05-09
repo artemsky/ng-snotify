@@ -78,10 +78,8 @@ gulp.task('rollup:fesm', function () {
       external: [
         '@angular/core',
         '@angular/common',
-        'rxjs/Subject',
+        'rxjs',
         'rxjs/observable/PromiseObservable',
-        'rxjs/Observable',
-        'rxjs/Subscription',
       ],
 
       // Format of generated bundle
@@ -115,10 +113,8 @@ gulp.task('rollup:umd', function () {
       external: [
         '@angular/core',
         '@angular/common',
-        'rxjs/Subject',
+        'rxjs',
         'rxjs/observable/PromiseObservable',
-        'rxjs/Observable',
-        'rxjs/Subscription',
       ],
 
       // Format of generated bundle
@@ -139,7 +135,7 @@ gulp.task('rollup:umd', function () {
         typescript: 'ts',
         '@angular/core': '@angular/core',
         '@angular/common': '@angular/common',
-        'rxjs/Subject': 'rxjs/Subject',
+        'rxjs': 'rxjs',
         'rxjs/observable/PromiseObservable': 'rxjs/observable/PromiseObservable',
       }
 

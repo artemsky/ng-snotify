@@ -1,9 +1,7 @@
 import {Inject, Injectable} from '@angular/core';
 import {SnotifyToast} from './toast/snotify-toast.model';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
+import {Observable, Subject, Subscription} from 'rxjs';
 import {PromiseObservable} from 'rxjs/observable/PromiseObservable';
-import {Subscription} from 'rxjs/Subscription';
 import {SnotifyToastConfig} from './interfaces/SnotifyToastConfig.interface';
 import {Snotify} from './interfaces/Snotify.interface';
 import {SnotifyStyle} from './enums/SnotifyStyle.enum';

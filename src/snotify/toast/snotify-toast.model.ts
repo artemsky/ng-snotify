@@ -1,8 +1,7 @@
 import {SnotifyToastConfig} from '../interfaces/SnotifyToastConfig.interface';
-import {Subject} from 'rxjs/Subject';
+import {Subject, Subscription} from 'rxjs';
 import {SnotifyEvent} from '../types/event.type';
 import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
-import {Subscription} from 'rxjs/Subscription';
 // @TODO remove method in observable way
 /**
  * Toast main model

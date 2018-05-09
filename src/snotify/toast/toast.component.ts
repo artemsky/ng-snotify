@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
 import {SnotifyEvent} from '../types/event.type';
 

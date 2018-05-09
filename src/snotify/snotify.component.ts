@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {SnotifyService} from './snotify.service';
 import {SnotifyToast} from './toast/snotify-toast.model';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {SnotifyNotifications} from './interfaces/SnotifyNotifications.interface';
 import {SnotifyPosition} from './enums/SnotifyPosition.enum';
 import {SnotifyEvent} from './types/event.type';
