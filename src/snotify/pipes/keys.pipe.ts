@@ -8,7 +8,7 @@ import { Pipe, PipeTransform } from '@angular/core';
  * Extract object keys pipe
  */
 export class KeysPipe implements PipeTransform {
-  transform(value: any, args: any[] = null): any {
+  transform(value: any, args: any[] | null = null): any {
     if (!value) {
       return value;
     }

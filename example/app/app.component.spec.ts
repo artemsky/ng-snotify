@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
 
-import { FormsModule } from '@angular/forms';
-import { TestBed, ComponentFixture, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import {SnotifyModule, SnotifyService, ToastDefaults} from 'ng-snotify';
+import {FormsModule} from '@angular/forms';
+import {TestBed, ComponentFixture, async} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {SnotifyModule, SnotifyService, ToastDefaults, SnotifyToast} from 'ng-snotify';
 import {SnotifyPosition} from '../../src/snotify/enums/SnotifyPosition.enum';
 
 describe('NgSnotify Testing', () => {
@@ -69,12 +69,12 @@ describe('NgSnotify Testing', () => {
   });
 
   it('should execute confirm button action', (done) => {
-    let result = null;
+    let result: SnotifyToast | null = null;
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
 
-    const toastID = service.confirm('Ng-Snotify', null, {
+    const toastID = service.confirm('Ng-Snotify', {
       buttons: [
         {text: 'Yes', action: (id) => result = id}
       ]
@@ -82,7 +82,7 @@ describe('NgSnotify Testing', () => {
     fixture.detectChanges();
     compiled.querySelector('.snotifyToast button').click();
 
-    expect(result).toEqual(toastID);
+    expect(result as SnotifyToast | null).toEqual(toastID);
     done();
   });
 
@@ -91,7 +91,7 @@ describe('NgSnotify Testing', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
 
-    service.prompt('Ng-Snotify', null, {
+    service.prompt('Ng-Snotify', {
       buttons: [
         {text: 'Yes'},
         {text: 'Yes'},
@@ -143,10 +143,10 @@ describe('NgSnotify Testing', () => {
     const service: SnotifyService = fixture.debugElement.injector.get(SnotifyService);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    service.simple('Test', null, {
+    service.simple('Test', {
       position: SnotifyPosition.centerBottom
     });
-    service.success('Test', null, {
+    service.success('Test', {
       position: SnotifyPosition.leftBottom
     });
     fixture.detectChanges();
