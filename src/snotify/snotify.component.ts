@@ -70,7 +70,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
           this.withBackdrop = toasts.filter(toast => toast.config.backdrop >= 0).reverse();
         }
         this.notifications = this.splitToasts(toasts.slice(this.dockSize_a, this.dockSize_b));
-
+        this.stateChanged('mounted')
       }
     );
 
@@ -82,10 +82,10 @@ export class SnotifyComponent implements OnInit, OnDestroy {
    * @param {SnotifyEvent} event
    */
   stateChanged(event: SnotifyEvent) {
-    if (!this.withBackdrop.length && this.backdrop > 0) {
-      this.backdrop = 0;
-    } else if (!this.withBackdrop.length) {
-      this.backdrop = -1;
+    if (!this.withBackdrop.length) {
+      if (this.backdrop >= 0) {
+        this.backdrop = -1;
+      }
       return;
     }
     switch (event) {
@@ -98,12 +98,12 @@ export class SnotifyComponent implements OnInit, OnDestroy {
         this.backdrop = this.withBackdrop[this.withBackdrop.length - 1].config.backdrop;
         break;
       case 'beforeHide':
-        if (this.withBackdrop.length === 0) {
+        if (this.withBackdrop.length === 1) {
           this.backdrop = 0;
         }
         break;
       case 'hidden':
-        if (this.withBackdrop.length === 0) {
+        if (this.withBackdrop.length === 1) {
           this.backdrop = -1;
         }
         break;
