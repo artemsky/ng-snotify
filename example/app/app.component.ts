@@ -16,6 +16,7 @@ export class AppComponent {
   progressBar = true;
   closeClick = true;
   newTop = true;
+  filterDuplicates = false;
   backdrop = -1;
   dockMax = 8;
   blockMax = 6;
@@ -34,6 +35,7 @@ export class AppComponent {
         newOnTop: this.newTop,
         maxAtPosition: this.blockMax,
         maxOnScreen: this.dockMax,
+        filterDuplicates: this.filterDuplicates
       }
     });
     return {

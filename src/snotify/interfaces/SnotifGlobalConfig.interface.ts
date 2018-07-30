@@ -32,4 +32,14 @@ export interface SnotifyGlobalConfig {
    * @default true
    */
   newOnTop?: boolean;
+
+  /**
+   * When enabled duplicated notification are filtered out.
+   *
+   * Duplicates are detected when they have the same title, body and type.
+   *
+   * @type {boolean}
+   * @default false
+   */
+  filterDuplicates?: boolean;
 }
