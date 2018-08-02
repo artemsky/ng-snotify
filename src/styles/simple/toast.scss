@@ -13,6 +13,19 @@ $async-border-color: $info-border-color;
 $confirm-border-color: #009688;
 $prompt-border-color: $confirm-border-color;
 
+$snotify-title-font-size:auto !default;
+$snotify-body-font-size:auto !default;
+
+@if $snotify-title-font-size == auto {
+  $snotify-title-font-size:1.8em;
+}
+
+@if $snotify-body-font-size == auto {
+  $snotify-body-font-size:1em;
+}
+
+
+
 .snotifyToast {
   display: block;
   cursor: pointer;
@@ -61,14 +74,14 @@ $prompt-border-color: $confirm-border-color;
   }
 
   &__title {
-    font-size: 1.8em;
+    font-size: $snotify-title-font-size;
     line-height: 1.2em;
     margin-bottom: 5px;
     color: $toast-color;
   }
 
   &__body {
-    font-size: 1em;
+    font-size: $snotify-body-font-size;
     color: $toast-color;
   }
 

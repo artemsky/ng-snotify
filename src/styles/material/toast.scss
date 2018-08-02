@@ -36,6 +36,17 @@ $confirm-progressBarPercentage: #80cbc4;
 $prompt-bg: #009688;
 $prompt-color: #e0f2f1;
 
+$snotify-title-font-size:auto !default;
+$snotify-body-font-size:auto !default;
+
+@if $snotify-title-font-size == auto {
+  $snotify-title-font-size:1.8em;
+}
+
+@if $snotify-body-font-size == auto {
+  $snotify-body-font-size:1em;
+}
+
 .snotifyToast {
   display: block;
   cursor: pointer;
@@ -84,14 +95,14 @@ $prompt-color: #e0f2f1;
   }
 
   &__title {
-    font-size: 1.8em;
+    font-size: $snotify-title-font-size;
     line-height: 1.2em;
     margin-bottom: 5px;
     color: #fff;
   }
 
   &__body {
-    font-size: 1em;
+    font-size: $snotify-body-font-size;
   }
 
 }
