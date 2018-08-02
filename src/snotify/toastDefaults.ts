@@ -1,11 +1,11 @@
 import {SnotifyPosition} from './enums/SnotifyPosition.enum';
 import {SnotifyStyle} from './enums/SnotifyStyle.enum';
+import {ProcessedSnotifyDefaults} from './interfaces/ProcessedSnotifyDefaults.interface';
 
 /**
  * Snotify default configuration object
- * @type {SnotifyDefaults}
  */
-export const ToastDefaults = {
+export const ToastDefaults: ProcessedSnotifyDefaults = {
   global: {
     newOnTop: true,
     maxOnScreen: 8,

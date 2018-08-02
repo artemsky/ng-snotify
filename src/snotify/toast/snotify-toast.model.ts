@@ -2,6 +2,7 @@ import {SnotifyToastConfig} from '../interfaces/SnotifyToastConfig.interface';
 import {Subject, Subscription} from 'rxjs';
 import {SnotifyEvent} from '../types/event.type';
 import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
+import {ProcessedSnotifyToastConfig} from '../interfaces/ProcessedSnotifyDefaults.interface';
 // @TODO remove method in observable way
 /**
  * Toast main model
@@ -27,9 +28,9 @@ export class SnotifyToast {
    */
   valid: boolean;
   constructor (public id: number,
-               public title: string,
-               public body: string,
-               public config: SnotifyToastConfig) {
+               public title: string | undefined,
+               public body: string | undefined,
+               public config: ProcessedSnotifyToastConfig) {
     if (this.config.type === SnotifyStyle.prompt) {
       this.value = '';
     }

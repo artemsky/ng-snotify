@@ -10,6 +10,8 @@ import {TransformArgument} from './decorators/transform-argument.decorator';
 import {mergeDeep, uuid} from './utils';
 import {SetToastType} from './decorators/set-toast-type.decorator';
 import {SnotifyDefaults} from './interfaces/SnotifyDefaults.interface';
+import {ToastDefaults} from './toastDefaults';
+import {ProcessedSnotifyDefaults, ProcessedSnotifyToastConfig} from './interfaces/ProcessedSnotifyDefaults.interface';
 
 /**
  * SnotifyService - create, remove, config toasts
@@ -22,7 +24,10 @@ export class SnotifyService {
   readonly toastDeleted = new Subject<number>();
   private notifications: SnotifyToast[] = [];
 
-  constructor(@Inject('SnotifyToastConfig') public config: SnotifyDefaults) {
+  public config: ProcessedSnotifyDefaults;
+
+  constructor(@Inject('SnotifyToastConfig') config: SnotifyDefaults) {
+    this.config = mergeDeep(ToastDefaults, config) as ProcessedSnotifyDefaults;
   }
   /**
    * emit changes in notifications array
@@ -36,7 +41,7 @@ export class SnotifyService {
    * @param id {Number}
    * @return {SnotifyToast|undefined}
    */
-  get(id: number): SnotifyToast {
+  get(id: number): SnotifyToast | undefined {
     return this.notifications.find(toast => toast.id === id);
   }
 
@@ -94,8 +99,8 @@ export class SnotifyService {
    * @return {number}
    */
   create(snotify: Snotify): SnotifyToast {
-    const config =
-      mergeDeep(this.config.toast, this.config.type[snotify.config.type], snotify.config);
+    const typeConfig = (snotify.config && snotify.config.type ? this.config.type[snotify.config.type] : {});
+    const config = mergeDeep(this.config.toast, typeConfig, snotify.config) as ProcessedSnotifyToastConfig;
     const toast = new SnotifyToast(
       uuid(),
       snotify.title,
@@ -106,8 +111,8 @@ export class SnotifyService {
     return toast;
   }
 
-  setDefaults(defaults: SnotifyDefaults): SnotifyDefaults {
-    return this.config = mergeDeep(this.config, defaults) as SnotifyDefaults;
+  setDefaults(defaults: SnotifyDefaults): ProcessedSnotifyDefaults {
+    return this.config = mergeDeep(this.config, defaults) as ProcessedSnotifyDefaults;
   }
 
   /**
@@ -488,8 +493,6 @@ export class SnotifyService {
    */
   html(html: string | SafeHtml, config?: SnotifyToastConfig): SnotifyToast {
     return this.create({
-      title: null,
-      body: null,
       config: {
         ...config,
         ...{html}

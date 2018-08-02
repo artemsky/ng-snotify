@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./demo-example/out-tsc",
+    "strictNullChecks": true,
     "baseUrl": "demo-example",
     "sourceMap": true,
     "declaration": false,
