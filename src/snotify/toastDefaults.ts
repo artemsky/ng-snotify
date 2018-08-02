@@ -9,7 +9,8 @@ export const ToastDefaults = {
   global: {
     newOnTop: true,
     maxOnScreen: 8,
-    maxAtPosition: 8
+    maxAtPosition: 8,
+    filterDuplicates: false
   },
   toast: {
     type: SnotifyStyle.simple,

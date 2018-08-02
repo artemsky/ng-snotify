@@ -23,7 +23,8 @@
     "lib:lint": "npm run lint && npm run example:lint",
     "lib:build": "npm run lib:lint && npm run build",
     "docs:build": "gitbook build ./docs ./demo/documentation",
-    "docs:deploy": "bash ./update-docs.sh"
+    "docs:deploy": "bash ./update-docs.sh",
+    "prepare": "npm run build"
   },
   "homepage": "https://artemsky.github.io/ng-snotify",
   "repository": {

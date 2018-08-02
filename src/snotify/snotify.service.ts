@@ -45,12 +45,24 @@ export class SnotifyService {
    * @param toast {SnotifyToast}
    */
   private add(toast: SnotifyToast): void {
+    if (this.config.global.filterDuplicates && this.containsToast(toast)) {
+      return;
+    }
     if (this.config.global.newOnTop) {
       this.notifications.unshift(toast);
     } else {
       this.notifications.push(toast);
     }
     this.emit();
+  }
+
+  /**
+   * checks if the toast is in the collection.
+   * @param {SnotifyToast} inToast
+   * @returns {boolean}
+   */
+  private containsToast(inToast: SnotifyToast): boolean {
+    return this.notifications.some(toast => toast.equals(inToast))
   }
 
   /**

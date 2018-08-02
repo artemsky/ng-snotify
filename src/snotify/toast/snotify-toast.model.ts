@@ -57,4 +57,15 @@ export class SnotifyToast {
     return this;
   }
 
+  /**
+   * Tests if a toast equals this toast.
+   * @param {SnotifyToast} toast
+   * @returns {boolean} true then equals else false.
+   */
+  equals(toast: SnotifyToast): boolean {
+    return this.body === toast.body &&
+           this.title === toast.title &&
+           this.config.type === toast.config.type
+  }
+
 }
