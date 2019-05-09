@@ -28,7 +28,7 @@ export interface SnotifyToastConfig {
    * It's not recommended to change it.
    * Depends on toast type.
    * @type {SnotifyType}
-   * @default SnotifyStyle.SIMPLE | SnotifyStyle.SUCCESS | SnotifyStyle. ERROR | SnotifyStyle.WARNING etc..
+   * @default SnotifyStyle.SIMPLE | SnotifyStyle.SUCCESS | SnotifyStyle.ERROR | SnotifyStyle.WARNING etc..
    */
   type?: SnotifyType;
   /**
