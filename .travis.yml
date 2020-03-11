@@ -1,20 +1,22 @@
-dist: trusty
-sudo: required
+dist: bionic
 language: node_js
-
 node_js:
-  - "10"
+  - '10'
+  - '12'
+  - '13'
+
 os:
   - linux
-env:
-  global:
-    - DBUS_SESSION_BUS_ADDRESS=/dev/null
-    - DISPLAY=:99.0
-    - CHROME_BIN=chromium-browser
-before_script:
-  - sh -e /etc/init.d/xvfb start
+
+services:
+  - xvfb
+
+cache:
+  directories:
+    - ./node_modules
+
 install:
-  - npm install
+  - npm install --no-progress
 script:
   - npm run lib:build
   - npm run test
