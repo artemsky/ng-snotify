@@ -19,6 +19,6 @@ install:
   - npm install --no-progress
 script:
   - npm run lib:build
-  - npm run test
+  - npm run test:ci
   - npm run example:build:prod
   - npm run compodoc:build
