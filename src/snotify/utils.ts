@@ -41,7 +41,7 @@ export function mergeDeep(...sources) {
   return target;
 }
 
-export function animate(start: number, duration: number, callback: (currentValue: number, progress: number) => void) {
+export function animate(start: number, duration: number, callback: (currentValue: number, progress: number) => {}) {
   let endTime;
   requestAnimationFrame((timestamp) => endTime = timestamp + duration);
   const calculate = () => {
