@@ -3,8 +3,7 @@
 import { FormsModule } from '@angular/forms';
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {SnotifyModule, SnotifyService, ToastDefaults} from 'ng-snotify';
-import {SnotifyPosition} from '../../src/snotify/enums/SnotifyPosition.enum';
+import {SnotifyModule, SnotifyPosition, SnotifyService, ToastDefaults} from 'ng-snotify';
 
 describe('NgSnotify Testing', () => {
   let component: AppComponent;

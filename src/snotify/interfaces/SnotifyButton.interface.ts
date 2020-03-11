@@ -9,14 +9,12 @@ import {SnotifyToast} from '../toast/snotify-toast.model';
 export interface SnotifyButton {
   /**
    * Button text
-   * @type {string}
    */
   text: string;
   /**
    * Action which will be called after button click
-   * @type {function}
-   * @param text? {string}
-   * @returns {void}
+   * @param text? string
+   * @returns void
    * @default this.remove(id)
    */
   action?: (toast: SnotifyToast) => void;

@@ -79,7 +79,7 @@ export class SnotifyComponent implements OnInit, OnDestroy {
   // TODO: fix backdrop if more than one toast called in a row
   /**
    * Changes the backdrop opacity
-   * @param {SnotifyEvent} event
+   * @param event SnotifyEvent
    */
   stateChanged(event: SnotifyEvent) {
     if (!this.withBackdrop.length) {
@@ -113,8 +113,8 @@ export class SnotifyComponent implements OnInit, OnDestroy {
 
   /**
    * Split toasts toasts into different objects
-   * @param {SnotifyToast[]} toasts
-   * @returns {SnotifyNotifications}
+   * @param toasts SnotifyToast[]
+   * @returns SnotifyNotifications
    */
   splitToasts(toasts: SnotifyToast[]): SnotifyNotifications {
     const result: SnotifyNotifications = {};

@@ -1,25 +1,33 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./demo-example/out-tsc",
     "baseUrl": "demo-example",
-    "sourceMap": true,
+    "charset": "UTF-8",
     "declaration": false,
-    "moduleResolution": "node",
+    "downlevelIteration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "importHelpers": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "noStrictGenericChecks": true,
+    "outDir": "./demo-example/out-tsc",
+    "sourceMap": true,
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2016",
+      "es2018",
       "dom"
     ]
   },
   "include": [
     "example/**/*.ts",
     "src/**/*.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
 }

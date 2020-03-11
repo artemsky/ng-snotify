@@ -12,14 +12,12 @@ export interface SnotifyToastConfig {
   /**
    * Toast timeout in milliseconds.
    * Disable timeout = 0
-   * @type {number}
    * @default: 2000
    */
   timeout?: number;
   /**
    * Enable/Disable progress bar.
    * Disabled if timeout is 0.
-   * @type {boolean}
    * @default true
    */
   showProgressBar?: boolean;
@@ -27,43 +25,36 @@ export interface SnotifyToastConfig {
    * Type of toast, affects toast style.
    * It's not recommended to change it.
    * Depends on toast type.
-   * @type {SnotifyType}
    * @default SnotifyStyle.SIMPLE | SnotifyStyle.SUCCESS | SnotifyStyle. ERROR | SnotifyStyle.WARNING etc..
    */
   type?: SnotifyType;
   /**
    * Should toast close on click?
-   * @type {boolean}
    * @default true
    */
   closeOnClick?: boolean;
   /**
    * Should timeout pause on hover?
-   * @type {boolean}
    * @default true
    */
   pauseOnHover?: boolean;
   /**
    * Buttons config.
-   * @type {SnotifyButton[]}
    * @default Look snotify button description
    */
   buttons?: SnotifyButton[];
   /**
    * Placeholder for Prompt toast
-   * @type {string}
    * @default 'Enter answer here...'
    */
   placeholder?: string;
   /**
    * Toast title maximum length
-   * @type {number}
    * @default 16
    */
   titleMaxLength?: number;
   /**
    * Toast body maximum length
-   * @type {number}
    * @default 150
    */
   bodyMaxLength?: number;
@@ -78,7 +69,6 @@ export interface SnotifyToastConfig {
    *     <g><path....../></g>
    * </svg>
    * ```
-   * @type {string}
    * @default Depends on toast type. Look more in icon.component.html
    */
   icon?: string;
@@ -92,25 +82,21 @@ export interface SnotifyToastConfig {
    * Backdrop opacity.
    * * **Range:** `0.0 - 1.0`.
    * * **Disabled:** `-1`
-   * @type {number}
    * @default -1
    */
   backdrop?: number;
   /**
    * Animation config
-   * @type {SnotifyAnimate}
    * @default -1
    */
   animation?: SnotifyAnimate;
   /**
    * Html string witch overrides toast content
-   * @type {string | SafeHtml}
    * @default null
    */
   html?: string | SafeHtml;
   /**
    * Toasts position on screen
-   * @type {SnotifyPosition}
    * @default SnotifyPosition.rightBottom
    */
   position?: SnotifyPosition;

@@ -5,8 +5,8 @@ import {
 import {SnotifyService} from '../snotify.service';
 import {SnotifyToast} from './snotify-toast.model';
 import {Subscription} from 'rxjs';
-import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
 import {SnotifyEvent} from '../types/event.type';
+import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
 
 @Component({
   selector: 'ng-snotify-toast',
@@ -30,7 +30,6 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Toast state
-   * @type {Object}
    */
   state = {
     paused: false,
@@ -165,7 +164,7 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Start progress bar
-   * @param startTime {number}
+   * @param startTime number
    * @default 0
    */
   startTimeout (startTime: number = 0) {

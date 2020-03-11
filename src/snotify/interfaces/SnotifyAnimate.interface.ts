@@ -6,20 +6,17 @@
 export interface SnotifyAnimate {
   /**
    * In animation
-   * @type {string}
    *
    * @default 'fadeIn'
    */
   enter: string;
   /**
    * Out animation
-   * @type {string}
    * @default 'fadeOut'
    */
   exit: string;
   /**
    * Animation time in ms
-   * @type {number}
    * @default 400
    */
   time: number;

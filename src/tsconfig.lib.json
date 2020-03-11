@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "module": "es2015",
-    "target": "es5",
+    "module": "esnext",
+    "target": "es2015",
     "baseUrl": ".",
     "stripInternal": true,
     "emitDecoratorMetadata": true,
@@ -11,10 +11,9 @@
     "outDir": "../build",
     "rootDir": ".",
     "lib": [
-      "es2015",
+      "es2018",
       "dom"
     ],
-    "skipLibCheck": true,
     "types": []
   },
   "angularCompilerOptions": {
@@ -22,9 +21,16 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "ng-snotify.js",
-    "flatModuleId": "ng-snotify"
+    "flatModuleId": "ng-snotify",
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableResourceInlining": true
   },
   "files": [
     "./index.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
   ]
 }

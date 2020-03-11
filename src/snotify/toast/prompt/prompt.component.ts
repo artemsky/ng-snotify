@@ -21,7 +21,6 @@ export class PromptComponent {
   @Input() toast: SnotifyToast;
   /**
    * Is PROMPT focused
-   * @type {boolean}
    */
   isPromptFocused = false;
 }

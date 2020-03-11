@@ -8,14 +8,11 @@ import {SnotifyStyle} from '../enums/SnotifyStyle.enum';
  */
 export class SnotifyToast {
   /**
-   * Emits {SnotifyEvent}
-   * @type {Subject<SnotifyEvent>}
+   * Emits SnotifyEvent
    */
   readonly eventEmitter = new Subject<SnotifyEvent>();
   /**
    * Holds all subscribers because we need to unsubscribe from all before toast get destroyed
-   * @type {Subscription[]}
-   * @private
    */
   private _eventsHolder: Subscription[] = [];
   /**
@@ -42,9 +39,9 @@ export class SnotifyToast {
 
   /**
    * Subscribe to toast events
-   * @param {SnotifyEvent} event
-   * @param {(toast: SnotifyToast) => void} action
-   * @returns {this}
+   * @returns this
+   * @param event SnotifyEvent
+   * @param action (toast: this) => void
    */
   on (event: SnotifyEvent, action: (toast: this) => void): this {
     this._eventsHolder.push(
@@ -59,8 +56,8 @@ export class SnotifyToast {
 
   /**
    * Tests if a toast equals this toast.
-   * @param {SnotifyToast} toast
-   * @returns {boolean} true then equals else false.
+   * @returns boolean true then equals else false.
+   * @param toast SnotifyToast
    */
   equals(toast: SnotifyToast): boolean {
     return this.body === toast.body &&

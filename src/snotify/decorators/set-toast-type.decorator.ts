@@ -4,10 +4,9 @@ import {Snotify} from '../interfaces/Snotify.interface';
 /**
  * Defines toast style depending on method name
  * @param target
- * @param {SnotifyType} propertyKey
- * @param {PropertyDescriptor} descriptor
- * @returns {{value: ((...args: any[]) => any)}}
- * @constructor
+ * @param propertyKey SnotifyType
+ * @param descriptor PropertyDescriptor
+ * @returns value: ((...args: any[]) => any)
  */
 export function SetToastType (target: any, propertyKey: SnotifyType, descriptor: PropertyDescriptor) {
   return {

@@ -8,6 +8,9 @@ const gulp = require('gulp'),
   inlineResources = require('./tools/gulp/inline-resources'),
   sass = require('gulp-sass');
 
+// Import `compiler-cli` for the side-effect of setting up the internal `FileSystem`.
+require('@angular/compiler-cli');
+
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'src');
 const tmpFolder = path.join(rootFolder, '.tmp');
@@ -49,7 +52,7 @@ gulp.task('inline-resources', function () {
  *    compiled modules to the /build folder.
  */
 gulp.task('ngc', function () {
-  ngc([ '--project', `${tmpFolder}/tsconfig.es5.json` ]);
+  ngc([ '--project', `${tmpFolder}/tsconfig.lib.json` ]);
   return Promise.resolve()
 });
 

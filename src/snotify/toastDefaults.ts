@@ -3,7 +3,6 @@ import {SnotifyStyle} from './enums/SnotifyStyle.enum';
 
 /**
  * Snotify default configuration object
- * @type {SnotifyDefaults}
  */
 export const ToastDefaults = {
   global: {
