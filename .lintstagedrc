@@ -1,0 +1,3 @@
+{
+  "./**/*.{ts,js,scss,html,json,*rc}": ["npm run prettier:write", "git add"]
+}

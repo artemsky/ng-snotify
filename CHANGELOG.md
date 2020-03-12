@@ -1,29 +1,52 @@
 ## Change Log
 
+### v8.0.2
+
+### v8.0.1
+
+### v8.0.0
+
+- add Angular 8.x support
+- bump package name to match angular version
+
+### v7.0.0
+
+- add Angular 7.x support
+- bump package name to match angular version
+
+### v6.0.0
+
+- add Angular 6.1 support
+- bump package name to match angular version
+
 ### v4.3.0
+
 - add Angular 6 support thx [MatissJanis](https://github.com/artemsky/ng-snotify/pull/43)
 - add input `autofocus` to prompt toast
 - add wai-aria attrs [#36](https://github.com/artemsky/ng-snotify/issues/36)
 - add fix backdrop [#41](https://github.com/artemsky/ng-snotify/issues/41)
 
-
 ### v4.2.0
+
 - add Angular 5 support
 
 ### v4.1.0
+
 - escape SVG icons bug with Safari, Firefox
 - add [iconClass](https://artemsky.github.io/ng-snotify/documentation/api/options.html#iconclass)
 
 ### v4.0.2
+
 - fix toast reposition if position changed in async method
 - bump dependencies
 
-
 ### v4.0.1
+
 - fix css icons width & height
 - update doc
 
 ### v4.0.0
+
 - **Breaking changes -** [Look migration guide](https://artemsky.github.io/ng-snotify/documentation/essentials/upgrade.html)
 - **Features**
   - [New Documentation](https://artemsky.github.io/ng-snotify/documentation) based on gitbook
@@ -36,28 +59,34 @@
   - Now 1kb lighter :)
 
 ### v3.0.1
-  - fix invisible backdrop blinking
-  
+
+- fix invisible backdrop blinking
+
 ### v3.0.0
-  - Removed style encapsulation. Now you can style component directly in your global styles.scss(css) without using `/deep/` directive. 
-  - Added 3 themes. Now styles are outside of the component. You should read [migration guide](documentation/v2-to-v3-migration-guide.md)
-  - Added the ability to simultaneously display toasts in different positions of the screen
-  - Added `maxAtPosition` option, so you can control max toast count at the position
-  - update angular 4.3.4 -> 4.3.6 (and other dev dependencies)
+
+- Removed style encapsulation. Now you can style component directly in your global styles.scss(css) without using `/deep/` directive.
+- Added 3 themes. Now styles are outside of the component. You should read [migration guide](documentation/v2-to-v3-migration-guide.md)
+- Added the ability to simultaneously display toasts in different positions of the screen
+- Added `maxAtPosition` option, so you can control max toast count at the position
+- update angular 4.3.4 -> 4.3.6 (and other dev dependencies)
 
 ### v2.2.0
-  - thx [ganeshkantu](https://github.com/artemsky/ng-snotify/issues/19), now you can pass HTML into toasts within config object, or use new *html* toast type
-  - update angular 4.3.0 -> 4.3.4 (and other dev dependencies)
+
+- thx [ganeshkantu](https://github.com/artemsky/ng-snotify/issues/19), now you can pass HTML into toasts within config object, or use new _html_ toast type
+- update angular 4.3.0 -> 4.3.4 (and other dev dependencies)
 
 ### v2.1.0
-  - optimize components rerender
-  - update angular 4.3.0 -> 4.3.1 (and other dev dependencies)
+
+- optimize components rerender
+- update angular 4.3.0 -> 4.3.1 (and other dev dependencies)
 
 ### v2.0.3
-  - fix horizontal center backdrop thx [ktriek](https://github.com/artemsky/ng-snotify/pull/18)
-  - update angular 4.2.6 -> 4.3.0 (and other dev dependencies)
+
+- fix horizontal center backdrop thx [ktriek](https://github.com/artemsky/ng-snotify/pull/18)
+- update angular 4.2.6 -> 4.3.0 (and other dev dependencies)
 
 ### v2.0.0
+
 - **Breaking changes -** [Look migration guide](https://github.com/artemsky/ng-snotify/tree/master/documentation/v1-to-v2-migration-guide.md)
 - **Features**
   - Now unlimited amount of buttons.
@@ -73,12 +102,11 @@
     - Auto-documentation add - Interfaces (thx @compodoc/compodoc)
     - Auto-documentation add - Default values (thx @compodoc/compodoc)
 
-
 ### v1.4.0
 
 - add backdrop ([#15](https://github.com/artemsky/ng-snotify/issues/15))
 - fix @compodoc/compodoc inteface generator - [source 1](https://github.com/compodoc/compodoc/issues/198)
-[source 2](https://github.com/jvandemo/generator-angular2-library/issues/112)
+  [source 2](https://github.com/jvandemo/generator-angular2-library/issues/112)
 
 ### v1.3.0
 
@@ -88,7 +116,7 @@
 ### v1.2.0
 
 - add custom icons [Wiki](https://github.com/artemsky/ng-snotify/wiki/API#custom-icon)  
-You can see an example of custom icon by calling *Simple toast* in the example app
+  You can see an example of custom icon by calling _Simple toast_ in the example app
 
 ### v1.1.7
 

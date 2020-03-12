@@ -1,8 +1,6 @@
 # Node
 node_modules/*
 npm-debug.log
-/demo
-/demo-example
 # DO NOT IGNORE TYPESCRIPT FILES FOR NPM
 # TypeScript
 # *.js
@@ -30,6 +28,5 @@ Desktop.ini
 **/*.ngfactory.ts
 
 # Library files
-src/*
-build/*
+projects/*
 package-lock.json
