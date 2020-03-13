@@ -1,7 +1,7 @@
 {
   "name": "ng-snotify-example",
   "description": "Angular 2+ notifications center",
-  "version": "8.0.2",
+  "version": "8.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve ng-snotify-example",
@@ -21,7 +21,7 @@
     "compodoc:build": "compodoc -p tsconfig.docs.json -n ng-snotify -d demo/compodoc/ --hideGenerator --theme Laravel",
     "compodoc:serve": "npm run compodoc:build -- -s",
     "compodoc:watch": "npm run compodoc:build -- -s -w",
-    "lib:build": "ng build ng-snotify && cpx projects/ng-snotify/assets/**/*.scss dist/ng-snotify && cd dist/ng-snotify && npm pack",
+    "lib:build": "ng build ng-snotify && cpx \"projects/ng-snotify/assets/**/*.scss\" dist/ng-snotify && cd dist/ng-snotify && npm pack",
     "lib:lint": "ng lint ng-snotify",
     "lib:test": "ng test ng-snotify --browsers=Chrome --watch false --reporters junit,progress,kjhtml",
     "lib:test:ci": "ng test ng-snotify -c=ci --browsers=ChromeHeadlessCI --watch=false --progress=false --reporters junit,progress,kjhtml",
