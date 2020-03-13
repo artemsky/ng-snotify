@@ -1,0 +1,10 @@
+<div class="snotifyToast__buttons">
+  <button
+    type="button"
+    *ngFor="let button of toast.config.buttons"
+    [ngClass]="{ 'snotifyToast__buttons--bold': button.bold }"
+    (click)="button.action ? button.action(toast) : remove()"
+  >
+    {{ button.text }}
+  </button>
+</div>

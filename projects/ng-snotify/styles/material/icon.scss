@@ -1,0 +1,60 @@
+$success: #c8e6c9;
+$info: #bbdefb;
+$warning: #ffccbc;
+$error: #ffcdd2;
+$async: $info;
+
+$icons: -generate-icons(
+  (
+    error: $error,
+    warning: $warning,
+    info: $info,
+    success: $success,
+    async: $async
+  )
+);
+
+.snotify-icon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  line-height: 0;
+  transform: translate(0, -50%);
+  max-height: 48px;
+  max-width: 48px;
+}
+
+.snotify-icon--error {
+  background-image: url("#{map-get($icons, error)}");
+}
+
+.snotify-icon--warning {
+  background-image: url("#{map-get($icons, warning)}");
+}
+
+.snotify-icon--info {
+  background-image: url("#{map-get($icons, info)}");
+}
+
+.snotify-icon--success {
+  background-image: url("#{map-get($icons, success)}");
+}
+
+.snotify-icon--async {
+  background-image: url("#{map-get($icons, async)}");
+  animation: async 3s infinite linear;
+  transform-origin: 50% 50%;
+}
+
+@keyframes async {
+  0% {
+    -webkit-transform: translate(0, -50%) rotate(0deg);
+    transform: translate(0, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(0, -50%) rotate(360deg);
+    transform: translate(0, -50%) rotate(360deg);
+  }
+}

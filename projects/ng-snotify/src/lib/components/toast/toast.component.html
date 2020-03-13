@@ -1,0 +1,43 @@
+<div
+  [attr.role]="toast.config.type === state.promptType ? 'dialog' : 'alert'"
+  [attr.aria-labelledby]="'snotify_' + toast.id"
+  [attr.aria-modal]="toast.config.type === state.promptType"
+  [ngClass]="[
+    'snotifyToast animated',
+    'snotify-' + toast.config.type,
+    state.animation,
+    toast.valid === undefined ? '' : toast.valid ? 'snotifyToast--valid' : 'snotifyToast--invalid'
+  ]"
+  [ngStyle]="{
+    '-webkit-transition': toast.config.animation.time + 'ms',
+    transition: toast.config.animation.time + 'ms',
+    '-webkit-animation-duration': toast.config.animation.time + 'ms',
+    'animation-duration': toast.config.animation.time + 'ms'
+  }"
+  (animationend)="onExitTransitionEnd()"
+  (click)="onClick()"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
+    <span class="snotifyToast__progressBar__percentage" [ngStyle]="{ width: state.progress * 100 + '%' }"></span>
+  </div>
+  <div class="snotifyToast__inner" *ngIf="!toast.config.html; else toastHTML">
+    <div class="snotifyToast__title" [attr.id]="'snotify_' + toast.id" *ngIf="toast.title">
+      {{ toast.title | truncate: toast.config.titleMaxLength }}
+    </div>
+    <div class="snotifyToast__body" *ngIf="toast.body">{{ toast.body | truncate: toast.config.bodyMaxLength }}</div>
+    <ng-snotify-prompt *ngIf="toast.config.type === state.promptType" [toast]="toast"> </ng-snotify-prompt>
+    <div
+      *ngIf="!toast.config.icon; else elseBlock"
+      [ngClass]="['snotify-icon', toast.config.iconClass || 'snotify-icon--' + toast.config.type]"
+    ></div>
+    <ng-template #elseBlock>
+      <img class="snotify-icon" [src]="toast.config.icon" />
+    </ng-template>
+  </div>
+  <ng-template #toastHTML>
+    <div class="snotifyToast__inner" [innerHTML]="toast.config.html"></div>
+  </ng-template>
+  <ng-snotify-button *ngIf="toast.config.buttons" [toast]="toast"></ng-snotify-button>
+</div>

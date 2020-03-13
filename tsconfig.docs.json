@@ -1,21 +1,11 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "outDir": "./demo/compodoc",
     "rootDir": "./src",
-    "lib": [
-      "es2015",
-      "dom"
-    ],
     "skipLibCheck": true,
     "types": []
   },
-  "exclude": [
-    "e2e",
-    "example",
-    "dist",
-    "docs",
-    "node_modules"
-  ]
+  "exclude": ["e2e", "example", "dist", "docs", "node_modules"]
 }
