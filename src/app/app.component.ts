@@ -35,6 +35,7 @@ export class AppComponent {
         newOnTop: this.newTop,
         maxAtPosition: this.blockMax,
         maxOnScreen: this.dockMax,
+        // @ts-ignore
         filterDuplicates: this.filterDuplicates
       }
     });
