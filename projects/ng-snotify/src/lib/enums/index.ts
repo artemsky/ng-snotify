@@ -1,2 +1,2 @@
-export * from './SnotifyPosition.enum';
-export * from './SnotifyStyle.enum';
+export * from './snotify-position.enum';
+export * from './snotify-style.enum';

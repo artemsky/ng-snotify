@@ -1,15 +1,15 @@
 import { Inject, Injectable } from '@angular/core';
 import { Observable, Subject, Subscription, from } from 'rxjs';
-import { SnotifyToastConfig } from '../interfaces/SnotifyToastConfig.interface';
-import { Snotify } from '../interfaces/Snotify.interface';
+import { SnotifyToastConfig } from '../interfaces/snotify-toast-config.interface';
+import { Snotify } from '../interfaces/snotify.interface';
 import { SnotifyType } from '../types/snotify.type';
 import { SafeHtml } from '@angular/platform-browser';
 import { TransformArgument } from '../decorators/transform-argument.decorator';
 import { mergeDeep, uuid } from '../utils';
 import { SetToastType } from '../decorators/set-toast-type.decorator';
-import { SnotifyDefaults } from '../interfaces/SnotifyDefaults.interface';
+import { SnotifyDefaults } from '../interfaces/snotify-defaults.interface';
 import { SnotifyToast } from '../models/snotify-toast.model';
-import { SnotifyStyle } from '../enums/SnotifyStyle.enum';
+import { SnotifyStyle } from '../enums/snotify-style.enum';
 
 /**
  * SnotifyService - create, remove, config toasts

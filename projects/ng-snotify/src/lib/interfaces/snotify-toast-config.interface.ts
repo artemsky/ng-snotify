@@ -1,8 +1,8 @@
-import { SnotifyButton } from './SnotifyButton.interface';
-import { SnotifyAnimate } from './SnotifyAnimate.interface';
+import { SnotifyButton } from './snotify-button.interface';
+import { SnotifyAnimate } from './snotify-animate.interface';
 import { SnotifyType } from '../types/snotify.type';
 import { SafeHtml } from '@angular/platform-browser';
-import { SnotifyPosition } from '../enums/SnotifyPosition.enum';
+import { SnotifyPosition } from '../enums/snotify-position.enum';
 
 /**
  * Toast configuration object

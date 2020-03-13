@@ -1,4 +1,4 @@
-import { SnotifyToastConfig } from './SnotifyToastConfig.interface';
+import { SnotifyToastConfig } from './snotify-toast-config.interface';
 import { SafeHtml } from '@angular/platform-browser';
 
 /**

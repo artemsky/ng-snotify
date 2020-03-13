@@ -12,7 +12,7 @@ import { SnotifyService } from '../../services/snotify.service';
 import { SnotifyToast } from '../../models/snotify-toast.model';
 import { Subscription } from 'rxjs';
 import { SnotifyEvent } from '../../types/event.type';
-import { SnotifyStyle } from '../../enums/SnotifyStyle.enum';
+import { SnotifyStyle } from '../../enums/snotify-style.enum';
 
 @Component({
   selector: 'ng-snotify-toast',
