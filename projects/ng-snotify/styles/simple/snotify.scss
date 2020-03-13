@@ -32,7 +32,7 @@ $snotify-width: auto !default;
 .snotify-centerTop,
 .snotify-centerCenter,
 .snotify-centerBottom {
-  left: calc(50% - $snotify-width/2);
+  left: calc(50% - #{$snotify-width} / 2);
 }
 
 .snotify-leftTop,

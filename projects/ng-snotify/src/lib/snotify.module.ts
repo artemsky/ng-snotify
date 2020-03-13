@@ -14,7 +14,7 @@ import { ToastComponent } from './components/toast/toast.component';
   exports: [SnotifyComponent, TruncatePipe, KeysPipe]
 })
 export class SnotifyModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<SnotifyModule> {
     return {
       ngModule: SnotifyModule,
       providers: [SnotifyService]

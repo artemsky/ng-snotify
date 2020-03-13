@@ -3,5 +3,6 @@
   "dest": "../../dist/ng-snotify",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": ["./styles/**/*.scss"]
 }

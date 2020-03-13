@@ -1,5 +1,5 @@
 import { FormsModule } from '@angular/forms';
-import { TestBed, ComponentFixture, async } from '@angular/core/testing';
+import { ComponentFixture, async, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { SnotifyModule, SnotifyPosition, SnotifyService, ToastDefaults } from 'ng-snotify';
 
@@ -20,7 +20,7 @@ describe('NgSnotify Testing', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
-    service = TestBed.get(SnotifyService);
+    service = TestBed.inject(SnotifyService);
     compiled = fixture.debugElement.nativeElement;
     fixture.detectChanges();
   });

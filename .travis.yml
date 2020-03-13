@@ -18,6 +18,6 @@ script:
   - npm run prettier:check
   - npm run lint
   - npm run test:ci
-  - npm run lib:build
+  - npm run lib:build:prod
   - npm run example:build:prod
   - npm run compodoc:build

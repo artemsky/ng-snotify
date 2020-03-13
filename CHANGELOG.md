@@ -1,5 +1,10 @@
 ## Change Log
 
+### v9.0.0
+
+- add Angular 9.x support
+- bump package name to match angular version
+
 ### v8.0.2
 
 ### v8.0.1
