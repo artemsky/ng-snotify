@@ -3,7 +3,10 @@
 ### v9.0.0
 
 - add Angular 9.x support
+- fix sass files
 - bump package name to match angular version
+
+### v8.0.3
 
 ### v8.0.2
 
