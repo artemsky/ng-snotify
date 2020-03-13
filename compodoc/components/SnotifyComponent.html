@@ -1,0 +1,1007 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-snotify</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-snotify</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SnotifyComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/ng-snotify/src/lib/components/snotify/snotify.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>ng-snotify</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./snotify.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#backdrop">backdrop</a>
+                            </li>
+                            <li>
+                                <a href="#blockSizeA">blockSizeA</a>
+                            </li>
+                            <li>
+                                <a href="#blockSizeB">blockSizeB</a>
+                            </li>
+                            <li>
+                                <a href="#dockSizeA">dockSizeA</a>
+                            </li>
+                            <li>
+                                <a href="#dockSizeB">dockSizeB</a>
+                            </li>
+                            <li>
+                                <a href="#emitter">emitter</a>
+                            </li>
+                            <li>
+                                <a href="#notifications">notifications</a>
+                            </li>
+                            <li>
+                                <a href="#withBackdrop">withBackdrop</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#splitToasts">splitToasts</a>
+                            </li>
+                            <li>
+                                <a href="#stateChanged">stateChanged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(service: <a href="../injectables/SnotifyService.html">SnotifyService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SnotifyService.html" target="_self" >SnotifyService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Unsubscribe subscriptions</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Init base options. Subscribe to options, lifecycle change</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="splitToasts"></a>
+                    <span class="name">
+                        <b>
+                            splitToasts
+                        </b>
+                        <a href="#splitToasts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>splitToasts(toasts: <a href="../interfaces/Snotify.html">SnotifyToast[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Split toasts toasts into different objects</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>toasts</td>
+                                    <td>
+                                                <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>SnotifyToast[]</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/SnotifyNotifications.html" target="_self" >SnotifyNotifications</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>SnotifyNotifications</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stateChanged"></a>
+                    <span class="name">
+                        <b>
+                            stateChanged
+                        </b>
+                        <a href="#stateChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>stateChanged(event: <a href="../interfaces/Snotify.html">SnotifyEvent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Changes the backdrop opacity</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyEvent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>SnotifyEvent</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="backdrop"></a>
+                        <span class="name">
+                            <b>
+                            backdrop</b>
+                            <a href="#backdrop"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>-1</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Backdrop Opacity</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blockSizeA"></a>
+                        <span class="name">
+                            <b>
+                            blockSizeA</b>
+                            <a href="#blockSizeA"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Helper for slice pipe (maxAtPosition)</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blockSizeB"></a>
+                        <span class="name">
+                            <b>
+                            blockSizeB</b>
+                            <a href="#blockSizeB"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>number | undefined</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Helper for slice pipe (maxAtPosition)</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dockSizeA"></a>
+                        <span class="name">
+                            <b>
+                            dockSizeA</b>
+                            <a href="#dockSizeA"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Helper for slice pipe (maxOnScreen)</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dockSizeB"></a>
+                        <span class="name">
+                            <b>
+                            dockSizeB</b>
+                            <a href="#dockSizeB"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>number | undefined</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Helper for slice pipe (maxOnScreen)</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="emitter"></a>
+                        <span class="name">
+                            <b>
+                            emitter</b>
+                            <a href="#emitter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Toasts emitter</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notifications"></a>
+                        <span class="name">
+                            <b>
+                            notifications</b>
+                            <a href="#notifications"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/SnotifyNotifications.html" target="_self" >SnotifyNotifications</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Toasts array</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="withBackdrop"></a>
+                        <span class="name">
+                            <b>
+                            withBackdrop</b>
+                            <a href="#withBackdrop"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/ng-snotify/src/lib/components/snotify/snotify.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>How many toasts with backdrop in current queue</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnDestroy, OnInit, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+import { SnotifyService } from &#x27;../../services/snotify.service&#x27;;
+import { SnotifyToast } from &#x27;../../models/snotify-toast.model&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { SnotifyNotifications } from &#x27;../../interfaces/snotify-notifications.interface&#x27;;
+import { SnotifyPosition } from &#x27;../../enums/snotify-position.enum&#x27;;
+import { SnotifyEvent } from &#x27;../../types/event.type&#x27;;
+
+@Component({
+  selector: &#x27;ng-snotify&#x27;,
+  templateUrl: &#x27;./snotify.component.html&#x27;,
+  encapsulation: ViewEncapsulation.None
+})
+export class SnotifyComponent implements OnInit, OnDestroy {
+  /**
+   * Toasts array
+   */
+  notifications: SnotifyNotifications;
+  /**
+   * Toasts emitter
+   */
+  emitter: Subscription;
+  /**
+   * Helper for slice pipe (maxOnScreen)
+   */
+  dockSizeA: number;
+  /**
+   * Helper for slice pipe (maxOnScreen)
+   */
+  dockSizeB: number | undefined;
+  /**
+   * Helper for slice pipe (maxAtPosition)
+   */
+  blockSizeA: number;
+  /**
+   * Helper for slice pipe (maxAtPosition)
+   */
+  blockSizeB: number | undefined;
+  /**
+   * Backdrop Opacity
+   */
+  backdrop &#x3D; -1;
+  /**
+   * How many toasts with backdrop in current queue
+   */
+  withBackdrop: SnotifyToast[];
+
+  constructor(private service: SnotifyService) {}
+
+  /**
+   * Init base options. Subscribe to options, lifecycle change
+   */
+  ngOnInit() {
+    this.emitter &#x3D; this.service.emitter.subscribe((toasts: SnotifyToast[]) &#x3D;&gt; {
+      if (this.service.config.global.newOnTop) {
+        this.dockSizeA &#x3D; -this.service.config.global.maxOnScreen;
+        this.dockSizeB &#x3D; undefined;
+        this.blockSizeA &#x3D; -this.service.config.global.maxAtPosition;
+        this.blockSizeB &#x3D; undefined;
+        this.withBackdrop &#x3D; toasts.filter(toast &#x3D;&gt; toast.config.backdrop &gt;&#x3D; 0);
+      } else {
+        this.dockSizeA &#x3D; 0;
+        this.dockSizeB &#x3D; this.service.config.global.maxOnScreen;
+        this.blockSizeA &#x3D; 0;
+        this.blockSizeB &#x3D; this.service.config.global.maxAtPosition;
+        this.withBackdrop &#x3D; toasts.filter(toast &#x3D;&gt; toast.config.backdrop &gt;&#x3D; 0).reverse();
+      }
+      this.notifications &#x3D; this.splitToasts(toasts.slice(this.dockSizeA, this.dockSizeB));
+      this.stateChanged(&#x27;mounted&#x27;);
+    });
+  }
+
+  // TODO: fix backdrop if more than one toast called in a row
+  /**
+   * Changes the backdrop opacity
+   * @param event SnotifyEvent
+   */
+  stateChanged(event: SnotifyEvent) {
+    if (!this.withBackdrop.length) {
+      if (this.backdrop &gt;&#x3D; 0) {
+        this.backdrop &#x3D; -1;
+      }
+      return;
+    }
+    switch (event) {
+      case &#x27;mounted&#x27;:
+        if (this.backdrop &lt; 0) {
+          this.backdrop &#x3D; 0;
+        }
+        break;
+      case &#x27;beforeShow&#x27;:
+        this.backdrop &#x3D; this.withBackdrop[this.withBackdrop.length - 1].config.backdrop;
+        break;
+      case &#x27;beforeHide&#x27;:
+        if (this.withBackdrop.length &#x3D;&#x3D;&#x3D; 1) {
+          this.backdrop &#x3D; 0;
+        }
+        break;
+      case &#x27;hidden&#x27;:
+        if (this.withBackdrop.length &#x3D;&#x3D;&#x3D; 1) {
+          this.backdrop &#x3D; -1;
+        }
+        break;
+    }
+  }
+
+  /**
+   * Split toasts toasts into different objects
+   * @param toasts SnotifyToast[]
+   * @returns SnotifyNotifications
+   */
+  splitToasts(toasts: SnotifyToast[]): SnotifyNotifications {
+    const result: SnotifyNotifications &#x3D; {};
+
+    for (const property in SnotifyPosition) {
+      if (SnotifyPosition.hasOwnProperty(property)) {
+        result[SnotifyPosition[property]] &#x3D; [];
+      }
+    }
+
+    toasts.forEach((toast: SnotifyToast) &#x3D;&gt; {
+      result[toast.config.position as string].push(toast);
+    });
+
+    return result;
+  }
+
+  /**
+   * Unsubscribe subscriptions
+   */
+  ngOnDestroy() {
+    this.emitter.unsubscribe();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;snotify-backdrop&quot; *ngIf&#x3D;&quot;backdrop &gt;&#x3D; 0&quot; [style.opacity]&#x3D;&quot;backdrop&quot;&gt;&lt;/div&gt;
+&lt;div *ngFor&#x3D;&quot;let position of notifications | keys&quot; class&#x3D;&quot;snotify snotify-{{ position }}&quot;&gt;
+  &lt;ng-snotify-toast
+    *ngFor&#x3D;&quot;let notification of notifications[position] | slice: blockSizeA:blockSizeB&quot;
+    [toast]&#x3D;&quot;notification&quot;
+    (stateChanged)&#x3D;&quot;stateChanged($event)&quot;
+  &gt;
+  &lt;/ng-snotify-toast&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="snotify-backdrop" *ngIf="backdrop >= 0" [style.opacity]="backdrop"></div><div *ngFor="let position of notifications | keys" class="snotify snotify-{{ position }}">  <ng-snotify-toast    *ngFor="let notification of notifications[position] | slice: blockSizeA:blockSizeB"    [toast]="notification"    (stateChanged)="stateChanged($event)"  >  </ng-snotify-toast></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsComponent', 'selector': 'ng-snotify-button'},{'name': 'PromptComponent', 'selector': 'ng-snotify-prompt'},{'name': 'SnotifyComponent', 'selector': 'ng-snotify'},{'name': 'ToastComponent', 'selector': 'ng-snotify-toast'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SnotifyComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SnotifyComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

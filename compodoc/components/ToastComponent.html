@@ -1,0 +1,1264 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-snotify</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-snotify</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ToastComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/ng-snotify/src/lib/components/toast/toast.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                    <code><a href="https://angular.io/api/core/AfterContentInit" target="_blank" >AfterContentInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>ng-snotify-toast</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./toast.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#animationFrame">animationFrame</a>
+                            </li>
+                            <li>
+                                <a href="#state">state</a>
+                            </li>
+                            <li>
+                                <a href="#toastChangedSubscription">toastChangedSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#toastDeletedSubscription">toastDeletedSubscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#initToast">initToast</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterContentInit">ngAfterContentInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onClick">onClick</a>
+                            </li>
+                            <li>
+                                <a href="#onExitTransitionEnd">onExitTransitionEnd</a>
+                            </li>
+                            <li>
+                                <a href="#onMouseEnter">onMouseEnter</a>
+                            </li>
+                            <li>
+                                <a href="#onMouseLeave">onMouseLeave</a>
+                            </li>
+                            <li>
+                                <a href="#onRemove">onRemove</a>
+                            </li>
+                            <li>
+                                <a href="#startTimeout">startTimeout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#toast">toast</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#stateChanged">stateChanged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(service: <a href="../injectables/SnotifyService.html">SnotifyService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SnotifyService.html" target="_self" >SnotifyService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toast"></a>
+                        <b>toast</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Snotify.html" target="_self" >SnotifyToast</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:26</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Get toast from notifications array</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stateChanged"></a>
+                        <b>stateChanged</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:27</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initToast"></a>
+                    <span class="name">
+                        <b>
+                            initToast
+                        </b>
+                        <a href="#initToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initToast()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:161</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Initialize base toast config</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterContentInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterContentInit
+                        </b>
+                        <a href="#ngAfterContentInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterContentInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Unsubscribe subscriptions</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Init base options. Subscribe to toast changed, toast deleted</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClick"></a>
+                    <span class="name">
+                        <b>
+                            onClick
+                        </b>
+                        <a href="#onClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trigger OnClick lifecycle</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onExitTransitionEnd"></a>
+                    <span class="name">
+                        <b>
+                            onExitTransitionEnd
+                        </b>
+                        <a href="#onExitTransitionEnd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onExitTransitionEnd()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:145</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Remove toast completely after animation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMouseEnter"></a>
+                    <span class="name">
+                        <b>
+                            onMouseEnter
+                        </b>
+                        <a href="#onMouseEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMouseEnter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trigger onHoverEnter lifecycle</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMouseLeave"></a>
+                    <span class="name">
+                        <b>
+                            onMouseLeave
+                        </b>
+                        <a href="#onMouseLeave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMouseLeave()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:134</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trigger onHoverLeave lifecycle</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemove"></a>
+                    <span class="name">
+                        <b>
+                            onRemove
+                        </b>
+                        <a href="#onRemove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRemove()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Trigger beforeDestroy lifecycle. Removes toast</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startTimeout"></a>
+                    <span class="name">
+                        <b>
+                            startTimeout
+                        </b>
+                        <a href="#startTimeout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startTimeout(startTime: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:171</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Start progress bar</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>startTime</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>0</code>
+                                    </td>
+
+                                    <td>
+                                        <p>number</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="animationFrame"></a>
+                        <span class="name">
+                            <b>
+                            animationFrame</b>
+                            <a href="#animationFrame"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>requestAnimationFrame id</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="state"></a>
+                        <span class="name">
+                            <b>
+                            state</b>
+                            <a href="#state"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    paused: false,
+    progress: 0,
+    animation: &#x27;&#x27;,
+    isDestroying: false,
+    promptType: SnotifyStyle.prompt
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Toast state</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toastChangedSubscription"></a>
+                        <span class="name">
+                            <b>
+                            toastChangedSubscription</b>
+                            <a href="#toastChangedSubscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toastDeletedSubscription"></a>
+                        <span class="name">
+                            <b>
+                            toastDeletedSubscription</b>
+                            <a href="#toastDeletedSubscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/ng-snotify/src/lib/components/toast/toast.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  AfterContentInit,
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ViewEncapsulation
+} from &#x27;@angular/core&#x27;;
+import { SnotifyService } from &#x27;../../services/snotify.service&#x27;;
+import { SnotifyToast } from &#x27;../../models/snotify-toast.model&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { SnotifyEvent } from &#x27;../../types/event.type&#x27;;
+import { SnotifyStyle } from &#x27;../../enums/snotify-style.enum&#x27;;
+
+@Component({
+  selector: &#x27;ng-snotify-toast&#x27;,
+  templateUrl: &#x27;./toast.component.html&#x27;,
+  encapsulation: ViewEncapsulation.None
+})
+export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
+  /**
+   * Get toast from notifications array
+   */
+  @Input() toast: SnotifyToast;
+  @Output() stateChanged &#x3D; new EventEmitter&lt;SnotifyEvent&gt;();
+
+  toastDeletedSubscription: Subscription;
+  toastChangedSubscription: Subscription;
+
+  /**
+   * requestAnimationFrame id
+   */
+  animationFrame: number;
+
+  /**
+   * Toast state
+   */
+  state &#x3D; {
+    paused: false,
+    progress: 0,
+    animation: &#x27;&#x27;,
+    isDestroying: false,
+    promptType: SnotifyStyle.prompt
+  };
+
+  constructor(private service: SnotifyService) {}
+
+  // Lifecycles
+
+  /**
+   * Init base options. Subscribe to toast changed, toast deleted
+   */
+  ngOnInit() {
+    this.toastChangedSubscription &#x3D; this.service.toastChanged.subscribe((toast: SnotifyToast) &#x3D;&gt; {
+      if (this.toast.id &#x3D;&#x3D;&#x3D; toast.id) {
+        this.initToast();
+      }
+    });
+    this.toastDeletedSubscription &#x3D; this.service.toastDeleted.subscribe(id &#x3D;&gt; {
+      if (this.toast.id &#x3D;&#x3D;&#x3D; id) {
+        this.onRemove();
+      }
+    });
+    if (!this.toast.config.timeout) {
+      this.toast.config.showProgressBar &#x3D; false;
+    }
+    this.toast.eventEmitter.next(&#x27;mounted&#x27;);
+    this.state.animation &#x3D; &#x27;snotifyToast--in&#x27;;
+  }
+
+  ngAfterContentInit() {
+    setTimeout(() &#x3D;&gt; {
+      this.stateChanged.emit(&#x27;beforeShow&#x27;);
+      this.toast.eventEmitter.next(&#x27;beforeShow&#x27;);
+      this.state.animation &#x3D; this.toast.config.animation.enter;
+    }, this.service.config.toast.animation.time / 5); // time to show toast push animation (snotifyToast--in)
+  }
+
+  /**
+   * Unsubscribe subscriptions
+   */
+  ngOnDestroy(): void {
+    cancelAnimationFrame(this.animationFrame);
+    this.toast.eventEmitter.next(&#x27;destroyed&#x27;);
+    this.toastChangedSubscription.unsubscribe();
+    this.toastDeletedSubscription.unsubscribe();
+  }
+
+  /*
+  Event hooks
+   */
+
+  /**
+   * Trigger OnClick lifecycle
+   */
+  onClick() {
+    this.toast.eventEmitter.next(&#x27;click&#x27;);
+    if (this.toast.config.closeOnClick) {
+      this.service.remove(this.toast.id);
+    }
+  }
+
+  /**
+   * Trigger beforeDestroy lifecycle. Removes toast
+   */
+  onRemove() {
+    this.state.isDestroying &#x3D; true;
+    this.toast.eventEmitter.next(&#x27;beforeHide&#x27;);
+    this.stateChanged.emit(&#x27;beforeHide&#x27;);
+    this.state.animation &#x3D; this.toast.config.animation.exit;
+    setTimeout(() &#x3D;&gt; {
+      this.stateChanged.emit(&#x27;hidden&#x27;);
+      this.state.animation &#x3D; &#x27;snotifyToast--out&#x27;;
+      this.toast.eventEmitter.next(&#x27;hidden&#x27;);
+      setTimeout(() &#x3D;&gt; this.service.remove(this.toast.id, true), this.toast.config.animation.time / 2);
+    }, this.toast.config.animation.time / 2);
+  }
+
+  /**
+   * Trigger onHoverEnter lifecycle
+   */
+  onMouseEnter() {
+    this.toast.eventEmitter.next(&#x27;mouseenter&#x27;);
+    if (this.toast.config.pauseOnHover) {
+      this.state.paused &#x3D; true;
+    }
+  }
+
+  /**
+   * Trigger onHoverLeave lifecycle
+   */
+  onMouseLeave() {
+    if (this.toast.config.pauseOnHover &amp;&amp; this.toast.config.timeout) {
+      this.state.paused &#x3D; false;
+      this.startTimeout(this.toast.config.timeout * this.state.progress);
+    }
+    this.toast.eventEmitter.next(&#x27;mouseleave&#x27;);
+  }
+
+  /**
+   * Remove toast completely after animation
+   */
+  onExitTransitionEnd() {
+    if (this.state.isDestroying) {
+      return;
+    }
+    this.initToast();
+    this.toast.eventEmitter.next(&#x27;shown&#x27;);
+  }
+
+  /*
+   Common
+   */
+
+  /**
+   * Initialize base toast config
+   *
+   */
+  initToast(): void {
+    if (this.toast.config.timeout &gt; 0) {
+      this.startTimeout(0);
+    }
+  }
+
+  /**
+   * Start progress bar
+   * @param startTime number
+   */
+  startTimeout(startTime: number &#x3D; 0) {
+    const start &#x3D; performance.now();
+    const calculate &#x3D; () &#x3D;&gt; {
+      this.animationFrame &#x3D; requestAnimationFrame(timestamp &#x3D;&gt; {
+        const runtime &#x3D; timestamp + startTime - start;
+        const progress &#x3D; Math.min(runtime / this.toast.config.timeout, 1);
+        if (this.state.paused) {
+          cancelAnimationFrame(this.animationFrame);
+        } else if (runtime &lt; this.toast.config.timeout) {
+          this.state.progress &#x3D; progress;
+          calculate();
+        } else {
+          this.state.progress &#x3D; 1;
+          cancelAnimationFrame(this.animationFrame);
+          this.service.remove(this.toast.id);
+        }
+      });
+    };
+    calculate();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div
+  [attr.role]&#x3D;&quot;toast.config.type &#x3D;&#x3D;&#x3D; state.promptType ? &#x27;dialog&#x27; : &#x27;alert&#x27;&quot;
+  [attr.aria-labelledby]&#x3D;&quot;&#x27;snotify_&#x27; + toast.id&quot;
+  [attr.aria-modal]&#x3D;&quot;toast.config.type &#x3D;&#x3D;&#x3D; state.promptType&quot;
+  [ngClass]&#x3D;&quot;[
+    &#x27;snotifyToast animated&#x27;,
+    &#x27;snotify-&#x27; + toast.config.type,
+    state.animation,
+    toast.valid &#x3D;&#x3D;&#x3D; undefined ? &#x27;&#x27; : toast.valid ? &#x27;snotifyToast--valid&#x27; : &#x27;snotifyToast--invalid&#x27;
+  ]&quot;
+  [ngStyle]&#x3D;&quot;{
+    &#x27;-webkit-transition&#x27;: toast.config.animation.time + &#x27;ms&#x27;,
+    transition: toast.config.animation.time + &#x27;ms&#x27;,
+    &#x27;-webkit-animation-duration&#x27;: toast.config.animation.time + &#x27;ms&#x27;,
+    &#x27;animation-duration&#x27;: toast.config.animation.time + &#x27;ms&#x27;
+  }&quot;
+  (animationend)&#x3D;&quot;onExitTransitionEnd()&quot;
+  (click)&#x3D;&quot;onClick()&quot;
+  (mouseenter)&#x3D;&quot;onMouseEnter()&quot;
+  (mouseleave)&#x3D;&quot;onMouseLeave()&quot;
+&gt;
+  &lt;div class&#x3D;&quot;snotifyToast__progressBar&quot; *ngIf&#x3D;&quot;toast.config.showProgressBar&quot;&gt;
+    &lt;span class&#x3D;&quot;snotifyToast__progressBar__percentage&quot; [ngStyle]&#x3D;&quot;{ width: state.progress * 100 + &#x27;%&#x27; }&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;snotifyToast__inner&quot; *ngIf&#x3D;&quot;!toast.config.html; else toastHTML&quot;&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__title&quot; [attr.id]&#x3D;&quot;&#x27;snotify_&#x27; + toast.id&quot; *ngIf&#x3D;&quot;toast.title&quot;&gt;
+      {{ toast.title | truncate: toast.config.titleMaxLength }}
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__body&quot; *ngIf&#x3D;&quot;toast.body&quot;&gt;{{ toast.body | truncate: toast.config.bodyMaxLength }}&lt;/div&gt;
+    &lt;ng-snotify-prompt *ngIf&#x3D;&quot;toast.config.type &#x3D;&#x3D;&#x3D; state.promptType&quot; [toast]&#x3D;&quot;toast&quot;&gt; &lt;/ng-snotify-prompt&gt;
+    &lt;div
+      *ngIf&#x3D;&quot;!toast.config.icon; else elseBlock&quot;
+      [ngClass]&#x3D;&quot;[&#x27;snotify-icon&#x27;, toast.config.iconClass || &#x27;snotify-icon--&#x27; + toast.config.type]&quot;
+    &gt;&lt;/div&gt;
+    &lt;ng-template #elseBlock&gt;
+      &lt;img class&#x3D;&quot;snotify-icon&quot; [src]&#x3D;&quot;toast.config.icon&quot; /&gt;
+    &lt;/ng-template&gt;
+  &lt;/div&gt;
+  &lt;ng-template #toastHTML&gt;
+    &lt;div class&#x3D;&quot;snotifyToast__inner&quot; [innerHTML]&#x3D;&quot;toast.config.html&quot;&gt;&lt;/div&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-snotify-button *ngIf&#x3D;&quot;toast.config.buttons&quot; [toast]&#x3D;&quot;toast&quot;&gt;&lt;/ng-snotify-button&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div  [attr.role]="toast.config.type === state.promptType ? \'dialog\' : \'alert\'"  [attr.aria-labelledby]="\'snotify_\' + toast.id"  [attr.aria-modal]="toast.config.type === state.promptType"  [ngClass]="[    \'snotifyToast animated\',    \'snotify-\' + toast.config.type,    state.animation,    toast.valid === undefined ? \'\' : toast.valid ? \'snotifyToast--valid\' : \'snotifyToast--invalid\'  ]"  [ngStyle]="{    \'-webkit-transition\': toast.config.animation.time + \'ms\',    transition: toast.config.animation.time + \'ms\',    \'-webkit-animation-duration\': toast.config.animation.time + \'ms\',    \'animation-duration\': toast.config.animation.time + \'ms\'  }"  (animationend)="onExitTransitionEnd()"  (click)="onClick()"  (mouseenter)="onMouseEnter()"  (mouseleave)="onMouseLeave()">  <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">    <span class="snotifyToast__progressBar__percentage" [ngStyle]="{ width: state.progress * 100 + \'%\' }"></span>  </div>  <div class="snotifyToast__inner" *ngIf="!toast.config.html; else toastHTML">    <div class="snotifyToast__title" [attr.id]="\'snotify_\' + toast.id" *ngIf="toast.title">      {{ toast.title | truncate: toast.config.titleMaxLength }}    </div>    <div class="snotifyToast__body" *ngIf="toast.body">{{ toast.body | truncate: toast.config.bodyMaxLength }}</div>    <ng-snotify-prompt *ngIf="toast.config.type === state.promptType" [toast]="toast"> </ng-snotify-prompt>    <div      *ngIf="!toast.config.icon; else elseBlock"      [ngClass]="[\'snotify-icon\', toast.config.iconClass || \'snotify-icon--\' + toast.config.type]"    ></div>    <ng-template #elseBlock>      <img class="snotify-icon" [src]="toast.config.icon" />    </ng-template>  </div>  <ng-template #toastHTML>    <div class="snotifyToast__inner" [innerHTML]="toast.config.html"></div>  </ng-template>  <ng-snotify-button *ngIf="toast.config.buttons" [toast]="toast"></ng-snotify-button></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsComponent', 'selector': 'ng-snotify-button'},{'name': 'PromptComponent', 'selector': 'ng-snotify-prompt'},{'name': 'SnotifyComponent', 'selector': 'ng-snotify'},{'name': 'ToastComponent', 'selector': 'ng-snotify-toast'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ToastComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ToastComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
