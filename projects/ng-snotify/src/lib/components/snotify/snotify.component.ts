@@ -4,7 +4,7 @@ import { SnotifyToast } from '../../models/snotify-toast.model';
 import { Subscription } from 'rxjs';
 import { SnotifyNotifications } from '../../interfaces/snotify-notifications.interface';
 import { SnotifyPosition } from '../../enums/snotify-position.enum';
-import { SnotifyEvent } from '../../types/event.type';
+import { SnotifyEventType } from '../../types/snotify-event.type';
 
 @Component({
   selector: 'ng-snotify',
@@ -73,9 +73,9 @@ export class SnotifyComponent implements OnInit, OnDestroy {
   // TODO: fix backdrop if more than one toast called in a row
   /**
    * Changes the backdrop opacity
-   * @param event SnotifyEvent
+   * @param event SnotifyEventType
    */
-  stateChanged(event: SnotifyEvent) {
+  stateChanged(event: SnotifyEventType) {
     if (!this.withBackdrop.length) {
       if (this.backdrop >= 0) {
         this.backdrop = -1;

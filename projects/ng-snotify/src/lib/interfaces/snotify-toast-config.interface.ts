@@ -1,8 +1,8 @@
 import { SnotifyButton } from './snotify-button.interface';
 import { SnotifyAnimate } from './snotify-animate.interface';
-import { SnotifyType } from '../types/snotify.type';
+import { SnotifyTypeType } from '../types/snotify-type.type';
 import { SafeHtml } from '@angular/platform-browser';
-import { SnotifyPosition } from '../enums/snotify-position.enum';
+import { SnotifyPositionType } from '../types';
 
 /**
  * Toast configuration object
@@ -23,7 +23,7 @@ export interface SnotifyToastConfig {
    * It's not recommended to change it.
    * Depends on toast type.
    */
-  type?: SnotifyType;
+  type?: SnotifyTypeType;
   /**
    * Should toast close on click?
    */
@@ -83,5 +83,5 @@ export interface SnotifyToastConfig {
   /**
    * Toasts position on screen
    */
-  position?: SnotifyPosition;
+  position?: SnotifyPositionType;
 }

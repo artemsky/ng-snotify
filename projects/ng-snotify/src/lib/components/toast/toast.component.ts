@@ -11,7 +11,7 @@ import {
 import { SnotifyService } from '../../services/snotify.service';
 import { SnotifyToast } from '../../models/snotify-toast.model';
 import { Subscription } from 'rxjs';
-import { SnotifyEvent } from '../../types/event.type';
+import { SnotifyEventType } from '../../types/snotify-event.type';
 import { SnotifyStyle } from '../../enums/snotify-style.enum';
 
 @Component({
@@ -24,7 +24,7 @@ export class ToastComponent implements OnInit, OnDestroy, AfterContentInit {
    * Get toast from notifications array
    */
   @Input() toast: SnotifyToast;
-  @Output() stateChanged = new EventEmitter<SnotifyEvent>();
+  @Output() stateChanged = new EventEmitter<SnotifyEventType>();
 
   toastDeletedSubscription: Subscription;
   toastChangedSubscription: Subscription;
