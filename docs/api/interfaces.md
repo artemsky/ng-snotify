@@ -71,7 +71,7 @@
 > Toast config
 
 ### type
-- type: `{ [key: SnotifyType]: SnotifyToastConfig }`
+- type: `{ [key: SnotifyTypeType]: SnotifyToastConfig }`
 > Toast type default config  
 > Example can be found in [options](options.md#setting-default-configuration) defaults
 
@@ -80,27 +80,27 @@
 > Append snotify-${name} class name to snotify element
 
 ### simple
-- type: [SnotifyType](types.md#snotifytype)
+- type: [SnotifyTypeType](types.md#snotifytype)
 
 ### success
-- type: [SnotifyType](types.md#snotifytype)
+- type: [SnotifyTypeType](types.md#snotifytype)
 
 ### error
-- type: [SnotifyType](types.md#snotifytype)
+- type: [SnotifyTypeType](types.md#snotifytype)
 
 ### warning
-- type: [SnotifyType](types.md#snotifytype)
+- type: [SnotifyTypeType](types.md#snotifytype)
 
 ### info
-- type: [SnotifyType](types.md#snotifytype)
+- type: [SnotifyTypeType](types.md#snotifytype)
 
 ### async
-- type: [SnotifyType](types.md#snotifytype)
+- type: [SnotifyTypeType](types.md#snotifytype)
 
 ### confirm
-- type: [SnotifyType](types.md#snotifytype)
+- type: [SnotifyTypeType](types.md#snotifytype)
 
 ### prompt
-- type: [SnotifyType](types.md#snotifytype)
+- type: [SnotifyTypeType](types.md#snotifytype)
 
 

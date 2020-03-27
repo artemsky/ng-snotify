@@ -51,7 +51,7 @@
     * [SnotifyStyle](api/enums.md#snotifystyle)
     * [SnotifyPosition](api/enums.md#snotifyposition)
   * [Types](api/types.md)
-    * [SnotifyType](api/types.md#snotifytype)
+    * [SnotifyTypeType](api/types.md#snotifytype)
     * [SnotifyEvent](api/types.md#snotifyevent)
   * [SnotifyToast](api/model.md)
     * [on](api/model.md#on)

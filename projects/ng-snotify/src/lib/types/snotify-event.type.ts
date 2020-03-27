@@ -1,7 +1,7 @@
 /**
  * Toast event types
  */
-export type SnotifyEvent =
+export type SnotifyEventType =
   | 'mounted'
   | 'beforeShow'
   | 'shown'

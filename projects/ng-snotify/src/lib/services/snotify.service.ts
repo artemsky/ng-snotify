@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable, Subject, Subscription, from } from 'rxjs';
 import { SnotifyToastConfig } from '../interfaces/snotify-toast-config.interface';
 import { Snotify } from '../interfaces/snotify.interface';
-import { SnotifyType } from '../types/snotify.type';
+import { SnotifyTypeType } from '../types/snotify-type.type';
 import { SafeHtml } from '@angular/platform-browser';
 import { TransformArgument } from '../decorators/transform-argument.decorator';
 import { mergeDeep, uuid } from '../utils';
@@ -457,7 +457,7 @@ export class SnotifyService {
     return toast;
   }
 
-  private mergeToast(toast, next, type?: SnotifyType) {
+  private mergeToast(toast, next, type?: SnotifyTypeType) {
     if (next.body) {
       toast.body = next.body;
     }

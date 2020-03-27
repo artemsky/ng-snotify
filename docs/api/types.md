@@ -1,10 +1,10 @@
 # Types
 
-## SnotifyType
+## SnotifyTypeType
 
  - definition
 ```typescript
-SnotifyType
+SnotifyTypeType
   = 'simple'
   | 'success'
   | 'error'
@@ -19,7 +19,7 @@ SnotifyType
 
  - definition
 ```typescript
-SnotifyType
+SnotifyTypeType
   = 'mounted'
   | 'beforeShow'
   | 'shown'

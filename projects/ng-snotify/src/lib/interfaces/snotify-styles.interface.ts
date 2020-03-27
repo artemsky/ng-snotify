@@ -1,15 +1,15 @@
-import { SnotifyType } from '../types/snotify.type';
+import { SnotifyTypeType } from '../types/snotify-type.type';
 
 /**
  * Toast styles
  */
 export interface SnotifyStyles {
-  simple: SnotifyType;
-  success: SnotifyType;
-  error: SnotifyType;
-  warning: SnotifyType;
-  info: SnotifyType;
-  async: SnotifyType;
-  confirm: SnotifyType;
-  prompt: SnotifyType;
+  simple: SnotifyTypeType;
+  success: SnotifyTypeType;
+  error: SnotifyTypeType;
+  warning: SnotifyTypeType;
+  info: SnotifyTypeType;
+  async: SnotifyTypeType;
+  confirm: SnotifyTypeType;
+  prompt: SnotifyTypeType;
 }

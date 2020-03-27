@@ -1,15 +1,15 @@
 import { Snotify } from '../interfaces/snotify.interface';
-import { SnotifyType } from '../types/snotify.type';
+import { SnotifyTypeType } from '../types/snotify-type.type';
 import { SnotifyStyle } from '../enums/snotify-style.enum';
 
 /**
  * Transform arguments to Snotify object
  * @param target any
- * @param propertyKey SnotifyType
+ * @param propertyKey SnotifyTypeType
  * @param descriptor PropertyDescriptor
  * @returns Snotify
  */
-export function TransformArgument(target: any, propertyKey: SnotifyType, descriptor: PropertyDescriptor) {
+export function TransformArgument(target: any, propertyKey: SnotifyTypeType, descriptor: PropertyDescriptor) {
   if (propertyKey === SnotifyStyle.async) {
     return {
       value(...args: any[]) {

@@ -1,6 +1,6 @@
 import { SnotifyToastConfig } from '../interfaces/snotify-toast-config.interface';
 import { Subject, Subscription } from 'rxjs';
-import { SnotifyEvent } from '../types/event.type';
+import { SnotifyEventType } from '../types/snotify-event.type';
 import { SnotifyStyle } from '../enums/snotify-style.enum';
 // @TODO remove method in observable way
 /**
@@ -8,9 +8,9 @@ import { SnotifyStyle } from '../enums/snotify-style.enum';
  */
 export class SnotifyToast {
   /**
-   * Emits SnotifyEvent
+   * Emits SnotifyEventType
    */
-  readonly eventEmitter = new Subject<SnotifyEvent>();
+  readonly eventEmitter = new Subject<SnotifyEventType>();
   /**
    * Holds all subscribers because we need to unsubscribe from all before toast get destroyed
    */
@@ -37,12 +37,12 @@ export class SnotifyToast {
   /**
    * Subscribe to toast events
    * @returns this
-   * @param event SnotifyEvent
+   * @param event SnotifyEventType
    * @param action (toast: this) => void
    */
-  on(event: SnotifyEvent, action: (toast: this) => void): this {
+  on(event: SnotifyEventType, action: (toast: this) => void): this {
     this.eventsHolder.push(
-      this.eventEmitter.subscribe((e: SnotifyEvent) => {
+      this.eventEmitter.subscribe((e: SnotifyEventType) => {
         if (e === event) {
           action(this);
         }
