@@ -1,10 +1,17 @@
 ## Change Log
 
+### v9.0.2
+- fix snotify position type in snotify toast config
+
+### v9.0.1
+
 ### v9.0.0
 
 - add Angular 9.x support
 - fix sass files
 - bump package name to match angular version
+- **BREAKING CHANGES**:
+  - Import **CSS** file in styles is no longer supported, use **Sass** files instead.
 
 ### v8.0.3
 
