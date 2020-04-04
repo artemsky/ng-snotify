@@ -1,7 +1,8 @@
 ## Change Log
 
 ### v9.0.2
-- fix snotify position type in snotify toast config
+
+- fix position in toast config
 
 ### v9.0.1
 

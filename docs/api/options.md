@@ -48,7 +48,7 @@ export class AppModule { }
   
 ### type
 
-- type: [SnotifyType](types.md#snotifytype)
+- type: [SnotifyTypeType](types.md#snotifytype)
   > Depends on toast type - success | async | error | etc...
   > Actually it changes only toast class name
   
