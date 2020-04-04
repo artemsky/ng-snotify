@@ -1,5 +1,9 @@
 ## Change Log
 
+### v9.1.0
+
+- add Angular 9.1 support
+
 ### v9.0.2
 
 - fix position in toast config
