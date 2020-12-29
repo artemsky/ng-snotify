@@ -34,7 +34,7 @@ _________________
 
 If you need something else you can easily create your own theme by duplicating one of this, and writing your own styles.
 
-Theme sources - [here](https://github.com/artemsky/ng-snotify/tree/master/src/styles)
+Theme sources - [here](https://github.com/artemsky/ng-snotify/tree/master/projects/ng-snotify/styles)
 
 
 
