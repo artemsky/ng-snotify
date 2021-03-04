@@ -18,6 +18,8 @@
   (click)="onClick()"
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()"
+  (touchstart)="onMouseEnter()"
+  (touchend)="onMouseLeave()"
 >
   <div class="snotifyToast__progressBar" *ngIf="toast.config.showProgressBar">
     <span class="snotifyToast__progressBar__percentage" [ngStyle]="{ width: state.progress * 100 + '%' }"></span>
