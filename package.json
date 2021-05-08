@@ -149,7 +149,7 @@
     "karma-jasmine-html-reporter": "~1.5.2",
     "karma-junit-reporter": "~2.0.1",
     "lint-staged": "^10.0.9",
-    "ng-packagr": "^9.0.3",
+    "ng-packagr": "^10.1.1",
     "prettier": "^1.19.1",
     "protractor": "~5.4.3",
     "puppeteer": "^2.1.1",
