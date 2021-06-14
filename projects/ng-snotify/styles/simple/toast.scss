@@ -81,6 +81,7 @@ $snotify-body-font-size: auto !default;
   &__body {
     font-size: $snotify-body-font-size;
     color: $toast-color;
+    white-space: pre-line;
   }
 }
 
