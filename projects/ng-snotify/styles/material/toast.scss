@@ -103,6 +103,7 @@ $snotify-body-font-size: auto !default;
 
   &__body {
     font-size: $snotify-body-font-size;
+    white-space: pre-line;
   }
 }
 
